@@ -21,17 +21,24 @@ from pathlib import Path
 from rental_radar.classify import TierClassifier
 from rental_radar.geocode import geocode
 from rental_radar.sources.html_listings import extract_listings
+from rental_radar.sources.registry import url_for
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--source", required=True, help="nome fonte, es. craigslist")
-    ap.add_argument("--url", required=True, help="URL pagina di ricerca")
+    ap.add_argument("--source", required=True, help="nome fonte, es. apartmentadvisor")
+    ap.add_argument("--url", default=None, help="URL ricerca (default: dal registro)")
     ap.add_argument("--out", default=None, help="file snapshot (default: <source>.snapshot.json)")
     args = ap.parse_args()
 
-    print(f"→ Fetch da {args.source} …")
-    listings = extract_listings(args.url, args.source)
+    url = args.url or url_for(args.source)
+    if not url:
+        raise SystemExit(
+            f"Nessun URL per '{args.source}'. Passa --url o aggiungilo a sources/registry.py"
+        )
+
+    print(f"→ Fetch da {args.source} … ({url})")
+    listings = extract_listings(url, args.source)
     print(f"  {len(listings)} annunci estratti")
 
     classifier = TierClassifier()

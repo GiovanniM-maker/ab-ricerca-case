@@ -61,6 +61,32 @@ Pipeline: `extract (Firecrawl) → geocode (US Census, se manca lat/lng) → cla
 > (es. `OPENAI_API_KEY` nel container self-hosted). Senza, usare `scrape_markdown()`
 > e parsare a valle.
 
+## Runbook locale — ApartmentAdvisor (prima fonte)
+
+Tutto gira sul tuo Mac (Firecrawl self-hosted). Setup una tantum:
+
+```bash
+cd apps/scraper
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Assicurati che **Firecrawl sia avviato** (Docker, default `http://localhost:3002`).
+Poi, la mattina, un solo comando:
+
+```bash
+./crawl.sh apartmentadvisor
+# poi, se il listings.json ti convince:
+git add -A && git commit -m "crawl $(date +%F)" && git push
+```
+
+> ⚠️ **Importante (Firecrawl self-hosted + estrazione):** il formato `json`
+> (estrazione per schema) richiede un **LLM configurato nel container Firecrawl**.
+> A budget zero la via migliore è **Ollama in locale** (es. `llama3.1`) impostato
+> nell'env di Firecrawl; in alternativa una `OPENAI_API_KEY`. Se Firecrawl non ha
+> un LLM, `scrape_json` torna vuoto: in quel caso usiamo `scrape_markdown()` e
+> parsiamo a valle (lo aggiungiamo se serve).
+
 ## Flusso della mattina ("git come DB")
 
 Niente database: il crawl rigenera `apps/web/public/data/listings.json`, lo si
