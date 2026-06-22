@@ -34,4 +34,5 @@ export interface Listing {
   tier: TierId;
   travelMinutes?: number | null;
   photos: string[];
+  sources?: string[];
 }
