@@ -20,8 +20,18 @@ from pathlib import Path
 
 from rental_radar.classify import TierClassifier
 from rental_radar.geocode import geocode
-from rental_radar.sources.html_listings import extract_listings
+from rental_radar.sources import apartmentadvisor
 from rental_radar.sources.registry import url_for
+
+
+def fetch(source: str, url: str):
+    """Sceglie il connettore: ApartmentAdvisor ha un parser dedicato (no Firecrawl)."""
+    if source == "apartmentadvisor":
+        return apartmentadvisor.fetch_listings(url)
+    # fonti HTML generiche via Firecrawl (import lazy: richiede httpx)
+    from rental_radar.sources.html_listings import extract_listings
+
+    return extract_listings(url, source)
 
 
 def main() -> None:
@@ -38,7 +48,7 @@ def main() -> None:
         )
 
     print(f"→ Fetch da {args.source} … ({url})")
-    listings = extract_listings(url, args.source)
+    listings = fetch(args.source, url)
     print(f"  {len(listings)} annunci estratti")
 
     classifier = TierClassifier()

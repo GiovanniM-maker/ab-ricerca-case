@@ -63,29 +63,21 @@ Pipeline: `extract (Firecrawl) → geocode (US Census, se manca lat/lng) → cla
 
 ## Runbook locale — ApartmentAdvisor (prima fonte)
 
-Tutto gira sul tuo Mac (Firecrawl self-hosted). Setup una tantum:
+ApartmentAdvisor incorpora un JSON (`__NEXT_DATA__`) con TUTTI gli annunci e le
+**coordinate precise**: il connettore dedicato lo legge con la sola stdlib →
+**niente Firecrawl, niente LLM, niente geocoding, nessuna dipendenza da installare**.
 
 ```bash
 cd apps/scraper
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+python3 -m rental_radar.run --source apartmentadvisor   # -> apartmentadvisor.snapshot.json
+python3 -m rental_radar.aggregate apartmentadvisor.snapshot.json   # -> listings.json
+git add -A && git commit -m "crawl $(date +%F)" && git push   # Vercel ridepoia
 ```
 
-Assicurati che **Firecrawl sia avviato** (Docker, default `http://localhost:3002`).
-Poi, la mattina, un solo comando:
+oppure tutto in uno: `./crawl-aa.sh`.
 
-```bash
-./crawl.sh apartmentadvisor
-# poi, se il listings.json ti convince:
-git add -A && git commit -m "crawl $(date +%F)" && git push
-```
-
-> ⚠️ **Importante (Firecrawl self-hosted + estrazione):** il formato `json`
-> (estrazione per schema) richiede un **LLM configurato nel container Firecrawl**.
-> A budget zero la via migliore è **Ollama in locale** (es. `llama3.1`) impostato
-> nell'env di Firecrawl; in alternativa una `OPENAI_API_KEY`. Se Firecrawl non ha
-> un LLM, `scrape_json` torna vuoto: in quel caso usiamo `scrape_markdown()` e
-> parsiamo a valle (lo aggiungiamo se serve).
+> Firecrawl serve solo per le fonti **senza** JSON incorporato (Craigslist, RentHop):
+> in quel caso vale la nota sull'LLM (Ollama/OpenAI) più sotto.
 
 ## Flusso della mattina ("git come DB")
 

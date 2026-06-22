@@ -1,146 +1,182 @@
 {
-  "generatedAt": "2026-06-22T07:00:00Z",
-  "note": "DATI DI ESEMPIO — sostituiti dal crawl reale (apps/scraper). Il tier viene calcolato dal frontend sulle isocrone.",
+  "generatedAt": "2026-06-22T11:27:09.993043+00:00",
+  "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
   "listings": [
     {
-      "id": "sample-1",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/1",
-      "title": "Luminoso 1BR a Union Square",
-      "price": 4200,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 720,
-      "lat": 40.7359,
-      "lng": -73.9911,
-      "photos": []
-    },
-    {
-      "id": "sample-2",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/2",
-      "title": "Studio arredato in Chelsea",
-      "price": 3100,
+      "id": "apartmentadvisor-8b15f6917b",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/27-w-16-st-manhattan-ny-10012",
+      "title": "27 W 16 St",
+      "price": 3750,
       "currency": "USD",
       "type": "studio",
-      "furnished": true,
-      "sqft": 480,
-      "lat": 40.7465,
-      "lng": -73.9972,
-      "photos": []
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7383077,
+      "lng": -73.994435,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/cc0b78046e967f160876bbdbe40bfb9d.jpeg"
+      ]
     },
     {
-      "id": "sample-3",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/3",
-      "title": "2BR signorile a Gramercy",
-      "price": 6500,
+      "id": "apartmentadvisor-de32457cbf",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/777-6-ave-manhattan-ny-10001",
+      "title": "777 6Th Avenue",
+      "price": 4517,
       "currency": "USD",
       "type": "2br",
-      "furnished": false,
-      "sqft": 1100,
-      "lat": 40.7368,
-      "lng": -73.9845,
-      "photos": []
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.74523162841797,
+      "lng": -73.99150085449219,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/1c3d8f931f49bf7f6cb393608cd5fb73"
+      ]
     },
     {
-      "id": "sample-4",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/4",
-      "title": "1BR nell'East Village",
-      "price": 3800,
+      "id": "apartmentadvisor-3ca1573716",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/801-6-ave-manhattan-ny-10001",
+      "title": "801 6 Ave",
+      "price": 5800,
       "currency": "USD",
       "type": "1br",
-      "furnished": false,
-      "sqft": 600,
-      "lat": 40.7265,
-      "lng": -73.9815,
-      "photos": []
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.74577305,
+      "lng": -73.99103542,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/f9f38f475a503ea53a5816d0b6da09e8.jpeg"
+      ]
     },
     {
-      "id": "sample-5",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/5",
-      "title": "Studio compatto a Murray Hill",
-      "price": 2900,
+      "id": "apartmentadvisor-866eafc7f6",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/290-3-ave-manhattan-ny-10010",
+      "title": "290 3Rd Ave.",
+      "price": 4750,
       "currency": "USD",
-      "type": "studio",
-      "furnished": true,
-      "sqft": 450,
-      "lat": 40.7479,
-      "lng": -73.9756,
-      "photos": []
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.738567,
+      "lng": -73.983697,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/cd8e8034e7e12ed21c762b507c2361f4.jpeg"
+      ]
     },
     {
-      "id": "sample-6",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/6",
-      "title": "2BR a Williamsburg",
+      "id": "apartmentadvisor-0a51f87d45",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/50-w-15-st-ny-ny-10011",
+      "title": "50 W 15 St",
+      "price": 5500,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7374472,
+      "lng": -73.995445,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/7ed92db1186bec1da2ce71f4577f8b89.jpeg"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-140d8c90e9",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/140-w-22-st-ny-ny-10011",
+      "title": "140 W 22 St",
+      "price": 4995,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7427833,
+      "lng": -73.9950623,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/1b59838516cb3f355e78ac9ee4daf3d0.png"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-523a1a82c7",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/103-lexington-ave-ny-ny-10016",
+      "title": "103 Lexington Ave",
+      "price": 3850,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7421626,
+      "lng": -73.9825255,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/4650b5aa53f73ba4f5efa4209dac773a.jpeg"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-e4a9d99b3b",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/225-5-ave-ny-ny-10010",
+      "title": "225 5 Ave",
+      "price": 12500,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7437447,
+      "lng": -73.98755129999999,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/40378ef22fa9fbcb24fdd0ed6baca46d.jpeg"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-445f9472f0",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/55-w-26-st-manhattan-ny-10001",
+      "title": "55 W 26 St",
+      "price": 5062,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7450081,
+      "lng": -73.99088379999999,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/436e9e47b33ef75f5326ff05a0e3f806.jpeg"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-4c8bd12416",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/101-w-24-st-ny-ny-10011",
+      "title": "101 W 24 St",
       "price": 4500,
       "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": 950,
-      "lat": 40.7081,
-      "lng": -73.9571,
-      "photos": []
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7439433,
+      "lng": -73.9923513,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/1a3d149be58b8f065657cce15a4db5ac.jpeg"
+      ]
     },
     {
-      "id": "sample-7",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/7",
-      "title": "1BR Upper West Side",
-      "price": 3600,
+      "id": "apartmentadvisor-7f2fc3d31b",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/43-w-16-st-manhattan-ny-10011",
+      "title": "43 W 16 St",
+      "price": 5300,
       "currency": "USD",
       "type": "1br",
-      "furnished": false,
-      "sqft": 680,
-      "lat": 40.7870,
-      "lng": -73.9754,
-      "photos": []
-    },
-    {
-      "id": "sample-8",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/8",
-      "title": "1BR arredato ad Astoria",
-      "price": 2400,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": true,
-      "sqft": 620,
-      "lat": 40.7644,
-      "lng": -73.9235,
-      "photos": []
-    },
-    {
-      "id": "sample-9",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/9",
-      "title": "2BR a Park Slope",
-      "price": 3900,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": 1000,
-      "lat": 40.6720,
-      "lng": -73.9777,
-      "photos": []
-    },
-    {
-      "id": "sample-10",
-      "source": "sample",
-      "sourceUrl": "https://example.com/listing/10",
-      "title": "Studio economico (fuori area)",
-      "price": 1800,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": false,
-      "sqft": 400,
-      "lat": 40.6500,
-      "lng": -73.9500,
-      "photos": []
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7385403,
+      "lng": -73.9949859,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/7f58a6fedcf48829bb63b76c04d4e9ba.jpeg"
+      ]
     }
   ]
 }
