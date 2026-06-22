@@ -3,10 +3,11 @@
 import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import type { Feature, Polygon, MultiPolygon } from "geojson";
+import type { Feature, FeatureCollection, Polygon, MultiPolygon } from "geojson";
 import { FLATIRON } from "@/lib/config";
-import { TIERS } from "@/lib/types";
+import { TIERS, OUT_META } from "@/lib/types";
 import type { IsochroneSet } from "@/lib/geo";
+import type { ScoredListing } from "@/lib/listings";
 
 const OSM_STYLE: maplibregl.StyleSpecification = {
   version: 8,
@@ -23,25 +24,39 @@ const OSM_STYLE: maplibregl.StyleSpecification = {
 
 type Props = {
   iso: IsochroneSet;
-  marker: { lat: number; lng: number };
-  onPick: (lat: number, lng: number) => void;
+  listings: ScoredListing[];
+  selectedId: string | number | null;
+  onSelect: (id: string | number) => void;
 };
 
 function fc(feat: Feature<Polygon | MultiPolygon> | null) {
+  return { type: "FeatureCollection" as const, features: feat ? [feat] : [] };
+}
+
+function listingsFC(listings: ScoredListing[]): FeatureCollection {
   return {
-    type: "FeatureCollection" as const,
-    features: feat ? [feat] : [],
+    type: "FeatureCollection",
+    features: listings.map((l) => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [l.lng, l.lat] },
+      properties: {
+        id: l.id,
+        tier: l.tier,
+        color: l.tier === "out" ? OUT_META.color : TIERS[l.tier].color,
+        title: l.title,
+        price: l.price ?? 0,
+      },
+    })),
   };
 }
 
-export default function MapView({ iso, marker, onPick }: Props) {
+export default function MapView({ iso, listings, selectedId, onSelect }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
-  const markerRef = useRef<maplibregl.Marker | null>(null);
-  const onPickRef = useRef(onPick);
-  onPickRef.current = onPick;
+  const readyRef = useRef(false);
+  const onSelectRef = useRef(onSelect);
+  onSelectRef.current = onSelect;
 
-  // init mappa una sola volta
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
     const map = new maplibregl.Map({
@@ -54,7 +69,7 @@ export default function MapView({ iso, marker, onPick }: Props) {
     map.addControl(new maplibregl.NavigationControl(), "top-right");
 
     map.on("load", () => {
-      // isocrone: dal tier più largo al più stretto, così il piccolo sta sopra
+      // isocrone (dal più largo al più stretto)
       (
         [
           ["transit45", iso.transit45],
@@ -62,56 +77,91 @@ export default function MapView({ iso, marker, onPick }: Props) {
           ["walk30", iso.walk30],
         ] as const
       ).forEach(([id, feat]) => {
-        const color = TIERS[id].color;
         map.addSource(id, { type: "geojson", data: fc(feat) });
         map.addLayer({
           id: `${id}-fill`,
           type: "fill",
           source: id,
-          paint: { "fill-color": color, "fill-opacity": 0.15 },
+          paint: { "fill-color": TIERS[id].color, "fill-opacity": 0.1 },
         });
         map.addLayer({
           id: `${id}-line`,
           type: "line",
           source: id,
-          paint: { "line-color": color, "line-width": 2 },
+          paint: { "line-color": TIERS[id].color, "line-width": 1.5, "line-dasharray": [2, 1] },
         });
       });
 
-      // marker fisso Flatiron (rosso)
+      // annunci
+      map.addSource("listings", { type: "geojson", data: listingsFC(listings) });
+      map.addLayer({
+        id: "listings-circles",
+        type: "circle",
+        source: "listings",
+        paint: {
+          "circle-radius": [
+            "case",
+            ["==", ["get", "id"], selectedId ?? "__none__"],
+            11,
+            7,
+          ],
+          "circle-color": ["get", "color"],
+          "circle-stroke-width": 2,
+          "circle-stroke-color": "#ffffff",
+        },
+      });
+
+      map.on("click", "listings-circles", (e) => {
+        const id = e.features?.[0]?.properties?.id;
+        if (id != null) onSelectRef.current(id);
+      });
+      map.on("mouseenter", "listings-circles", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "listings-circles", () => {
+        map.getCanvas().style.cursor = "";
+      });
+
+      // destinazione Flatiron
       new maplibregl.Marker({ color: "#dc2626" })
         .setLngLat([FLATIRON.lng, FLATIRON.lat])
         .setPopup(new maplibregl.Popup().setText("Flatiron (destinazione)"))
         .addTo(map);
 
-      // marker di test trascinabile
-      const m = new maplibregl.Marker({ color: "#111827", draggable: true })
-        .setLngLat([marker.lng, marker.lat])
-        .addTo(map);
-      m.on("dragend", () => {
-        const { lng, lat } = m.getLngLat();
-        onPickRef.current(lat, lng);
-      });
-      markerRef.current = m;
-    });
-
-    // click sulla mappa = sposta il marker di test
-    map.on("click", (e) => {
-      onPickRef.current(e.lngLat.lat, e.lngLat.lng);
+      readyRef.current = true;
     });
 
     return () => {
       map.remove();
       mapRef.current = null;
-      markerRef.current = null;
+      readyRef.current = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // sincronizza posizione marker quando cambia da fuori (click/geocoding)
+  // aggiorna i pin quando cambiano gli annunci
   useEffect(() => {
-    markerRef.current?.setLngLat([marker.lng, marker.lat]);
-  }, [marker.lat, marker.lng]);
+    const map = mapRef.current;
+    if (!map || !readyRef.current) return;
+    const src = map.getSource("listings") as maplibregl.GeoJSONSource | undefined;
+    src?.setData(listingsFC(listings));
+  }, [listings]);
+
+  // evidenzia + centra il selezionato
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !readyRef.current) return;
+    if (map.getLayer("listings-circles")) {
+      map.setPaintProperty("listings-circles", "circle-radius", [
+        "case",
+        ["==", ["get", "id"], selectedId ?? "__none__"],
+        11,
+        7,
+      ]);
+    }
+    const sel = listings.find((l) => l.id === selectedId);
+    if (sel) map.flyTo({ center: [sel.lng, sel.lat], zoom: 14, speed: 0.8 });
+  }, [selectedId, listings]);
 
   return <div ref={containerRef} className="h-full w-full" />;
 }

@@ -2,14 +2,25 @@
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import { FLATIRON } from "@/lib/config";
-import { classify, loadIsochrones, type IsochroneSet } from "@/lib/geo";
+import { loadIsochrones, type IsochroneSet } from "@/lib/geo";
+import {
+  loadListings,
+  scoreListings,
+  type RawListing,
+  type ScoredListing,
+} from "@/lib/listings";
 import { TIERS, OUT_META, type TierId } from "@/lib/types";
 
-// MapLibre usa `window`: niente SSR.
 const MapView = dynamic(() => import("@/components/MapView"), { ssr: false });
 
 const EMPTY: IsochroneSet = { walk30: null, transit30: null, transit45: null };
+type SortKey = "convenienza" | "price" | "distance";
+
+const SORTS: { key: SortKey; label: string }[] = [
+  { key: "convenienza", label: "Convenienza" },
+  { key: "price", label: "Prezzo" },
+  { key: "distance", label: "Vicinanza" },
+];
 
 function tierMeta(id: TierId) {
   return id === "out" ? OUT_META : TIERS[id];
@@ -17,130 +28,170 @@ function tierMeta(id: TierId) {
 
 export default function Home() {
   const [iso, setIso] = useState<IsochroneSet>(EMPTY);
-  const [marker, setMarker] = useState({ lat: 40.7359, lng: -73.9911 }); // Union Sq area
-  const [address, setAddress] = useState("");
-  const [geocoding, setGeocoding] = useState(false);
-  const [geoError, setGeoError] = useState<string | null>(null);
+  const [raw, setRaw] = useState<RawListing[]>([]);
+  const [sort, setSort] = useState<SortKey>("convenienza");
+  const [activeTiers, setActiveTiers] = useState<Set<TierId>>(
+    new Set(["walk30", "transit30", "transit45"])
+  );
+  const [selectedId, setSelectedId] = useState<string | number | null>(null);
 
   useEffect(() => {
     loadIsochrones().then(setIso);
+    loadListings().then(setRaw);
   }, []);
 
-  const tier: TierId = useMemo(
-    () => classify(marker.lat, marker.lng, iso),
-    [marker, iso]
+  const scored: ScoredListing[] = useMemo(
+    () => scoreListings(raw, iso),
+    [raw, iso]
   );
-  const meta = tierMeta(tier);
 
-  async function geocode() {
-    if (!address.trim()) return;
-    setGeocoding(true);
-    setGeoError(null);
-    try {
-      // US Census Geocoder — gratis, senza API key.
-      const url =
-        "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress" +
-        `?address=${encodeURIComponent(address)}&benchmark=Public_AR_Current&format=json`;
-      const res = await fetch(url);
-      const data = await res.json();
-      const match = data?.result?.addressMatches?.[0];
-      if (!match) {
-        setGeoError("Indirizzo non trovato dal geocoder Census.");
-        return;
-      }
-      setMarker({ lat: match.coordinates.y, lng: match.coordinates.x });
-    } catch {
-      setGeoError("Geocoding non riuscito (rete/CORS). Clicca sulla mappa.");
-    } finally {
-      setGeocoding(false);
-    }
+  const visible = useMemo(() => {
+    const filtered = scored.filter((l) => activeTiers.has(l.tier));
+    const sorted = [...filtered].sort((a, b) => {
+      if (sort === "price") return (a.price ?? Infinity) - (b.price ?? Infinity);
+      if (sort === "distance") return a.distanceM - b.distanceM;
+      return b.convenienza - a.convenienza;
+    });
+    return sorted;
+  }, [scored, activeTiers, sort]);
+
+  function toggleTier(t: TierId) {
+    setActiveTiers((prev) => {
+      const next = new Set(prev);
+      next.has(t) ? next.delete(t) : next.add(t);
+      return next;
+    });
   }
 
   return (
     <main className="flex h-screen w-screen flex-col md:flex-row">
-      {/* Pannello laterale */}
-      <aside className="w-full shrink-0 space-y-5 overflow-y-auto border-b border-gray-200 bg-white p-5 md:w-96 md:border-b-0 md:border-r">
-        <header>
+      <aside className="flex w-full shrink-0 flex-col border-b border-gray-200 bg-white md:w-[26rem] md:border-b-0 md:border-r">
+        <header className="border-b border-gray-100 p-4">
           <h1 className="text-xl font-bold">Flatiron Rental Radar</h1>
           <p className="text-sm text-gray-500">
-            Fase 1 — isocrone &amp; classificazione. Clicca sulla mappa o trascina
-            il pin nero per vedere in che tier cade un punto.
+            {visible.length} case · ordinate per tempo reale di arrivo a Flatiron
           </p>
         </header>
 
-        {/* Geocoding indirizzo */}
-        <div className="space-y-2">
-          <label className="text-sm font-semibold">Prova un indirizzo</label>
-          <div className="flex gap-2">
-            <input
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && geocode()}
-              placeholder="es. 100 W 20th St, New York, NY"
-              className="w-full rounded border border-gray-300 px-2 py-1.5 text-sm"
-            />
-            <button
-              onClick={geocode}
-              disabled={geocoding}
-              className="rounded bg-gray-900 px-3 py-1.5 text-sm font-medium text-white disabled:opacity-50"
-            >
-              {geocoding ? "…" : "Vai"}
-            </button>
-          </div>
-          {geoError && <p className="text-xs text-red-600">{geoError}</p>}
-        </div>
-
-        {/* Risultato classificazione */}
-        <div className="rounded-lg border border-gray-200 p-4">
-          <p className="text-xs uppercase tracking-wide text-gray-400">
-            Tier del punto selezionato
-          </p>
-          <div className="mt-1 flex items-center gap-2">
-            <span
-              className="inline-block h-3 w-3 rounded-full"
-              style={{ background: meta.color }}
-            />
-            <span className="text-lg font-semibold">{meta.label}</span>
-          </div>
-          <p className="mt-1 font-mono text-xs text-gray-500">
-            {marker.lat.toFixed(5)}, {marker.lng.toFixed(5)}
-          </p>
-        </div>
-
-        {/* Legenda */}
-        <div className="space-y-2">
-          <p className="text-sm font-semibold">Legenda tier</p>
-          {Object.values(TIERS).map((t) => (
-            <div key={t.id} className="flex items-center gap-2 text-sm">
-              <span
-                className="inline-block h-3 w-3 rounded-full"
-                style={{ background: t.color }}
-              />
-              {t.label}
+        {/* Controlli */}
+        <div className="space-y-3 border-b border-gray-100 p-4">
+          <div>
+            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">
+              Ordina per
+            </p>
+            <div className="flex gap-1.5">
+              {SORTS.map((s) => (
+                <button
+                  key={s.key}
+                  onClick={() => setSort(s.key)}
+                  className={`rounded-full px-3 py-1 text-sm ${
+                    sort === s.key
+                      ? "bg-gray-900 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  {s.label}
+                </button>
+              ))}
             </div>
-          ))}
-          <div className="flex items-center gap-2 text-sm text-gray-500">
-            <span
-              className="inline-block h-3 w-3 rounded-full"
-              style={{ background: OUT_META.color }}
-            />
-            {OUT_META.label}
+          </div>
+
+          <div>
+            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">
+              Tier
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {Object.values(TIERS).map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => toggleTier(t.id)}
+                  className="flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm"
+                  style={{
+                    borderColor: t.color,
+                    background: activeTiers.has(t.id) ? t.color : "transparent",
+                    color: activeTiers.has(t.id) ? "white" : t.color,
+                  }}
+                >
+                  <span
+                    className="inline-block h-2 w-2 rounded-full"
+                    style={{
+                      background: activeTiers.has(t.id) ? "white" : t.color,
+                    }}
+                  />
+                  {t.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        <p className="rounded bg-amber-50 p-3 text-xs text-amber-800">
-          ⚠️ Le isocrone &quot;mezzi&quot; sono <b>approssimazioni</b> provvisorie.
-          Vanno rigenerate con dati di transito reali (OpenTripPlanner + GTFS MTA).
-          Vedi <code>PROJECT.md</code>.
+        {/* Lista */}
+        <div className="flex-1 overflow-y-auto">
+          {visible.length === 0 && (
+            <p className="p-4 text-sm text-gray-500">
+              Nessuna casa con questi filtri.
+            </p>
+          )}
+          {visible.map((l) => {
+            const meta = tierMeta(l.tier);
+            const selected = l.id === selectedId;
+            return (
+              <button
+                key={l.id}
+                onClick={() => setSelectedId(l.id)}
+                className={`block w-full border-b border-gray-100 p-4 text-left transition hover:bg-gray-50 ${
+                  selected ? "bg-blue-50" : ""
+                }`}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <span className="font-semibold">{l.title}</span>
+                  <span className="whitespace-nowrap font-semibold">
+                    {l.price ? `$${l.price.toLocaleString()}` : "—"}
+                    <span className="text-xs font-normal text-gray-400">/mese</span>
+                  </span>
+                </div>
+                <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500">
+                  <span
+                    className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-medium text-white"
+                    style={{ background: meta.color }}
+                  >
+                    {meta.label}
+                  </span>
+                  {l.type && <span className="uppercase">{l.type}</span>}
+                  {l.furnished != null && (
+                    <span>{l.furnished ? "arredato" : "non arredato"}</span>
+                  )}
+                  {l.sqft && <span>{l.sqft} ft²</span>}
+                  <span>{(l.distanceM / 1000).toFixed(1)} km</span>
+                </div>
+                <div className="mt-1.5 flex items-center gap-2">
+                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-100">
+                    <div
+                      className="h-full rounded-full bg-emerald-500"
+                      style={{ width: `${Math.round(l.convenienza * 100)}%` }}
+                    />
+                  </div>
+                  <span className="text-xs text-gray-400">
+                    conv. {Math.round(l.convenienza * 100)}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        <p className="border-t border-gray-100 bg-amber-50 p-3 text-xs text-amber-800">
+          ⚠️ Dati di esempio · isocrone &quot;mezzi&quot; approssimate. Il crawl
+          reale rigenera <code>listings.json</code>. Vedi <code>PROJECT.md</code>.
         </p>
       </aside>
 
-      {/* Mappa */}
       <div className="relative h-full w-full flex-1">
         <MapView
           iso={iso}
-          marker={marker}
-          onPick={(lat, lng) => setMarker({ lat, lng })}
+          listings={visible}
+          selectedId={selectedId}
+          onSelect={setSelectedId}
         />
       </div>
     </main>

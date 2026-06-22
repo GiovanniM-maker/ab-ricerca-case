@@ -61,7 +61,25 @@ Pipeline: `extract (Firecrawl) → geocode (US Census, se manca lat/lng) → cla
 > (es. `OPENAI_API_KEY` nel container self-hosted). Senza, usare `scrape_markdown()`
 > e parsare a valle.
 
+## Flusso della mattina ("git come DB")
+
+Niente database: il crawl rigenera `apps/web/public/data/listings.json`, lo si
+committa e si pusha → Vercel ridepoia da solo e serve lo snapshot.
+
+```bash
+# 1) crawl di una o più fonti (Firecrawl in locale)
+python -m rental_radar.run --source craigslist --url "https://newyork.craigslist.org/search/mnh/aap?..."
+
+# 2) fondi gli snapshot nel listings.json che legge il frontend
+python -m rental_radar.aggregate craigslist.snapshot.json
+
+# 3) pubblica: il push fa partire il redeploy su Vercel
+git add -A && git commit -m "crawl $(date +%F)" && git push
+```
+
+La cronologia git è lo **storico prezzi gratuito** (`git diff` su `listings.json`).
+
 ## Stato
-Scaffold pronto. Connettore HTML/Firecrawl generico implementato
-(`sources/html_listings.py` + `run.py`). Da fare: connettore RentCast
-(`sources/rentcast.py`) e scrittura su DB.
+Scaffold pronto. Implementati: connettore HTML/Firecrawl (`sources/html_listings.py`),
+pipeline (`run.py`), aggregatore → `listings.json` (`aggregate.py`), geocoding Census,
+classificatore tier. Da fare: connettore RentCast (`sources/rentcast.py`).

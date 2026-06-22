@@ -33,31 +33,40 @@ millisecondi dentro una serverless function di Vercel o persino nel browser.
 
 Conseguenza: niente server sempre acceso → tutto resta nel **free-tier**.
 
-## 3. Architettura
+## 3. Architettura — "git come database"
 
 ```
-  [Mac/locale o GitHub Actions]            [Vercel free tier]
-  ┌──────────────────────────┐             ┌─────────────────────────┐
-  │ SCRAPER (Playwright/py)   │   scrive    │ Next.js app             │
-  │ fonte → geocode           │ ─────────►  │ • API routes (lettura)  │
-  │ (US Census Geocoder)      │             │ • point-in-polygon      │
-  └──────────────┬───────────┘             │   (Turf + GeoJSON)      │
-                 │                          │ • mappa MapLibre + lista│
-                 ▼  legge ◄──────────────────┘
-        ┌─────────────────────┐    isocrone congelate (FASE 1):
-        │ Postgres FREE        │    apps/web/public/data/iso_*.geojson
-        │ Neon o Supabase      │
-        └─────────────────────┘
+  [Mac / locale — la mattina]                 [Vercel free tier]
+  ┌────────────────────────────┐              ┌─────────────────────────┐
+  │ CRAWL                       │              │ Next.js app (statica)   │
+  │ Firecrawl → geocode →       │  git push    │ • fetch listings.json   │
+  │ classify (tier) →           │ ───────────► │ • classify (Turf)       │
+  │ aggregate → listings.json   │  (redeploy   │ • mappa + lista         │
+  └────────────┬───────────────┘   automatico)│   filtrabile            │
+               │ commit                        └─────────────────────────┘
+               ▼
+   apps/web/public/data/listings.json   ← il "DB" è un file versionato
+   apps/web/public/data/iso_*.geojson   ← isocrone congelate (Fase 1)
 ```
+
+Il database **è il repo git**. Ogni mattina il crawl rigenera `listings.json`, lo si
+committa e si pusha: Vercel ridepoia in automatico e serve il nuovo snapshot dalla
+CDN. Nessun Postgres, nessuna API route, nessun server sempre acceso → tutto gratis.
+
+**Bonus:** la cronologia git è lo **storico prezzi gratuito**. `git diff` su
+`listings.json` mostra case comparse/sparite e variazioni di prezzo: niente tabella
+dedicata.
 
 ### Perché queste scelte
-- **Isocrone offline** → niente routing server in produzione (free-tier).
-- **US Census Geocoder**: gratis, senza API key, batch, ottimo per indirizzi USA.
-- **Playwright** (non requests): i portali sono JS-heavy e con anti-bot.
-- **Postgres + PostGIS** (Supabase/Neon free): test geospaziali nativi.
-- **Next.js + MapLibre** su Vercel: esperienza a mappa, deploy gratuito.
-- Lo **scraper NON gira su Vercel** (serverless non regge Playwright): gira via
-  GitHub Actions schedulata o dal Mac, e scrive nel DB.
+- **git-as-DB**: snapshot giornaliero versionato, zero infrastruttura, free-tier puro.
+- **Isocrone offline** → niente routing server in produzione.
+- **US Census Geocoder**: gratis, senza API key, per le fonti con solo indirizzo.
+- **Firecrawl** (in locale): estrazione via schema, un solo codice per più fonti HTML.
+- **Next.js + MapLibre** su Vercel: front statico, deploy gratuito su push.
+- Il **crawl NON gira su Vercel**: gira sul Mac la mattina e pusha il risultato.
+
+> `db/schema.sql` resta come opzione "fase futura" se un giorno servirà un DB vero
+> (volumi alti, query complesse). Per l'MVP NON serve.
 
 ## 4. Vincoli scelti (decisioni prese)
 - **Fonti**: approccio *ibrido pragmatico*. Fonte primaria individuata:
