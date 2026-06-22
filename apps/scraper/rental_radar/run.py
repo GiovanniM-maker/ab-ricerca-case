@@ -20,20 +20,22 @@ from pathlib import Path
 
 from rental_radar.classify import TierClassifier, tiers_bbox
 from rental_radar.geocode import geocode
-from rental_radar.sources import apartmentadvisor
+from rental_radar.sources import apartmentadvisor, trulia
 from rental_radar.sources.registry import url_for
 
 
 def fetch(source: str, url: str, area: bool):
-    """Sceglie il connettore. ApartmentAdvisor: parser dedicato (no Firecrawl).
+    """Sceglie il connettore. Fonti con parser dedicato (stdlib, no Firecrawl).
 
-    `area=True` interroga tutta l'area dei 3 tier (bbox), non solo Flatiron.
+    `area=True` (solo ApartmentAdvisor) interroga tutta l'area dei 3 tier (bbox).
     """
     if source == "apartmentadvisor":
         if area:
             south, north, west, east = tiers_bbox()
             return apartmentadvisor.fetch_listings_bbox(south, north, west, east)
         return apartmentadvisor.fetch_listings(url)
+    if source == "trulia":
+        return trulia.fetch_listings(url)
     # fonti HTML generiche via Firecrawl (import lazy: richiede httpx)
     from rental_radar.sources.html_listings import extract_listings
 
