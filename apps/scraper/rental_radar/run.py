@@ -18,15 +18,21 @@ from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 
-from rental_radar.classify import TierClassifier
+from rental_radar.classify import TierClassifier, tiers_bbox
 from rental_radar.geocode import geocode
 from rental_radar.sources import apartmentadvisor
 from rental_radar.sources.registry import url_for
 
 
-def fetch(source: str, url: str):
-    """Sceglie il connettore: ApartmentAdvisor ha un parser dedicato (no Firecrawl)."""
+def fetch(source: str, url: str, area: bool):
+    """Sceglie il connettore. ApartmentAdvisor: parser dedicato (no Firecrawl).
+
+    `area=True` interroga tutta l'area dei 3 tier (bbox), non solo Flatiron.
+    """
     if source == "apartmentadvisor":
+        if area:
+            south, north, west, east = tiers_bbox()
+            return apartmentadvisor.fetch_listings_bbox(south, north, west, east)
         return apartmentadvisor.fetch_listings(url)
     # fonti HTML generiche via Firecrawl (import lazy: richiede httpx)
     from rental_radar.sources.html_listings import extract_listings
@@ -39,6 +45,11 @@ def main() -> None:
     ap.add_argument("--source", required=True, help="nome fonte, es. apartmentadvisor")
     ap.add_argument("--url", default=None, help="URL ricerca (default: dal registro)")
     ap.add_argument("--out", default=None, help="file snapshot (default: <source>.snapshot.json)")
+    ap.add_argument(
+        "--canonical",
+        action="store_true",
+        help="usa la ricerca di quartiere (solo Flatiron) invece dell'area dei 3 tier",
+    )
     args = ap.parse_args()
 
     url = args.url or url_for(args.source)
@@ -47,9 +58,10 @@ def main() -> None:
             f"Nessun URL per '{args.source}'. Passa --url o aggiungilo a sources/registry.py"
         )
 
-    print(f"→ Fetch da {args.source} … ({url})")
-    listings = fetch(args.source, url)
-    print(f"  {len(listings)} annunci estratti")
+    area = not args.canonical
+    print(f"→ Fetch da {args.source} … ({'area 3-tier' if area else url})")
+    listings = fetch(args.source, url, area)
+    print(f"  {len(listings)} annunci grezzi")
 
     classifier = TierClassifier()
     geo_cache: dict = {}
@@ -58,15 +70,14 @@ def main() -> None:
             coords = geocode(lst.address_raw, geo_cache)
             if coords:
                 lst.lat, lst.lng = coords
-        if lst.geocoded:
-            lst.tier = classifier.classify(lst.lat, lst.lng)
-        else:
-            lst.tier = "out"  # senza posizione non classificabile
+        lst.tier = classifier.classify(lst.lat, lst.lng) if lst.geocoded else "out"
+
+    # tieni solo le case dentro uno dei 3 tier (scarta "out")
+    kept = [l for l in listings if l.tier != "out"]
+    listings = kept
 
     tiers = Counter(l.tier for l in listings)
-    geocoded = sum(1 for l in listings if l.geocoded)
-    print(f"  geocodificati: {geocoded}/{len(listings)}")
-    print(f"  per tier: {dict(tiers)}")
+    print(f"  in-tier: {len(listings)} · per tier: {dict(tiers)}")
 
     out = Path(args.out or f"{args.source}.snapshot.json")
     out.write_text(json.dumps([asdict(l) for l in listings], indent=2, ensure_ascii=False))

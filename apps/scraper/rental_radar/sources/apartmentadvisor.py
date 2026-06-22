@@ -96,16 +96,12 @@ def _search_params(html: str) -> dict:
     return params
 
 
-def fetch_listings(url: str | None = None) -> list[Listing]:
-    search_url = url or url_for("apartmentadvisor")
-    html = _get(search_url)
-    params = _search_params(html)
-
+def _paginate(params: dict, referer: str, max_pages: int = 40) -> list[Listing]:
     out: list[Listing] = []
     page = 0
-    while True:
+    while page < max_pages:
         params["page"] = page
-        resp = _post_json(SEARCH_API, params, referer=search_url)
+        resp = _post_json(SEARCH_API, dict(params), referer=referer)
         for e in resp.get("results", []):
             lst = _to_listing(e)
             if lst:
@@ -114,6 +110,42 @@ def fetch_listings(url: str | None = None) -> list[Listing]:
             break
         page += 1
     return out
+
+
+def fetch_listings(url: str | None = None) -> list[Listing]:
+    """Ricerca canonica su Flatiron (~55 case, tutte walk30)."""
+    search_url = url or url_for("apartmentadvisor")
+    html = _get(search_url)
+    return _paginate(_search_params(html), referer=search_url)
+
+
+def fetch_listings_bbox(
+    south: float, north: float, west: float, east: float
+) -> list[Listing]:
+    """Tutte le case dentro un bounding box (per coprire l'intera area dei 3 tier).
+
+    Restituisce TUTTO ciò che sta nel rettangolo: il filtro per isocrona/tier va
+    fatto a valle (run.py) con il classificatore.
+    """
+    mid_lat = (south + north) / 2
+    mid_lng = (west + east) / 2
+    params = {
+        "canonicalSearch": False,
+        "location": {"latitude": mid_lat, "longitude": mid_lng},
+        "boundingBox": {
+            "latitude": {"min": south, "max": north},
+            "longitude": {"min": west, "max": east},
+            "midpoint": {"latitude": mid_lat, "longitude": mid_lng},
+        },
+        "filterState": {},
+        "page": 0,
+        "pageSize": 90,
+        "preferFeatured": False,
+        "featuredOnly": False,
+        "numSponsored": 0,
+        "includePrivate": False,
+    }
+    return _paginate(params, referer=url_for("apartmentadvisor"))
 
 
 if __name__ == "__main__":

@@ -45,6 +45,22 @@ def _point_in_ring(lng: float, lat: float, ring: list[tuple[float, float]]) -> b
     return inside
 
 
+def tiers_bbox(iso_dir: Path = ISO_DIR) -> tuple[float, float, float, float]:
+    """Bounding box (south, north, west, east) che racchiude tutti i tier.
+
+    Coincide col bbox del tier più largo (transit45). Serve a interrogare le fonti
+    su tutta l'area utile, prima di filtrare per isocrona.
+    """
+    lats: list[float] = []
+    lngs: list[float] = []
+    for tier in TIER_ORDER:
+        for ring in _rings(iso_dir / f"iso_{tier}.geojson"):
+            for x, y in ring:
+                lngs.append(x)
+                lats.append(y)
+    return min(lats), max(lats), min(lngs), max(lngs)
+
+
 class TierClassifier:
     def __init__(self, iso_dir: Path = ISO_DIR):
         self._rings = {
