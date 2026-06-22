@@ -37,6 +37,31 @@ fetch (per fonte) → normalize → geocode (se serve) → classify (tier) → d
 - **budget RentCast**: con 50 call/mese conviene 1 fetch/giorno con
   `includeTotalCount=true` e scaricare i dettagli solo se il count cambia.
 
+## Fonti HTML via Firecrawl
+
+Le fonti HTML (ApartmentAdvisor, Craigslist, RentHop) usano **Firecrawl** come motore:
+si passa l'URL di ricerca + uno schema dei campi, l'estrazione LLM restituisce gli
+annunci → niente selettori per-sito fragili.
+
+```bash
+# self-hosted (Docker sul tuo Mac, default localhost:3002)
+export FIRECRAWL_API_URL="http://localhost:3002"
+# oppure cloud:
+# export FIRECRAWL_API_URL="https://api.firecrawl.dev"
+# export FIRECRAWL_API_KEY="fc-..."
+
+python -m rental_radar.run --source craigslist \
+  --url "https://newyork.craigslist.org/search/mnh/aap?..."
+```
+
+Pipeline: `extract (Firecrawl) → geocode (US Census, se manca lat/lng) → classify
+(tier) → snapshot JSON` (la scrittura su DB è il passo successivo).
+
+> ⚠️ L'estrazione strutturata richiede un LLM configurato nell'istanza Firecrawl
+> (es. `OPENAI_API_KEY` nel container self-hosted). Senza, usare `scrape_markdown()`
+> e parsare a valle.
+
 ## Stato
-Scaffold pronto. I connettori sono stub (Fase 2): da implementare `sources/rentcast.py`
-per primo.
+Scaffold pronto. Connettore HTML/Firecrawl generico implementato
+(`sources/html_listings.py` + `run.py`). Da fare: connettore RentCast
+(`sources/rentcast.py`) e scrittura su DB.
