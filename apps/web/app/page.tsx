@@ -24,6 +24,11 @@ const SORTS: { key: SortKey; label: string }[] = [
 ];
 const PAGE = 30;
 
+const chip = (on: boolean) =>
+  `rounded-full px-3 py-1.5 text-xs font-medium transition ${
+    on ? "bg-white text-neutral-900" : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+  }`;
+
 export default function Home() {
   const [iso, setIso] = useState<IsochroneSet>(EMPTY);
   const [raw, setRaw] = useState<RawListing[]>([]);
@@ -93,39 +98,31 @@ export default function Home() {
   };
 
   return (
-    <main className="flex h-screen w-screen flex-col bg-neutral-50 md:flex-row">
+    <main className="flex h-[100dvh] w-screen flex-col bg-neutral-950 md:flex-row">
       {/* Sidebar */}
       <aside
-        className={`flex w-full shrink-0 flex-col bg-neutral-50 md:w-[30rem] md:border-r md:border-neutral-200 ${
+        className={`flex w-full shrink-0 flex-col bg-neutral-950 md:w-[30rem] md:border-r md:border-neutral-800 ${
           mobileMap ? "hidden md:flex" : "flex"
         }`}
       >
         {/* Header + filtri */}
-        <div className="shrink-0 border-b border-neutral-200 bg-white/80 px-5 pb-4 pt-5 backdrop-blur">
+        <div className="shrink-0 border-b border-neutral-800 bg-neutral-950/90 px-5 pb-4 pt-[max(1.25rem,env(safe-area-inset-top))] backdrop-blur">
           <div className="flex items-baseline justify-between">
-            <h1 className="text-xl font-bold tracking-tight text-neutral-900">
-              Flatiron <span className="text-emerald-600">Radar</span>
+            <h1 className="text-xl font-bold tracking-tight text-neutral-50">
+              Flatiron <span className="text-emerald-400">Radar</span>
             </h1>
-            <span className="text-sm text-neutral-400">
+            <span className="text-sm text-neutral-500">
               {loading ? "…" : `${visible.length} case`}
             </span>
           </div>
-          <p className="mt-0.5 text-xs text-neutral-400">
+          <p className="mt-0.5 text-xs text-neutral-500">
             Affitti ordinati per tempo reale di arrivo a Flatiron
           </p>
 
           {/* sort */}
           <div className="mt-3 flex gap-1.5">
             {SORTS.map((s) => (
-              <button
-                key={s.key}
-                onClick={() => setSort(s.key)}
-                className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
-                  sort === s.key
-                    ? "bg-neutral-900 text-white"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-                }`}
-              >
+              <button key={s.key} onClick={() => setSort(s.key)} className={chip(sort === s.key)}>
                 {s.label}
               </button>
             ))}
@@ -158,33 +155,23 @@ export default function Home() {
 
           {/* type + furnished */}
           <div className="mt-2 flex flex-wrap items-center gap-1.5">
-            {types.map((ty) => {
-              const on = activeTypes.has(ty);
-              return (
-                <button
-                  key={ty}
-                  onClick={() => setActiveTypes(toggle(activeTypes, ty))}
-                  className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
-                    on ? "bg-neutral-900 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-                  }`}
-                >
-                  {ty.toUpperCase()}
-                </button>
-              );
-            })}
-            <button
-              onClick={() => setFurnishedOnly((v) => !v)}
-              className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
-                furnishedOnly ? "bg-neutral-900 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-              }`}
-            >
+            {types.map((ty) => (
+              <button
+                key={ty}
+                onClick={() => setActiveTypes(toggle(activeTypes, ty))}
+                className={chip(activeTypes.has(ty))}
+              >
+                {ty.toUpperCase()}
+              </button>
+            ))}
+            <button onClick={() => setFurnishedOnly((v) => !v)} className={chip(furnishedOnly)}>
               Arredati
             </button>
           </div>
 
           {/* prezzo max */}
           <div className="mt-3 flex items-center gap-3">
-            <span className="text-xs text-neutral-400">Max</span>
+            <span className="text-xs text-neutral-500">Max</span>
             <input
               type="range"
               min={1000}
@@ -192,9 +179,9 @@ export default function Home() {
               step={250}
               value={maxPrice ?? (priceCap || 20000)}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
-              className="h-1 flex-1 cursor-pointer accent-neutral-900"
+              className="h-1 flex-1 cursor-pointer accent-emerald-400"
             />
-            <span className="w-20 text-right text-xs font-medium tabular-nums text-neutral-600">
+            <span className="w-20 text-right text-xs font-medium tabular-nums text-neutral-300">
               {maxPrice ? `$${maxPrice.toLocaleString()}` : "Qualsiasi"}
             </span>
           </div>
@@ -205,11 +192,11 @@ export default function Home() {
           {loading ? (
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="aspect-[16/13] animate-pulse rounded-2xl bg-neutral-200" />
+                <div key={i} className="aspect-[16/13] animate-pulse rounded-2xl bg-neutral-800" />
               ))}
             </div>
           ) : visible.length === 0 ? (
-            <p className="py-10 text-center text-sm text-neutral-400">
+            <p className="py-10 text-center text-sm text-neutral-500">
               Nessuna casa con questi filtri.
             </p>
           ) : (
@@ -228,11 +215,12 @@ export default function Home() {
               {limit < visible.length && (
                 <button
                   onClick={() => setLimit((n) => n + PAGE)}
-                  className="mt-4 w-full rounded-full border border-neutral-300 bg-white py-2.5 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100"
+                  className="mt-4 w-full rounded-full border border-neutral-700 bg-neutral-900 py-2.5 text-sm font-medium text-neutral-200 transition hover:bg-neutral-800"
                 >
                   Mostra altre ({visible.length - limit})
                 </button>
               )}
+              <div className="h-20 md:h-2" />
             </>
           )}
         </div>
@@ -251,12 +239,12 @@ export default function Home() {
         />
       </div>
 
-      {/* Toggle mappa mobile */}
+      {/* Toggle mappa/lista su mobile */}
       <button
         onClick={() => setMobileMap((v) => !v)}
-        className="fixed bottom-5 left-1/2 z-40 -translate-x-1/2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white shadow-lg md:hidden"
+        className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-neutral-900 shadow-xl md:hidden"
       >
-        {mobileMap ? "Lista" : "Mappa"}
+        {mobileMap ? "☰ Lista" : "◵ Mappa"}
       </button>
 
       <ListingDetail listing={detail} onClose={() => setDetail(null)} />

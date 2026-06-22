@@ -9,29 +9,58 @@ body {
   height: 100%;
 }
 
+html {
+  color-scheme: dark;
+}
+
 body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #171717;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  /* evita rimbalzi/over-scroll su mobile */
+  overscroll-behavior: none;
 }
 
-/* scrollbar discreta */
+/* scrollbar discreta (scura) */
 *::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 *::-webkit-scrollbar-thumb {
-  background: #d4d4d4;
+  background: #3f3f46;
   border-radius: 9999px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: #a3a3a3;
+  background: #52525b;
 }
 
-/* MapLibre popup pulito */
+/* MapLibre: popup e controlli in dark */
 .maplibregl-popup-content {
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  background: #18181b;
+  color: #f5f5f5;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   font-family: inherit;
+}
+.maplibregl-popup-tip {
+  border-top-color: #18181b !important;
+  border-bottom-color: #18181b !important;
+}
+.maplibregl-ctrl-group {
+  background: #18181b !important;
+  border: 1px solid #27272a !important;
+}
+.maplibregl-ctrl-group button + button {
+  border-top: 1px solid #27272a !important;
+}
+.maplibregl-ctrl button .maplibregl-ctrl-icon {
+  filter: invert(1);
+}
+.maplibregl-ctrl-attrib {
+  background: rgba(24, 24, 27, 0.8) !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: #a1a1aa !important;
 }

@@ -9,17 +9,21 @@ import { TIERS, OUT_META } from "@/lib/types";
 import type { IsochroneSet } from "@/lib/geo";
 import type { ScoredListing } from "@/lib/listings";
 
-const OSM_STYLE: maplibregl.StyleSpecification = {
+const DARK_STYLE: maplibregl.StyleSpecification = {
   version: 8,
   sources: {
-    osm: {
+    carto: {
       type: "raster",
-      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+      tiles: [
+        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+        "https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+        "https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+      ],
       tileSize: 256,
-      attribution: "© OpenStreetMap contributors",
+      attribution: "© OpenStreetMap · © CARTO",
     },
   },
-  layers: [{ id: "osm", type: "raster", source: "osm" }],
+  layers: [{ id: "carto", type: "raster", source: "carto" }],
 };
 
 type Props = {
@@ -61,7 +65,7 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
     if (!containerRef.current || mapRef.current) return;
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: OSM_STYLE,
+      style: DARK_STYLE,
       center: [FLATIRON.lng, FLATIRON.lat],
       zoom: 12,
     });
@@ -82,13 +86,13 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
           id: `${id}-fill`,
           type: "fill",
           source: id,
-          paint: { "fill-color": TIERS[id].color, "fill-opacity": 0.1 },
+          paint: { "fill-color": TIERS[id].color, "fill-opacity": 0.14 },
         });
         map.addLayer({
           id: `${id}-line`,
           type: "line",
           source: id,
-          paint: { "line-color": TIERS[id].color, "line-width": 1.5, "line-dasharray": [2, 1] },
+          paint: { "line-color": TIERS[id].color, "line-width": 2, "line-opacity": 0.9, "line-dasharray": [2, 1] },
         });
       });
 
@@ -107,7 +111,7 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
           ],
           "circle-color": ["get", "color"],
           "circle-stroke-width": 2,
-          "circle-stroke-color": "#ffffff",
+          "circle-stroke-color": "#0a0a0a",
         },
       });
 
