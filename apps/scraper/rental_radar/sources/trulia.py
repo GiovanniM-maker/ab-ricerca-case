@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 import urllib.request
 
 from rental_radar.models import Listing
@@ -101,8 +102,29 @@ def parse_listings(html: str) -> list[Listing]:
     return out
 
 
-def fetch_listings(url: str | None = None) -> list[Listing]:
-    return parse_listings(_get(url or url_for("trulia")))
+def fetch_listings(url: str | None = None, max_pages: int = 3, delay: float = 1.5) -> list[Listing]:
+    """Pagina la pagina di quartiere (Flatiron) a basso volume.
+
+    Trulia (gruppo Zillow) applica anti-bot: poche richieste lente, niente crawl
+    massivo. max_pages tiene il conteggio basso di proposito.
+    """
+    base = (url or url_for("trulia")).rstrip("/") + "/"
+    out: list[Listing] = []
+    seen: set[str] = set()
+    for page in range(1, max_pages + 1):
+        page_url = base if page == 1 else f"{base}{page}_p/"
+        try:
+            items = parse_listings(_get(page_url))
+        except Exception:
+            break
+        new = [i for i in items if (i.source_id or i.source_url) not in seen]
+        for i in new:
+            seen.add(i.source_id or i.source_url)
+        out.extend(new)
+        if not new:
+            break
+        time.sleep(delay)
+    return out
 
 
 if __name__ == "__main__":

@@ -97,9 +97,25 @@ last_seen, raw_json. Indice geografico su (lat,lng). Storico prezzi a parte.
 ## 7. Stato di avanzamento
 - [x] **Fase 0** — Scaffold monorepo, schema DB, config Flatiron, docs.
 - [x] **Fase 1** — Isocrone (GeoJSON) + `classify()` + mappa interattiva.
-- [ ] **Fase 2** — Scraper prima fonte → geocode → DB.
-- [ ] **Fase 3** — Frontend lista filtrabile + pulsantino + deploy Vercel.
-- [ ] **Fase 4** — Seconda fonte, scheduler Actions, alert.
+- [x] **Fase 2** — Crawling fonti → classify → `listings.json` (git-as-DB).
+  - ApartmentAdvisor (API interna): ~1680 case su tutti e 3 i tier.
+  - Trulia (`__NEXT_DATA__`): core Flatiron, aggiunge `sqft` + `furnished`.
+  - Aggregatore con merge per edificio (cross-fonte).
+- [ ] **Fase 3** — Frontend lista filtrabile + deploy Vercel.
+- [ ] **Fase 4** — Estensione fonti via Firecrawl (siti blindati), alert.
+
+### Copertura dati (stato attuale)
+| Campo | Copertura | Note |
+|-------|-----------|------|
+| prezzo, posizione, link | ~100% | core completo |
+| tipo (studio/1br/…) | ~99% | |
+| foto | ~64% | non tutte le fonti la espongono |
+| sqft, furnished | basso | solo Trulia; limitato dall'anti-bot al core Flatiron |
+
+> **Fonti blindate** (StreetEasy, Zillow, Apartments.com, Realtor, HotPads,
+> RentHop): rispondono 403/Captcha a richieste dirette. Per integrarle serve
+> **Firecrawl self-hosted** (headless) con un LLM configurato. Non incluse finché
+> non c'è quella configurazione.
 
 > ⚠️ **Nota sulle isocrone attuali**: i GeoJSON in `apps/web/public/data/` sono
 > **approssimazioni geometriche** generate da `tools/generate_isochrones.py` senza

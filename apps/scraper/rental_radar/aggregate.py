@@ -1,19 +1,21 @@
 """Fonde gli snapshot delle fonti nel listings.json che il frontend (Vercel) legge.
 
 Flusso della mattina:
-    python -m rental_radar.run --source craigslist --url "..."      # -> craigslist.snapshot.json
-    python -m rental_radar.run --source apartmentadvisor --url "..." # -> apartmentadvisor.snapshot.json
-    python -m rental_radar.aggregate craigslist.snapshot.json apartmentadvisor.snapshot.json
+    python -m rental_radar.run --source apartmentadvisor
+    python -m rental_radar.run --source trulia
+    python -m rental_radar.aggregate apartmentadvisor.snapshot.json trulia.snapshot.json
     git add -A && git commit -m "crawl $(date +%F)" && git push   # Vercel ridepoia
 
-Tiene solo gli annunci geocodificati (servono lat/lng). Dedup per chiave fonte e per
-indirizzo+prezzo. La cronologia git diventa lo storico prezzi.
+Dedup/merge per edificio: la stessa casa vista da piu' fonti diventa UNA scheda,
+combinando i campi (es. sqft/furnished di Trulia su una casa di ApartmentAdvisor).
+Tiene solo gli annunci geocodificati. La cronologia git e' lo storico prezzi.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,60 +23,93 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / "apps" / "web" / "public" / "data" / "listings.json"
 
+_ORDINAL = re.compile(r"\b(\d+)(?:st|nd|rd|th)\b")
+_UNIT = re.compile(r"\s*(#|\bapt\b|\bunit\b|\bste\b).*$", re.I)
+_PUNCT = re.compile(r"[.,]")
+
+
+def _norm_address(address_raw: str | None) -> str | None:
+    """Chiave di edificio: porzione via, senza unità, ordinali e punteggiatura."""
+    if not address_raw:
+        return None
+    street = address_raw.split(",")[0].lower().strip()
+    street = _UNIT.sub("", street)
+    street = _ORDINAL.sub(r"\1", street)  # "16th" -> "16"
+    street = _PUNCT.sub("", street)
+    street = re.sub(r"\s+", " ", street).strip()
+    return street or None
+
 
 def _id(item: dict) -> str:
     sid = item.get("source_id") or item.get("source_url") or json.dumps(item, sort_keys=True)
     return f"{item.get('source','?')}-{hashlib.sha1(str(sid).encode()).hexdigest()[:10]}"
 
 
-def _dedup_key(item: dict) -> str:
-    addr = (item.get("address_raw") or "").lower().strip()
-    return f"{addr}|{item.get('price')}"
+def _to_public(item: dict) -> dict:
+    return {
+        "id": _id(item),
+        "source": item.get("source"),
+        "sourceUrl": item.get("source_url"),
+        "title": item.get("title"),
+        "price": item.get("price"),
+        "currency": item.get("currency", "USD"),
+        "type": item.get("type"),
+        "furnished": item.get("furnished"),
+        "sqft": item.get("sqft"),
+        "lat": item["lat"],
+        "lng": item["lng"],
+        "photos": item.get("photos", []),
+        "sources": [item.get("source")],
+    }
+
+
+def _merge(into: dict, other: dict) -> None:
+    """Combina `other` in `into`: riempie i campi mancanti, prezzo minimo, furnished OR."""
+    if into.get("price") and other.get("price"):
+        into["price"] = min(into["price"], other["price"])
+    else:
+        into["price"] = into.get("price") or other.get("price")
+    for f in ("type", "sqft", "title"):
+        if into.get(f) in (None, "") and other.get(f) not in (None, ""):
+            into[f] = other[f]
+    if other.get("furnished"):  # un solo "sì" basta
+        into["furnished"] = True
+    elif into.get("furnished") is None:
+        into["furnished"] = other.get("furnished")
+    if not into.get("photos") and other.get("photos"):
+        into["photos"] = other["photos"]
+    src = other.get("source")
+    if src and src not in into["sources"]:
+        into["sources"].append(src)
 
 
 def main() -> None:
     if len(sys.argv) < 2:
         sys.exit("Uso: python -m rental_radar.aggregate <snapshot.json> [snapshot2.json ...]")
 
-    seen_keys: set[str] = set()
-    seen_ids: set[str] = set()
-    out: list[dict] = []
+    by_key: dict[str, dict] = {}
+    order: list[str] = []
 
     for path in sys.argv[1:]:
-        items = json.loads(Path(path).read_text())
-        for it in items:
+        for it in json.loads(Path(path).read_text()):
             if it.get("lat") is None or it.get("lng") is None:
-                continue  # senza posizione non è mostrabile
-            lid = _id(it)
-            if lid in seen_ids:
                 continue
-            dk = _dedup_key(it)
-            if dk in seen_keys and it.get("address_raw"):
-                continue
-            seen_ids.add(lid)
-            seen_keys.add(dk)
-            out.append({
-                "id": lid,
-                "source": it.get("source"),
-                "sourceUrl": it.get("source_url"),
-                "title": it.get("title"),
-                "price": it.get("price"),
-                "currency": it.get("currency", "USD"),
-                "type": it.get("type"),
-                "furnished": it.get("furnished"),
-                "sqft": it.get("sqft"),
-                "lat": it["lat"],
-                "lng": it["lng"],
-                "photos": it.get("photos", []),
-            })
+            key = _norm_address(it.get("address_raw")) or _id(it)
+            if key in by_key:
+                _merge(by_key[key], _to_public(it))
+            else:
+                by_key[key] = _to_public(it)
+                order.append(key)
 
+    listings = [by_key[k] for k in order]
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
-        "listings": out,
+        "count": len(listings),
+        "listings": listings,
     }
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
-    print(f"✓ {len(out)} annunci -> {OUT}")
+    print(f"✓ {len(listings)} schede (merge per edificio) -> {OUT}")
 
 
 if __name__ == "__main__":
