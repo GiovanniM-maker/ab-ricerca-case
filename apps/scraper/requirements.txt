@@ -1,0 +1,10 @@
+# Core
+httpx>=0.27            # client HTTP (RentCast API e altre fonti JSON)
+shapely>=2.0          # point-in-polygon per assegnare il tier all'ingest
+python-dotenv>=1.0    # carica .env (RENTCAST_API_KEY, DATABASE_URL)
+psycopg[binary]>=3.2  # scrittura su Postgres (Supabase/Neon)
+
+# Fonti HTML (Fase 2+, fonti secondarie tipo ApartmentAdvisor/Craigslist)
+playwright>=1.47      # browser headless per siti JS-heavy / anti-bot
+selectolax>=0.3       # parsing HTML veloce
+usaddress>=0.5        # normalizzazione indirizzi USA (dedup)

@@ -1,0 +1,18 @@
+{
+  "name": "Flatiron District",
+  "anchor": {
+    "label": "Flatiron Building, 175 Fifth Ave, New York, NY 10010",
+    "lat": 40.7411,
+    "lng": -73.9897
+  },
+  "tiers": [
+    { "id": "walk30",    "label": "≤ 30 min a piedi",  "mode": "walking", "minutes": 30 },
+    { "id": "transit30", "label": "≤ 30 min coi mezzi", "mode": "transit", "minutes": 30 },
+    { "id": "transit45", "label": "≤ 45 min coi mezzi", "mode": "transit", "minutes": 45 }
+  ],
+  "transit_reference": {
+    "comment": "Orario di riferimento per il calcolo delle isocrone 'mezzi'. Il transito dipende dagli orari MTA: cambiare qui rigenera poligoni diversi.",
+    "arrive_by": "2026-06-23T09:00:00",
+    "weekday": "tuesday"
+  }
+}
