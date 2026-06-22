@@ -42,11 +42,11 @@ export default function ListingDetail({ listing, onClose }: Props) {
       onClick={onClose}
     >
       <div
-        className="max-h-[92vh] w-full max-w-lg overflow-hidden rounded-t-3xl border border-neutral-800 bg-neutral-900 shadow-2xl sm:rounded-3xl"
+        className="flex max-h-[92dvh] w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border border-neutral-800 bg-neutral-900 shadow-2xl sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* foto */}
-        <div className="relative aspect-[16/10] bg-gradient-to-br from-neutral-800 to-neutral-900">
+        <div className="relative aspect-[16/10] shrink-0 bg-gradient-to-br from-neutral-800 to-neutral-900">
           {photo && imgOk ? (
             <img
               src={photo}
@@ -78,7 +78,7 @@ export default function ListingDetail({ listing, onClose }: Props) {
         </div>
 
         {/* corpo */}
-        <div className="space-y-4 overflow-y-auto p-5" style={{ maxHeight: "calc(92vh - 56vw)" }}>
+        <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-5">
           <div className="flex items-start justify-between gap-3">
             <h2 className="text-lg font-bold text-neutral-50">{listing.title}</h2>
             <div className="whitespace-nowrap text-right">
