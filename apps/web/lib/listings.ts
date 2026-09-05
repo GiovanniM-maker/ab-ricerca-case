@@ -2,6 +2,7 @@ import { FLATIRON } from "./config";
 import { classify, type IsochroneSet } from "./geo";
 import type { Listing, TierId } from "./types";
 import { nearestStationM, transitAccessScore, type Station } from "./subway";
+import { neighborhoodsOf } from "./neighborhoods";
 
 export type RawListing = Omit<Listing, "tier">;
 
@@ -10,6 +11,8 @@ export interface ScoredListing extends Listing {
   convenienza: number; // 0..1, più alto = più conveniente
   /** metri dalla metro piu' vicina (null per chi arriva a piedi: non serve) */
   stationM: number | null;
+  /** quartiere piu' specifico che contiene la casa */
+  neighborhood: string | null;
 }
 
 /** Pesi del punteggio convenienza (regolabili dall'UI). */
@@ -186,6 +189,9 @@ export function scoreListings(
       weights.furnished * furnScore +
       weights.photo * photoScore +
       weights.services * servScore;
-    return { ...l, convenienza, stationM };
+    // NEIGHBORHOODS e' ordinato dal piu' specifico al piu' generico,
+    // quindi il primo match e' il quartiere giusto da mostrare.
+    const neighborhood = neighborhoodsOf(l.lat, l.lng)[0] ?? null;
+    return { ...l, convenienza, stationM, neighborhood };
   });
 }

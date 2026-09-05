@@ -55,7 +55,7 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
 
         {/* arredato */}
         {listing.furnished && (
-          <span className="absolute right-3 top-3 rounded-full bg-neutral-950/80 px-2.5 py-1 text-xs font-medium text-neutral-100 shadow-sm backdrop-blur">
+          <span className="absolute right-3 top-3 rounded-full bg-neutral-950/85 px-2.5 py-1 text-xs font-medium text-neutral-100 shadow-sm backdrop-blur">
             Arredato
           </span>
         )}
@@ -74,6 +74,13 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
       <div className="p-3.5">
         <h3 className="truncate text-sm font-semibold text-neutral-100">{listing.title}</h3>
         <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-400">
+          {/* tag quartiere: sta nel corpo e non sulla foto, dove si scontrava
+              con il badge del tier su card strette */}
+          {listing.neighborhood && (
+            <span className="rounded-full border border-neutral-600 px-2 py-0.5 font-semibold text-neutral-200">
+              {listing.neighborhood}
+            </span>
+          )}
           {listing.type && <span>{listing.type.toUpperCase()}</span>}
           {listing.sqft && (
             <>
