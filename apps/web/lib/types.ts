@@ -25,6 +25,8 @@ export interface Listing {
   sourceUrl: string;
   title: string;
   price: number | null;
+  /** true se il prezzo e' un "a partire da" (piu' unita' nello stesso palazzo). */
+  priceFrom?: boolean;
   currency: string;
   type: string | null;
   furnished: boolean | null;

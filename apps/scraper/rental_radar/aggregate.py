@@ -29,7 +29,11 @@ _PUNCT = re.compile(r"[.,]")
 
 
 def _norm_address(address_raw: str | None) -> str | None:
-    """Chiave di edificio: porzione via, senza unità, ordinali e punteggiatura.
+    """Chiave di merge: via normalizzata + interno, se presente.
+
+    L'interno fa parte della chiave apposta: unita' diverse dello stesso palazzo
+    sono annunci diversi, con prezzi diversi. Fonderle darebbe una scheda che
+    mostra il titolo di un'unita' e il prezzo di un'altra.
 
     Ritorna None se non c'è un civico (es. solo "Brooklyn"): in quel caso l'annuncio
     non è mergeabile per indirizzo e resta unico (fallback su id).
@@ -37,13 +41,19 @@ def _norm_address(address_raw: str | None) -> str | None:
     if not address_raw:
         return None
     street = address_raw.split(",")[0].lower().strip()
-    street = _UNIT.sub("", street)
+
+    m = _UNIT.search(street)
+    unit = ""
+    if m:
+        unit = re.sub(r"[^a-z0-9]", "", street[m.start():])
+        street = street[: m.start()]
+
     street = _ORDINAL.sub(r"\1", street)  # "16th" -> "16"
     street = _PUNCT.sub("", street)
     street = re.sub(r"\s+", " ", street).strip()
     if not re.search(r"\d", street):  # nessun civico -> non mergeabile
         return None
-    return street or None
+    return f"{street}|{unit}" if unit else street
 
 
 def _id(item: dict) -> str:
@@ -52,12 +62,16 @@ def _id(item: dict) -> str:
 
 
 def _to_public(item: dict) -> dict:
+    # ApartmentAdvisor pubblica minRent: per un palazzo con piu' unita' e' un
+    # prezzo "a partire da", non il prezzo di quell'appartamento. Va detto.
+    unit_count = (item.get("raw") or {}).get("unitCount") or 1
     return {
         "id": _id(item),
         "source": item.get("source"),
         "sourceUrl": item.get("source_url"),
         "title": item.get("title"),
         "price": item.get("price"),
+        "priceFrom": bool(item.get("price") and unit_count > 1),
         "currency": item.get("currency", "USD"),
         "type": item.get("type"),
         "furnished": item.get("furnished"),
@@ -72,9 +86,14 @@ def _to_public(item: dict) -> dict:
 def _merge(into: dict, other: dict) -> None:
     """Combina `other` in `into`: riempie i campi mancanti, prezzo minimo, furnished OR."""
     if into.get("price") and other.get("price"):
+        if into["price"] != other["price"]:
+            # prezzi diversi per la stessa chiave: quello mostrato e' il minimo
+            into["priceFrom"] = True
         into["price"] = min(into["price"], other["price"])
     else:
         into["price"] = into.get("price") or other.get("price")
+    if other.get("priceFrom"):
+        into["priceFrom"] = True
     for f in ("type", "sqft", "title"):
         if into.get(f) in (None, "") and other.get(f) not in (None, ""):
             into[f] = other[f]
