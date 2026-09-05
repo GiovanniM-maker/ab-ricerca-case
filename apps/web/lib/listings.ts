@@ -1,12 +1,15 @@
 import { FLATIRON } from "./config";
 import { classify, type IsochroneSet } from "./geo";
 import type { Listing, TierId } from "./types";
+import { nearestStationM, transitAccessScore, type Station } from "./subway";
 
 export type RawListing = Omit<Listing, "tier">;
 
 export interface ScoredListing extends Listing {
   distanceM: number;
   convenienza: number; // 0..1, più alto = più conveniente
+  /** metri dalla metro piu' vicina (null per chi arriva a piedi: non serve) */
+  stationM: number | null;
 }
 
 /** Pesi del punteggio convenienza (regolabili dall'UI). */
@@ -17,17 +20,46 @@ export interface Weights {
   furnished: number;
   /** Premia gli annunci con foto: quelli senza sono spesso civetta o incompleti. */
   photo: number;
+  /** Servizi dell'edificio: portineria che ritira i pacchi, ascensore, lavanderia… */
+  services: number;
 }
 
-// I quattro pesi originali riscalati a 0.85, piu' 0.15 per la foto: mantiene il
-// loro equilibrio relativo e fa scendere gli annunci senza immagini.
 export const DEFAULT_WEIGHTS: Weights = {
   price: 0.34,
   time: 0.3,
-  space: 0.13,
-  furnished: 0.08,
+  space: 0.1,
+  furnished: 0.01,
   photo: 0.15,
+  services: 0.1,
 };
+
+// Servizi dell'edificio e quanto valgono. La portineria vale piu' di tutto:
+// a NYC significa avere qualcuno che ritira e tiene le consegne.
+const SERVICES: { key: string; value: number }[] = [
+  { key: "doorman", value: 1 },
+  { key: "concierge", value: 1 },
+  { key: "package", value: 0.8 },
+  { key: "elevator", value: 0.6 },
+  { key: "washer", value: 0.6 },
+  { key: "laundry", value: 0.5 },
+  { key: "gym", value: 0.4 },
+  { key: "fitness", value: 0.4 },
+  { key: "storage", value: 0.3 },
+  { key: "roof", value: 0.3 },
+];
+/** Somma di servizi oltre la quale il punteggio e' pieno. */
+const SERVICES_MAX = 2.5;
+
+/** Da 0 a 1 in base ai servizi dell'edificio. */
+export function servicesScore(amenities?: string[] | null): number {
+  if (!amenities?.length) return 0;
+  const norm = amenities.map((a) => a.toLowerCase());
+  let sum = 0;
+  for (const { key, value } of SERVICES) {
+    if (norm.some((a) => a.includes(key))) sum += value;
+  }
+  return Math.min(1, sum / SERVICES_MAX);
+}
 
 // Quanto "vale" il tier sul tempo. Andare a piedi non e' solo veloce: e' gratis,
 // senza attese, cambi o affollamento. Percio' il salto tra piedi e mezzi e' molto
@@ -93,6 +125,7 @@ export async function loadListings(): Promise<RawListing[]> {
 export function scoreListings(
   raw: RawListing[],
   iso: IsochroneSet,
+  stations: Station[] = [],
   weights: Weights = DEFAULT_WEIGHTS
 ): ScoredListing[] {
   const withTier = raw.map((l) => ({
@@ -131,16 +164,28 @@ export function scoreListings(
 
   return withTier.map((l) => {
     const priceScore = l.price ? 1 - pricePercentile(l.price) : 0.5;
-    const timeScore = TIER_TIME_SCORE[l.tier];
+
+    // Chi arriva a piedi non usa i mezzi: la fermata non c'entra. Per tutti gli
+    // altri, i minuti casa-fermata fanno parte del viaggio e pesano fino al 40%
+    // del punteggio tempo.
+    const walking = l.tier === "walk30";
+    const stationM = walking ? null : nearestStationM(l.lat, l.lng, stations);
+    let timeScore = TIER_TIME_SCORE[l.tier];
+    if (!walking && l.tier !== "out") {
+      timeScore *= 0.6 + 0.4 * transitAccessScore(stationM);
+    }
+
     const spaceScore = l.sqft ? norm(l.sqft, minS, maxS) : 0.5;
     const furnScore = l.furnished ? 1 : 0;
     const photoScore = l.photos?.length ? 1 : 0;
+    const servScore = servicesScore(l.amenities);
     const convenienza =
       weights.price * priceScore +
       weights.time * timeScore +
       weights.space * spaceScore +
       weights.furnished * furnScore +
-      weights.photo * photoScore;
-    return { ...l, convenienza };
+      weights.photo * photoScore +
+      weights.services * servScore;
+    return { ...l, convenienza, stationM };
   });
 }

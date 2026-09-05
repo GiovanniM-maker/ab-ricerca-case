@@ -36,5 +36,7 @@ export interface Listing {
   tier: TierId;
   travelMinutes?: number | null;
   photos: string[];
+  /** servizi dell'edificio: portineria, ascensore, lavanderia… */
+  amenities?: string[];
   sources?: string[];
 }
