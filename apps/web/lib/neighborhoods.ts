@@ -73,7 +73,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
   { name: "Flatiron", bbox: [40.736, 40.747, -73.998, -73.982] },
   { name: "Chelsea", bbox: [40.739, 40.757, -74.012, -73.988] },
   { name: "Murray Hill", bbox: [40.742, 40.755, -73.986, -73.969] },
-  { name: "Midtown", bbox: [40.748, 40.766, -73.996, -73.970] },
+  { name: "Midtown Manhattan", bbox: [40.748, 40.766, -73.996, -73.970] },
   { name: "Turtle Bay", bbox: [40.750, 40.760, -73.975, -73.963] },
   { name: "Hell's Kitchen", bbox: [40.755, 40.775, -74.005, -73.986] },
   { name: "Upper West Side", bbox: [40.771, 40.800, -73.990, -73.968] },
