@@ -105,6 +105,11 @@ export default function ListingDetail({ listing, onClose }: Props) {
             <Stat label="Superficie" value={listing.sqft ? `${listing.sqft} ft²` : "n/d"} />
             <Stat label="Arredato" value={listing.furnished == null ? "n/d" : listing.furnished ? "Sì" : "No"} />
             <Stat label="Distanza" value={formatDistance(listing.distanceM)} />
+            {listing.stationM != null && (
+              <div className="col-span-2">
+                <Stat label="Metro più vicina" value={formatDistance(listing.stationM)} />
+              </div>
+            )}
           </div>
 
           <div className="rounded-xl border border-neutral-800 p-3">
@@ -121,8 +126,8 @@ export default function ListingDetail({ listing, onClose }: Props) {
               />
             </div>
             <p className="mt-2 text-xs text-neutral-500">
-              Combina prezzo, vicinanza (a piedi vale piu' dei mezzi), spazio,
-              arredamento e presenza di foto.
+              Combina prezzo, vicinanza (a piedi vale piu' dei mezzi, e per gli altri
+              conta quanto dista la metro), spazio, servizi e foto.
             </p>
           </div>
 
