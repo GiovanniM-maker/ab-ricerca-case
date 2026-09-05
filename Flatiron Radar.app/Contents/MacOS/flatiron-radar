@@ -1,0 +1,26 @@
+#!/bin/bash
+# Lanciatore dell'app: apre crawl.command in una finestra di Terminale.
+#
+# Serve perche' il doppio clic su un .command dipende da quale applicazione il
+# Mac ha associato a quell'estensione, e quell'associazione si puo' rompere (o
+# essere dirottata su un browser). Un .app invece viene lanciato per la
+# struttura del bundle, e qui indichiamo il Terminale per nome: nessuna
+# associazione da indovinare.
+
+# Contents/MacOS/flatiron-radar -> su di tre livelli c'e' la radice del repo
+REPO="$(cd "$(dirname "$0")/../../.." && pwd)"
+SCRIPT="$REPO/crawl.command"
+
+if [ ! -f "$SCRIPT" ]; then
+  osascript -e "display alert \"Flatiron Radar\" message \"Non trovo crawl.command in:
+$REPO
+
+Sposta l'app dentro la cartella del progetto, accanto a crawl.command.\" as critical"
+  exit 1
+fi
+
+# Il bit di esecuzione arriva da git, ma se qualcosa lo perde (copie, zip,
+# archivi) Terminale non farebbe partire nulla senza dire perche'.
+[ -x "$SCRIPT" ] || chmod +x "$SCRIPT"
+
+open -a Terminal "$SCRIPT"
