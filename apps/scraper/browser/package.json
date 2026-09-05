@@ -1,0 +1,13 @@
+{
+  "name": "flatiron-radar-browser",
+  "private": true,
+  "type": "module",
+  "description": "Scarica le pagine dei siti anti-bot con un browser vero (solo sul Mac).",
+  "scripts": {
+    "login": "node fetch.mjs --login",
+    "crawl": "node fetch.mjs --all"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

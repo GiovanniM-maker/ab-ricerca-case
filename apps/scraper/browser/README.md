@@ -15,9 +15,13 @@ fetch.mjs (Mac, browser vero)  ──►  pages/*.html  ──►  rental_radar 
 ## Preparazione (una volta sola)
 
 ```bash
+cd ~/ab-ricerca-case && git pull
 cd apps/scraper/browser
-npm i -D playwright && npx playwright install chromium
+npm install && npx playwright install chromium
 ```
+
+Lancia `npm install` **dentro questa cartella**: c'è un `package.json` apposta,
+così `node_modules/` non finisce nella root del repo.
 
 ## Login (una volta per sito, e solo se serve)
 
