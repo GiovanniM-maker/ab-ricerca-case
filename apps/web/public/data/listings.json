@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-05T13:33:12.033963+00:00",
+  "generatedAt": "2026-09-05T14:03:11.299732+00:00",
   "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
-  "count": 1698,
+  "count": 1848,
   "listings": [
     {
       "id": "apartmentadvisor-143739f36c",
@@ -93,6 +93,25 @@
       "lng": -73.95207829,
       "photos": [
         "https://static.apartmentadvisor.com/i/f8462f5ec10e7af7fd407f45df6a8742.jpeg"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-700c23f074",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/8-saint-pauls-ave-jersey-city-nj-07306",
+      "title": "8 Saint Pauls Ave",
+      "price": 2200,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7337801,
+      "lng": -74.0513616,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/bf1a4ae844ac3ad7c996c2cf615514aa.jpeg"
       ],
       "sources": [
         "apartmentadvisor"
@@ -12344,25 +12363,6 @@
       ]
     },
     {
-      "id": "apartmentadvisor-969fb49337",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/572-5-ave-brooklyn-ny-11215",
-      "title": "572 5 Ave",
-      "price": 3970,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.66490674,
-      "lng": -73.99023887,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/30038d3b693e6f61ca4979c68c413e77.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
       "id": "apartmentadvisor-7ecd9525c2",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/41-17-cres-st-queens-ny-11101",
@@ -13902,25 +13902,6 @@
       ]
     },
     {
-      "id": "apartmentadvisor-0a629285f3",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/814-marcy-ave-brooklyn-ny-11216",
-      "title": "814 Marcy Ave",
-      "price": 2700,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68568,
-      "lng": -73.94758,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/b67a097a804bcc60d9a4b98acbfa9282.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
       "id": "apartmentadvisor-c033de783e",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/315-e-houston-st-ny-ny-10002",
@@ -14529,25 +14510,6 @@
       ]
     },
     {
-      "id": "apartmentadvisor-5e2ca5a3a1",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/30-56-12-st-queens-ny-11102",
-      "title": "30 56 12 St",
-      "price": 2500,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.77019841,
-      "lng": -73.93265432,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/e80b18dd67d0a608c9c7de4d7ff73bf1.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
       "id": "apartmentadvisor-e40467c098",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/12-e-12-st-ny-ny-10003",
@@ -15036,25 +14998,6 @@
       "lng": -73.986799,
       "photos": [
         "https://static.apartmentadvisor.com/i/4d52aad63a0e883bd08a36e575fb5138.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
-      "id": "apartmentadvisor-45c232e779",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/12-halsey-st-brooklyn-ny-11216",
-      "title": "12 Halsey St",
-      "price": 3225,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.681404,
-      "lng": -73.95299,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/06c0e78388b0905f41fbac8cf54602ba.jpeg"
       ],
       "sources": [
         "apartmentadvisor"
@@ -16442,63 +16385,6 @@
       "lng": -73.95758765,
       "photos": [
         "https://static.apartmentadvisor.com/i/be99a8a595efc1e846ceac723a8b8199.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
-      "id": "apartmentadvisor-eb74cdd10e",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/4311-36-st-long-island-city-ny-11101",
-      "title": "4311 36 St",
-      "price": 3200,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.74497,
-      "lng": -73.92848,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/3c66c1c535d0ab94ef66de93c736564a.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
-      "id": "apartmentadvisor-40e068ce65",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/891-bergen-st-brooklyn-ny-11238",
-      "title": "891 Bergen St",
-      "price": 3100,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6774275,
-      "lng": -73.9579553,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/6aabaf5d5f1c843d13d5b870662d877a.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
-      "id": "apartmentadvisor-e961a4b381",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/876-bergen-st-brooklyn-ny-11238",
-      "title": "876 Bergen St",
-      "price": 3900,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.67707271,
-      "lng": -73.95838864,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/abbc0292ab00600ee9b144ff2f9c28da.jpeg"
       ],
       "sources": [
         "apartmentadvisor"
@@ -19166,25 +19052,6 @@
       ]
     },
     {
-      "id": "apartmentadvisor-219f58916a",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/444-gates-ave-brooklyn-ny-11216",
-      "title": "444 Gates Ave",
-      "price": 3695,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68623,
-      "lng": -73.94845,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/76304bf5200432671ab58d3bea8f01f5.webp"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
       "id": "apartmentadvisor-b9e9490beb",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/11-irving-pl-brooklyn-ny-11238",
@@ -19483,25 +19350,6 @@
       "lng": -74.0395137,
       "photos": [
         "https://static.apartmentadvisor.com/i/50bd8ece77d8b490286ae69ddf839adf.jpeg"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
-      "id": "apartmentadvisor-4c47f8f7ac",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/23-11-33-rd-queens-ny-11106",
-      "title": "23 11 33 Rd",
-      "price": 7500,
-      "currency": "USD",
-      "type": "4br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.763286,
-      "lng": -73.930802,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/5a4fc19c257df5a7adb4242ac389e61d.jpeg"
       ],
       "sources": [
         "apartmentadvisor"
@@ -20667,6 +20515,25 @@
       ]
     },
     {
+      "id": "apartmentadvisor-822810d616",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/61-concord-dr-jersey-city-nj-07306",
+      "title": "61 Concord Dr",
+      "price": 2100,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7347286,
+      "lng": -74.0516238,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/19ef59e20dc1340697bbe12c148352ad.jpeg"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ]
+    },
+    {
       "id": "apartmentadvisor-c4ed0c8960",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/608-carlton-ave-brooklyn-ny-11238",
@@ -21653,6 +21520,25 @@
       "sources": [
         "apartmentadvisor",
         "trulia"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-fc3c813c92",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/86-88-manhattan-ave-jersey-city-nj-07307",
+      "title": "86 88 Manhattan Ave",
+      "price": 1963,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7434429,
+      "lng": -74.0523881,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/d17ec8339abdeb76a3a3f0f351e3e3ba.jpeg"
+      ],
+      "sources": [
+        "apartmentadvisor"
       ]
     },
     {
@@ -24971,23 +24857,6 @@
       ]
     },
     {
-      "id": "apartmentadvisor-1cfc602d14",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/115-eastern-pkwy-ny-ny-11238",
-      "title": "115 Eastern Pkwy",
-      "price": 5850,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6727854,
-      "lng": -73.9649582,
-      "photos": [],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
       "id": "apartmentadvisor-c50b62d37d",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/137-e-38-st-ny-ny-10016",
@@ -25400,7 +25269,7 @@
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/506-2-ave-ny-ny-10016",
       "title": "506 2 Ave",
-      "price": 3700,
+      "price": 3945,
       "currency": "USD",
       "type": "4br",
       "furnished": null,
@@ -25774,7 +25643,7 @@
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/213-e-63-st-ny-ny-10065",
       "title": "213 E 63 St",
-      "price": 5650,
+      "price": 5950,
       "currency": "USD",
       "type": "2br",
       "furnished": null,
@@ -29703,23 +29572,6 @@
       ]
     },
     {
-      "id": "apartmentadvisor-def8d393e8",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/305-e-105-st-ny-ny-10029",
-      "title": "305 E 105 St",
-      "price": 2450,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7898558,
-      "lng": -73.9423496,
-      "photos": [],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
       "id": "apartmentadvisor-12c255b973",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/87-commercial-st-brooklyn-ny-11222",
@@ -31298,6 +31150,2692 @@
       ],
       "sources": [
         "trulia"
+      ]
+    },
+    {
+      "id": "craigslist-58c09990b0",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-st-st-brooklyn-ny/sFcQpLsGwyXag28QdWGgW1",
+      "title": "1930 71st St, Brooklyn, NY",
+      "price": 900,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6940008110343,
+      "lng": -73.990298876554,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ff30eb22c2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-downtown-bk-2br-private/hPQMVZP8jD6ywo7bLp8YuE",
+      "title": "DOWNTOWN BK 2BR | $4,500 | PRIVATE BALCONY | GYM + ROOF",
+      "price": 4500,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6979175505216,
+      "lng": -73.9841034839156,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ac2599a10c",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-park-slope-gowanus-15bedrooms/ghiJswcMDvWq7ucDw9ogsu",
+      "title": "Park Slope Gowanus 1.5Bedrooms from $2750",
+      "price": 2750,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6834171346432,
+      "lng": -73.9819932803562,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-654fd3a184",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-greenpoint-williamsburg-2br/hCshCjKoq6KkdnSdMVEoQP",
+      "title": "GREENPOINT / WILLIAMSBURG 2BR | $4,575 | GYM + ROOF | NO AMENITY FEE",
+      "price": 4575,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7190218779463,
+      "lng": -73.9424735164392,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ab9c8866d5",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-two-bedroom-two-bath/rQTu1qz6QEsTXGuVTzLMtY",
+      "title": "Two Bedroom Two Bath Condominium",
+      "price": 3650,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7912695640772,
+      "lng": -73.998925329117,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-349d124003",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-charm-in-this-one-bedroom/cuUXVVdvGyVipTLKSXvEgF",
+      "title": "@#$Charm in this one bedroom/one bath unit##",
+      "price": 700,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e0fcfba9fa",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-boerum-hill-brooklyn-apartment/7p7nGKXa5r1Mt47Nuh9kFM",
+      "title": "Boerum Hill Brooklyn Apartment – Bright Home Near Wyckoff St",
+      "price": 1400,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6940008110343,
+      "lng": -73.990298876554,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-96a164140d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/long-island-city-th-street-two/358urRA4FAzaBQ7s9JAU4E",
+      "title": "34-20 44TH STREET TWO BEDROOOMS NEAR NM R AND  #7 TRAIN NEWLY RENO",
+      "price": 2695,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7445987139196,
+      "lng": -73.9345031005516,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-1b297eaf9e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-spacious-br-bath-condo/j5stVVjzwD8ddrNLcaEXbC",
+      "title": "SPACIOUS 1 BR / 1 BATH CONDO",
+      "price": 3295,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7323998695041,
+      "lng": -74.0431026669504,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a9706d248d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/long-island-city-bright-apartment-in/asLqf1uUuPX9hEeMecT1TC",
+      "title": "Bright Apartment in Long Island City – Convenient Location",
+      "price": 1850,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7445987139196,
+      "lng": -73.9345031005516,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-9ff407ccd7",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-fort-clinton-hill-brooklyn/vofXG96Dtcot361AAswdQV",
+      "title": "Fort Clinton Hill Brooklyn Apartment – Bright Home Near Vanderbilt Ave",
+      "price": 1700,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6923988210392,
+      "lng": -73.9665979044019,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e3e50280f7",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rent-stabilized-bedroom/vzmHKx6FRutkLdenjUCikC",
+      "title": "Rent Stabilized 2 Bedroom apartment",
+      "price": 1540,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7634295448133,
+      "lng": -73.9829696004391,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-821169af51",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburg-brooklyn/iWBDonYGo8S1v2XZm2HUKU",
+      "title": "Williamsburg Brooklyn Apartment – Bright Home Near S 3rd St",
+      "price": 1900,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7094981734762,
+      "lng": -73.9562978421194,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f29b76cd2a",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rent-stabilized-off-market/6Ji5yEYdRhqhSMXLZ6qqfu",
+      "title": "RENT STABILIZED OFF-MARKET BARGAIN LITI 1 BED DIGS___PRIME LOCATION!",
+      "price": 2595,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7178685139048,
+      "lng": -73.9971084799487,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-501390ad46",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-room-apartment-with/hiWorK2NtkD8QfWoa9t6sC",
+      "title": "3 room apartment with parking! $2200",
+      "price": 2200,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7830046478829,
+      "lng": -74.0319695240338,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f25747ded2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-spacious-1br-1ba-apartment/aSne9C4jSSN5APeQ332UYA",
+      "title": "Spacious 1BR +1BA Apartment Greenpoint/Williamsburg",
+      "price": 999,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7242959544502,
+      "lng": -73.9491988950381,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-d61b5c60c3",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-commercial-store-for-rent-on/g8GtJdPeBGozFBsXDKJ9BG",
+      "title": "Commercial store for rent on Busy Road in",
+      "price": 850,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7178003319272,
+      "lng": -74.0027022669023,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-bff1ccd045",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-140-east-46th-street-apartment/kLeqYnbbohNLd9QL7LiDZZ",
+      "title": "140 East 46th Street Apartment 7M",
+      "price": 4300,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7516988069165,
+      "lng": -73.970702574046,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-769a49892d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-167-east-87th-street-apartment/uduCqvoPbGtkUxezwqoTq5",
+      "title": "167 East 87th Street Apartment 2RW",
+      "price": 3500,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7816014742427,
+      "lng": -73.9510999690022,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e2d455c6bb",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-148-west-68th-street-apartment/tEzZaC1DSXQaF68YDDUqYZ",
+      "title": "148 West 68th Street Apartment 6A",
+      "price": 3150,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7764001633788,
+      "lng": -73.9826968725286,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6f218eb027",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-140-east-46th-street-apartment/uAkpmphYPTdJcRK7wNTL15",
+      "title": "140 East 46th Street Apartment 2S",
+      "price": 3300,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7516988069165,
+      "lng": -73.970702574046,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e87dd2204e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-305-west-45th-street-3c/nxWEcuwVrNKyG37NeBtaiv",
+      "title": "305 West 45th Street 3C",
+      "price": 3500,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7597018813984,
+      "lng": -73.9918011718927,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-1ed8cba7c1",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-711-2nd-avenue-apartment-2d/8tZ7zyK3Ff1U81FKKxFzcL",
+      "title": "711 2nd Avenue Apartment 2D",
+      "price": 3100,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7443013488239,
+      "lng": -73.9781000321385,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-2a095922ec",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-exquisite-renovated-2br/72P1UeC9N7s5yUpFnqDnFB",
+      "title": "Exquisite Renovated 2BR/1.5BA Duplex in Van Vorst Park with Private",
+      "price": 888,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-00b10451a2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-renovated-bedroom/xea2AFQP3ELK5dmt4LcsHs",
+      "title": "RENOVATED 2-BEDROOM APARTMENT FOR RENT",
+      "price": 2800,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.793898867399,
+      "lng": -74.0258033522429,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-3b34eb370e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-downtown-brooklyn-3br-925-sf/cWHFkNncxhEuQGZUzqWcW5",
+      "title": "DOWNTOWN BROOKLYN 3BR | 925 SF | $5,895 | FULL AMENITIES",
+      "price": 5895,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6979313015087,
+      "lng": -73.9838439340344,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-345e6c7133",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/union-city-private-house-bedroom/stDUwisNnh3o8aVn1BXLT8",
+      "title": "Private house 3-Bedroom  2 bathrooms House for Rent – Union City, NJ",
+      "price": 2900,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.767401288249,
+      "lng": -74.0322972558926,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-be18d7df92",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-gorgeous-largstudio-dm/teZpbyCZvbVD2p7E7BXW2B",
+      "title": "NO FEE-GORGEOUS LARG.STUDIO-DM/ELEV/LNDRY-SPAC LIV RM-SEP KIT-DW-VIEWS",
+      "price": 3850,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7635406986256,
+      "lng": -73.9851898118951,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-b5b58567dd",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-spac-1br-lux-dm-elev/7CBdaMaD7hhJVtwWHVEnJC",
+      "title": "NO FEE-SPAC 1BR-LUX DM/ELEV/LNDRY-LRG COMF LIV RM-QN BR-GORG SS KIT-DW",
+      "price": 4292,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7635406986256,
+      "lng": -73.9851898118951,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6b8a06ec03",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-room-for-rent-uws-manhattan/fJHFgs5eFKLr8iMM9PrarJ",
+      "title": "Room for rent UWS MANHATTAN $1600",
+      "price": 1600,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7795010109659,
+      "lng": -73.9777992292961,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-4f514ee3bc",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-43-duffield-st-bed-bath/17LYfWkZdCVL5cQQCGjvvY",
+      "title": "43 Duffield St – 3 Bed / 2 Bath | Private Backyard | No Fee",
+      "price": 4800,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6970369143905,
+      "lng": -73.984049052925,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-06ccc8501d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-midtown-west-1br-central-c/q2ZXPDFd5Gg8gyLdX71fZv",
+      "title": "Midtown West 1BR – Central A/C – Laundry in Building",
+      "price": 5750,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.765099716786,
+      "lng": -73.9857977201157,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f4cfa0aafe",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rent-stabilized-huge-bedroom/4bv3emMmtyuXn3LGGUHa8d",
+      "title": "Rent Stabilized Huge 2 bedroom in East Village",
+      "price": 5200,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7262016120767,
+      "lng": -73.9796023274773,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8ee10ec870",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rent-stabilized-huge-bedroom/rwfbwMphSw1tSE8C1Y6d79",
+      "title": "RENT STABILIZED HUGE 3 BEDROOM",
+      "price": 7300,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7262016120767,
+      "lng": -73.9796023274773,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-55856dff91",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rent-stabilized-huge-bedroom/k64GBLnxiehD2MXW6wYS79",
+      "title": "RENT STABILIZED HUGE 4 BEDROOM",
+      "price": 10000,
+      "currency": "USD",
+      "type": "4br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7262016120767,
+      "lng": -73.9796023274773,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-073785eeaa",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rooms-rentgorgeous-bedroom-on/spP8XTfp5R2sBskhcahv1J",
+      "title": "ROOMS 4 RENT.!Gorgeous 3 Bedroom On East 80th st Laundry in Unit!",
+      "price": 1999,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7143001327569,
+      "lng": -74.0060013578865,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-0227a42c81",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-gorgeous-bedroom-on-east-80th/fedgjDfF3AhX146GUp1QkY",
+      "title": "Gorgeous 3 Bedroom On East 80th st Laundry in Unit!Video Available!",
+      "price": 5995,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7143001327569,
+      "lng": -74.0060013578865,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8c17542be4",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-beautifl-alcov-studio/dJPAG1Yv9qhtiw3JmJ1bN5",
+      "title": "NO FEE-BEAUTIFL ALCOV STUDIO-DM/ELEV/LNDRY-SPAC LIV RM-SEP SS KI-DW-AC",
+      "price": 3795,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7635406986256,
+      "lng": -73.9851898118951,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-7b3cc8da5d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-this-renovated-tribeca-bed-has/ijqDsQ9fDZ8wkEAix9Nuqw",
+      "title": "This Renovated Tribeca 2-Bed Has Incredible Hudson River Views! 🤩🌊",
+      "price": 6945,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.719777609278,
+      "lng": -74.0068069365464,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ea288953af",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-opportunity-knocksbrand-new/kX1fRTD5UaLZvjCnuDpAJV",
+      "title": "Opportunity Knocks!Brand new 2 bed 2 bath all utilities included",
+      "price": 2575,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-17d7d54f9f",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rooms-rentluxurious/1gXCKhNSZXrKzqqExjm5k7",
+      "title": "ROOMS 4 RENT.!Luxurious APARTMENT•LAUNDRY•Top Notch living!",
+      "price": 1299,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.786460729303,
+      "lng": -73.9444066760399,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-72dd333720",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-available-now-spacious-fort/dh969HucrnWJn5kznjPrxV",
+      "title": "Available Now. Spacious Fort Greene 2-Bed 1-Bath",
+      "price": 4500,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6948888956167,
+      "lng": -73.9730912350937,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8c51d925f5",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-tribeca-two-bed-with-equinox/kp5R4R3q1k4nSrCQcu4AEe",
+      "title": "(Tribeca) TWO-BED with Equinox Gym🤩",
+      "price": 6395,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.719777609278,
+      "lng": -74.0068069365464,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-67b8548ae7",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-gorgeous-bed-on-103rd-st-near/1sTgmxkxoe4PhopLc5eMgu",
+      "title": "**GORGEOUS 2 BED ON W 103rd ST NEAR CENTRAL PARK NORTH!",
+      "price": 4395,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7961156411082,
+      "lng": -73.9614544622753,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8bbce4c11d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-renovated-bed-15-bath-at/gQWkUJ72HqKhxY6Xsx8LMi",
+      "title": "Renovated 2 bed 1.5 Bath At Central Park–Video Available!With Garden!",
+      "price": 4995,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7961225166017,
+      "lng": -73.9614682132623,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a478e7cbe2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-midtown-manhattan-1br-central/pzKz7xQmiiEVWk8kwHtu37",
+      "title": "Midtown Manhattan 1BR – Central A/C – Laundry in Building",
+      "price": 5500,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.765099716786,
+      "lng": -73.9857977201157,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c882feb1bf",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-th-st-unit-1c-west-new/zHe_b6qo8RGn6q5wHJndyg",
+      "title": "160 59th St, Unit 1C, West New York, NJ 07093",
+      "price": 2100,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7857714610755,
+      "lng": -74.0112811639683,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-aede9cdec8",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/union-city-2br-aparment-for-rent/7FzJjoeKMfivQMpvjD1nuP",
+      "title": "2br - Aparment for rent",
+      "price": 1300,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7672546110534,
+      "lng": -74.0327481736773,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-9492751385",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/hoboken-2br-bed-bath-with-shared/cED8S6gDFDUtQMZ1LKKtxE",
+      "title": "2br - 2 Bed 2 Bath with shared backyard and view of NYC - $1400",
+      "price": 1400,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7458076548672,
+      "lng": -74.0431576708987,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ca7804f9cb",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxury-tribeca-studio-has/wJGDZvSAVvn3wbHt6KNQbY",
+      "title": "Luxury Tribeca studio Has a Rooftop + Pool! 🤩🏙️",
+      "price": 4200,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.717677718959,
+      "lng": -74.0057756125152,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-09340e2ea5",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-gorgeous-bedroom-large-balcony/5dsRZ5o1vu8KxTL9WgLrvG",
+      "title": "Gorgeous 2 Bedroom w/ Large Balcony in Williamsburg",
+      "price": 4800,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7069611163595,
+      "lng": -73.9476032075787,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-36627ff61c",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-3br-ft2-bedroom-full-bath/7ERczZJHVzUj8JhNMEok91",
+      "title": "3br - 1408ft2 - 3 bedroom 2 full bath north bergen",
+      "price": 1500,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7935367580724,
+      "lng": -74.0225506708402,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-d644db1e9e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-great-bed-in-woodside/vac3hHW5T2xknrUzEHvjYt",
+      "title": "Great 2 bed in woodside",
+      "price": 2999,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7724622244531,
+      "lng": -73.9649380456695,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-cdd20cfd41",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-prime-wburg-2br2ba-steps-from/55P8vmnfaDDGrfAhbMUgmy",
+      "title": "PRIME WBURG!!! 2br2ba steps from McCarren Park/ Bedford, W/D in unit!",
+      "price": 6700,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7191937652848,
+      "lng": -73.9571314957112,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6bbe43e519",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-this-tribeca-bed-has-it-all/o1fkhKCVjY3D2MoagEijDa",
+      "title": "THIS TRIBECA 2-BED HAS IT ALL 🤩 2 BATHS + PRIVATE BALCONY",
+      "price": 8295,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.719777609278,
+      "lng": -74.0068069365464,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a1fd628988",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-sun-drenched-1br-in-gramercy/h2Z5hEnTE5vc7KgZjHmrjy",
+      "title": "Sun-Drenched 1BR in Gramercy/Kips Bay — W/D, Dishwasher, Steps to 6 Tr",
+      "price": 4150,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7398105056259,
+      "lng": -73.9808387703991,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ba83ac1a68",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-great-deal-flex-bed-apt-in-the/a4Fk2pN3zvHGW9GeTnmz2N",
+      "title": "GREAT DEAL - Flex 3 bed apt in the Murray Hill",
+      "price": 6700,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7443013488239,
+      "lng": -73.9781000321385,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-404ff1c00b",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-bed-bath-in-the-heart-of/iB9MHuY7DD7fVofD1YBtYj",
+      "title": "3 Bed 1 bath in the Heart of Greenpoint",
+      "price": 4499,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7342986516371,
+      "lng": -73.9543990599864,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ce42d483c2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-great-deal-flex-bed-apt-in/vbWQ4vwHuqnq1Y4eHbM7TU",
+      "title": "GREAT DEAL - Flex 3 bed apt in Murray hill",
+      "price": 6400,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7440933651443,
+      "lng": -73.9763513649479,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-45e280e1f8",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-great-deal-bed-apt-in-kips-bay/3xiNki7cqGX64nb1Nn7Vkt",
+      "title": "GREAT DEAL - 2 bed apt in Kips Bay/Murray hill",
+      "price": 5000,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7443013488239,
+      "lng": -73.9781000321385,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c724a0743e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-great-deal-flex-bed-apt-in/dbYVRvoi6fL1LnLFBdT6we",
+      "title": "GREAT DEAL - Flex 4 bed apt in Murray hill",
+      "price": 8000,
+      "currency": "USD",
+      "type": "4br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7440933651443,
+      "lng": -73.9763513649479,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-95315461e2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-great-deal-bed-flex-apt-in/uZTzevC32wGG7yAhXBXXwz",
+      "title": "GREAT DEAL - 4 bed flex apt in Murray hill",
+      "price": 8500,
+      "currency": "USD",
+      "type": "4br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7443013488239,
+      "lng": -73.9781000321385,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-36f5a363a5",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-bedroomsept1-downtown/j9jYQHLp2TJFUbthsNKQAM",
+      "title": "2 bedroom.sept1. Downtown jersey city . Near Path. Large apartment",
+      "price": 2850,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-accb26acf6",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-bedroom-sept1-downtown/mRjp21SZes6sCiiDVaBCdP",
+      "title": "2 bedroom. sept1. Downtown jersey city . Near Path. Large apartment",
+      "price": 2850,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-fe65a0ed5e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-bedroomsept1-downtown/ixjTDun5s1z2sFWM2TrHMK",
+      "title": "2 bedroom.sept1. Downtown jersey city . Near Path. Large apartment",
+      "price": 2850,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8def89f142",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-stunning-micro-studio-loft/faS3jaeiUYUiRYJbNRchp9",
+      "title": "Stunning Micro Studio Loft available in Williamsburg for ASAP MOVE IN!",
+      "price": 2949,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7184563686026,
+      "lng": -73.9484156617322,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ff52d5b7ff",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-over-sunny-studio-in-heart-of/8JkpkdMpwd55SG48wyqDcw",
+      "title": "Over Sunny Studio in HEART of Williamsburg w/ Elevator/Roof/More!",
+      "price": 3910,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7125170880985,
+      "lng": -73.9538730847305,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f8c151336b",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-sunny-bed-in-williamsburg-all/tTHpRiT9TVLsKb2sMprd8y",
+      "title": "Sunny 2 Bed in Williamsburg w/ ALL AMENITY BUILDING! ASAP MOVE IN",
+      "price": 4649,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7346813874442,
+      "lng": -73.9450483887704,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-4b8bd750bb",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-lease-takeover-of-studio-in/iKseiwhJ25T4GKoaegSnR5",
+      "title": "Lease Takeover of Studio in Clinton Hill",
+      "price": 3450,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6790013489164,
+      "lng": -73.9643983194265,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-5651e4ebd3",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-no-broker-fee-luxury-1brs/4pU3yXYYofn7iYQ1GGVLnJ",
+      "title": "NO BROKER FEE | Luxury 1BRs from $2,850 | $1K Security",
+      "price": 2850,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7467467326934,
+      "lng": -74.0492843086017,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-dd5f2fb797",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-no-broker-fee-month-free/o2zM9qhjECrVA8cu6N5yBd",
+      "title": "NO BROKER FEE + 1 MONTH FREE | Downtown JC 1BR | $3,290",
+      "price": 3290,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c087181640",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburgreal-large/sYJ2Y7TzTCjB2Zs5AaedAk",
+      "title": "🟥Williamsburg🟩Real Large 2BR♦️Backyard 2 Blocks @G/J/M/Train No Fee",
+      "price": 3650,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6995911602411,
+      "lng": -73.945205952164,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-250fcca80b",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-6000-monroe-pl-west-new/SpRkhZGo8RGCld1rBOYsqw",
+      "title": "6000 Monroe Pl, West New York, NJ 07093",
+      "price": 2450,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7875842995392,
+      "lng": -74.0131111911659,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-9d79f2857a",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-th-st-west-new-york-nj/LOVicpGo8RGgTfieFnpX0w",
+      "title": "214 64th St West New York, NJ",
+      "price": 1750,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7903373617446,
+      "lng": -74.0087744736148,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e09921a543",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-unreal-3br2ba-lofty-apartment/uD5gbm7xteoTfeYbCBf1PY",
+      "title": "Unreal 3br2ba lofty apartment PRIME Wburg by Peter Luger W/D in unit!!",
+      "price": 6800,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7099594045012,
+      "lng": -73.9624588572901,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a7e9d7a961",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburg-large-bedroom-no/pipdaKGxtQRsnNymyFaKqo",
+      "title": "Williamsburg - Large 1 Bedroom - No fee - Separate living room!!",
+      "price": 3300,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7044882305158,
+      "lng": -73.9430201181757,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c5441b6f39",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-extra-large-2br-elegant-apt/3ASXSDRBn892MCJQk7GLHF",
+      "title": "Extra Large 2BR Elegant Apt 15 Min to Port Authority",
+      "price": 1500,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.747586688821,
+      "lng": -74.0507728529534,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8658073885",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-retail-storefront-with/i3PhhU3t755DDBUsX1NX3k",
+      "title": "Retail storefront with apartment in back",
+      "price": 1050,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6940008110343,
+      "lng": -73.990298876554,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-3798ac021f",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-brand-new-luxury-williamsburg/kMcP7YLGQRDZNmLzHWaBmE",
+      "title": "***✨ BRAND NEW LUXURY WILLIAMSBURG APTS 🏙️🔥 W/D + CENTRAL A/C + HIGH C",
+      "price": 4500,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7086003486112,
+      "lng": -73.943402281025,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-94afe002e4",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-off-market-labor-day-weekend/s65MJtjmta2rv8SGrDqpD9",
+      "title": "⭐OFF MARKET LABOR DAY WEEKEND OPPORTUNITIES - 3 BRs in Turtle Bay⭐",
+      "price": 6195,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7450565071979,
+      "lng": -73.9786053809138,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6963a512c6",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-large-one-bedroom-apartment-in/9EVqCmmJRjD7taBLEk6pev",
+      "title": "Large One Bedroom Apartment in Williamsburg",
+      "price": 3250,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7011994527719,
+      "lng": -73.9436005244222,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-d45529556b",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-modern-living-at-the-clinton/1wbr9VWv76paf2AXQW8APW",
+      "title": "Modern living at the Clinton Hill/Bed-Stuy border!",
+      "price": 4150,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6790013489164,
+      "lng": -73.9643983194265,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-0dea00cb27",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-new-development-bed-in/mxj3iAbjub8z6xdA7sEyTn",
+      "title": "NEW DEVELOPMENT 🚨3 BED IN WILLIAMSBURG 📍🔥",
+      "price": 6800,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7099972197157,
+      "lng": -73.9625201637741,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-62df1a358f",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-studio-near-columbiano/obgPLfYn2FdCEVzigwcLoj",
+      "title": "STUDIO NEAR COLUMBIA_NO FEE_LAUNDRY_ELEVATOR_LIVE-IN SUPER",
+      "price": 2500,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7374986209227,
+      "lng": -73.9813034391709,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-cc05f99ac3",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-br-in-luxury-bldng/46odmFDrJZakWS82zzTJn9",
+      "title": "375 ✔️ 2 BR IN LUXURY BLDNG ✔️",
+      "price": 5800,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6816002854749,
+      "lng": -73.9798005708744,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-568d1c2861",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-two-bedroom-two-bath/55ue3SHVpfH8KuNTSX88CQ",
+      "title": "Two Bedroom Two Bath Condominium",
+      "price": 3650,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7912695640772,
+      "lng": -73.998925329117,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-942008cac9",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-spacious-bed-bath-duplex-in/cxiyxScRBDAugAZLndveqR",
+      "title": "🎉Spacious 3 bed 1 bath duplex in East Williamsburg",
+      "price": 4000,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7107002389303,
+      "lng": -73.9454993065551,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ace2f1557d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-511-rent-stabilized-in/fT3ETtiYF1xpJfCutLomft",
+      "title": "511 🤭 Rent Stabilized in Greenpoint on Meeker 🤭",
+      "price": 5700,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7271985586402,
+      "lng": -73.9498022195963,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-705ad91694",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-br-in-williamsburg/9wC8aYqSmmJwHtZk1xJMk6",
+      "title": "56 ✔️ 1 BR IN WILLIAMSBURG ✔️",
+      "price": 4500,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7094981734762,
+      "lng": -73.9562978421194,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a3c94d77d8",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-north-park-slope-2br-apt/bnobhC9MynPkktC3NbqF4q",
+      "title": "North Park Slope 2BR Apt PacificSt border Prospect Heights Boerum Hill",
+      "price": 4395,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6833214506914,
+      "lng": -73.9778542332444,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f478912a4d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-24-east-80th-street-apartment/ocftu4W98ShWPxYAaLwSGn",
+      "title": "24 East 80th Street Apartment 5A",
+      "price": 4400,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7816014742427,
+      "lng": -73.9510999690022,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-d7daf5cdea",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-2br-apt-laundry-dw-by-barclays/i2BNpSiaC2DwGmuJBiWLj8",
+      "title": "2BR Apt +Laundry +DW by Barclays Center Park Slope North Prospect",
+      "price": 4395,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6833214506914,
+      "lng": -73.9778542332444,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-7cbc53dd4d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-brand-new-bed-bath-prime/uwFTn5eYMaCiwvvGVm2tYx",
+      "title": "🚨 BRAND NEW 🚨 3 BED 🛏️ 2 BATH 🛁 PRIME WILLIAMSBURG 🌇 ACT NOW!",
+      "price": 6800,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7099215892867,
+      "lng": -73.9622949913607,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a68e7026ab",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-prime-williamsburg-bed-bath/5GhaccupkMGkfJdy8SEYgW",
+      "title": "🌟 PRIME WILLIAMSBURG 🌟 2 BED 🛏️ 2 BATH 🛁 ROOF 🌇 LAUNDRY! 🧺",
+      "price": 4500,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7076543952915,
+      "lng": -73.9398373376239,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-474833cc8f",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-sun-drenched-bed-d-in-unit/2JjNU1zZdMytztS6Xy8nEX",
+      "title": "☀️ SUN-DRENCHED 3 BED 🛏️ W/D IN UNIT 🧺 PRIME CLINTON HILL 📍",
+      "price": 5500,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6931367906793,
+      "lng": -73.9698253756617,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ebd45cca2a",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-ues-lease-takeover-in/jmTaghvZNxf2gPJBVUm9VC",
+      "title": "UES Lease Takeover in Normandie Court",
+      "price": 900,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7843808925068,
+      "lng": -73.9495019897117,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-5d3bdcf384",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-massive-3br2ba-loft-prime/kp6caqm9rr1iRLyREdGEKb",
+      "title": "Massive 3br2ba loft PRIME historic Williamsburg W/D in unit RARE find!",
+      "price": 6800,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7099594045012,
+      "lng": -73.9624588572901,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8382202f72",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-bedroom-bath/wh1PSCC9hSjHn9AGYQnpAG",
+      "title": "1 bedroom 1 bath",
+      "price": 1000,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7313003634953,
+      "lng": -73.9891987975874,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a65977d39f",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-bedroom-bath/68HZpBEFxwwXxpFAdBiXEH",
+      "title": "1 bedroom 1 bath",
+      "price": 1150,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7313003634953,
+      "lng": -73.9891987975874,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c1a2d4f828",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-apartamento-habitaciones-baos/4zgxtiJU1gZ36gc6VpDQi3",
+      "title": "Apartamento 3 habitaciones 1 baños",
+      "price": 3200,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7298215594261,
+      "lng": -74.0049700338553,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a2227d5eda",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/hoboken-bedroom-den-with-over-1000-sq/4h9uiwrACofVomYM9jCcjH",
+      "title": "1-bedroom + den with over 1,000 sq ft in Maxwell Place.",
+      "price": 2300,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.744499592221,
+      "lng": -74.0328982886197,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e797cd6923",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-clinton-hill-sunny-and/hLtAtnk9k5RAYZjDPQLb3q",
+      "title": "☀Clinton Hill Sunny and Spacious 3br WD In Unit Close to Pratt STEAL!☀",
+      "price": 5500,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6931333529325,
+      "lng": -73.9692753361784,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-81be76d7ed",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-immediate-movingmassive/KHGRZmmo8RGd26zCrLCxFA",
+      "title": "IMMEDIATE MOVING**MASSIVE SPACE**FIDI CLASSIC**NEW AMENITIES**",
+      "price": 4150,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7100992062032,
+      "lng": -74.0013019580511,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-055935e561",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-must-seebest-in-the-areaw-in/al8OBWmo8RGd26zCrLCxFA",
+      "title": "MUST SEE**BEST IN THE AREA**W/D IN THE UNIT**ONE MONTHS FREE",
+      "price": 3920,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7143001327569,
+      "lng": -74.0060013578865,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-fa332472ca",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-broker-feesbe-the-first-to/SjbhrWio8RGYKM19dX3fHA",
+      "title": "NO BROKER FEES**BE THE FIRST TO MOVE IN**STELLAR AMENITIES**",
+      "price": 5000,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7055986227227,
+      "lng": -74.0083029293494,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-42f9d15d56",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-spacious-high-rise-bedroom/jHiSFgqVbDADqqo2Vrp6NA",
+      "title": "🔥🔑Spacious High-Rise 2-Bedroom With Washer/Dryer🔥🔑",
+      "price": 5395,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.681245051642,
+      "lng": -73.9808800233603,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f20e898e59",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-elevator-large-studioseprt/bGdqihFZc3TvG3sqgBBv7n",
+      "title": "ELEVATOR..... LARGE STUDIO...SEPRT KICH..GOOD LIGHT",
+      "price": 2799,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7173156096325,
+      "lng": -74.0013770155222,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6a88bb2248",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-east-williamsburg-sunny-studio/vybSDnhLd1aWbWx6BGH19i",
+      "title": "EAST WILLIAMSBURG - SUNNY STUDIO APARTMENT - GREENPOINT",
+      "price": 2600,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7205562589216,
+      "lng": -73.9394683528039,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-693c7ced46",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-luxury-1br-1ba-no-broker-fee/p3yd2cHEaCc9yqQRdfwwnP",
+      "title": "***🔥🏡 LUXURY 1BR/1BA | NO BROKER FEE | MODERN FINISHES | W/D!🔑🏡***",
+      "price": 3487,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6668987614105,
+      "lng": -73.9827988590161,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-031a431377",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-charming-exposed-brick/tcpqJbWYAzYwqHFVFnyGu6",
+      "title": "🔥🔑Charming Exposed Brick Apartment with Dishwasher🔥🔑",
+      "price": 3392,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6876283744372,
+      "lng": -73.95668745342,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-49ff985c01",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburg-1bad-1bath-great/7Eg9REHhVKsXaEd36hkyWN",
+      "title": "🌳🌳🔥Williamsburg 1BAD/1BATH!! Great Location , Steps from J/M/Z ,Great D",
+      "price": 3025,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7061996554498,
+      "lng": -73.957998953813,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-b247321b8c",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rooms-small-roof-deck-live/nJhQRkiN9PEj25dgjFYrQV",
+      "title": "3 rooms ,small roof deck, Live work, 2nd Floor walk up ,",
+      "price": 2690,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.754700532805,
+      "lng": -73.9924978885716,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-13f2b79412",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-prime-williamsburg-bedroom/qF4gh7yJnURZoaukQ98UfJ",
+      "title": "Prime Williamsburg 2 Bedroom Next to Mccarren Park",
+      "price": 4500,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7186918542563,
+      "lng": -73.9470497303487,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-aac48f7c54",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-gorgeous-massive-nomad/8NiRAuNwTEQv9Y46dFfLJn",
+      "title": "NO FEE! Gorgeous massive Nomad penthouse studio, doorman, VIDEO!",
+      "price": 4495,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7443013488239,
+      "lng": -73.9781000321385,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-3113a4ec06",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-fantastic-studio-prime-east/mF3FH3UKwBER4sNHsBCeaz",
+      "title": "Fantastic studio, prime East Vil near 2nd Ave F train, VIDEO IN AD",
+      "price": 3300,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7313003634953,
+      "lng": -73.9891987975874,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-24f6e4c304",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-lovely-west-vil-xl-1br/2m4m8bvpZuTb9KBiDUoUym",
+      "title": "NO FEE Lovely West Vil XL 1BR, new kitchen, elevator, VIDEO!",
+      "price": 6300,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7402001169266,
+      "lng": -73.9996014193152,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-61710e4215",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-lovely-xl-1br-prime/k3ntbwLQ5GZnwCNHGpEPrZ",
+      "title": "NO FEE Lovely XL 1BR, prime Chelsea, elevator, laundry, doorman, VIDEO",
+      "price": 5500,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7402001169266,
+      "lng": -73.9996014193152,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-517e76e133",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-rent-stabilized-charming-grand/sfAUm2XPbsFM16VEdG1uW7",
+      "title": "Rent Stabilized Charming Grand L Prewar 1 Bedroom",
+      "price": 3000,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7126265230374,
+      "lng": -73.9414490679015,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-9d205165bd",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-off-market-studios-and-1brms/rF8fznuuVdzfcMfKKAsgEF",
+      "title": "OFF MARKET STUDIOS and 1brms in EAST VILLAGE!___FREE TO VIEW!__LOW FEE",
+      "price": 3000,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7313003634953,
+      "lng": -73.9891987975874,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-1ff491ea77",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-320-east-42nd-street-posting/cCaYvJTBtRM7bRdFiZK3rL",
+      "title": "320 East 42nd Street posting by landlord min.1 year lease move in 10/1",
+      "price": 3600,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7516988069165,
+      "lng": -73.970702574046,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-976bcfb837",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-stunning-nomad-3br-3ba/5NoLUUsDBKeaoH5yEj6fmx",
+      "title": "NO FEE  Stunning Nomad 3br/3ba penthouse, balconies, elevator, VIDEO!",
+      "price": 8795,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7374986209227,
+      "lng": -73.9813034391709,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-afd15683f8",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-park-slope-gowanus-luxury-1br/oKHJzFqH5ryXKmHHcjX59g",
+      "title": "Park Slope/Gowanus Luxury 1BR 🌿 Private Terrace + W/D + Gym + Rooftop",
+      "price": 3692,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6756002714447,
+      "lng": -73.9844999707098,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-1598e0c4d7",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-mint-alcov-studio-elev/cNXXZybT1aFnFpwRLNnMD1",
+      "title": "NO FEE-MINT ALCOV STUDIO-ELEV/LDRY-SEP KI-DW-AC-CLOSET SPA-PRETTY VIEW",
+      "price": 3150,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7450668204382,
+      "lng": -73.9725755730781,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8477b0ac5a",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-mintspacstudio-elev/iGJRHpAZ5Gbpwr6B3ETND9",
+      "title": "NO FEE-MINT(SPAC)STUDIO-ELEV/LNDRY-COMF LIV RM-SEP KI-VIEW-TOMPKINS PK",
+      "price": 3450,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7297808794227,
+      "lng": -73.9868152931598,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-60bd42b0fc",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-beautifl-studio-elev/2Ee4Gcskc5eAeYCmAVtmi1",
+      "title": "NO FEE-BEAUTIFL STUDIO-ELEV-SPAC LIV RM-BIG PIC WINDO-SEP SS KIT-DW-AC",
+      "price": 3150,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7754914523158,
+      "lng": -73.9821708972727,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-5252debaf7",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-midtown-murray-hill-mid/bwi8Qbb2tKAzctx3trdPjL",
+      "title": "Midtown Murray Hill Mid-Century Marvel",
+      "price": 2500,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7498750822547,
+      "lng": -73.9761393705637,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-74e70fff98",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-beautifl-studio-elev/mfGt43ZibrAxSnmJCcJnBN",
+      "title": "NO FEE-BEAUTIFL STUDIO-ELEV-SPAC LIV RM-SEP SS KIT-GRAN CTR-DW-AC-VIEW",
+      "price": 3150,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7754914523158,
+      "lng": -73.9821708972727,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-504507f8e3",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-huge-dreamy-loft-in-unit/oGLEsXFPpCZEkg147QdvNo",
+      "title": "Huge Dreamy Loft w/In Unit Laundry in Red Hook Near the Waterfront!",
+      "price": 4100,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6794012734574,
+      "lng": -74.0013953501717,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f1d3fb715b",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-massive-3br-3ba-corner-loft/skHRTyFaDrvs8HA3WGMUPy",
+      "title": "⭐ Massive 3BR 3BA Corner Loft | Private Roof Deck | In-Unit Laundry ⭐",
+      "price": 6295,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7011994527719,
+      "lng": -73.9436005244222,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-18957389af",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-1196-bedford-ave-bed-balconies/oggM7tyQb7t71ik4FWCgF4",
+      "title": "1196 Bedford Ave – 1 Bed + 2 Balconies | Central A/C | No Fee",
+      "price": 3000,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6835810005726,
+      "lng": -73.9539544447374,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-dfe08fa22e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburg-1bad-1bath-great/tsb84u7jSpgrMUSBGHQvFE",
+      "title": "🌳🌳🔥Williamsburg 1BAD/1BATH!! Great Location , Steps from J/M/Z ,Great D",
+      "price": 3025,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7061996554498,
+      "lng": -73.957998953813,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-afff8a42be",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-375-dean-st-bed-balcony-luxury/87VSyVVyFk9C2bQpTEzQcZ",
+      "title": "375 Dean St – 1 Bed + Balcony | Luxury Building + Rooftop | No Fee",
+      "price": 4050,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6831237802521,
+      "lng": -73.9789927003833,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-623d25f8d6",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-beautiful-bed-apartment-with/oqKeaEVa7hj9zogQNLTcHx",
+      "title": "Beautiful 2-bed Apartment with Private Balcony in Prime Williamsburg",
+      "price": 5558,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7114926395609,
+      "lng": -73.961857824563,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c3781da9ec",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-stunning-spac-1br-elev/rdKhdSnmurgNkLyP4j6cRj",
+      "title": "NO FEE-STUNNING SPAC 1BR-ELEV/LNDRY-BIG LIV RM-QN BR-SEP SS KIT-DW-AC",
+      "price": 6450,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7398826983081,
+      "lng": -73.9987133347328,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-d12ac0fa27",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-chelsea-bed-hotel-style/1gqSjayurW9K5bcHGMvn4H",
+      "title": "(Chelsea 3-Bed) Hotel Style Amenities with Fitness Center",
+      "price": 5000,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7571562299148,
+      "lng": -73.999328118447,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e5059a6bfd",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburg-3bed-1bath-prime/8Ey8Rk654mDN8a2EpRNvt7",
+      "title": "🔥🔥⚡️Williamsburg 3BED/1BATH!! PRIME LOCATION,INCREDIBLE PRICE 🔥🔥",
+      "price": 4400,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7042017516183,
+      "lng": -73.9581943324211,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6e2285e840",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-prime-williamsburg-3bed-2bath/pi6CYRAGwjBdh1wHydK8JW",
+      "title": "🔥🌳🔥PRIME WILLIAMSBURG 3BED/2BATH!! Don’t Miss it!!🔥",
+      "price": 6233,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7220998072216,
+      "lng": -73.9472004182488,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-bc8c98b990",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-spacious-east-williamsburg-bed/caYBw3tnnVY4eQy7Jksgdy",
+      "title": "🌳🔥🌳Spacious East Williamsburg 2 BED/2BATH!! MUST SEE!🔥🔥",
+      "price": 4400,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7039009487758,
+      "lng": -73.9420025451316,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-b4eaa7887c",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-3bed-bath-washer-and-dryer-in/nQzvvL4VzAtziy6tKsa2Mk",
+      "title": "(3Bed/2-Bath) Washer and Dryer in your apartment",
+      "price": 7000,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7683816190364,
+      "lng": -73.9928055669075,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-cc1cadff37",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-classic-williamsburg-bed-flex/7oeZ72nXA12s5pc17RJqTx",
+      "title": "⭐ Classic Williamsburg 2 Bed Flex 3 Bedroom L Train ⭐",
+      "price": 4198,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7126505872648,
+      "lng": -73.9371599058474,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c1aea3ed84",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/long-island-city-lease-transfer-ph/qmrZCHHk7fUkVmVXMYs49H",
+      "title": "Lease Transfer - PH Floor - Private Balcony - Water Views!!",
+      "price": 4150,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7454014277905,
+      "lng": -73.9574999075735,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6e262f8baa",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-bed-bath-duplex-massive/35wnUiSMypUrNj6fuGCS9d",
+      "title": "4 Bed 2 Bath Duplex w/ Massive Private Backyard in North Williamsburg!",
+      "price": 10500,
+      "currency": "USD",
+      "type": "4br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.715997233746,
+      "lng": -73.9535046728682,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-83e61d861d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-two-bedroom-two-bath/4cVgzmJXLxaLCUJJY1ZMoC",
+      "title": "Two Bedroom Two Bath Condominium",
+      "price": 3650,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7912695640772,
+      "lng": -73.998925329117,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-1807f3a2c0",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-spacious-beautiful-true-br/ksw5G8GRwg3P4cwYXuehkD",
+      "title": "SPACIOUS _BEAUTIFUL TRUE 3 BR 2 BATHS_WEST 51 ST_NO FEE_STUNNING UNIT",
+      "price": 6900,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.765099716786,
+      "lng": -73.9857977201157,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-a0f9f7dc62",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-spacious-beautiful-true-br/68fB3y7HCAayoJ81SEmCiE",
+      "title": "SPACIOUS _BEAUTIFUL TRUE 3 BR 2 BATHS_WEST 51 ST_NO FEE_STUNNING UNIT",
+      "price": 7150,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.765099716786,
+      "lng": -73.9857977201157,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-4240349193",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-rooms-rentrenovated-bed-bath/reUtdJtCzJTbbGjhuryhPG",
+      "title": "ROOMS 4 RENT.Renovated 4 bed 2 Bath At Central Park–Video Available!",
+      "price": 1800,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7961225166017,
+      "lng": -73.9614682132623,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-7b6d6e0565",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-renovated-bed-bath-at-central/tC7E55TpkqogFgRSbVdH2C",
+      "title": "Renovated 6 bed 2 Bath At Central Park–Video Available!",
+      "price": 10950,
+      "currency": "USD",
+      "type": "6br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7961225166017,
+      "lng": -73.9614682132623,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-27a180b820",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-195-bay-st/8PsUDe8X6B22cRtR67w78y",
+      "title": "195 bay st",
+      "price": 1500,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7208536240172,
+      "lng": -74.041798042051,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-249b5a313e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/union-city-aparment-for-rent/g6WnNQN4baxGfRZw1RWQeN",
+      "title": "Aparment for rent",
+      "price": 1300,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7663321490033,
+      "lng": -74.0334311393691,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-9bbbced511",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-gorgeous-bed-bath-on-53rd-st/7fkRsKu1abWmz9cPmhQBCz",
+      "title": "GORGEOUS 2 BED 1 BATH ON W 53rd ST ! Hells Kitchen-Duplex!DECK!",
+      "price": 5699,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7658033089584,
+      "lng": -73.9886183913409,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-840cf64a15",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed2-bathlaundrytop/w3oWPdg3dtjZUfWY8uJ4Fz",
+      "title": "Luxurious 4 BED•2 BATH•LAUNDRY•Top Notch living!Video Available!",
+      "price": 5950,
+      "currency": "USD",
+      "type": "4br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7864062983124,
+      "lng": -73.9443585475851,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-332d4c07dc",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed2-bathlaundrytop/iDEBGuuyb5p3moCbx5NDJU",
+      "title": "Luxurious 3 BED•2 BATH•LAUNDRY•Top Notch living!Video Available!",
+      "price": 5299,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7864062983124,
+      "lng": -73.9443585475851,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-89d537d495",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-studio-condo-for-rent-in/5X2VESucedLW8r2S8RQRZM",
+      "title": "Studio - Condo for Rent In North Bergen, NJ with parking.!!",
+      "price": 1015,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7928503546339,
+      "lng": -74.0263963635609,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e394ee2345",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed3-bathlaundrytop/nXXt8JBsX4hScT5BadFjok",
+      "title": "Luxurious 6 BED•3 BATH•LAUNDRY•Top Notch living!Call/Text/Email!",
+      "price": 7700,
+      "currency": "USD",
+      "type": "6br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.786460729303,
+      "lng": -73.9444066760399,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-1caee79a09",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed2-bathlaundrytop/kDKW7bdbqFvYAyNxavPu1V",
+      "title": "Luxurious 5 BED•2 BATH•LAUNDRY•Top Notch living!Video Available!",
+      "price": 6650,
+      "currency": "USD",
+      "type": "5br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.786460729303,
+      "lng": -73.9444066760399,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-1ba04b2a01",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/hoboken-move-in-ready-large-two/7TrUcx8mEZ9V2zUPvEhk5w",
+      "title": "Move-In Ready, Large two bedrooms/two bathrooms, balcony w/NYC views",
+      "price": 1700,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.739360160799,
+      "lng": -74.0419962854481,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-6c54b5fdc9",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/union-city-aparment-for-rent/r8kLU64TVsK2Kz3jyCyNtp",
+      "title": "Aparment for rent",
+      "price": 1200,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7663321490033,
+      "lng": -74.0334311393691,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8fa3111584",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-br-true-bedroom-in-prime/fuJasHZBhnoemRd36wKEe2",
+      "title": "$2,750 / 1br - True 1-Bedroom in Prime Brooklyn Heights | Pets Welcome",
+      "price": 2750,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.693727510166,
+      "lng": -73.9983105454029,
+      "photos": [],
+      "sources": [
+        "craigslist"
       ]
     }
   ]
