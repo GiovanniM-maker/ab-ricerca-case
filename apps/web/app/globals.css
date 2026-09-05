@@ -23,6 +23,15 @@ body {
   overscroll-behavior: none;
 }
 
+/* riga di filtri scorrevole su mobile, senza barra visibile */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* scrollbar discreta (scura) */
 *::-webkit-scrollbar {
   width: 8px;
