@@ -61,7 +61,7 @@ function Pill({ label, onRemove }: { label: string; onRemove: () => void }) {
   return (
     <button
       onClick={onRemove}
-      className="flex items-center gap-1 rounded-full bg-neutral-800 px-2.5 py-1 text-[11px] font-medium text-neutral-200 transition hover:bg-neutral-700"
+      className="flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full bg-neutral-800 px-2.5 py-1 text-[11px] font-medium text-neutral-200 transition hover:bg-neutral-700"
     >
       {label}
       <span className="text-neutral-500">✕</span>
@@ -186,8 +186,8 @@ export default function Home() {
             Tempo reale di arrivo a {FLATIRON.label}
           </p>
 
-          {/* Barra filtri compatta */}
-          <div className="mt-3 flex flex-wrap items-center gap-2">
+          {/* Barra filtri: scorrevole su mobile, a capo su desktop */}
+          <div className="no-scrollbar -mx-5 mt-3 flex items-center gap-2 overflow-x-auto px-5 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
             <FilterPopover
               label="Ordina"
               value={SORTS.find((s) => s.key === sort)!.label}
@@ -317,7 +317,7 @@ export default function Home() {
 
           {/* Filtri attivi */}
           {hasFilters && (
-            <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            <div className="no-scrollbar -mx-5 mt-2 flex items-center gap-1.5 overflow-x-auto px-5 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
               {tiersFiltered &&
                 [...activeTiers].map((t) => (
                   <Pill
@@ -349,7 +349,7 @@ export default function Home() {
               )}
               <button
                 onClick={resetAll}
-                className="ml-1 text-[11px] font-medium text-neutral-500 underline-offset-2 hover:text-neutral-300 hover:underline"
+                className="ml-1 shrink-0 whitespace-nowrap text-[11px] font-medium text-neutral-500 underline-offset-2 hover:text-neutral-300 hover:underline"
               >
                 Azzera
               </button>
