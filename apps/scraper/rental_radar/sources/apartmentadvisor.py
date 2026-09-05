@@ -67,7 +67,9 @@ def _to_listing(e: dict) -> Listing | None:
         price=int(rent) if rent else None,
         type=_bedroom_type(e),
         furnished=None,  # non esposto a livello di ricerca
-        sqft=None,
+        # minSqFt/maxSqFt ci sono nella risposta di ricerca (~63% dei risultati):
+        # prendiamo il minimo, coerente con minRent.
+        sqft=int(e["minSqFt"]) if e.get("minSqFt") else (int(e["maxSqFt"]) if e.get("maxSqFt") else None),
         address_raw=address_raw,
         lat=lat,
         lng=lng,
