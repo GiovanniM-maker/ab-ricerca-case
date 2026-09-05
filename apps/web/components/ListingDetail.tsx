@@ -92,6 +92,9 @@ export default function ListingDetail({ listing, onClose }: Props) {
           <div className="flex items-start justify-between gap-3">
             <h2 className="text-lg font-bold text-neutral-50">{listing.title}</h2>
             <div className="whitespace-nowrap text-right">
+              {listing.priceFrom && (
+                <span className="mr-1 text-sm text-neutral-500">da</span>
+              )}
               <span className="text-xl font-bold text-neutral-50">{formatPrice(listing.price)}</span>
               <span className="text-sm text-neutral-500">/mese</span>
             </div>
@@ -118,7 +121,8 @@ export default function ListingDetail({ listing, onClose }: Props) {
               />
             </div>
             <p className="mt-2 text-xs text-neutral-500">
-              Combina prezzo, vicinanza, spazio, arredamento e presenza di foto.
+              Combina prezzo, vicinanza (a piedi vale piu' dei mezzi), spazio,
+              arredamento e presenza di foto.
             </p>
           </div>
 
