@@ -173,7 +173,9 @@ export default function Home() {
         }`}
       >
         {/* Header */}
-        <div className="shrink-0 border-b border-neutral-800 bg-neutral-950/95 px-5 pb-3 pt-[max(1.25rem,env(safe-area-inset-top))] backdrop-blur">
+        {/* relative+z-30: backdrop-blur crea uno stacking context, senza questo
+            le tendine dei filtri finiscono sotto le card della lista */}
+        <div className="relative z-30 shrink-0 border-b border-neutral-800 bg-neutral-950/95 px-5 pb-3 pt-[max(1.25rem,env(safe-area-inset-top))] backdrop-blur">
           <div className="flex items-baseline justify-between gap-3">
             <h1 className="text-xl font-bold tracking-tight text-neutral-50">
               Flatiron <span className="text-emerald-400">Radar</span>
