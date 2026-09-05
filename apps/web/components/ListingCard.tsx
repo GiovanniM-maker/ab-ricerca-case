@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
-import { formatPrice, formatDistance, tierMeta } from "@/lib/format";
+import { formatPrice, formatDistance, tierMeta, sourceLabel } from "@/lib/format";
 
 type Props = {
   listing: ScoredListing;
@@ -94,6 +94,20 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
             {Math.round(listing.convenienza * 100)}
           </span>
         </div>
+
+        {/* tag fonte: apre l'annuncio originale senza passare dal dettaglio */}
+        <a
+          href={listing.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="mt-2.5 inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+        >
+          Vedi su {sourceLabel((listing.sources ?? [listing.source])[0])}
+          <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <path d="M4.5 2h5.5v5.5M10 2 2.5 9.5" />
+          </svg>
+        </a>
       </div>
     </article>
   );
