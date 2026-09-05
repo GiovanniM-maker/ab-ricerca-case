@@ -3,6 +3,7 @@ import { classify, type IsochroneSet } from "./geo";
 import type { Listing, TierId } from "./types";
 import { nearestStationM, transitAccessScore, type Station } from "./subway";
 import { neighborhoodsOf } from "./neighborhoods";
+import priceFloors from "./price_floors.json";
 
 export type RawListing = Omit<Listing, "tier">;
 
@@ -92,20 +93,11 @@ export function haversineM(
 }
 
 /**
- * Prezzo minimo credibile per tipologia (intero appartamento, area entro 45 min
- * da Flatiron). Sotto queste cifre l'annuncio non e' un affitto reale: in pratica
- * sono esche, subentri di contratto, stanze singole o locali commerciali.
- * Volutamente prudenti, per non scartare veri affitti economici in periferia.
+ * Prezzo minimo credibile per tipologia. Sta in un JSON perche' lo legge anche
+ * il report del crawl (tools/crawl_report.py): se le due soglie divergessero,
+ * il report proporrebbe come "occasioni" proprio gli annunci che il sito nasconde.
  */
-const PRICE_FLOORS: Record<string, number> = {
-  studio: 1200,
-  "1br": 1400,
-  "2br": 1700,
-  "3br": 2100,
-  "4br": 2500,
-  "5br": 2500,
-  "6br": 2500,
-};
+const PRICE_FLOORS: Record<string, number> = priceFloors.floors;
 
 /** false se l'annuncio ha un prezzo implausibile per la sua tipologia (civetta). */
 export function isPlausibleListing(l: RawListing): boolean {

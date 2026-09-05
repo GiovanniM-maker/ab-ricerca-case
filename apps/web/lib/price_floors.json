@@ -1,0 +1,12 @@
+{
+  "_nota": "Prezzo minimo credibile per tipologia (appartamento intero, entro 45 min da Flatiron). Sotto queste cifre non e' un affitto reale: sono esche, subentri di contratto, stanze singole o locali commerciali. Volutamente prudenti, per non scartare veri affitti economici in periferia. Letto sia dal frontend (lib/listings.ts) sia dal report del crawl (tools/crawl_report.py): tenerlo in un posto solo evita che i due filtrino in modo diverso.",
+  "floors": {
+    "studio": 1200,
+    "1br": 1400,
+    "2br": 1700,
+    "3br": 2100,
+    "4br": 2500,
+    "5br": 2500,
+    "6br": 2500
+  }
+}

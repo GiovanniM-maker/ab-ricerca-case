@@ -18,7 +18,7 @@
  */
 
 import { chromium } from "playwright";
-import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
+import { readFileSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import readline from "node:readline/promises";
@@ -157,11 +157,19 @@ if (argv.includes("--login")) {
     console.log("Fonti: " + Object.keys(TARGETS).filter((k) => k[0] !== "_").join(", "));
     process.exit(1);
   }
+  // Le fonti che hanno bisogno di un login le lasciamo scritte qui: e' cosi'
+  // che crawl.command sa per quali aprire la finestra a fine giro.
+  const needsLogin = [];
   for (const s of sources) {
     console.log(`\n→ ${s}`);
     const { saved, blocks } = await crawl(s, headed);
     console.log(`  ${saved} pagine salvate${blocks ? `, ${blocks} bloccate` : ""}`);
+    if (!saved && blocks) needsLogin.push(s);
   }
+  const flag = join(HERE, ".needs-login");
+  if (needsLogin.length) writeFileSync(flag, needsLogin.join("\n"));
+  else rmSync(flag, { force: true });
+
   console.log(`\nHTML in ${PAGES}. Ora estrai gli annunci con:`);
   console.log(`  cd .. && python3 -m rental_radar.run --source <fonte>`);
 }

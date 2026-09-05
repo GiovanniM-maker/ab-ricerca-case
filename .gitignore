@@ -37,3 +37,6 @@ rentcast_sample.json
 # e le pagine sono HTML grezzo da centinaia di KB. Niente di tutto cio' va nel repo.
 apps/scraper/browser/.profile/
 apps/scraper/browser/pages/
+
+# Log del crawl (crawl.command)
+logs/
