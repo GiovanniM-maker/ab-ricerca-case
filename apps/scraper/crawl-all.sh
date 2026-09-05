@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Crawl di tutte le fonti stdlib (no Firecrawl) -> listings.json
-#   ./crawl-all.sh
+#   bash crawl-all.sh
 set -uo pipefail
 cd "$(dirname "$0")"
+
+# Isocrone sempre allineate al punto di ancoraggio in data/flatiron.json
+python3 ../../tools/generate_isochrones.py || echo "  (isocrone: errore, uso quelle esistenti)"
 
 # ApartmentAdvisor: tutta l'area dei 3 tier (~1700 case)
 python3 -m rental_radar.run --source apartmentadvisor || echo "  (ApartmentAdvisor: errore, salto)"
