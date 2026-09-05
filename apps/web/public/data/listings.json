@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-05T14:03:11.299732+00:00",
+  "generatedAt": "2026-09-05T15:06:10.744336+00:00",
   "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
-  "count": 1848,
+  "count": 1851,
   "listings": [
     {
       "id": "apartmentadvisor-143739f36c",
@@ -11394,6 +11394,25 @@
       ]
     },
     {
+      "id": "apartmentadvisor-fdb4bf80c0",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/351-franklin-ave-ny-ny-11238",
+      "title": "351 Franklin Ave",
+      "price": 5200,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6874431,
+      "lng": -73.95679430000001,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/df0bd7cbca934b22731370e6c26a55b0.jpeg"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ]
+    },
+    {
       "id": "apartmentadvisor-34e5fbf39e",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/17-downing-st-ny-ny-10014",
@@ -22074,6 +22093,44 @@
       ]
     },
     {
+      "id": "apartmentadvisor-eda509dc6f",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/110-4-ave-brooklyn-ny-11217",
+      "title": "110 4Th Ave, Brooklyn Ny 9A",
+      "price": 5400,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.68120193481445,
+      "lng": -73.98081970214844,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/da0b2f4912021d4fd109bb61fb356c0e.jpeg"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-ca59b151ce",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/53-bushwick-ave-brooklyn-ny-11211",
+      "title": "53 Bushwick Ave",
+      "price": 4450,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7132777,
+      "lng": -73.9409648,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/6a6cf5ac10d3913a3d76d7be9584abb9.jpeg"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ]
+    },
+    {
       "id": "apartmentadvisor-7cbaf63aa9",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/1700-park-ave-weehawken-nj-07086",
@@ -22510,6 +22567,23 @@
       "sqft": null,
       "lat": 40.7550983,
       "lng": -73.9992508,
+      "photos": [],
+      "sources": [
+        "apartmentadvisor"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-170e93f7d4",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/235-w-56-st-ny-ny-10019",
+      "title": "235 W 56Th St",
+      "price": 5200,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.765869140625,
+      "lng": -73.98249053955078,
       "photos": [],
       "sources": [
         "apartmentadvisor"
@@ -23128,6 +23202,23 @@
       "sqft": null,
       "lat": 40.772436,
       "lng": -73.967167,
+      "photos": [],
+      "sources": [
+        "apartmentadvisor"
+      ]
+    },
+    {
+      "id": "apartmentadvisor-85a8c28083",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/200-w-26-st-ny-ny-10001",
+      "title": "200 West 26Th Street",
+      "price": 5295,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.74605941772461,
+      "lng": -73.99467468261719,
       "photos": [],
       "sources": [
         "apartmentadvisor"
@@ -25214,17 +25305,17 @@
       ]
     },
     {
-      "id": "apartmentadvisor-4a9b93274c",
+      "id": "apartmentadvisor-064e5d1bd0",
       "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/53-w-72-st-ny-ny-10023",
-      "title": "53 W 72Nd St",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/216-218-w-72-st-ny-ny-10023",
+      "title": "216 218 W 72 St",
       "price": 2900,
       "currency": "USD",
       "type": "2br",
       "furnished": null,
       "sqft": null,
-      "lat": 40.77745819091797,
-      "lng": -73.9784927368164,
+      "lat": 40.778812,
+      "lng": -73.98284,
       "photos": [],
       "sources": [
         "apartmentadvisor"
@@ -25235,7 +25326,7 @@
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/70-w-87-st-ny-city-ny-10024",
       "title": "70 W 87 St",
-      "price": 11500,
+      "price": 15000,
       "currency": "USD",
       "type": "3br",
       "furnished": null,
@@ -30439,23 +30530,6 @@
       ]
     },
     {
-      "id": "apartmentadvisor-fdb4bf80c0",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/351-franklin-ave-ny-ny-11238",
-      "title": "351 Franklin Ave",
-      "price": 5200,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6874431,
-      "lng": -73.95679430000001,
-      "photos": [],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
       "id": "apartmentadvisor-e4d312d6a4",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/392-adelphi-st-brooklyn-ny-11238",
@@ -30467,40 +30541,6 @@
       "sqft": null,
       "lat": 40.68581311,
       "lng": -73.97066054,
-      "photos": [],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
-      "id": "apartmentadvisor-eda509dc6f",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/110-4-ave-brooklyn-ny-11217",
-      "title": "110 4Th Ave, Brooklyn Ny 9A",
-      "price": 5400,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68120193481445,
-      "lng": -73.98081970214844,
-      "photos": [],
-      "sources": [
-        "apartmentadvisor"
-      ]
-    },
-    {
-      "id": "apartmentadvisor-ca59b151ce",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/53-bushwick-ave-brooklyn-ny-11211",
-      "title": "53 Bushwick Ave",
-      "price": 4450,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7132777,
-      "lng": -73.9409648,
       "photos": [],
       "sources": [
         "apartmentadvisor"
@@ -31153,6 +31193,210 @@
       ]
     },
     {
+      "id": "craigslist-b862c4f0fb",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-renovated-bedroom-apartment/xgbpay6UALySaJe4dghQyU",
+      "title": "Renovated 2-Bedroom Apartment — Jersey City Heights",
+      "price": 700,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7482014725352,
+      "lng": -74.0498034083641,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-d66922e9b3",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-astoria-bedroom-apartment/jPjgnGjFTzDywRjxeVQGEC",
+      "title": "Astoria 2-Bedroom Apartment – Laundry Available",
+      "price": 1100,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7493766089729,
+      "lng": -73.9847320186168,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-ea0acbe91e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-1297-bergen-st-apt-brooklyn-ny/uL21Fxzvvur666386hULFc",
+      "title": "1297 Bergen St, APT 4, Brooklyn, NY",
+      "price": 700,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6940008110343,
+      "lng": -73.990298876554,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-94beb063d6",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-615-183rd-st-new-york-ny/be8ECdYq6VU4jc21eV4qNg",
+      "title": "615 W 183rd St, New York, NY",
+      "price": 750,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7483997159323,
+      "lng": -73.9966970962519,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c063367cfb",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-welcome-to-this-beautiful/9JeaS5ceeAfPRaH16Twysh",
+      "title": "Welcome to this beautiful Apartment for Rent in North Bergen, NJ!",
+      "price": 1500,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.793898867399,
+      "lng": -74.0258033522429,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-8c2520f68a",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-cute-bedrooms/jdpCZgRjmqrAKQ5ZyJS4iK",
+      "title": "Cute 2 Bedrooms!",
+      "price": 1250,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.793898867399,
+      "lng": -74.0258033522429,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e32eb7566e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-charming-bedroom-apartment/3sfBAe2pixnzgxhprYRwKS",
+      "title": "Charming 1 bedroom apartment!",
+      "price": 1000,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.793898867399,
+      "lng": -74.0258033522429,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-738e78538d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-comfortable-2br-apartment/2zvcxfuRwvCFFhunPGbCdH",
+      "title": "Comfortable 2BR Apartment in Desirable North Bergen, NJ  Location",
+      "price": 850,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7811368054709,
+      "lng": -74.028199461742,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-0b10f84f32",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-room-apartment-with/txxSKkLrPFY8JGBCnxEqRM",
+      "title": "- 3 room apartment with parking! $1500",
+      "price": 1500,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.793898867399,
+      "lng": -74.0258033522429,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f97de931e1",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/hoboken-aparment-for-rent/jb5vvYuLJim62hK4uP888g",
+      "title": "Aparment for rent",
+      "price": 1300,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7556155464038,
+      "lng": -74.0369897802345,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f116152e67",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-clinton-hill-bed-stuy-1br-king/fwixtPBdhoi2fgyTw5AqNY",
+      "title": "CLINTON HILL / BED-STUY 1BR | $3,250 | KING-SIZE BEDROOM",
+      "price": 3250,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6864807399736,
+      "lng": -73.9554303840176,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-f72bed5a33",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-oct-july-31-lease-takeover/f4CJYc8NKt7GR2cCwoXPTu",
+      "title": "Oct 1-July 31 Lease Takeover with AMAZING views",
+      "price": 3429,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6794304943049,
+      "lng": -73.9820545868403,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
       "id": "craigslist-58c09990b0",
       "source": "craigslist",
       "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-st-st-brooklyn-ny/sFcQpLsGwyXag28QdWGgW1",
@@ -31317,23 +31561,6 @@
       "sqft": null,
       "lat": 40.7445987139196,
       "lng": -73.9345031005516,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-9ff407ccd7",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-fort-clinton-hill-brooklyn/vofXG96Dtcot361AAswdQV",
-      "title": "Fort Clinton Hill Brooklyn Apartment – Bright Home Near Vanderbilt Ave",
-      "price": 1700,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6923988210392,
-      "lng": -73.9665979044019,
       "photos": [],
       "sources": [
         "craigslist"
@@ -33663,176 +33890,6 @@
       "sqft": null,
       "lat": 40.7208536240172,
       "lng": -74.041798042051,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-249b5a313e",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/union-city-aparment-for-rent/g6WnNQN4baxGfRZw1RWQeN",
-      "title": "Aparment for rent",
-      "price": 1300,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7663321490033,
-      "lng": -74.0334311393691,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-9bbbced511",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-gorgeous-bed-bath-on-53rd-st/7fkRsKu1abWmz9cPmhQBCz",
-      "title": "GORGEOUS 2 BED 1 BATH ON W 53rd ST ! Hells Kitchen-Duplex!DECK!",
-      "price": 5699,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7658033089584,
-      "lng": -73.9886183913409,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-840cf64a15",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed2-bathlaundrytop/w3oWPdg3dtjZUfWY8uJ4Fz",
-      "title": "Luxurious 4 BED•2 BATH•LAUNDRY•Top Notch living!Video Available!",
-      "price": 5950,
-      "currency": "USD",
-      "type": "4br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7864062983124,
-      "lng": -73.9443585475851,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-332d4c07dc",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed2-bathlaundrytop/iDEBGuuyb5p3moCbx5NDJU",
-      "title": "Luxurious 3 BED•2 BATH•LAUNDRY•Top Notch living!Video Available!",
-      "price": 5299,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7864062983124,
-      "lng": -73.9443585475851,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-89d537d495",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/north-bergen-studio-condo-for-rent-in/5X2VESucedLW8r2S8RQRZM",
-      "title": "Studio - Condo for Rent In North Bergen, NJ with parking.!!",
-      "price": 1015,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7928503546339,
-      "lng": -74.0263963635609,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-e394ee2345",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed3-bathlaundrytop/nXXt8JBsX4hScT5BadFjok",
-      "title": "Luxurious 6 BED•3 BATH•LAUNDRY•Top Notch living!Call/Text/Email!",
-      "price": 7700,
-      "currency": "USD",
-      "type": "6br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.786460729303,
-      "lng": -73.9444066760399,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-1caee79a09",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-luxurious-bed2-bathlaundrytop/kDKW7bdbqFvYAyNxavPu1V",
-      "title": "Luxurious 5 BED•2 BATH•LAUNDRY•Top Notch living!Video Available!",
-      "price": 6650,
-      "currency": "USD",
-      "type": "5br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.786460729303,
-      "lng": -73.9444066760399,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-1ba04b2a01",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/hoboken-move-in-ready-large-two/7TrUcx8mEZ9V2zUPvEhk5w",
-      "title": "Move-In Ready, Large two bedrooms/two bathrooms, balcony w/NYC views",
-      "price": 1700,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.739360160799,
-      "lng": -74.0419962854481,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-6c54b5fdc9",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/union-city-aparment-for-rent/r8kLU64TVsK2Kz3jyCyNtp",
-      "title": "Aparment for rent",
-      "price": 1200,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7663321490033,
-      "lng": -74.0334311393691,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-8fa3111584",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-br-true-bedroom-in-prime/fuJasHZBhnoemRd36wKEe2",
-      "title": "$2,750 / 1br - True 1-Bedroom in Prime Brooklyn Heights | Pets Welcome",
-      "price": 2750,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.693727510166,
-      "lng": -73.9983105454029,
       "photos": [],
       "sources": [
         "craigslist"
