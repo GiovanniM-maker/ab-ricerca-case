@@ -20,7 +20,7 @@ from pathlib import Path
 
 from rental_radar.classify import TierClassifier, tiers_bbox
 from rental_radar.geocode import geocode
-from rental_radar.sources import apartmentadvisor, craigslist, trulia
+from rental_radar.sources import apartmentadvisor, craigslist, saved_html, trulia
 from rental_radar.sources.registry import url_for
 
 
@@ -38,6 +38,10 @@ def fetch(source: str, url: str, area: bool):
         return trulia.fetch_listings(url)
     if source == "craigslist":
         return craigslist.fetch_listings()
+    # siti anti-bot: le pagine le scarica il browser sul Mac (browser/fetch.mjs),
+    # qui leggiamo l'HTML gia' salvato su disco
+    if source in saved_html.ORIGINS:
+        return saved_html.fetch_listings(source)
     # fonti HTML generiche via Firecrawl (import lazy: richiede httpx)
     from rental_radar.sources.html_listings import extract_listings
 
@@ -57,7 +61,9 @@ def main() -> None:
     args = ap.parse_args()
 
     url = args.url or url_for(args.source)
-    if not url:
+    # le fonti da HTML salvato non partono da un URL: le ricerche stanno in
+    # browser/targets.json ed e' il browser sul Mac ad averle gia' scaricate
+    if not url and args.source not in saved_html.ORIGINS:
         raise SystemExit(
             f"Nessun URL per '{args.source}'. Passa --url o aggiungilo a sources/registry.py"
         )

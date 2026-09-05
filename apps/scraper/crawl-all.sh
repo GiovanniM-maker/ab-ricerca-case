@@ -19,9 +19,17 @@ python3 -m rental_radar.run --source trulia || echo "  (Trulia non raggiungibile
 # Craigslist: sezione appartamenti nell'area di Flatiron
 python3 -m rental_radar.run --source craigslist || echo "  (Craigslist non raggiungibile: salto)"
 
+# Siti anti-bot: leggono l'HTML che hai scaricato col browser vero.
+#   cd browser && node fetch.mjs --login streeteasy && node fetch.mjs --all
+# Se non hai ancora scaricato niente, saltano senza rompere il crawl.
+for s in streeteasy zillow apartments renthop; do
+  [ -d "browser/pages/$s" ] && \
+    python3 -m rental_radar.run --source "$s" || true
+done
+
 # Fondi tutti gli snapshot disponibili (merge per edificio)
 SNAPS=""
-for s in apartmentadvisor trulia craigslist; do
+for s in apartmentadvisor trulia craigslist streeteasy zillow apartments renthop; do
   [ -f "${s}.snapshot.json" ] && SNAPS="$SNAPS ${s}.snapshot.json"
 done
 python3 -m rental_radar.aggregate $SNAPS

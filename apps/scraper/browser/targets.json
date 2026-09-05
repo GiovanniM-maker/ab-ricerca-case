@@ -1,0 +1,62 @@
+{
+  "_nota": "Le ricerche da scaricare col browser vero. Modificale pure: sono URL normali, aprili prima nel browser per controllare che diano risultati. `pages` = quante pagine di risultati scaricare.",
+
+  "streeteasy": {
+    "loginUrl": "https://streeteasy.com/login",
+    "pageParam": "page",
+    "pages": 5,
+    "searches": [
+      "https://streeteasy.com/for-rent/flatiron",
+      "https://streeteasy.com/for-rent/chelsea",
+      "https://streeteasy.com/for-rent/greenwich-village",
+      "https://streeteasy.com/for-rent/east-village",
+      "https://streeteasy.com/for-rent/gramercy-park",
+      "https://streeteasy.com/for-rent/murray-hill",
+      "https://streeteasy.com/for-rent/midtown",
+      "https://streeteasy.com/for-rent/lower-east-side",
+      "https://streeteasy.com/for-rent/soho",
+      "https://streeteasy.com/for-rent/tribeca",
+      "https://streeteasy.com/for-rent/upper-east-side",
+      "https://streeteasy.com/for-rent/upper-west-side",
+      "https://streeteasy.com/for-rent/harlem",
+      "https://streeteasy.com/for-rent/williamsburg",
+      "https://streeteasy.com/for-rent/brooklyn-heights",
+      "https://streeteasy.com/for-rent/long-island-city"
+    ]
+  },
+
+  "zillow": {
+    "loginUrl": "https://www.zillow.com/user/acct/login",
+    "pageParam": "page",
+    "pages": 4,
+    "searches": [
+      "https://www.zillow.com/new-york-ny/rentals/",
+      "https://www.zillow.com/brooklyn-new-york-ny/rentals/",
+      "https://www.zillow.com/long-island-city-queens-ny/rentals/",
+      "https://www.zillow.com/jersey-city-nj/rentals/",
+      "https://www.zillow.com/hoboken-nj/rentals/"
+    ]
+  },
+
+  "apartments": {
+    "loginUrl": "https://www.apartments.com/",
+    "pageParam": null,
+    "pathPage": "/{n}/",
+    "pages": 4,
+    "searches": [
+      "https://www.apartments.com/new-york-ny/",
+      "https://www.apartments.com/brooklyn-ny/",
+      "https://www.apartments.com/jersey-city-nj/"
+    ]
+  },
+
+  "renthop": {
+    "loginUrl": "https://www.renthop.com/",
+    "pageParam": "page",
+    "pages": 4,
+    "searches": [
+      "https://www.renthop.com/apartments-for-rent/manhattan-new-york-ny",
+      "https://www.renthop.com/apartments-for-rent/brooklyn-new-york-ny"
+    ]
+  }
+}

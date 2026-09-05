@@ -27,6 +27,10 @@ export function sourceLabel(source: string): string {
     apartmentadvisor: "ApartmentAdvisor",
     trulia: "Trulia",
     craigslist: "Craigslist",
+    streeteasy: "StreetEasy",
+    zillow: "Zillow",
+    apartments: "Apartments.com",
+    renthop: "RentHop",
     sample: "Esempio",
   };
   return map[source] ?? source;

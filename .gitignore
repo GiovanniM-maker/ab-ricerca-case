@@ -32,3 +32,8 @@ npm-debug.log*
 # Dati grezzi / snapshot fonti
 rentcast_sample.json
 *.snapshot.json
+
+# Browser scraping (fetch.mjs): il profilo contiene i TUOI cookie di sessione
+# e le pagine sono HTML grezzo da centinaia di KB. Niente di tutto cio' va nel repo.
+apps/scraper/browser/.profile/
+apps/scraper/browser/pages/
