@@ -20,7 +20,7 @@ from pathlib import Path
 
 from rental_radar.classify import TierClassifier, tiers_bbox
 from rental_radar.geocode import geocode
-from rental_radar.sources import apartmentadvisor, trulia
+from rental_radar.sources import apartmentadvisor, craigslist, trulia
 from rental_radar.sources.registry import url_for
 
 
@@ -36,6 +36,8 @@ def fetch(source: str, url: str, area: bool):
         return apartmentadvisor.fetch_listings(url)
     if source == "trulia":
         return trulia.fetch_listings(url)
+    if source == "craigslist":
+        return craigslist.fetch_listings()
     # fonti HTML generiche via Firecrawl (import lazy: richiede httpx)
     from rental_radar.sources.html_listings import extract_listings
 

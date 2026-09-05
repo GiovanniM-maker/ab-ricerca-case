@@ -29,7 +29,11 @@ _PUNCT = re.compile(r"[.,]")
 
 
 def _norm_address(address_raw: str | None) -> str | None:
-    """Chiave di edificio: porzione via, senza unità, ordinali e punteggiatura."""
+    """Chiave di edificio: porzione via, senza unità, ordinali e punteggiatura.
+
+    Ritorna None se non c'è un civico (es. solo "Brooklyn"): in quel caso l'annuncio
+    non è mergeabile per indirizzo e resta unico (fallback su id).
+    """
     if not address_raw:
         return None
     street = address_raw.split(",")[0].lower().strip()
@@ -37,6 +41,8 @@ def _norm_address(address_raw: str | None) -> str | None:
     street = _ORDINAL.sub(r"\1", street)  # "16th" -> "16"
     street = _PUNCT.sub("", street)
     street = re.sub(r"\s+", " ", street).strip()
+    if not re.search(r"\d", street):  # nessun civico -> non mergeabile
+        return None
     return street or None
 
 
