@@ -10,6 +10,7 @@ import {
   type ScoredListing,
 } from "@/lib/listings";
 import { TIERS, type TierId } from "@/lib/types";
+import { NEIGHBORHOODS, neighborhoodsOf } from "@/lib/neighborhoods";
 import ListingCard from "@/components/ListingCard";
 import ListingDetail from "@/components/ListingDetail";
 
@@ -41,6 +42,7 @@ export default function Home() {
   const [activeTypes, setActiveTypes] = useState<Set<string>>(new Set());
   const [furnishedOnly, setFurnishedOnly] = useState(false);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
+  const [activeNeighborhoods, setActiveNeighborhoods] = useState<Set<string>>(new Set());
   const [limit, setLimit] = useState(PAGE);
 
   const [selectedId, setSelectedId] = useState<string | number | null>(null);
@@ -74,7 +76,9 @@ export default function Home() {
         activeTiers.has(l.tier) &&
         (activeTypes.size === 0 || (l.type && activeTypes.has(l.type))) &&
         (!furnishedOnly || l.furnished === true) &&
-        (maxPrice == null || (l.price ?? Infinity) <= maxPrice)
+        (maxPrice == null || (l.price ?? Infinity) <= maxPrice) &&
+        (activeNeighborhoods.size === 0 ||
+          neighborhoodsOf(l.lat, l.lng).some((n) => activeNeighborhoods.has(n)))
     );
     filtered.sort((a, b) => {
       if (sort === "price") return (a.price ?? Infinity) - (b.price ?? Infinity);
@@ -82,9 +86,12 @@ export default function Home() {
       return b.convenienza - a.convenienza;
     });
     return filtered;
-  }, [scored, activeTiers, activeTypes, furnishedOnly, maxPrice, sort]);
+  }, [scored, activeTiers, activeTypes, furnishedOnly, maxPrice, activeNeighborhoods, sort]);
 
-  useEffect(() => setLimit(PAGE), [activeTiers, activeTypes, furnishedOnly, maxPrice, sort]);
+  useEffect(
+    () => setLimit(PAGE),
+    [activeTiers, activeTypes, furnishedOnly, maxPrice, activeNeighborhoods, sort]
+  );
 
   function toggle<T>(set: Set<T>, v: T): Set<T> {
     const n = new Set(set);
@@ -184,6 +191,22 @@ export default function Home() {
             <span className="w-20 text-right text-xs font-medium tabular-nums text-neutral-300">
               {maxPrice ? `$${maxPrice.toLocaleString()}` : "Qualsiasi"}
             </span>
+          </div>
+
+          {/* quartiere */}
+          <div className="mt-3">
+            <span className="text-xs text-neutral-500">Quartiere</span>
+            <div className="mt-1.5 flex flex-wrap gap-1.5">
+              {NEIGHBORHOODS.map((n) => (
+                <button
+                  key={n.name}
+                  onClick={() => setActiveNeighborhoods(toggle(activeNeighborhoods, n.name))}
+                  className={chip(activeNeighborhoods.has(n.name))}
+                >
+                  {n.name}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

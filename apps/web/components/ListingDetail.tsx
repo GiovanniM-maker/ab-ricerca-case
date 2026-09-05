@@ -20,9 +20,19 @@ export default function ListingDetail({ listing, onClose }: Props) {
 
   useEffect(() => {
     setImgOk(true);
+  }, [listing]);
+
+  useEffect(() => {
+    if (!listing) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    // Prevent the page behind the modal from scrolling while it's open.
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
   }, [listing, onClose]);
 
   if (!listing) return null;
@@ -38,21 +48,21 @@ export default function ListingDetail({ listing, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/70 p-0 backdrop-blur-sm sm:items-center sm:p-4"
       onClick={onClose}
     >
       <div
-        className="flex max-h-[92dvh] w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border border-neutral-800 bg-neutral-900 shadow-2xl sm:rounded-3xl"
+        className="flex max-h-[90dvh] w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border border-neutral-800 bg-neutral-900 shadow-2xl sm:my-auto sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* foto */}
-        <div className="relative aspect-[16/10] shrink-0 bg-gradient-to-br from-neutral-800 to-neutral-900">
+        <div className="relative h-52 w-full shrink-0 overflow-hidden bg-gradient-to-br from-neutral-800 to-neutral-900 sm:aspect-[16/10] sm:h-auto">
           {photo && imgOk ? (
             <img
               src={photo}
               alt={listing.title}
               onError={() => setImgOk(false)}
-              className="h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center text-neutral-700">
@@ -78,7 +88,7 @@ export default function ListingDetail({ listing, onClose }: Props) {
         </div>
 
         {/* corpo */}
-        <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-5">
+        <div className="min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain p-5">
           <div className="flex items-start justify-between gap-3">
             <h2 className="text-lg font-bold text-neutral-50">{listing.title}</h2>
             <div className="whitespace-nowrap text-right">

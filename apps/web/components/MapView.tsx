@@ -106,12 +106,35 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
           "circle-radius": [
             "case",
             ["==", ["get", "id"], selectedId ?? "__none__"],
-            11,
+            13,
             7,
           ],
-          "circle-color": ["get", "color"],
-          "circle-stroke-width": 2,
-          "circle-stroke-color": "#0a0a0a",
+          "circle-color": [
+            "case",
+            ["==", ["get", "id"], selectedId ?? "__none__"],
+            "#f59e0b",
+            ["get", "color"],
+          ],
+          "circle-stroke-width": [
+            "case",
+            ["==", ["get", "id"], selectedId ?? "__none__"],
+            3,
+            2,
+          ],
+          "circle-stroke-color": [
+            "case",
+            ["==", ["get", "id"], selectedId ?? "__none__"],
+            "#ffffff",
+            "#0a0a0a",
+          ],
+        },
+        layout: {
+          "circle-sort-key": [
+            "case",
+            ["==", ["get", "id"], selectedId ?? "__none__"],
+            1,
+            0,
+          ],
         },
       });
 
@@ -126,10 +149,10 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
         map.getCanvas().style.cursor = "";
       });
 
-      // destinazione Flatiron
+      // destinazione (punto di ancoraggio)
       new maplibregl.Marker({ color: "#dc2626" })
         .setLngLat([FLATIRON.lng, FLATIRON.lat])
-        .setPopup(new maplibregl.Popup().setText("Flatiron (destinazione)"))
+        .setPopup(new maplibregl.Popup().setText(FLATIRON.label))
         .addTo(map);
 
       readyRef.current = true;
@@ -156,11 +179,36 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
     const map = mapRef.current;
     if (!map || !readyRef.current) return;
     if (map.getLayer("listings-circles")) {
+      const isSelected = ["==", ["get", "id"], selectedId ?? "__none__"] as maplibregl.ExpressionSpecification;
       map.setPaintProperty("listings-circles", "circle-radius", [
         "case",
-        ["==", ["get", "id"], selectedId ?? "__none__"],
-        11,
+        isSelected,
+        13,
         7,
+      ]);
+      map.setPaintProperty("listings-circles", "circle-color", [
+        "case",
+        isSelected,
+        "#f59e0b",
+        ["get", "color"],
+      ]);
+      map.setPaintProperty("listings-circles", "circle-stroke-width", [
+        "case",
+        isSelected,
+        3,
+        2,
+      ]);
+      map.setPaintProperty("listings-circles", "circle-stroke-color", [
+        "case",
+        isSelected,
+        "#ffffff",
+        "#0a0a0a",
+      ]);
+      map.setLayoutProperty("listings-circles", "circle-sort-key", [
+        "case",
+        isSelected,
+        1,
+        0,
       ]);
     }
     const sel = listings.find((l) => l.id === selectedId);
