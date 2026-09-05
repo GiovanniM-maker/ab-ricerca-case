@@ -118,7 +118,7 @@ export default function ListingDetail({ listing, onClose }: Props) {
               />
             </div>
             <p className="mt-2 text-xs text-neutral-500">
-              Combina prezzo, vicinanza, spazio e arredamento.
+              Combina prezzo, vicinanza, spazio, arredamento e presenza di foto.
             </p>
           </div>
 

@@ -15,13 +15,18 @@ export interface Weights {
   time: number;
   space: number;
   furnished: number;
+  /** Premia gli annunci con foto: quelli senza sono spesso civetta o incompleti. */
+  photo: number;
 }
 
+// I quattro pesi originali riscalati a 0.85, piu' 0.15 per la foto: mantiene il
+// loro equilibrio relativo e fa scendere gli annunci senza immagini.
 export const DEFAULT_WEIGHTS: Weights = {
-  price: 0.4,
-  time: 0.35,
-  space: 0.15,
-  furnished: 0.1,
+  price: 0.34,
+  time: 0.3,
+  space: 0.13,
+  furnished: 0.08,
+  photo: 0.15,
 };
 
 // quanto "vale" il tier sul tempo (walk30 = migliore)
@@ -87,11 +92,13 @@ export function scoreListings(
     const timeScore = TIER_TIME_SCORE[l.tier];
     const spaceScore = l.sqft ? norm(l.sqft, minS, maxS) : 0.5;
     const furnScore = l.furnished ? 1 : 0;
+    const photoScore = l.photos?.length ? 1 : 0;
     const convenienza =
       weights.price * priceScore +
       weights.time * timeScore +
       weights.space * spaceScore +
-      weights.furnished * furnScore;
+      weights.furnished * furnScore +
+      weights.photo * photoScore;
     return { ...l, convenienza };
   });
 }
