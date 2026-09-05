@@ -12,6 +12,7 @@ import {
 import { TIERS, type TierId } from "@/lib/types";
 import { NEIGHBORHOODS, neighborhoodsOf } from "@/lib/neighborhoods";
 import { FLATIRON } from "@/lib/config";
+import { loadStations, type Station } from "@/lib/subway";
 import ListingCard from "@/components/ListingCard";
 import ListingDetail from "@/components/ListingDetail";
 import FilterPopover from "@/components/FilterPopover";
@@ -72,6 +73,7 @@ function Pill({ label, onRemove }: { label: string; onRemove: () => void }) {
 export default function Home() {
   const [iso, setIso] = useState<IsochroneSet>(EMPTY);
   const [raw, setRaw] = useState<RawListing[]>([]);
+  const [stations, setStations] = useState<Station[]>([]);
   const [loading, setLoading] = useState(true);
 
   const [sort, setSort] = useState<SortKey>("convenienza");
@@ -90,14 +92,20 @@ export default function Home() {
   const [mobileMap, setMobileMap] = useState(false);
 
   useEffect(() => {
-    Promise.all([loadIsochrones(), loadListings()]).then(([i, l]) => {
-      setIso(i);
-      setRaw(l);
-      setLoading(false);
-    });
+    Promise.all([loadIsochrones(), loadListings(), loadStations()]).then(
+      ([i, l, s]) => {
+        setIso(i);
+        setRaw(l);
+        setStations(s);
+        setLoading(false);
+      }
+    );
   }, []);
 
-  const scored = useMemo(() => scoreListings(raw, iso), [raw, iso]);
+  const scored = useMemo(
+    () => scoreListings(raw, iso, stations),
+    [raw, iso, stations]
+  );
 
   const { types, priceCap } = useMemo(() => {
     const t = new Set<string>();
