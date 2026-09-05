@@ -62,6 +62,9 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
 
         {/* prezzo */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+          {listing.priceFrom && (
+            <span className="mr-1 text-sm font-medium text-white/70">da</span>
+          )}
           <span className="text-lg font-bold text-white">{formatPrice(listing.price)}</span>
           <span className="text-sm font-medium text-white/70">/mese</span>
         </div>

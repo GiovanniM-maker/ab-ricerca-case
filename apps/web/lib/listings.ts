@@ -29,11 +29,13 @@ export const DEFAULT_WEIGHTS: Weights = {
   photo: 0.15,
 };
 
-// quanto "vale" il tier sul tempo (walk30 = migliore)
+// Quanto "vale" il tier sul tempo. Andare a piedi non e' solo veloce: e' gratis,
+// senza attese, cambi o affollamento. Percio' il salto tra piedi e mezzi e' molto
+// piu' marcato del semplice divario di minuti.
 const TIER_TIME_SCORE: Record<TierId, number> = {
   walk30: 1,
-  transit30: 0.66,
-  transit45: 0.33,
+  transit30: 0.5,
+  transit45: 0.2,
   out: 0,
 };
 
@@ -99,18 +101,36 @@ export function scoreListings(
     distanceM: haversineM(FLATIRON.lat, FLATIRON.lng, l.lat, l.lng),
   }));
 
-  const prices = withTier.map((l) => l.price ?? 0).filter((p) => p > 0);
   const sqfts = withTier.map((l) => l.sqft ?? 0).filter((s) => s > 0);
-  const minP = Math.min(...prices, 0);
-  const maxP = Math.max(...prices, 1);
   const minS = Math.min(...sqfts, 0);
   const maxS = Math.max(...sqfts, 1);
 
   const norm = (v: number, lo: number, hi: number) =>
     hi > lo ? (v - lo) / (hi - lo) : 0;
 
+  // Il prezzo si normalizza per PERCENTILE, non min-max: con affitti da $1.400 a
+  // $65.000 un solo attico schiaccerebbe tutti gli altri nello stesso punteggio
+  // (fra il 1o e il 3o quartile ballavano meno di 2 punti su 100).
+  const sortedPrices = withTier
+    .map((l) => l.price ?? 0)
+    .filter((p) => p > 0)
+    .sort((a, b) => a - b);
+
+  /** frazione di annunci non piu' cari di `v` (0 = il piu' economico, 1 = il piu' caro) */
+  const pricePercentile = (v: number) => {
+    if (!sortedPrices.length) return 0.5;
+    let lo = 0;
+    let hi = sortedPrices.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (sortedPrices[mid] <= v) lo = mid + 1;
+      else hi = mid;
+    }
+    return lo / sortedPrices.length;
+  };
+
   return withTier.map((l) => {
-    const priceScore = l.price ? 1 - norm(l.price, minP, maxP) : 0.5;
+    const priceScore = l.price ? 1 - pricePercentile(l.price) : 0.5;
     const timeScore = TIER_TIME_SCORE[l.tier];
     const spaceScore = l.sqft ? norm(l.sqft, minS, maxS) : 0.5;
     const furnScore = l.furnished ? 1 : 0;
