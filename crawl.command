@@ -98,6 +98,10 @@ if [ "$HAVE_NODE" = "1" ]; then
     npm install --silent && npx playwright install chromium
   fi
   rm -f .needs-login
+  # I muri del giro precedente vanno via: tenerli porta a diagnosticare
+  # problemi vecchi credendoli di oggi, che e' esattamente quel che e'
+  # successo con apartments e renthop.
+  rm -rf blocked
   # Niente browser pilotati: PerimeterX e DataDome riconoscono un Chrome
   # aperto al debug remoto, al punto che li' dentro il "press and hold" non
   # passa nemmeno facendolo a mano. L'estensione gira nel Chrome normale,

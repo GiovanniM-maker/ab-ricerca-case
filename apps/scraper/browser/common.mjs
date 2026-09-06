@@ -137,8 +137,10 @@ export function diagnose() {
   const SYSTEMS = [
     ["PerimeterX / HUMAN", ["px-captcha", "perimeterx", "_pxhd", "px-cdn"]],
     ["DataDome", ["captcha-delivery", "datadome", "geo.captcha"]],
-    ["Cloudflare", ["cf-chl", "challenge-platform", "cf_chl_opt", "__cf_bm"]],
-    ["Akamai", ["_abck", "akam", "bm-verify"]],
+    ["Cloudflare", ["cf-chl", "challenge-platform", "cf_chl_opt", "__cf_bm", "just a moment"]],
+    // "Reference #18.xxxxxxxx.yyyy" e' la firma della pagina di rifiuto di
+    // Akamai: senza, quel muro risultava "non riconosciuto".
+    ["Akamai", ["_abck", "akam", "bm-verify", "reference #1"]],
     ["Imperva / Incapsula", ["incapsula", "_incap_", "distil"]],
   ];
   for (const f of files) {
@@ -149,6 +151,10 @@ export function diagnose() {
     console.log(`\n${f}  ${Math.round(html.length / 1024)} KB`);
     console.log(`  titolo: ${title.slice(0, 80)}`);
     console.log(`  sistema: ${hits.length ? hits.join(", ") : "non riconosciuto"}`);
+    // Il nome dice chi l'ha salvato: "fonte-N" viene dai browser pilotati,
+    // "fonte-ricerca-N" dall'estensione. Senza questo si finisce a discutere
+    // di muri vecchi credendoli dell'ultimo giro.
+    console.log(`  raccolto da: ${/^[a-z]+-\d+\.html$/.test(f) ? "browser pilotato" : "estensione"}`);
     if (!hits.length) console.log(`  inizio: ${html.replace(/\s+/g, " ").slice(0, 200)}`);
   }
 }
