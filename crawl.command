@@ -24,10 +24,14 @@ START=$(date +%s)
 exec > >(tee "$LOG") 2>&1
 
 hr()  { printf '─%.0s' {1..58}; echo; }
+# Notifica di sistema: il crawl dura una decina di minuti e l'idea e' che tu
+# faccia altro. Se serve il tuo intervento devi saperlo senza restare a guardare.
+notify() { osascript -e "display notification \"$2\" with title \"$1\" sound name \"Glass\"" >/dev/null 2>&1 || true; }
 step() { echo; hr; echo "  $1"; hr; }
 ok()   { echo "  ✓ $1"; }
 warn() { echo "  ⚠︎  $1"; }
 
+notify "Flatiron Radar" "Crawl avviato. Ti avviso quando ho finito."
 echo "FLATIRON RADAR — crawl del $(date '+%d/%m/%Y alle %H:%M')"
 echo "log: $LOG"
 
@@ -87,6 +91,7 @@ if [ "$HAVE_NODE" = "1" ]; then
   if [ -f .needs-login ]; then
     echo
     echo "  Ritento con Chrome vero: $(tr '\n' ' ' < .needs-login)"
+    notify "Flatiron Radar" "Apro Chrome: se chiede una verifica, risolvila quando puoi."
     node fetch-cdp.mjs $(cat .needs-login) || true
     # Le fonti che ora hanno pagine sono risolte: non chiedere il login per quelle.
     STILL=""
@@ -113,28 +118,35 @@ for s in apartmentadvisor trulia craigslist streeteasy zillow apartments renthop
 done
 if [ -z "$SNAPS" ]; then
   echo; echo "  Nessuna fonte ha risposto. Niente da pubblicare."
-  echo; read -n 1 -s -r -p "  Premi un tasto per chiudere…"; exit 1
+  notify "Flatiron Radar" "Nessuna fonte ha risposto: crawl fallito."
+  echo; read -t 300 -n 1 -s -r -p "  Premi un tasto per chiudere…"; exit 1
 fi
 python3 -m rental_radar.aggregate $SNAPS
 
 # ------------------------------------------------------------------ riepilogo
 step "5/6  Cos'e' cambiato"
 cd "$ROOT" || exit 1
-python3 tools/crawl_report.py
+# Il riepilogo va anche su file e viene committato: e' il modo in cui il
+# risultato di stamattina arriva a chi non era davanti allo schermo.
+python3 tools/crawl_report.py | tee logs/ultimo-crawl.txt
 
 # ------------------------------------------------------------------ pubblica
 step "6/6  Pubblico su Vercel"
 if git diff --quiet -- apps/web/public/data/; then
   ok "nessuna novita': niente da pubblicare"
+  notify "Flatiron Radar" "Crawl finito: nessuna novita' oggi."
 else
   git add -A
   git commit -q -m "crawl $(date +%F)" && ok "commit fatto"
   for try in 1 2 3 4; do
     if git push -q origin "$(git rev-parse --abbrev-ref HEAD)" 2>/dev/null; then
       ok "pubblicato — Vercel si aggiorna fra un paio di minuti"
+      SUMMARY="$(grep -E "Schede pubblicate|Rispetto a ieri" logs/ultimo-crawl.txt | tr '\n' ' ')"
+      notify "Flatiron Radar" "Pubblicato. ${SUMMARY:-crawl completato}"
       break
     fi
-    [ "$try" = "4" ] && warn "push fallito 4 volte: rilancia a mano con  git push"
+    [ "$try" = "4" ] && { warn "push fallito 4 volte: rilancia a mano con  git push"; \
+      notify "Flatiron Radar" "Crawl finito ma la pubblicazione e' fallita."; }
     sleep $((2 ** try))
   done
 fi
@@ -154,7 +166,8 @@ if [ -n "$NEEDS_LOGIN" ]; then
   echo "  Si risolve loggandosi una volta: si apre una finestra vera, ti logghi"
   echo "  (o risolvi il captcha) e da domani il crawl la riusa da solo."
   echo
-  read -n 1 -r -p "  Vuoi farlo ora? [s/N] " ANS; echo
+  # Con un timeout: se sei altrove non deve restare appeso a un tasto.
+  read -t 60 -n 1 -r -p "  Vuoi farlo ora? [s/N, 60s]  " ANS; echo
   if [[ "$ANS" =~ ^[sSyY]$ ]]; then
     cd "$BROWSER" || exit 1
     for s in $NEEDS_LOGIN; do node fetch.mjs --login "$s"; done
@@ -163,7 +176,9 @@ if [ -n "$NEEDS_LOGIN" ]; then
   fi
 fi
 
-# Col doppio clic la finestra si chiuderebbe subito portandosi via il riepilogo.
+# Col doppio clic la finestra si chiuderebbe subito portandosi via il riepilogo,
+# ma non deve nemmeno restare aperta all'infinito: il senso e' che tu faccia
+# altro mentre gira, e il riepilogo resta comunque nel log e su Vercel.
 echo
-read -n 1 -s -r -p "  Premi un tasto per chiudere…"
+read -t 600 -n 1 -s -r -p "  Premi un tasto per chiudere (si chiude da sola fra 10 min)…"
 echo

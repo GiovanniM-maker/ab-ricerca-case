@@ -40,5 +40,8 @@ apps/scraper/browser/pages/
 
 # Log del crawl (crawl.command)
 logs/
+# ...tranne il riepilogo dell'ultimo crawl: e' il modo in cui il risultato
+# arriva a chi non era davanti allo schermo (me compreso, quando me lo chiedi).
+!logs/ultimo-crawl.txt
 apps/scraper/browser/blocked/
 apps/scraper/browser/.chrome-profile/

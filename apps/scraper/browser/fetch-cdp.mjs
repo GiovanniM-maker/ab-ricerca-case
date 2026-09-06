@@ -28,7 +28,7 @@ import { join } from "node:path";
 import readline from "node:readline/promises";
 import {
   HERE, PAGES, TARGETS, sources, pause, isBlocked, pageUrl, slugFor,
-  savePage, saveBlocked, sourceOfUrl, actLikeAHuman, diagnose,
+  savePage, saveBlocked, sourceOfUrl, actLikeAHuman, diagnose, notify,
 } from "./common.mjs";
 
 const PORT = 9222;
@@ -124,6 +124,36 @@ async function connect() {
   return { browser, ctx };
 }
 
+/** Quanto aspettare che una verifica venga risolta prima di rinunciare. */
+const WAIT_FOR_HUMAN_MS = 10 * 60 * 1000;
+
+/**
+ * Aspetta che la pagina smetta di essere un muro, ricaricandola ogni tanto.
+ * Torna true appena passa. La persona risolve il captcha quando se ne accorge:
+ * qui non si blocca nessuno in attesa di un INVIO.
+ */
+async function waitUntilUnblocked(p, url, source) {
+  const deadline = Date.now() + WAIT_FOR_HUMAN_MS;
+  let announced = false;
+  while (Date.now() < deadline) {
+    await pause(15000, 25000);
+    try {
+      await p.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
+      await pause(1500, 3000);
+      if (!isBlocked(await p.content(), await p.title())) return true;
+    } catch {
+      /* pagina che non carica: riproviamo al giro dopo */
+    }
+    const left = Math.round((deadline - Date.now()) / 60000);
+    if (!announced && left <= 5) {
+      announced = true;
+      notify("Flatiron Radar", `${source}: ancora ${left} min per la verifica in Chrome.`);
+    }
+    console.log(`      … attendo la verifica (ancora ${left} min)`);
+  }
+  return false;
+}
+
 async function crawl(source, ctx) {
   const cfg = TARGETS[source];
   if (!cfg) throw new Error(`fonte sconosciuta: ${source}`);
@@ -131,6 +161,7 @@ async function crawl(source, ctx) {
 
   let saved = 0;
   let blocks = 0;
+  let warned = false;
   for (const base of cfg.searches) {
     for (let n = 1; n <= (cfg.pages ?? 1); n++) {
       const url = pageUrl(base, cfg, n);
@@ -143,26 +174,32 @@ async function crawl(source, ctx) {
         const title = await p.title();
 
         if (isBlocked(html, title)) {
-          blocks++;
-          saveBlocked(source, blocks, html);
+          saveBlocked(source, ++blocks, html);
           console.log(`  ⚠︎  bloccato: ${url}`);
           console.log(`      titolo: "${title}" · ${html.length} byte`);
-          if (blocks >= 3) {
-            console.log(
-              `\n${source}: bloccato anche con Chrome vero.\n` +
-                `La finestra e' aperta: risolvi il captcha a mano su quella scheda,\n` +
-                `poi rilancia. Se il muro resta, usa:  node fetch-cdp.mjs --manual`
-            );
+
+          // Invece di arrenderci e chiedere di rilanciare a mano, portiamo la
+          // finestra davanti, avvisiamo e RIPROVIAMO da soli. Cosi' puoi
+          // risolvere il captcha quando ti pare e il crawl riparte da solo:
+          // e' la differenza fra restare a guardare e fare altro.
+          if (!warned) {
+            warned = true;
+            await p.bringToFront().catch(() => {});
+            notify("Flatiron Radar", `${source} chiede una verifica: risolvila in Chrome.`);
+          }
+          const passed = await waitUntilUnblocked(p, url, source);
+          if (!passed) {
+            console.log(`\n${source}: la verifica non e' stata risolta, passo oltre.`);
             await p.close();
             return { saved, blocks };
           }
-          await pause(8000, 15000);
-          continue;
+          console.log("  ✓ verifica superata, riprendo");
         }
 
-        savePage(source, slugFor(base), n, html);
+        const good = await p.content();
+        savePage(source, slugFor(base), n, good);
         saved++;
-        console.log(`  ✓ ${slugFor(base)} p${n} (${Math.round(html.length / 1024)} KB)`);
+        console.log(`  ✓ ${slugFor(base)} p${n} (${Math.round(good.length / 1024)} KB)`);
       } catch (e) {
         console.log(`  ✗ ${url}: ${e.message.split("\n")[0]}`);
       }

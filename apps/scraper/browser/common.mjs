@@ -7,6 +7,7 @@
  */
 
 import { readFileSync, readdirSync, mkdirSync, writeFileSync } from "node:fs";
+import { execFile } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -79,6 +80,20 @@ export function sourceOfUrl(url) {
     }
   }
   return null;
+}
+
+/**
+ * Notifica di sistema. Il crawl dura una decina di minuti e l'idea e' che tu
+ * faccia altro nel frattempo: se serve il tuo intervento devi saperlo senza
+ * tenere d'occhio il terminale.
+ */
+export function notify(title, message) {
+  const esc = (s) => JSON.stringify(String(s).slice(0, 200));
+  execFile(
+    "osascript",
+    ["-e", `display notification ${esc(message)} with title ${esc(title)} sound name "Glass"`],
+    () => {}
+  );
 }
 
 /** Qualche gesto umano: questi sistemi guardano se il mouse si muove. */
