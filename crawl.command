@@ -19,6 +19,11 @@ LOGDIR="$ROOT/logs"
 mkdir -p "$LOGDIR"
 LOG="$LOGDIR/crawl-$(date +%Y-%m-%d-%H%M).log"
 START=$(date +%s)
+# Segnatempo del giro. Serve un file che NON venga piu' toccato: il log lo e'
+# di continuo (ci scriviamo dentro fino all'ultima riga), quindi confrontarsi
+# con lui faceva sembrare vecchio ogni snapshot appena scritto.
+STAMP="$LOGDIR/.inizio-giro"
+: > "$STAMP"
 
 # Tutto quel che segue finisce sia a schermo che nel log.
 exec > >(tee "$LOG") 2>&1
@@ -67,7 +72,7 @@ wait
 # stato scritto DA QUESTO giro.
 STALE=""
 for s in $OPEN_SOURCES; do
-  if [ "$s.snapshot.json" -nt "$LOG" ]; then
+  if [ "$s.snapshot.json" -nt "$STAMP" ]; then
     ok "$s — $(grep -o 'in-tier: [0-9]*' "$LOGDIR/.$s.out" | tail -1 | tr -d 'a-z-: ') case"
   elif [ -f "$s.snapshot.json" ]; then
     warn "$s non ha risposto: resta il dato del giro precedente"
@@ -151,8 +156,12 @@ if git diff --quiet -- apps/web/public/data/; then
 else
   git add -A
   git commit -q -m "crawl $(date +%F)" && ok "commit fatto"
+  BRANCH="$(git rev-parse --abbrev-ref HEAD)"
   for try in 1 2 3 4; do
-    if git push -q origin "$(git rev-parse --abbrev-ref HEAD)" 2>/dev/null; then
+    # Se nel frattempo e' arrivato altro codice, il push viene rifiutato:
+    # ripeterlo uguale non puo' funzionare, bisogna prima riallinearsi.
+    [ "$try" -gt 1 ] && git pull --rebase --autostash -q origin "$BRANCH" 2>/dev/null
+    if git push -q origin "$BRANCH" 2>/dev/null; then
       ok "pubblicato — Vercel si aggiorna fra un paio di minuti"
       SUMMARY="$(grep -E "Schede pubblicate|Rispetto a ieri" logs/ultimo-crawl.txt | tr '\n' ' ')"
       notify "Flatiron Radar" "Pubblicato. ${SUMMARY:-crawl completato}"
@@ -160,6 +169,7 @@ else
     fi
     [ "$try" = "4" ] && { warn "push fallito 4 volte: rilancia a mano con  git push"; \
       notify "Flatiron Radar" "Crawl finito ma la pubblicazione e' fallita."; }
+    warn "push rifiutato, mi riallineo e riprovo ($try/4)"
     sleep $((2 ** try))
   done
 fi

@@ -48,3 +48,4 @@ apps/scraper/browser/.chrome-profile/
 
 # Canale notifiche: e' un nome segreto, chi lo conosce riceve i tuoi avvisi.
 notify.conf
+logs/.inizio-giro
