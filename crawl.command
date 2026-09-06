@@ -61,15 +61,25 @@ for s in $OPEN_SOURCES; do
   ( python3 -m rental_radar.run --source "$s" >"$LOGDIR/.$s.out" 2>&1 ) &
 done
 wait
+# Attenzione a cosa si guarda: se una fonte fallisce, il suo snapshot di ieri
+# e' ancora li'. Controllando solo che il file esista, un errore passerebbe per
+# successo e la fusione userebbe dati vecchi senza dirlo. Serve che il file sia
+# stato scritto DA QUESTO giro.
+STALE=""
 for s in $OPEN_SOURCES; do
-  if [ -f "$s.snapshot.json" ]; then
+  if [ "$s.snapshot.json" -nt "$LOG" ]; then
     ok "$s — $(grep -o 'in-tier: [0-9]*' "$LOGDIR/.$s.out" | tail -1 | tr -d 'a-z-: ') case"
+  elif [ -f "$s.snapshot.json" ]; then
+    warn "$s non ha risposto: resta il dato del giro precedente"
+    STALE="$STALE $s"
+    tail -2 "$LOGDIR/.$s.out" | sed 's/^/      /'
   else
-    warn "$s non raggiungibile"
+    warn "$s non raggiungibile e non ho niente di suo"
     tail -2 "$LOGDIR/.$s.out" | sed 's/^/      /'
   fi
   rm -f "$LOGDIR/.$s.out"
 done
+[ -n "$STALE" ] && notify "Flatiron Radar" "Fonti mute, uso dati vecchi:$STALE"
 
 # --------------------------------------------------------- siti dietro anti-bot
 step "3/6  Siti col browser (StreetEasy, Zillow, Apartments, RentHop)"
