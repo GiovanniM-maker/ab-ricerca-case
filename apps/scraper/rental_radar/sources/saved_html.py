@@ -53,16 +53,25 @@ BED_KEYS = (
     "numberofrooms", "numberofbedrooms",
 )
 SQFT_KEYS = ("sqft", "squarefeet", "livingarea", "size", "squarefootage", "areasqft")
-URL_KEYS = ("url", "detailurl", "hdpurl", "permalink", "path", "href", "listingurl", "link")
+URL_KEYS = (
+    "url", "detailurl", "hdpurl", "permalink", "path", "urlpath", "uri",
+    "href", "listingurl", "link",
+)
 PHOTO_KEYS = (
     "imgsrc", "imageurl", "image", "images", "photo", "photos", "thumbnail",
     "heroimageurl", "photourl", "media",
 )
 ADDR_KEYS = (
     "address", "addressstreet", "streetaddress", "formattedaddress", "fulladdress",
-    "displayaddress", "title", "name",
+    "displayaddress", "street", "addressline1", "buildingname", "title", "name",
 )
 ID_KEYS = ("id", "listingid", "zpid", "rentalid", "propertyid")
+
+# Un percorso di dettaglio: "/building/100-w-24-st/12b". Serve quando il campo
+# del link ha un nome che non conosciamo.
+_PATH = re.compile(r"^/[a-z0-9][\w\-/.]{5,}$", re.I)
+# Un indirizzo americano: numero civico seguito da parole. "310 W 20 St".
+_ADDR = re.compile(r"^\d+[\w\-]*\s+[A-Za-z]")
 FURN_KEYS = ("furnished", "isfurnished")
 
 
@@ -137,6 +146,66 @@ def _blobs(html: str) -> list:
                 out.append(json.loads(frag))
             except ValueError:
                 pass
+    return out
+
+
+_NEXT_F = re.compile(r'self\.__next_f\.push\(\s*\[\s*1\s*,\s*"')
+
+
+def _flight(html: str) -> str:
+    """Ricompone il payload di Next.js App Router.
+
+    Le app Next moderne non mettono piu' i dati in un unico __NEXT_DATA__: li
+    spediscono a pezzi con self.__next_f.push([1,"..."]), ognuno una stringa
+    JSON da riunire. Cercare i dati nei singoli <script> non trova nulla, ed e'
+    esattamente il caso di StreetEasy.
+    """
+    parts = []
+    for m in _NEXT_F.finditer(html):
+        lit = _balanced_string(html, m.end() - 1)
+        if not lit:
+            continue
+        try:
+            parts.append(json.loads(lit))
+        except ValueError:
+            pass
+    return "".join(parts)
+
+
+def _objects_near(text: str, needles: tuple[str, ...]) -> list[dict]:
+    """Oggetti JSON che contengono una delle chiavi date, ovunque si trovino.
+
+    Il payload ricomposto non e' JSON valido nel suo insieme (e' una sequenza
+    di frammenti numerati), quindi non si puo' caricare tutto e poi cercare.
+    Partiamo invece dalla chiave e risaliamo alla graffa che la racchiude.
+    """
+    out: list[dict] = []
+    spans: list[tuple[int, int]] = []
+    for needle in needles:
+        start = 0
+        while True:
+            i = text.find(needle, start)
+            if i < 0:
+                break
+            start = i + len(needle)
+            if any(a <= i < b for a, b in spans):
+                continue  # gia' dentro un oggetto che abbiamo preso
+            j = i
+            limit = max(0, i - 20_000)
+            while True:
+                j = text.rfind("{", limit, j)
+                if j < 0:
+                    break
+                frag = _balanced(text, j)
+                if frag and j + len(frag) > i:
+                    try:
+                        obj = json.loads(frag)
+                    except ValueError:
+                        break
+                    if isinstance(obj, dict):
+                        out.append(obj)
+                        spans.append((j, j + len(frag)))
+                    break
     return out
 
 
@@ -219,6 +288,19 @@ def _coords(d: dict) -> tuple[float, float] | None:
     return lat, lng
 
 
+def _pick_shaped(d: dict, rx: re.Pattern, maxlen: int = 120) -> str | None:
+    """Primo valore stringa che ha la forma cercata.
+
+    I nomi dei campi cambiano da un portale all'altro e da un restyling
+    all'altro; la forma di un indirizzo o di un percorso no. Quando la
+    ricerca per nome fallisce, si riconosce il valore invece della chiave.
+    """
+    for v in d.values():
+        if isinstance(v, str) and len(v) <= maxlen and rx.match(v):
+            return v
+    return None
+
+
 def _photos(d: dict) -> list[str]:
     v = _pick(d, PHOTO_KEYS)
     urls: list[str] = []
@@ -276,11 +358,28 @@ def fetch_listings(source: str) -> list[Listing]:
     origin = ORIGINS.get(source, "")
     by_key: dict[str, Listing] = {}
 
+    skipped = 0
     for f in files:
         html = f.read_text("utf-8", "replace")
+        # Le pagine-muro pesano pochi KB: sono state salvate da versioni del
+        # crawler con un controllo piu' permissivo. Nessun elenco di case e'
+        # cosi' piccolo, quindi non c'e' rischio di scartare roba buona.
+        if len(html) < 20_000:
+            skipped += 1
+            continue
+
         raw: list[dict] = []
         for blob in _blobs(html):
             _walk(blob, raw)
+        # Next.js App Router spedisce i dati a pezzi via self.__next_f: li
+        # ricomponiamo e ci cerchiamo dentro gli oggetti con coordinate.
+        flight = _flight(html)
+        if flight:
+            raw += _objects_near(flight, ('"latitude"', '"lat"'))
+        # Ultima rete: cerchiamo anche nell'HTML grezzo, per i dati incapsulati
+        # in modi che i due passaggi sopra non coprono.
+        if not raw:
+            raw += _objects_near(html, ('"latitude"',))
 
         for d in raw:
             lat, lng = _coords(d)  # type: ignore[misc]
@@ -289,7 +388,8 @@ def fetch_listings(source: str) -> list[Listing]:
                 continue  # prezzi di vendita o placeholder: non sono affitti
 
             url = _pick(d, URL_KEYS)
-            url = url if isinstance(url, str) else ""
+            if not isinstance(url, str):
+                url = _pick_shaped(d, _PATH) or ""
             if url.startswith("/"):
                 url = origin + url
             if not url.startswith("http"):
@@ -298,7 +398,8 @@ def fetch_listings(source: str) -> list[Listing]:
             addr = _pick(d, ADDR_KEYS)
             if isinstance(addr, dict):
                 addr = _pick(addr, ADDR_KEYS)
-            addr = addr if isinstance(addr, str) else None
+            if not isinstance(addr, str):
+                addr = _pick_shaped(d, _ADDR)
 
             sid = _pick(d, ID_KEYS)
             furn = _pick(d, FURN_KEYS)
@@ -324,6 +425,8 @@ def fetch_listings(source: str) -> list[Listing]:
                 photos=_photos(d),
             )
 
+    if skipped:
+        print(f"  ({skipped} pagine scartate: troppo piccole, sono muri o vuote)")
     return list(by_key.values())
 
 
@@ -334,12 +437,20 @@ def _inspect(source: str) -> None:
     print(f"{source}: {len(files)} pagine in {folder}")
     for f in files:
         html = f.read_text("utf-8", "replace")
+        if len(html) < 20_000:
+            print(f"  {f.name}: {len(html)//1024} KB — muro o pagina vuota, scartata")
+            continue
         blobs = _blobs(html)
         found: list[dict] = []
         for b in blobs:
             _walk(b, found)
+        flight = _flight(html)
+        if flight:
+            found += _objects_near(flight, ('"latitude"', '"lat"'))
+        if not found:
+            found += _objects_near(html, ('"latitude"',))
         keys = sorted({k for d in found[:20] for k in d if isinstance(k, str)})
-        print(f"  {f.name}: {len(html)//1024} KB · {len(blobs)} blob · {len(found)} con coordinate")
+        print(f"  {f.name}: {len(html)//1024} KB · {len(blobs)} blob · {len(flight)} B flight · {len(found)} oggetti")
         if found:
             print(f"    campi: {', '.join(keys[:22])}")
 

@@ -25,7 +25,10 @@ export const pause = (min, max) =>
 /** Riconosce le pagine-muro (captcha, "press & hold", 403) prima di salvarle. */
 export function isBlocked(html, title) {
   const t = (title || "").toLowerCase();
-  const h = html.slice(0, 4000).toLowerCase();
+  // Prima guardavamo solo i primi 4000 caratteri: i muri che mettono il
+  // messaggio piu' in basso passavano indisturbati e finivano fra le pagine
+  // buone. Costa poco leggerla tutta.
+  const h = html.toLowerCase();
   const marks = [
     "px-captcha",
     "please verify you are a human",
@@ -34,8 +37,12 @@ export function isBlocked(html, title) {
     "captcha-delivery",
     "attention required",
     "request unsuccessful",
+    "unusual traffic",
+    "enable javascript and cookies",
   ];
-  return marks.some((m) => h.includes(m) || t.includes(m)) || html.length < 5000;
+  // Una pagina di risultati vera sta sui 300 KB - 1,8 MB. Sotto i 20 KB non
+  // e' un elenco di case: e' un muro, un redirect o una pagina vuota.
+  return marks.some((m) => h.includes(m) || t.includes(m)) || html.length < 20_000;
 }
 
 export function pageUrl(base, cfg, n) {
