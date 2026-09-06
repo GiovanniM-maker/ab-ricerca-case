@@ -102,7 +102,7 @@ if [ "$HAVE_NODE" = "1" ]; then
   # aperto al debug remoto, al punto che li' dentro il "press and hold" non
   # passa nemmeno facendolo a mano. L'estensione gira nel Chrome normale,
   # non apre porte e non pilota niente: non c'e' nulla da riconoscere.
-  python3 "$ROOT/tools/collector.py" --once &
+  python3 -u "$ROOT/tools/collector.py" --once &
   COLLECTOR=$!
   sleep 2
   notify "Flatiron Radar" "Apri Chrome e clicca l'icona Flatiron Radar per StreetEasy, Zillow, Apartments e RentHop."
