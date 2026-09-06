@@ -58,6 +58,46 @@ python3 -m rental_radar.run --source streeteasy
 Oppure lascia fare tutto a `bash crawl-all.sh`: se trova `pages/<sito>/` lo
 include da solo, altrimenti lo salta senza lamentarsi.
 
+## Quando anche così bloccano (piano B: Chrome vero)
+
+Playwright, anche quando avvia il Chrome installato, lo lancia con una trentina
+di switch che nessun utente usa mai. Quella lista è essa stessa un'impronta, e
+PerimeterX la legge. `fetch-cdp.mjs` fa il contrario: **Chrome parte da solo**,
+con gli switch normali, e noi ci colleghiamo al suo debug remoto.
+
+```bash
+node fetch-cdp.mjs streeteasy
+node fetch-cdp.mjs --all
+```
+
+Dal Chrome 136 Google ignora il debug remoto sul profilo predefinito, apposta
+per impedire questo. Quindi usiamo un profilo dedicato (`.chrome-profile/`):
+stesso Chrome, sessione tua, e il browser di ogni giorno resta libero.
+
+`crawl.command` lo lancia da solo sulle fonti che Playwright non è riuscito a
+prendere: non devi ricordartene.
+
+### E se non basta nemmeno quello
+
+```bash
+node fetch-cdp.mjs --manual
+```
+
+Si apre la finestra, **navighi tu** alle ricerche che ti interessano (una per
+scheda), torni al terminale e premi INVIO: salva il contenuto di ogni scheda
+che riconosce. Qui non c'è automazione da smascherare — le pagine le ha chieste
+una persona. È lento, ma non ha modo di fallire.
+
+## Capire chi ci blocca
+
+```bash
+node fetch.mjs --blocked
+```
+
+Legge le pagine-muro salvate in `blocked/` e dice quale sistema risponde
+(PerimeterX, DataDome, Cloudflare, Akamai, Imperva). Senza questo, "bloccato"
+resta una nostra supposizione.
+
 ## Quando un sito cambia forma
 
 Il parser non insegue i nomi dei campi: cerca oggetti JSON con delle coordinate

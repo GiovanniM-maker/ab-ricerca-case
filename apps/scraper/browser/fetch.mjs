@@ -17,22 +17,18 @@
  * A estrarre gli annunci ci pensa `python3 -m rental_radar.run --source streeteasy`.
  */
 
-import { readFileSync, readdirSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { join } from "node:path";
 import readline from "node:readline/promises";
+import {
+  HERE, PAGES, TARGETS, sources, pause, isBlocked, pageUrl, slugFor,
+  savePage, saveBlocked, actLikeAHuman, diagnose,
+} from "./common.mjs";
 
-const HERE = dirname(fileURLToPath(import.meta.url));
 const PROFILE = join(HERE, ".profile");
-const PAGES = join(HERE, "pages");
-const TARGETS = JSON.parse(readFileSync(join(HERE, "targets.json"), "utf8"));
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
-
-/** Pausa casuale: un ritmo umano riduce il rischio di finire in blacklist. */
-const pause = (min, max) =>
-  new Promise((r) => setTimeout(r, min + Math.random() * (max - min)));
 
 // Import pigro: il modo diagnostico (--blocked) e' proprio quello che lanci
 // quando qualcosa non va, e non deve pretendere che Playwright ci sia.
@@ -67,43 +63,6 @@ async function open(headless) {
   return ctx;
 }
 
-/** Qualche gesto umano: questi sistemi guardano se il mouse si muove. */
-async function actLikeAHuman(p) {
-  try {
-    await p.mouse.move(300 + Math.random() * 500, 200 + Math.random() * 300);
-    await pause(200, 600);
-    await p.mouse.wheel(0, 400 + Math.random() * 800);
-    await pause(400, 900);
-    await p.mouse.wheel(0, 400 + Math.random() * 800);
-  } catch {
-    /* pagina gia' chiusa o navigata: non e' un errore che ci interessa */
-  }
-}
-
-/** Riconosce le pagine-muro (captcha, "press & hold", 403) prima di salvarle. */
-function blocked(html, title) {
-  const t = (title || "").toLowerCase();
-  const h = html.slice(0, 4000).toLowerCase();
-  const marks = [
-    "px-captcha",
-    "please verify you are a human",
-    "access to this page has been denied",
-    "are you a robot",
-    "captcha-delivery",
-    "attention required",
-    "request unsuccessful",
-  ];
-  return marks.some((m) => h.includes(m) || t.includes(m)) || html.length < 5000;
-}
-
-function pageUrl(base, cfg, n) {
-  if (n === 1) return base;
-  if (cfg.pathPage) return base.replace(/\/?$/, "") + cfg.pathPage.replace("{n}", n);
-  if (cfg.pageParam)
-    return base + (base.includes("?") ? "&" : "?") + `${cfg.pageParam}=${n}`;
-  return null;
-}
-
 async function login(source) {
   const cfg = TARGETS[source];
   if (!cfg) throw new Error(`fonte sconosciuta: ${source}`);
@@ -126,9 +85,6 @@ async function login(source) {
 async function crawl(source, headed) {
   const cfg = TARGETS[source];
   if (!cfg) throw new Error(`fonte sconosciuta: ${source}`);
-  const out = join(PAGES, source);
-  mkdirSync(out, { recursive: true });
-
   const ctx = await open(!headed);
   const p = ctx.pages()[0] ?? (await ctx.newPage());
   // Bloccavamo le immagini per risparmiare banda, ma un browser che carica
@@ -149,14 +105,12 @@ async function crawl(source, headed) {
         const html = await p.content();
         const title = await p.title();
 
-        if (blocked(html, title)) {
+        if (isBlocked(html, title)) {
           blocks++;
           // Salviamo il muro cosi' com'e': senza, "bloccato" resta una nostra
           // supposizione e non si distingue un captcha vero da un falso
           // positivo del rilevatore. Fuori da pages/, che e' solo roba buona.
-          const dump = join(HERE, "blocked");
-          mkdirSync(dump, { recursive: true });
-          writeFileSync(join(dump, `${source}-${blocks}.html`), html);
+          saveBlocked(source, blocks, html);
           console.log(`  ⚠︎  bloccato: ${url}`);
           console.log(`      titolo: "${title}" · ${html.length} byte`);
           if (blocks >= 3) {
@@ -172,11 +126,9 @@ async function crawl(source, headed) {
           continue;
         }
 
-        const slug =
-          base.replace(/^https?:\/\/[^/]+\//, "").replace(/[^a-z0-9]+/gi, "-") || "home";
-        writeFileSync(join(out, `${slug}-${n}.html`), html);
+        savePage(source, slugFor(base), n, html);
         saved++;
-        process.stdout.write(`  ✓ ${slug} p${n} (${Math.round(html.length / 1024)} KB)\n`);
+        console.log(`  ✓ ${slugFor(base)} p${n} (${Math.round(html.length / 1024)} KB)`);
       } catch (e) {
         console.log(`  ✗ ${url}: ${e.message.split("\n")[0]}`);
       }
@@ -185,35 +137,6 @@ async function crawl(source, headed) {
   }
   await ctx.close();
   return { saved, blocks };
-}
-
-/** Che cosa ci ha risposto davvero chi ci blocca. */
-function diagnose() {
-  const dir = join(HERE, "blocked");
-  let files = [];
-  try {
-    files = readdirSync(dir).filter((f) => f.endsWith(".html"));
-  } catch {
-    console.log("Nessuna pagina bloccata salvata: o non hai ancora ricrawlato, o non blocca piu'.");
-    return;
-  }
-  const SYSTEMS = [
-    ["PerimeterX / HUMAN", ["px-captcha", "perimeterx", "_pxhd", "px-cdn"]],
-    ["DataDome", ["captcha-delivery", "datadome", "geo.captcha"]],
-    ["Cloudflare", ["cf-chl", "challenge-platform", "cf_chl_opt", "__cf_bm"]],
-    ["Akamai", ["_abck", "akam", "bm-verify"]],
-    ["Imperva / Incapsula", ["incapsula", "_incap_", "distil"]],
-  ];
-  for (const f of files) {
-    const html = readFileSync(join(dir, f), "utf8");
-    const low = html.toLowerCase();
-    const hits = SYSTEMS.filter(([, marks]) => marks.some((m) => low.includes(m))).map(([n]) => n);
-    const title = (html.match(/<title[^>]*>(.*?)<\/title>/is) || [, "(nessuno)"])[1].trim();
-    console.log(`\n${f}  ${Math.round(html.length / 1024)} KB`);
-    console.log(`  titolo: ${title.slice(0, 80)}`);
-    console.log(`  sistema: ${hits.length ? hits.join(", ") : "non riconosciuto"}`);
-    if (!hits.length) console.log(`  inizio: ${html.replace(/\s+/g, " ").slice(0, 200)}`);
-  }
 }
 
 const argv = process.argv.slice(2);
@@ -225,16 +148,16 @@ if (argv.includes("--blocked")) {
 } else if (argv.includes("--login")) {
   await login(args[0]);
 } else {
-  const sources = argv.includes("--all") ? Object.keys(TARGETS).filter((k) => k[0] !== "_") : args;
-  if (!sources.length) {
+  const list = argv.includes("--all") ? sources() : args;
+  if (!list.length) {
     console.log("Uso: node fetch.mjs [--login] <fonte> | --all");
-    console.log("Fonti: " + Object.keys(TARGETS).filter((k) => k[0] !== "_").join(", "));
+    console.log("Fonti: " + sources().join(", "));
     process.exit(1);
   }
   // Le fonti che hanno bisogno di un login le lasciamo scritte qui: e' cosi'
   // che crawl.command sa per quali aprire la finestra a fine giro.
   const needsLogin = [];
-  for (const s of sources) {
+  for (const s of list) {
     console.log(`\n→ ${s}`);
     let { saved, blocks } = await crawl(s, headed);
 

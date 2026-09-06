@@ -80,7 +80,21 @@ if [ "$HAVE_NODE" = "1" ]; then
   fi
   rm -f .needs-login
   node fetch.mjs --all
-  [ -f .needs-login ] && NEEDS_LOGIN="$(cat .needs-login)"
+
+  # Chi resiste anche a Playwright lo ritentiamo con Chrome vero: e' un
+  # processo lanciato normalmente, senza la trentina di switch da automazione
+  # che sono essi stessi un'impronta riconoscibile.
+  if [ -f .needs-login ]; then
+    echo
+    echo "  Ritento con Chrome vero: $(tr '\n' ' ' < .needs-login)"
+    node fetch-cdp.mjs $(cat .needs-login) || true
+    # Le fonti che ora hanno pagine sono risolte: non chiedere il login per quelle.
+    STILL=""
+    for s in $(cat .needs-login); do
+      [ -d "pages/$s" ] || STILL="$STILL $s"
+    done
+    NEEDS_LOGIN="$STILL"
+  fi
 
   cd "$ROOT/apps/scraper" || exit 1
   for s in streeteasy zillow apartments renthop; do

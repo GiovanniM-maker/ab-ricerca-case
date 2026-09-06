@@ -41,3 +41,4 @@ apps/scraper/browser/pages/
 # Log del crawl (crawl.command)
 logs/
 apps/scraper/browser/blocked/
+apps/scraper/browser/.chrome-profile/
