@@ -53,13 +53,6 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
           {meta.label}
         </span>
 
-        {/* arredato */}
-        {listing.furnished && (
-          <span className="absolute right-3 top-3 rounded-full bg-neutral-950/85 px-2.5 py-1 text-xs font-medium text-neutral-100 shadow-sm backdrop-blur">
-            Arredato
-          </span>
-        )}
-
         {/* prezzo */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
           {listing.priceFrom && (
@@ -79,6 +72,13 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
           {listing.neighborhood && (
             <span className="rounded-full border border-neutral-600 px-2 py-0.5 font-semibold text-neutral-200">
               {listing.neighborhood}
+            </span>
+          )}
+          {/* anche "Arredato" sta nel corpo: sulla foto si scontrava con il
+              badge del tier sulle card strette, come gia' il quartiere */}
+          {listing.furnished && (
+            <span className="rounded-full bg-neutral-800 px-2 py-0.5 font-medium text-neutral-200">
+              Arredato
             </span>
           )}
           {listing.type && <span>{listing.type.toUpperCase()}</span>}
@@ -105,19 +105,36 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
           </span>
         </div>
 
-        {/* tag fonte: apre l'annuncio originale senza passare dal dettaglio */}
-        <a
-          href={listing.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="mt-2.5 inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
-        >
-          Vedi su {sourceLabel((listing.sources ?? [listing.source])[0])}
-          <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <path d="M4.5 2h5.5v5.5M10 2 2.5 9.5" />
-          </svg>
-        </a>
+        <div className="mt-2.5 flex flex-wrap items-center gap-2">
+          {/* La scheda completa si apriva solo col doppio clic: sul telefono
+              non e' un gesto che qualcuno prova, e nulla diceva che ci fosse
+              dell'altro da vedere. Il doppio clic resta, ma ora c'e' anche un
+              bottone. */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpen();
+            }}
+            className="inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+          >
+            Dettagli
+          </button>
+
+          {/* tag fonte: apre l'annuncio originale senza passare dal dettaglio */}
+          <a
+            href={listing.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+          >
+            Vedi su {sourceLabel((listing.sources ?? [listing.source])[0])}
+            <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <path d="M4.5 2h5.5v5.5M10 2 2.5 9.5" />
+            </svg>
+          </a>
+        </div>
       </div>
     </article>
   );

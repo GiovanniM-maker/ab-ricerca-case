@@ -196,8 +196,11 @@ export default function Home() {
             Tempo reale di arrivo a {FLATIRON.label}
           </p>
 
-          {/* Barra filtri: scorrevole su mobile, a capo su desktop */}
-          <div className="no-scrollbar -mx-5 mt-3 flex items-center gap-2 overflow-x-auto px-5 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+          {/* Barra filtri: i chip vanno a capo anche sul telefono. Prima scorrevano in
+              orizzontale con la barra nascosta: "Prezzo" e "Tipo" finivano
+              fuori schermo e nulla faceva capire che ci fosse dell'altro.
+              Due righe di chip costano quaranta pixel e si vedono tutti. */}
+          <div className="mt-3 flex flex-wrap items-center gap-2">
             <FilterPopover
               label="Ordina"
               value={SORTS.find((s) => s.key === sort)!.label}
