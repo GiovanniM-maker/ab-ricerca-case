@@ -162,7 +162,16 @@ if (argv.includes("--login")) {
   const needsLogin = [];
   for (const s of sources) {
     console.log(`\n→ ${s}`);
-    const { saved, blocks } = await crawl(s, headed);
+    let { saved, blocks } = await crawl(s, headed);
+
+    // In headless questi siti riconoscono il browser anche con la sessione
+    // giusta: e' la firma piu' facile da leggere che ci sia. Con la finestra
+    // visibile spesso passano, quindi prima di arrenderci proviamo cosi'.
+    if (!saved && blocks && !headed) {
+      console.log("  Bloccato in headless: riprovo con la finestra visibile.");
+      ({ saved, blocks } = await crawl(s, true));
+    }
+
     console.log(`  ${saved} pagine salvate${blocks ? `, ${blocks} bloccate` : ""}`);
     if (!saved && blocks) needsLogin.push(s);
   }
