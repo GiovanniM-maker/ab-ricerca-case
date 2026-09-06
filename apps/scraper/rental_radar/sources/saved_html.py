@@ -135,6 +135,39 @@ def _attr_blobs(html: str) -> list:
     return out
 
 
+# RentHop non ha JSON da nessuna parte: mette ogni campo in un attributo
+# separato sullo stesso tag (data-latlng, data-price, data-address).
+_TAG_WITH_DATA = re.compile(r"<[a-z][^>]*\sdata-(?:latlng|price|address)[^>]*>", re.I)
+_ONE_ATTR = re.compile(r'data-([\w-]+)\s*=\s*"([^"]*)"')
+
+
+def _tag_attrs(html: str) -> list[dict]:
+    """Annunci ricavati dagli attributi data-* di uno stesso tag.
+
+    I pezzi possono stare su tag diversi della stessa scheda (le coordinate
+    sul marcatore della mappa, il prezzo sulla card), percio' uniamo quelli
+    che dichiarano lo stesso identificativo.
+    """
+    from html import unescape
+
+    by_id: dict[str, dict] = {}
+    loose: list[dict] = []
+    for tag in _TAG_WITH_DATA.findall(html):
+        d = {k.lower(): unescape(v) for k, v in _ONE_ATTR.findall(tag)}
+        if not d:
+            continue
+        latlng = d.pop("latlng", "")
+        if "," in latlng:
+            a, b = latlng.split(",")[:2]
+            d["latitude"], d["longitude"] = a.strip(), b.strip()
+        key = d.get("list-id") or d.get("listing-id") or d.get("alias") or d.get("address")
+        if key:
+            by_id.setdefault(key, {}).update(d)
+        else:
+            loose.append(d)
+    return list(by_id.values()) + loose
+
+
 def _blobs(html: str) -> list:
     """Tutti i JSON plausibili dentro i tag <script> della pagina."""
     out = []
@@ -283,7 +316,10 @@ def _num(v) -> float | None:
     if isinstance(v, (int, float)):
         return float(v)
     if isinstance(v, str):
-        m = re.search(r"\d[\d,]*(?:\.\d+)?", v)
+        # Il segno meno va incluso: le longitudini di New York sono tutte
+        # negative, e senza questo "-73.99" diventava +73.99, cioe' Pechino.
+        # Non emergeva finche' i numeri arrivavano gia' numerici dal JSON.
+        m = re.search(r"-?\d[\d,]*(?:\.\d+)?", v)
         if m:
             try:
                 return float(m.group(0).replace(",", ""))
@@ -433,6 +469,7 @@ def fetch_listings(source: str) -> list[Listing]:
         raw: list[dict] = []
         for blob in _blobs(html) + _attr_blobs(html):
             _walk(blob, raw)
+        raw += _tag_attrs(html)
         # Next.js App Router spedisce i dati a pezzi via self.__next_f: li
         # ricomponiamo e ci cerchiamo dentro gli oggetti con coordinate.
         flight = _flight(html)
@@ -513,6 +550,7 @@ def _inspect(source: str) -> None:
         found: list[dict] = []
         for b in blobs:
             _walk(b, found)
+        found += _tag_attrs(html)
         flight = _flight(html)
         if flight:
             found += _objects_near(flight, ('"latitude"', '"lat"'))
@@ -524,5 +562,32 @@ def _inspect(source: str) -> None:
             print(f"    campi: {', '.join(keys)}")
 
 
+def _sample(source: str, n: int = 2) -> None:
+    """Stampa per intero i primi oggetti trovati: quando l'estrazione da zero
+    senza un errore, il modo piu' rapido per capire perche' e' guardarli."""
+    folder = PAGES / source
+    for f in sorted(folder.glob("*.html")):
+        html = f.read_text("utf-8", "replace")
+        if len(html) < 20_000:
+            continue
+        found: list[dict] = []
+        for b in _blobs(html) + _attr_blobs(html):
+            _walk(b, found)
+        found += _tag_attrs(html)
+        if not found:
+            flight = _flight(html)
+            found = _objects_near(flight or html, ('"latitude"',))
+        print(f"\n=== {f.name}: {len(found)} oggetti ===")
+        for d in found[:n]:
+            print(json.dumps(d, ensure_ascii=False)[:1200])
+            print(f"  -> coords={_coords(d)}  prezzo={_price(d)}")
+        return
+    print("Nessuna pagina utilizzabile.")
+
+
 if __name__ == "__main__":
-    _inspect(sys.argv[1] if len(sys.argv) > 1 else "streeteasy")
+    arg = sys.argv[1] if len(sys.argv) > 1 else "streeteasy"
+    if "--sample" in sys.argv:
+        _sample(arg)
+    else:
+        _inspect(arg)
