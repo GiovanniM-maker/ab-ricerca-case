@@ -93,14 +93,23 @@ if [ "$HAVE_NODE" = "1" ]; then
     npm install --silent && npx playwright install chromium
   fi
   rm -f .needs-login
-  # Dritti al Chrome vero per TUTTI e quattro. Provare prima con Playwright su
-  # siti che sappiamo riconoscerlo e' solo tempo perso: quando serve una
-  # verifica il crawl porta avanti la finestra, avvisa e riprova da solo.
-  notify "Flatiron Radar" "Apro Chrome per StreetEasy, Zillow, Apartments e RentHop. Se chiede una verifica ti avviso."
-  if ! node fetch-cdp.mjs --all; then
-    warn "Chrome non disponibile: ripiego su Playwright"
-    node fetch.mjs --all || true
-  fi
+  # Niente browser pilotati: PerimeterX e DataDome riconoscono un Chrome
+  # aperto al debug remoto, al punto che li' dentro il "press and hold" non
+  # passa nemmeno facendolo a mano. L'estensione gira nel Chrome normale,
+  # non apre porte e non pilota niente: non c'e' nulla da riconoscere.
+  python3 "$ROOT/tools/collector.py" --once &
+  COLLECTOR=$!
+  sleep 2
+  notify "Flatiron Radar" "Apri Chrome e clicca l'icona Flatiron Radar per StreetEasy, Zillow, Apartments e RentHop."
+  echo "  In attesa dell'estensione (fino a 25 minuti)…"
+  echo "  → apri Chrome, clicca l'icona Flatiron Radar, poi «Scarica le case»"
+  # Aspettiamo che finisca, ma non per sempre: se oggi non ti va, il crawl
+  # pubblica lo stesso quello che le fonti aperte hanno dato.
+  ( sleep 1500; kill "$COLLECTOR" 2>/dev/null ) &
+  TIMER=$!
+  wait "$COLLECTOR" 2>/dev/null
+  kill "$TIMER" 2>/dev/null
+
   for s in streeteasy zillow apartments renthop; do
     [ -d "pages/$s" ] || NEEDS_LOGIN="$NEEDS_LOGIN $s"
   done

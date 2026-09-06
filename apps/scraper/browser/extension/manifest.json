@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Flatiron Radar",
+  "version": "1.0",
+  "description": "Salva le pagine di ricerca delle case dal TUO browser, senza automazioni da nascondere.",
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": [
+    "https://streeteasy.com/*",
+    "https://www.zillow.com/*",
+    "https://www.apartments.com/*",
+    "https://www.renthop.com/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Flatiron Radar" }
+}

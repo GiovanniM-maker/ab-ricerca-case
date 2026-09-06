@@ -4,7 +4,7 @@
   "streeteasy": {
     "loginUrl": "https://streeteasy.com/login",
     "pageParam": "page",
-    "pages": 5,
+    "pages": 3,
     "searches": [
       "https://streeteasy.com/for-rent/flatiron",
       "https://streeteasy.com/for-rent/chelsea",
@@ -28,7 +28,7 @@
   "zillow": {
     "loginUrl": "https://www.zillow.com/user/acct/login",
     "pageParam": "page",
-    "pages": 4,
+    "pages": 3,
     "searches": [
       "https://www.zillow.com/new-york-ny/rentals/",
       "https://www.zillow.com/brooklyn-new-york-ny/rentals/",
@@ -42,7 +42,7 @@
     "loginUrl": "https://www.apartments.com/",
     "pageParam": null,
     "pathPage": "/{n}/",
-    "pages": 4,
+    "pages": 3,
     "searches": [
       "https://www.apartments.com/new-york-ny/",
       "https://www.apartments.com/brooklyn-ny/",
@@ -53,7 +53,7 @@
   "renthop": {
     "loginUrl": "https://www.renthop.com/",
     "pageParam": "page",
-    "pages": 4,
+    "pages": 3,
     "searches": [
       "https://www.renthop.com/apartments-for-rent/manhattan-new-york-ny",
       "https://www.renthop.com/apartments-for-rent/brooklyn-new-york-ny"

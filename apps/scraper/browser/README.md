@@ -58,7 +58,39 @@ python3 -m rental_radar.run --source streeteasy
 Oppure lascia fare tutto a `bash crawl-all.sh`: se trova `pages/<sito>/` lo
 include da solo, altrimenti lo salta senza lamentarsi.
 
-## Quando anche così bloccano (piano B: Chrome vero)
+## Il modo che funziona: l'estensione
+
+PerimeterX e DataDome riconoscono un Chrome aperto al debug remoto. Non è una
+questione di impronte da limare: dentro quella finestra il "press and hold" non
+passa **nemmeno facendolo a mano**. La porta che serve per pilotarlo è la stessa
+che ci fa scoprire.
+
+L'estensione gira nel Chrome normale: non apre porte, non pilota niente
+dall'esterno. Apre schede come faresti tu e legge quello che c'è a schermo. Non
+c'è niente da riconoscere perché non c'è nessuna automazione.
+
+### Installarla (una volta sola)
+
+1. Chrome → `chrome://extensions`
+2. Attiva **Modalità sviluppatore** (in alto a destra)
+3. **Carica non pacchettizzata** → scegli `apps/scraper/browser/extension`
+
+### Usarla
+
+`crawl.command` avvia da solo il raccoglitore e ti manda una notifica. Quando
+arriva: clicca l'icona **Flatiron Radar** in Chrome → **Scarica le case**.
+
+Si apre una scheda che percorre le ricerche. Se compare una verifica, risolvila
+lì: l'estensione se ne accorge e riprende da sola. Puoi chiudere il popup, il
+lavoro va avanti.
+
+A mano, senza il crawl completo:
+
+```bash
+python3 tools/collector.py
+```
+
+## Il piano B che non ha funzionato (Chrome col debug remoto)
 
 Playwright, anche quando avvia il Chrome installato, lo lancia con una trentina
 di switch che nessun utente usa mai. Quella lista è essa stessa un'impronta, e

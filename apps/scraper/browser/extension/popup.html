@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8" />
+<style>
+  body {
+    width: 260px;
+    margin: 0;
+    padding: 14px;
+    font: 13px/1.45 -apple-system, system-ui, sans-serif;
+    background: #171717;
+    color: #e5e5e5;
+  }
+  h1 { margin: 0 0 2px; font-size: 14px; }
+  p { margin: 0 0 12px; color: #a3a3a3; font-size: 12px; }
+  button {
+    width: 100%; padding: 9px; border: 0; border-radius: 8px;
+    font: inherit; font-weight: 600; cursor: pointer;
+  }
+  #go { background: #fff; color: #171717; }
+  #stop { margin-top: 6px; background: #3f3f46; color: #e5e5e5; }
+  #state {
+    margin-top: 12px; padding: 9px; border-radius: 8px;
+    background: #262626; color: #d4d4d4; font-size: 12px; min-height: 17px;
+  }
+</style>
+<h1>Flatiron Radar</h1>
+<p>Apre le ricerche in una scheda e le salva. Se compare una verifica, risolvila lì: riprende da solo.</p>
+<button id="go">Scarica le case</button>
+<button id="stop">Ferma</button>
+<div id="state">Pronto.</div>
+<script src="popup.js"></script>
