@@ -79,7 +79,7 @@ FURN_KEYS = ("furnished", "isfurnished")
 # 1. tirare fuori ogni JSON annidato nella pagina
 # --------------------------------------------------------------------------
 
-def _balanced(s: str, start: int) -> str | None:
+def _balanced(s: str, start: int, max_len: int = 8_000_000) -> str | None:
     """Ritaglia l'oggetto/array JSON che inizia a `start`, contando le parentesi.
 
     Salta virgolette e escape, altrimenti una graffa dentro una stringa
@@ -90,7 +90,7 @@ def _balanced(s: str, start: int) -> str | None:
     depth = 0
     in_str = False
     esc = False
-    for i in range(start, min(len(s), start + 8_000_000)):
+    for i in range(start, min(len(s), start + max_len)):
         c = s[i]
         if in_str:
             if esc:
@@ -149,6 +149,9 @@ def _blobs(html: str) -> list:
     return out
 
 
+# Quanto lontano risalire per trovare l'oggetto che racchiude una chiave.
+WINDOW = 20_000
+
 _NEXT_F = re.compile(r'self\.__next_f\.push\(\s*\[\s*1\s*,\s*"')
 
 
@@ -173,14 +176,49 @@ def _flight(html: str) -> str:
 
 
 def _objects_near(text: str, needles: tuple[str, ...]) -> list[dict]:
-    """Oggetti JSON che contengono una delle chiavi date, ovunque si trovino.
+    """Oggetti-annuncio individuati a partire da una chiave, ovunque si trovino.
 
     Il payload ricomposto non e' JSON valido nel suo insieme (e' una sequenza
-    di frammenti numerati), quindi non si puo' caricare tutto e poi cercare.
-    Partiamo invece dalla chiave e risaliamo alla graffa che la racchiude.
+    di frammenti numerati), quindi non si puo' caricare tutto e poi navigarlo:
+    si parte dalla chiave e si risale alla graffa che la racchiude.
+
+    E si risale piu' di un livello. Le coordinate stanno spesso in un oggetto
+    annidato tutto loro ({"latitude":.., "longitude":..}) mentre prezzo,
+    indirizzo e link sono nel genitore: fermandosi al primo si otterrebbero
+    due numeri e nient'altro. Saliamo finche' non troviamo l'oggetto che ha
+    anche un prezzo, e se non c'e' teniamo il piu' interno.
     """
     out: list[dict] = []
     spans: list[tuple[int, int]] = []
+
+    def enclosing(i: int) -> tuple[dict, tuple[int, int]] | None:
+        # Finestra stretta di proposito: un oggetto-annuncio sta in pochi KB,
+        # e senza un tetto ogni tentativo andato storto scandirebbe mezzo
+        # payload. Con 79 pagine da mezzo mega la differenza e' fra due minuti
+        # e un'ora.
+        j = i
+        limit = max(0, i - WINDOW)
+        best = None
+        for _ in range(8):
+            j = text.rfind("{", limit, j)
+            if j < 0:
+                break
+            frag = _balanced(text, j, WINDOW)
+            if not frag or j + len(frag) <= i:
+                continue  # non racchiude la chiave: sali ancora
+            try:
+                obj = json.loads(frag)
+            except ValueError:
+                continue
+            if not isinstance(obj, dict):
+                continue
+            span = (j, j + len(frag))
+            if best is None:
+                best = (obj, span)  # ripiego: il piu' interno
+            if _price(obj) is not None:
+                return obj, span
+        return best
+
     for needle in needles:
         start = 0
         while True:
@@ -190,22 +228,10 @@ def _objects_near(text: str, needles: tuple[str, ...]) -> list[dict]:
             start = i + len(needle)
             if any(a <= i < b for a, b in spans):
                 continue  # gia' dentro un oggetto che abbiamo preso
-            j = i
-            limit = max(0, i - 20_000)
-            while True:
-                j = text.rfind("{", limit, j)
-                if j < 0:
-                    break
-                frag = _balanced(text, j)
-                if frag and j + len(frag) > i:
-                    try:
-                        obj = json.loads(frag)
-                    except ValueError:
-                        break
-                    if isinstance(obj, dict):
-                        out.append(obj)
-                        spans.append((j, j + len(frag)))
-                    break
+            hit = enclosing(i)
+            if hit:
+                out.append(hit[0])
+                spans.append(hit[1])
     return out
 
 
@@ -273,13 +299,17 @@ def _coords(d: dict) -> tuple[float, float] | None:
     lat = _num(_pick(d, LAT_KEYS))
     lng = _num(_pick(d, LNG_KEYS))
     if lat is None or lng is None:
-        for key in ("latlong", "latlng", "location", "coordinates", "geo", "point"):
-            inner = _pick(d, (key,))
-            if isinstance(inner, dict):
-                lat = _num(_pick(inner, LAT_KEYS))
-                lng = _num(_pick(inner, LNG_KEYS))
-                if lat is not None and lng is not None:
-                    break
+        # Il sotto-oggetto con le coordinate si chiama in mille modi
+        # (latLong, geo, geoPoint, coordinates...). Invece di elencarli,
+        # guardiamo dentro ogni sotto-oggetto: le coordinate le riconosciamo
+        # comunque dai nomi lat/lng, che quelli non cambiano.
+        for inner in d.values():
+            if not isinstance(inner, dict):
+                continue
+            lat = _num(_pick(inner, LAT_KEYS))
+            lng = _num(_pick(inner, LNG_KEYS))
+            if lat is not None and lng is not None:
+                break
     if lat is None or lng is None:
         return None
     s, n, w, e = NYC
@@ -382,7 +412,13 @@ def fetch_listings(source: str) -> list[Listing]:
             raw += _objects_near(html, ('"latitude"',))
 
         for d in raw:
-            lat, lng = _coords(d)  # type: ignore[misc]
+            # _objects_near risale ai genitori e puo' restituire oggetti che
+            # non hanno ne' coordinate ne' prezzo (il centro della mappa, per
+            # dire): qui si scarta, non si da' per scontato.
+            coords = _coords(d)
+            if coords is None:
+                continue
+            lat, lng = coords
             price = _price(d)
             if not price or price < 200 or price > 200_000:
                 continue  # prezzi di vendita o placeholder: non sono affitti
