@@ -47,6 +47,9 @@ LNG_KEYS = ("longitude", "longitude_", "lng", "lon", "long")
 PRICE_KEYS = (
     "price", "unformattedprice", "neteffectiveprice", "monthlyrent", "rent",
     "minrent", "rentprice", "priceforhdp", "listedprice", "askingprice",
+    # Zillow chiama il canone baseRent; Apartments.com, che usa JSON-LD,
+    # mette una forbice (lowPrice/highPrice o "$1,500 - $3,000").
+    "baserent", "lowprice", "minprice", "pricerange", "rentrange",
 )
 BED_KEYS = (
     "bedrooms", "beds", "bedroomcount", "bedcount", "bed", "numbedrooms",
@@ -109,6 +112,27 @@ def _balanced(s: str, start: int, max_len: int = 8_000_000) -> str | None:
             if depth == 0:
                 return s[start : i + 1]
     return None
+
+
+# Attributi HTML che contengono JSON: data-listing="{...}". Apartments.com
+# mette li' i suoi annunci, uno per scheda, senza passare da nessuno <script>.
+_DATA_ATTR = re.compile(r'data-[\w-]*\s*=\s*(["\'])(\s*(?:\{|&\#?\w+;\s*\{).*?)\1', re.S)
+
+
+def _attr_blobs(html: str) -> list:
+    """JSON annidato negli attributi data-*, con le entita' HTML sciolte."""
+    from html import unescape
+
+    out = []
+    for _, raw in _DATA_ATTR.findall(html):
+        txt = unescape(raw).strip()
+        if not txt.startswith("{"):
+            continue
+        try:
+            out.append(json.loads(txt))
+        except ValueError:
+            pass
+    return out
 
 
 def _blobs(html: str) -> list:
@@ -283,7 +307,7 @@ def _price(d: dict) -> float | None:
     v = _num(_pick(d, PRICE_KEYS))
     if v is not None:
         return v
-    for key in ("offers", "pricing", "rentrange", "pricerange"):
+    for key in ("offers", "pricing", "rentrange", "pricerange", "mainentity"):
         inner = _pick(d, (key,))
         if isinstance(inner, list) and inner and isinstance(inner[0], dict):
             inner = inner[0]
@@ -291,6 +315,14 @@ def _price(d: dict) -> float | None:
             v = _num(_pick(inner, PRICE_KEYS + ("min", "low")))
             if v is not None:
                 return v
+            # JSON-LD annida ancora: offers.offers[0].price
+            deeper = _pick(inner, ("offers", "itemoffered"))
+            if isinstance(deeper, list) and deeper and isinstance(deeper[0], dict):
+                deeper = deeper[0]
+            if isinstance(deeper, dict):
+                v = _num(_pick(deeper, PRICE_KEYS + ("min", "low")))
+                if v is not None:
+                    return v
     return None
 
 
@@ -399,17 +431,18 @@ def fetch_listings(source: str) -> list[Listing]:
             continue
 
         raw: list[dict] = []
-        for blob in _blobs(html):
+        for blob in _blobs(html) + _attr_blobs(html):
             _walk(blob, raw)
         # Next.js App Router spedisce i dati a pezzi via self.__next_f: li
         # ricomponiamo e ci cerchiamo dentro gli oggetti con coordinate.
         flight = _flight(html)
         if flight:
             raw += _objects_near(flight, ('"latitude"', '"lat"'))
-        # Ultima rete: cerchiamo anche nell'HTML grezzo, per i dati incapsulati
-        # in modi che i due passaggi sopra non coprono.
-        if not raw:
-            raw += _objects_near(html, ('"latitude"',))
+        # Rete di sicurezza sull'HTML grezzo. Girava solo se i passaggi
+        # precedenti non avevano trovato NIENTE, ma su Zillow i blob rendono
+        # una frazione degli annunci: il resto si perdeva in silenzio. I
+        # duplicati non sono un problema, piu' avanti si fondono per URL.
+        raw += _objects_near(html, ('"latitude"',))
 
         for d in raw:
             # _objects_near risale ai genitori e puo' restituire oggetti che
@@ -476,7 +509,7 @@ def _inspect(source: str) -> None:
         if len(html) < 20_000:
             print(f"  {f.name}: {len(html)//1024} KB — muro o pagina vuota, scartata")
             continue
-        blobs = _blobs(html)
+        blobs = _blobs(html) + _attr_blobs(html)
         found: list[dict] = []
         for b in blobs:
             _walk(b, found)
@@ -485,10 +518,10 @@ def _inspect(source: str) -> None:
             found += _objects_near(flight, ('"latitude"', '"lat"'))
         if not found:
             found += _objects_near(html, ('"latitude"',))
-        keys = sorted({k for d in found[:20] for k in d if isinstance(k, str)})
+        keys = sorted({k for d in found[:20] for k in d if isinstance(k, str)})[:40]
         print(f"  {f.name}: {len(html)//1024} KB · {len(blobs)} blob · {len(flight)} B flight · {len(found)} oggetti")
         if found:
-            print(f"    campi: {', '.join(keys[:22])}")
+            print(f"    campi: {', '.join(keys)}")
 
 
 if __name__ == "__main__":
