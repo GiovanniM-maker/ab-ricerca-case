@@ -362,23 +362,25 @@ def _price(d: dict) -> float | None:
     return None
 
 
-def _coords(d: dict) -> tuple[float, float] | None:
-    """Coordinate dell'oggetto, anche annidate in latLong/location/coordinate."""
+def _coords(d: dict, depth: int = 0) -> tuple[float, float] | None:
+    """Coordinate dell'oggetto, cercate anche nei sotto-oggetti.
+
+    Prima guardavamo un solo livello sotto, e non bastava: Apartments.com le
+    mette in mainEntity.geo.latitude, cioe' due livelli piu' in basso, e
+    l'annuncio veniva scartato pur avendo prezzo e indirizzo. I nomi dei
+    contenitori cambiano da un portale all'altro (latLong, geo, geoPoint...),
+    lat e lng no: quindi si scende, senza elencarli.
+    """
     lat = _num(_pick(d, LAT_KEYS))
     lng = _num(_pick(d, LNG_KEYS))
     if lat is None or lng is None:
-        # Il sotto-oggetto con le coordinate si chiama in mille modi
-        # (latLong, geo, geoPoint, coordinates...). Invece di elencarli,
-        # guardiamo dentro ogni sotto-oggetto: le coordinate le riconosciamo
-        # comunque dai nomi lat/lng, che quelli non cambiano.
+        if depth >= 3:
+            return None
         for inner in d.values():
-            if not isinstance(inner, dict):
-                continue
-            lat = _num(_pick(inner, LAT_KEYS))
-            lng = _num(_pick(inner, LNG_KEYS))
-            if lat is not None and lng is not None:
-                break
-    if lat is None or lng is None:
+            if isinstance(inner, dict):
+                got = _coords(inner, depth + 1)
+                if got:
+                    return got
         return None
     s, n, w, e = NYC
     if not (s <= lat <= n and w <= lng <= e):
