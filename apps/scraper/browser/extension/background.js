@@ -14,6 +14,25 @@
 const COLLECTOR = "http://127.0.0.1:8787";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Tiene sveglio il service worker.
+ *
+ * In Manifest V3 Chrome spegne il service worker dopo una trentina di secondi
+ * di inattivita'. Il nostro giro e' fatto quasi solo di attese — 3-7 secondi
+ * fra una pagina e l'altra, fino a venti minuti su una verifica — quindi senza
+ * questo verrebbe ucciso a meta' strada, e le fonti in fondo alla lista
+ * (apartments, renthop) non verrebbero mai raggiunte. Una chiamata a una API
+ * di chrome ogni venti secondi azzera quel timer.
+ */
+let heartbeat = null;
+function keepAlive(on) {
+  if (on && !heartbeat) heartbeat = setInterval(() => chrome.runtime.getPlatformInfo(), 20000);
+  if (!on && heartbeat) {
+    clearInterval(heartbeat);
+    heartbeat = null;
+  }
+}
 const wait = (min, max) => sleep(min + Math.random() * (max - min));
 
 let running = false;
@@ -48,6 +67,7 @@ async function grabHtml(tabId) {
 async function run() {
   if (running) return;
   running = true;
+  keepAlive(true);
   let tab;
   try {
     const targets = await (await fetch(`${COLLECTOR}/targets`)).json();
@@ -56,6 +76,7 @@ async function run() {
     tab = await chrome.tabs.create({ url: "about:blank", active: true });
     let saved = 0;
     let blocked = 0;
+    const okBySource = {};
 
     for (let i = 0; i < targets.length; i++) {
       if (!running) break;
@@ -72,8 +93,10 @@ async function run() {
       );
       const out = await r.json();
 
-      if (out.saved) saved++;
-      else blocked++;
+      if (out.saved) {
+        saved++;
+        okBySource[t.source] = (okBySource[t.source] ?? 0) + 1;
+      } else blocked++;
       await say(
         `${i + 1} / ${targets.length} — ${saved} salvate` +
           (blocked ? `, ${blocked} bloccate` : "")
@@ -93,6 +116,7 @@ async function run() {
           if ((await rr.json()).saved) {
             saved++;
             blocked--;
+            okBySource[t.source] = (okBySource[t.source] ?? 0) + 1;
             break;
           }
         }
@@ -102,11 +126,19 @@ async function run() {
     }
 
     await fetch(`${COLLECTOR}/done`, { method: "POST" }).catch(() => {});
-    await say(`Finito: ${saved} pagine salvate${blocked ? `, ${blocked} no` : ""}.`);
+    // Il totale non basta: "60 salvate" nasconde una fonte a zero.
+    const perSource = {};
+    for (const t of targets) perSource[t.source] = perSource[t.source] ?? 0;
+    const vuote = Object.keys(perSource).filter((s) => !okBySource[s]);
+    await say(
+      `Finito: ${saved} salvate${blocked ? `, ${blocked} no` : ""}` +
+        (vuote.length ? ` — a zero: ${vuote.join(", ")}` : "")
+    );
   } catch (e) {
     await say(`Errore: ${e.message}. Il raccoglitore e' avviato?`);
   } finally {
     running = false;
+    keepAlive(false);
     if (tab) chrome.tabs.remove(tab.id).catch(() => {});
   }
 }
