@@ -160,6 +160,11 @@ def _tag_attrs(html: str) -> list[dict]:
         if "," in latlng:
             a, b = latlng.split(",")[:2]
             d["latitude"], d["longitude"] = a.strip(), b.strip()
+        # Le linguette di filtro dei quartieri hanno anche loro delle
+        # coordinate, ma non sono annunci: si riconoscono perche' vivono
+        # dentro la navigazione (child-div/parents) e non hanno prezzo.
+        if ("child-div" in d or "parents" in d) and "price" not in d:
+            continue
         key = d.get("list-id") or d.get("listing-id") or d.get("alias") or d.get("address")
         if key:
             by_id.setdefault(key, {}).update(d)
@@ -579,6 +584,10 @@ def _sample(source: str, n: int = 2) -> None:
         if not found:
             flight = _flight(html)
             found = _objects_near(flight or html, ('"latitude"',))
+        # Prima quelli con un prezzo: sono gli annunci. Senza questo si finisce
+        # a guardare le linguette di navigazione, che hanno le coordinate ma
+        # non sono case — e a dedurre la forma sbagliata.
+        found.sort(key=lambda d: _price(d) is None)
         print(f"\n=== {f.name}: {len(found)} oggetti ===")
         for d in found[:n]:
             print(json.dumps(d, ensure_ascii=False)[:1200])
