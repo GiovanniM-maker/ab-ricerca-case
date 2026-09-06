@@ -22,7 +22,8 @@
  */
 
 import { existsSync } from "node:fs";
-import { spawn } from "node:child_process";
+import { spawn, execFileSync } from "node:child_process";
+import { homedir } from "node:os";
 import { join } from "node:path";
 import readline from "node:readline/promises";
 import {
@@ -32,7 +33,46 @@ import {
 
 const PORT = 9222;
 const PROFILE = join(HERE, ".chrome-profile");
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
+// Chrome non sta sempre in /Applications: puo' essere nella cartella utente,
+// o essere una variante (Beta, Brave, Edge — tutte Chromium, tutte con lo
+// stesso debug remoto). Cerchiamolo invece di dare per scontato un percorso.
+const CANDIDATES = [
+  ["Google Chrome", "/Applications/Google Chrome.app"],
+  ["Google Chrome", join(homedir(), "Applications/Google Chrome.app")],
+  ["Google Chrome Beta", "/Applications/Google Chrome Beta.app"],
+  ["Google Chrome Canary", "/Applications/Google Chrome Canary.app"],
+  ["Brave Browser", "/Applications/Brave Browser.app"],
+  ["Microsoft Edge", "/Applications/Microsoft Edge.app"],
+  ["Chromium", "/Applications/Chromium.app"],
+];
+
+function findChrome() {
+  if (process.env.CHROME_PATH) return process.env.CHROME_PATH;
+
+  for (const [bin, app] of CANDIDATES) {
+    const exe = join(app, "Contents/MacOS", bin);
+    if (existsSync(exe)) return exe;
+  }
+
+  // Ultima carta: lo chiediamo a Spotlight, che lo trova ovunque sia.
+  for (const id of ["com.google.Chrome", "com.brave.Browser", "com.microsoft.edgemac"]) {
+    try {
+      const app = execFileSync("mdfind", [`kMDItemCFBundleIdentifier == '${id}'`], {
+        encoding: "utf8",
+      })
+        .split("\n")[0]
+        .trim();
+      if (!app) continue;
+      const bin = app.split("/").pop().replace(/\.app$/, "");
+      const exe = join(app, "Contents/MacOS", bin);
+      if (existsSync(exe)) return exe;
+    } catch {
+      /* mdfind assente o indicizzazione spenta: passiamo oltre */
+    }
+  }
+  return null;
+}
 
 async function cdpAlive() {
   try {
@@ -49,13 +89,17 @@ async function ensureChrome() {
     console.log(`Mi collego al Chrome gia' in ascolto sulla porta ${PORT}.`);
     return true;
   }
-  if (!existsSync(CHROME)) {
-    console.log(`Non trovo Google Chrome in:\n  ${CHROME}\nInstallalo, oppure usa fetch.mjs.`);
+  const chrome = findChrome();
+  if (!chrome) {
+    console.log("Non trovo nessun browser Chromium. Ho guardato in:");
+    for (const [, app] of CANDIDATES) console.log(`  ${app}`);
+    console.log("\nSe ce l'hai altrove, indicamelo:");
+    console.log('  CHROME_PATH="/percorso/Chrome.app/Contents/MacOS/Google Chrome" node fetch-cdp.mjs streeteasy');
     return false;
   }
-  console.log("Avvio Chrome col debug remoto…");
+  console.log(`Avvio col debug remoto: ${chrome}`);
   spawn(
-    CHROME,
+    chrome,
     [
       `--remote-debugging-port=${PORT}`,
       `--user-data-dir=${PROFILE}`,
