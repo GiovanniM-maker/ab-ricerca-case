@@ -9,21 +9,23 @@ import { TIERS, OUT_META } from "@/lib/types";
 import type { IsochroneSet } from "@/lib/geo";
 import type { ScoredListing } from "@/lib/listings";
 
+// CARTO ha iniziato a chiedere una chiave e serve mattonelle con scritto
+// "API KEY REQUIRED" sopra tutta la citta'. Esri Dark Gray e' scuro di suo e
+// non chiede chiavi, quindi resta nello spirito "tutto gratuito" del progetto.
 const DARK_STYLE: maplibregl.StyleSpecification = {
   version: 8,
   sources: {
-    carto: {
+    base: {
       type: "raster",
+      // Attenzione all'ordine: Esri usa {z}/{y}/{x}, non {z}/{x}/{y}.
       tiles: [
-        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-        "https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-        "https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+        "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
       ],
       tileSize: 256,
-      attribution: "© OpenStreetMap · © CARTO",
+      attribution: "© Esri · © OpenStreetMap",
     },
   },
-  layers: [{ id: "carto", type: "raster", source: "carto" }],
+  layers: [{ id: "base", type: "raster", source: "base" }],
 };
 
 type Props = {
@@ -60,6 +62,16 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
   const readyRef = useRef(false);
   const onSelectRef = useRef(onSelect);
   onSelectRef.current = onSelect;
+  // I gestori della mappa vivono fuori dal ciclo di React: leggono da qui per
+  // avere sempre l'ultimo valore invece di quello catturato al montaggio.
+  const isoRef = useRef(iso);
+  isoRef.current = iso;
+  const listingsRef = useRef(listings);
+  listingsRef.current = listings;
+  const selectedRef = useRef(selectedId);
+  selectedRef.current = selectedId;
+  const applyRef = useRef<(() => void) | null>(null);
+  const retryRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -72,15 +84,37 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
     mapRef.current = map;
     map.addControl(new maplibregl.NavigationControl(), "top-right");
 
-    map.on("load", () => {
-      // isocrone (dal più largo al più stretto)
-      (
-        [
-          ["transit45", iso.transit45],
-          ["transit30", iso.transit30],
-          ["walk30", iso.walk30],
-        ] as const
-      ).forEach(([id, feat]) => {
+    /**
+     * Crea le sorgenti la prima volta, poi si limita ad aggiornarle.
+     *
+     * Prima le sorgenti nascevano dentro map.on("load") con i valori catturati
+     * al montaggio, cioe' vuoti: se i dati arrivavano PRIMA che la mappa fosse
+     * pronta, l'effetto di aggiornamento usciva subito (mappa non pronta) e poi
+     * il load ci metteva dentro l'array vuoto. Nessuno rimediava piu', e la
+     * mappa restava senza pallini. Le isocrone stavano anche peggio: per loro
+     * un effetto di aggiornamento non esisteva proprio.
+     */
+    const applyData = () => {
+      const map = mapRef.current;
+      if (!map) return;
+      try {
+        addOrUpdate(map);
+      } catch {
+        // "Style is not done loading": lo stile non e' ancora pronto.
+        // Non e' un errore da segnalare, e' solo troppo presto: ci riprova
+        // il tentativo periodico qui sotto.
+      }
+    };
+
+    const addOrUpdate = (map: maplibregl.Map) => {
+
+      ([
+        ["transit45", isoRef.current.transit45],
+        ["transit30", isoRef.current.transit30],
+        ["walk30", isoRef.current.walk30],
+      ] as const).forEach(([id, feat]) => {
+        const src = map.getSource(id) as maplibregl.GeoJSONSource | undefined;
+        if (src) return src.setData(fc(feat));
         map.addSource(id, { type: "geojson", data: fc(feat) });
         map.addLayer({
           id: `${id}-fill`,
@@ -96,45 +130,32 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
         });
       });
 
-      // annunci
-      map.addSource("listings", { type: "geojson", data: listingsFC(listings) });
+      const pins = map.getSource("listings") as maplibregl.GeoJSONSource | undefined;
+      if (pins) return pins.setData(listingsFC(listingsRef.current));
+
+      map.addSource("listings", { type: "geojson", data: listingsFC(listingsRef.current) });
       map.addLayer({
         id: "listings-circles",
         type: "circle",
         source: "listings",
         paint: {
-          "circle-radius": [
-            "case",
-            ["==", ["get", "id"], selectedId ?? "__none__"],
-            13,
-            7,
-          ],
+          "circle-radius": ["case", ["==", ["get", "id"], selectedRef.current ?? "__none__"], 13, 7],
           "circle-color": [
             "case",
-            ["==", ["get", "id"], selectedId ?? "__none__"],
+            ["==", ["get", "id"], selectedRef.current ?? "__none__"],
             "#f59e0b",
             ["get", "color"],
           ],
-          "circle-stroke-width": [
-            "case",
-            ["==", ["get", "id"], selectedId ?? "__none__"],
-            3,
-            2,
-          ],
+          "circle-stroke-width": ["case", ["==", ["get", "id"], selectedRef.current ?? "__none__"], 3, 2],
           "circle-stroke-color": [
             "case",
-            ["==", ["get", "id"], selectedId ?? "__none__"],
+            ["==", ["get", "id"], selectedRef.current ?? "__none__"],
             "#ffffff",
             "#0a0a0a",
           ],
         },
         layout: {
-          "circle-sort-key": [
-            "case",
-            ["==", ["get", "id"], selectedId ?? "__none__"],
-            1,
-            0,
-          ],
+          "circle-sort-key": ["case", ["==", ["get", "id"], selectedRef.current ?? "__none__"], 1, 0],
         },
       });
 
@@ -148,17 +169,41 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
       map.on("mouseleave", "listings-circles", () => {
         map.getCanvas().style.cursor = "";
       });
+    };
+    applyRef.current = applyData;
 
+    // MapLibre considera lo stile "caricato" solo quando lo sono anche le
+    // mattonelle dello sfondo. Agganciando i pallini a quel momento, uno
+    // sfondo lento o irraggiungibile faceva sparire le case: i dati sono
+    // nostri e locali, non devono dipendere da un CDN di mappe. Riproviamo
+    // finche' non entrano, e ci fermiamo appena ci siamo riusciti.
+    const retry = setInterval(() => {
+      applyData();
+      if (mapRef.current?.getLayer("listings-circles")) clearInterval(retry);
+    }, 300);
+    retryRef.current = retry;
+
+    // Non ci appendiamo a un solo evento. "load" e' quello canonico, ma se
+    // per qualsiasi motivo non scatta (mattonelle che non arrivano, stile
+    // lento) la mappa resterebbe vuota per sempre. applyData e' idempotente:
+    // guarda se la sorgente c'e' gia' e nel caso si limita ad aggiornarla,
+    // quindi chiamarla piu' volte non costa nulla.
+    map.on("styledata", applyData);
+    map.on("idle", applyData);
+
+    map.on("load", () => {
       // destinazione (punto di ancoraggio)
       new maplibregl.Marker({ color: "#dc2626" })
         .setLngLat([FLATIRON.lng, FLATIRON.lat])
         .setPopup(new maplibregl.Popup().setText(FLATIRON.label))
         .addTo(map);
 
+      applyData();
       readyRef.current = true;
     });
 
     return () => {
+      if (retryRef.current) clearInterval(retryRef.current);
       map.remove();
       mapRef.current = null;
       readyRef.current = false;
@@ -166,13 +211,11 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // aggiorna i pin quando cambiano gli annunci
+  // Ripassa i dati quando arrivano. Se la mappa non e' ancora pronta non
+  // serve fare nulla: al termine del caricamento chiama lei la stessa funzione.
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !readyRef.current) return;
-    const src = map.getSource("listings") as maplibregl.GeoJSONSource | undefined;
-    src?.setData(listingsFC(listings));
-  }, [listings]);
+    applyRef.current?.();
+  }, [iso, listings]);
 
   // evidenzia + centra il selezionato
   useEffect(() => {
