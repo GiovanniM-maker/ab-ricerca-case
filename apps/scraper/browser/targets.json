@@ -1,4 +1,5 @@
 {
+  "_renthop": "Tolto: negli attributi data-* ha solo pezzi di interfaccia (il filtro quartieri ha le coordinate, il filtro prezzo ha i prezzi). Gli annunci stanno nel markup come testo, e inseguirli con selettori CSS sarebbe l'unica cosa fragile in tutta la pipeline. Sei pagine su 78: non vale.",
   "_nota": "Le ricerche da scaricare col browser vero. Modificale pure: sono URL normali, aprili prima nel browser per controllare che diano risultati. `pages` = quante pagine di risultati scaricare.",
 
   "streeteasy": {
@@ -47,16 +48,6 @@
       "https://www.apartments.com/new-york-ny/",
       "https://www.apartments.com/brooklyn-ny/",
       "https://www.apartments.com/jersey-city-nj/"
-    ]
-  },
-
-  "renthop": {
-    "loginUrl": "https://www.renthop.com/",
-    "pageParam": "page",
-    "pages": 3,
-    "searches": [
-      "https://www.renthop.com/apartments-for-rent/manhattan-new-york-ny",
-      "https://www.renthop.com/apartments-for-rent/brooklyn-new-york-ny"
     ]
   }
 }

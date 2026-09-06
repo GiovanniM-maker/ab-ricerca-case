@@ -79,6 +79,7 @@ def _to_public(item: dict) -> dict:
         "lat": item["lat"],
         "lng": item["lng"],
         "photos": item.get("photos", []),
+        "amenities": item.get("amenities", []),
         "sources": [item.get("source")],
     }
 
@@ -103,6 +104,13 @@ def _merge(into: dict, other: dict) -> None:
         into["furnished"] = other.get("furnished")
     if not into.get("photos") and other.get("photos"):
         into["photos"] = other["photos"]
+    # I servizi si sommano invece di sostituirsi: fonti diverse ne elencano
+    # pezzi diversi dello stesso edificio, e tenerne una sola sarebbe uno spreco.
+    if other.get("amenities"):
+        seen = {a.lower() for a in into.get("amenities", [])}
+        into["amenities"] = into.get("amenities", []) + [
+            a for a in other["amenities"] if a.lower() not in seen
+        ]
     src = other.get("source")
     if src and src not in into["sources"]:
         into["sources"].append(src)

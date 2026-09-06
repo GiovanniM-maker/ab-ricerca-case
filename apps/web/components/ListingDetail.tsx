@@ -112,6 +112,27 @@ export default function ListingDetail({ listing, onClose }: Props) {
             )}
           </div>
 
+          {/* Servizi dell'edificio: la portineria che ritira i pacchi pesa nel
+              punteggio, quindi va anche mostrata — un numero che sale senza
+              dire perche' non serve a decidere. */}
+          {!!listing.amenities?.length && (
+            <div>
+              <div className="mb-1.5 text-[11px] uppercase tracking-wide text-neutral-500">
+                Servizi
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {listing.amenities.slice(0, 12).map((a) => (
+                  <span
+                    key={a}
+                    className="rounded-full border border-neutral-700 px-2.5 py-1 text-xs text-neutral-300"
+                  >
+                    {a}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="rounded-xl border border-neutral-800 p-3">
             <div className="flex items-center justify-between text-sm">
               <span className="font-medium text-neutral-300">Convenienza</span>

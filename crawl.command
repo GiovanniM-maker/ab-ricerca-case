@@ -119,12 +119,12 @@ if [ "$HAVE_NODE" = "1" ]; then
   wait "$COLLECTOR" 2>/dev/null
   kill "$TIMER" 2>/dev/null
 
-  for s in streeteasy zillow apartments renthop; do
+  for s in streeteasy zillow apartments; do
     [ -d "pages/$s" ] || NEEDS_LOGIN="$NEEDS_LOGIN $s"
   done
 
   cd "$ROOT/apps/scraper" || exit 1
-  for s in streeteasy zillow apartments renthop; do
+  for s in streeteasy zillow apartments; do
     [ -d "browser/pages/$s" ] && python3 -m rental_radar.run --source "$s" 2>&1 | tail -2
   done
 else
@@ -135,7 +135,7 @@ fi
 step "4/6  Fondo le fonti"
 cd "$ROOT/apps/scraper" || exit 1
 SNAPS=""
-for s in apartmentadvisor trulia craigslist streeteasy zillow apartments renthop; do
+for s in apartmentadvisor trulia craigslist streeteasy zillow apartments; do
   [ -f "${s}.snapshot.json" ] && SNAPS="$SNAPS ${s}.snapshot.json"
 done
 if [ -z "$SNAPS" ]; then

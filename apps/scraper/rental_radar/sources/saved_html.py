@@ -76,6 +76,7 @@ _PATH = re.compile(r"^/[a-z0-9][\w\-/.]{5,}$", re.I)
 # Un indirizzo americano: numero civico seguito da parole. "310 W 20 St".
 _ADDR = re.compile(r"^\d+[\w\-]*\s+[A-Za-z]")
 FURN_KEYS = ("furnished", "isfurnished")
+AMENITY_KEYS = ("amenityfeature", "amenities", "amenity", "features", "buildingamenities")
 
 
 # --------------------------------------------------------------------------
@@ -424,6 +425,39 @@ def _photos(d: dict) -> list[str]:
     return [u for u in urls if u.startswith("http")][:5]
 
 
+def _amenities(d: dict, depth: int = 0) -> list[str]:
+    """Servizi dell'edificio, cercati anche nei sotto-oggetti.
+
+    Apartments.com li espone come amenityFeature: una lista di
+    {"name": "Fitness Center", "value": "true"} dentro mainEntity. E' l'unica
+    fonte che ce li da', ed e' quella che finalmente rende vivo il 10% del
+    punteggio dedicato ai servizi.
+    """
+    v = _pick(d, AMENITY_KEYS)
+    out: list[str] = []
+    if isinstance(v, list):
+        for x in v:
+            if isinstance(x, str):
+                out.append(x)
+            elif isinstance(x, dict):
+                # value "false" significa che il servizio NON c'e'
+                if str(x.get("value", "true")).lower() in ("false", "0", "no"):
+                    continue
+                name = _pick(x, ("name", "label", "title"))
+                if isinstance(name, str):
+                    out.append(name)
+    elif isinstance(v, str):
+        out = [p.strip() for p in re.split(r"[,;|]", v) if p.strip()]
+
+    if not out and depth < 3:
+        for inner in d.values():
+            if isinstance(inner, dict):
+                out = _amenities(inner, depth + 1)
+                if out:
+                    break
+    return out[:25]
+
+
 def _bed_type(d: dict) -> str | None:
     n = _num(_pick(d, BED_KEYS))
     if n is None:
@@ -536,6 +570,7 @@ def fetch_listings(source: str) -> list[Listing]:
                 lat=lat,
                 lng=lng,
                 photos=_photos(d),
+                amenities=_amenities(d),
             )
 
     if skipped:

@@ -22,6 +22,9 @@ class Listing:
     tier: str | None = None           # assegnato da classify()
     travel_minutes: int | None = None
     photos: list[str] = field(default_factory=list)
+    # Servizi dell'edificio (portineria, ascensore, lavanderia...): alimentano
+    # il 10% del punteggio convenienza, che senza questi resta a zero per tutti.
+    amenities: list[str] = field(default_factory=list)
     raw: dict | None = None
 
     @property
