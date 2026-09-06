@@ -17,8 +17,7 @@
  * A estrarre gli annunci ci pensa `python3 -m rental_radar.run --source streeteasy`.
  */
 
-import { chromium } from "playwright";
-import { readFileSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { readFileSync, readdirSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import readline from "node:readline/promises";
@@ -35,16 +34,50 @@ const UA =
 const pause = (min, max) =>
   new Promise((r) => setTimeout(r, min + Math.random() * (max - min)));
 
+// Import pigro: il modo diagnostico (--blocked) e' proprio quello che lanci
+// quando qualcosa non va, e non deve pretendere che Playwright ci sia.
 async function open(headless) {
+  const { chromium } = await import("playwright");
   mkdirSync(PROFILE, { recursive: true });
-  return chromium.launchPersistentContext(PROFILE, {
+  const opts = {
     headless,
     userAgent: UA,
     viewport: { width: 1440, height: 900 },
     locale: "en-US",
     timezoneId: "America/New_York",
     args: ["--disable-blink-features=AutomationControlled"],
+    ignoreDefaultArgs: ["--enable-automation"],
+  };
+
+  // Il Chromium che scarica Playwright e' una build "for Testing": si dichiara
+  // tale e ha una firma diversa da Chrome vero. Se sul Mac c'e' Chrome usiamo
+  // quello: e' il singolo cambiamento che pesa di piu'.
+  let ctx;
+  try {
+    ctx = await chromium.launchPersistentContext(PROFILE, { ...opts, channel: "chrome" });
+  } catch {
+    ctx = await chromium.launchPersistentContext(PROFILE, opts);
+  }
+
+  // navigator.webdriver resta true anche con AutomationControlled disattivato,
+  // ed e' il primo controllo che fa qualunque anti-bot.
+  await ctx.addInitScript(() => {
+    Object.defineProperty(navigator, "webdriver", { get: () => undefined });
   });
+  return ctx;
+}
+
+/** Qualche gesto umano: questi sistemi guardano se il mouse si muove. */
+async function actLikeAHuman(p) {
+  try {
+    await p.mouse.move(300 + Math.random() * 500, 200 + Math.random() * 300);
+    await pause(200, 600);
+    await p.mouse.wheel(0, 400 + Math.random() * 800);
+    await pause(400, 900);
+    await p.mouse.wheel(0, 400 + Math.random() * 800);
+  } catch {
+    /* pagina gia' chiusa o navigata: non e' un errore che ci interessa */
+  }
 }
 
 /** Riconosce le pagine-muro (captcha, "press & hold", 403) prima di salvarle. */
@@ -98,8 +131,10 @@ async function crawl(source, headed) {
 
   const ctx = await open(!headed);
   const p = ctx.pages()[0] ?? (await ctx.newPage());
-  // Le immagini sono il grosso del traffico e a noi serve solo l'HTML.
-  await p.route("**/*.{png,jpg,jpeg,gif,webp,svg,woff,woff2,mp4}", (r) => r.abort());
+  // Bloccavamo le immagini per risparmiare banda, ma un browser che carica
+  // l'HTML e non scarica una sola foto e' un comportamento che nessun umano
+  // ha: era un altro cartello "sono un bot". Fermiamo solo i video.
+  await p.route("**/*.{mp4,webm,m4v}", (r) => r.abort());
 
   let saved = 0;
   let blocks = 0;
@@ -110,6 +145,7 @@ async function crawl(source, headed) {
       try {
         await p.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
         await pause(1200, 2500); // lascia idratare la pagina
+        await actLikeAHuman(p);
         const html = await p.content();
         const title = await p.title();
 
@@ -151,11 +187,42 @@ async function crawl(source, headed) {
   return { saved, blocks };
 }
 
+/** Che cosa ci ha risposto davvero chi ci blocca. */
+function diagnose() {
+  const dir = join(HERE, "blocked");
+  let files = [];
+  try {
+    files = readdirSync(dir).filter((f) => f.endsWith(".html"));
+  } catch {
+    console.log("Nessuna pagina bloccata salvata: o non hai ancora ricrawlato, o non blocca piu'.");
+    return;
+  }
+  const SYSTEMS = [
+    ["PerimeterX / HUMAN", ["px-captcha", "perimeterx", "_pxhd", "px-cdn"]],
+    ["DataDome", ["captcha-delivery", "datadome", "geo.captcha"]],
+    ["Cloudflare", ["cf-chl", "challenge-platform", "cf_chl_opt", "__cf_bm"]],
+    ["Akamai", ["_abck", "akam", "bm-verify"]],
+    ["Imperva / Incapsula", ["incapsula", "_incap_", "distil"]],
+  ];
+  for (const f of files) {
+    const html = readFileSync(join(dir, f), "utf8");
+    const low = html.toLowerCase();
+    const hits = SYSTEMS.filter(([, marks]) => marks.some((m) => low.includes(m))).map(([n]) => n);
+    const title = (html.match(/<title[^>]*>(.*?)<\/title>/is) || [, "(nessuno)"])[1].trim();
+    console.log(`\n${f}  ${Math.round(html.length / 1024)} KB`);
+    console.log(`  titolo: ${title.slice(0, 80)}`);
+    console.log(`  sistema: ${hits.length ? hits.join(", ") : "non riconosciuto"}`);
+    if (!hits.length) console.log(`  inizio: ${html.replace(/\s+/g, " ").slice(0, 200)}`);
+  }
+}
+
 const argv = process.argv.slice(2);
 const headed = argv.includes("--headed");
 const args = argv.filter((a) => !a.startsWith("--"));
 
-if (argv.includes("--login")) {
+if (argv.includes("--blocked")) {
+  diagnose();
+} else if (argv.includes("--login")) {
   await login(args[0]);
 } else {
   const sources = argv.includes("--all") ? Object.keys(TARGETS).filter((k) => k[0] !== "_") : args;
