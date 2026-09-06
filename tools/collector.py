@@ -139,9 +139,34 @@ class Handler(BaseHTTPRequestHandler):
         pass  # il nostro log basta e avanza
 
 
+def _already_running() -> bool:
+    """C'e' gia' un raccoglitore in ascolto su quella porta?"""
+    import urllib.request
+
+    try:
+        with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/health", timeout=2):
+            return True
+    except Exception:
+        return False
+
+
 def main() -> None:
     once = "--once" in sys.argv
-    srv = HTTPServer(("127.0.0.1", PORT), Handler)
+    # Un raccoglitore rimasto vivo dal giro precedente faceva fallire l'avvio
+    # con "Address already in use", e il crawl proseguiva in silenzio senza
+    # nessuno in ascolto: l'estensione non poteva collegarsi e le fonti col
+    # browser restavano a zero senza che si capisse perche'.
+    if _already_running():
+        print(f"C'e' gia' un raccoglitore sulla porta {PORT}: uso quello.")
+        print("Apri Chrome e clicca l'icona Flatiron Radar → «Scarica le case».")
+        finished.wait(timeout=45 * 60)
+        return
+    try:
+        srv = HTTPServer(("127.0.0.1", PORT), Handler)
+    except OSError as e:
+        print(f"Non riesco ad aprire la porta {PORT}: {e}")
+        print(f"Chiudi chi la occupa con:  lsof -ti tcp:{PORT} | xargs kill")
+        raise SystemExit(1)
     print(f"Raccoglitore in ascolto su http://127.0.0.1:{PORT}")
     print("Ora apri Chrome e clicca l'icona Flatiron Radar → «Scarica le case».")
     if once:
