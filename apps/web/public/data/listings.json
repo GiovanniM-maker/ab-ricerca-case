@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-06T14:42:28.024586+00:00",
+  "generatedAt": "2026-09-06T15:13:18.876591+00:00",
   "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
-  "count": 2356,
+  "count": 2355,
   "listings": [
     {
       "id": "apartmentadvisor-143739f36c",
@@ -574,7 +574,7 @@
       "priceFrom": true,
       "currency": "USD",
       "type": "2br",
-      "furnished": false,
+      "furnished": null,
       "sqft": 475,
       "lat": 40.7477,
       "lng": -74.0042,
@@ -582,8 +582,7 @@
         "https://static.apartmentadvisor.com/i/e6eef180c8f877f6a4acf0592f050a49"
       ],
       "sources": [
-        "apartmentadvisor",
-        "streeteasy"
+        "apartmentadvisor"
       ]
     },
     {
@@ -12001,7 +12000,7 @@
       "priceFrom": true,
       "currency": "USD",
       "type": "2br",
-      "furnished": false,
+      "furnished": null,
       "sqft": null,
       "lat": 40.7824821472168,
       "lng": -73.94576263427734,
@@ -12009,8 +12008,7 @@
         "https://static.apartmentadvisor.com/i/a4c85c5a786978c31e898dfebeb4096f.jpeg"
       ],
       "sources": [
-        "apartmentadvisor",
-        "streeteasy"
+        "apartmentadvisor"
       ]
     },
     {
@@ -14287,7 +14285,7 @@
       "lat": 40.782117,
       "lng": -73.9796222,
       "photos": [
-        "https://static.apartmentadvisor.com/i/e60d62a5e617c4e1c55ce213f0a505c4.jpeg"
+        "https://static.apartmentadvisor.com/i/6a86b66efc8fe0bd48509be94f114c9f.jpeg"
       ],
       "sources": [
         "apartmentadvisor"
@@ -17067,7 +17065,7 @@
       "lat": 40.747707,
       "lng": -73.99741,
       "photos": [
-        "https://static.apartmentadvisor.com/i/94b1935d01ef105250c2f628ea99e234.jpeg"
+        "https://static.apartmentadvisor.com/i/554bdc12b354d16d3d4aefc2ae2171b2.jpeg"
       ],
       "sources": [
         "apartmentadvisor"
@@ -29633,11 +29631,11 @@
       "lat": 40.7139998,
       "lng": -74.009564,
       "photos": [
-        "https://photos.zillowstatic.com/fp/8b6e404441686028a2d158f0d70387ea-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7f3137e4c374cbaadaf82955f74ea8b3-p_e.webp",
-        "https://photos.zillowstatic.com/fp/824616c9150cc18956832a8695b4a6f0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d53b08eef68358e12cfe4a6b86e0f781-p_e.webp",
-        "https://photos.zillowstatic.com/fp/9cf97c02503f1eb5d95497227e705a5c-p_e.webp"
+        "https://photos.zillowstatic.com/fp/ff3f40db4bf3789b9ba17e3bd4746c23-p_e.webp",
+        "https://photos.zillowstatic.com/fp/0eca6edbf5b484943be40ddbdea3f148-p_e.webp",
+        "https://photos.zillowstatic.com/fp/be2500c92f63176f664143b252d4f0e6-p_e.webp",
+        "https://photos.zillowstatic.com/fp/08c9f9c6365dcd3b95e935da8d3be339-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ea98661498f6a62c1e3619730b846a0b-p_e.webp"
       ],
       "sources": [
         "apartmentadvisor",
@@ -32154,7 +32152,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-13j-new-york-ny-10016-2102655960",
       "title": "50 E  28th St #13J",
-      "price": 7345,
+      "price": 7340,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -32314,7 +32312,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-11e-new-york-ny-10016-2102655982",
       "title": "50 E  28th St #11E",
-      "price": 7485,
+      "price": 7480,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -32474,7 +32472,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-13e-new-york-ny-10016-2102655958",
       "title": "50 E  28th St #13E",
-      "price": 7510,
+      "price": 7500,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -32594,7 +32592,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-6e-new-york-ny-10016-2102655984",
       "title": "50 E  28th St #6E",
-      "price": 7475,
+      "price": 7470,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -32714,7 +32712,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-20e-new-york-ny-10016-2099293516",
       "title": "50 E  28th St #20E",
-      "price": 8255,
+      "price": 8250,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -32794,7 +32792,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-12g-new-york-ny-10016-2063163541",
       "title": "50 E  28th St #12G",
-      "price": 8035,
+      "price": 8030,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -32874,7 +32872,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-8l-new-york-ny-10016-2102655978",
       "title": "50 E  28th St #8L",
-      "price": 6055,
+      "price": 6050,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -33154,7 +33152,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-12j-new-york-ny-10016-2102655961",
       "title": "50 E  28th St #12J",
-      "price": 7245,
+      "price": 7240,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -33294,7 +33292,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-7e-new-york-ny-10016-2102656005",
       "title": "50 E  28th St #7E",
-      "price": 7455,
+      "price": 7450,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -33414,7 +33412,7 @@
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-2g-new-york-ny-10016-2099293526",
       "title": "50 E  28th St #2G",
-      "price": 5470,
+      "price": 5465,
       "priceFrom": false,
       "currency": "USD",
       "type": null,
@@ -33710,18 +33708,108 @@
       ]
     },
     {
-      "id": "craigslist-c55c6b187f",
+      "id": "craigslist-94505e98f2",
       "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-greenpoint-bedroom-apartment/9ntJ88PVBzBdwSWuVcykXy",
-      "title": "- Greenpoint 1-Bedroom Apartment",
-      "price": 1700,
+      "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-welcome-to-405-2nd-st/2k1H6jieaiByf2jy8U46Z2",
+      "title": "Welcome to 405 2nd St, a charming top-floor 1-bedroom condo",
+      "price": 800,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
       "furnished": null,
       "sqft": null,
-      "lat": 40.7249754823952,
-      "lng": -73.9494469857634,
+      "lat": 40.7220998072216,
+      "lng": -74.0469002312163,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-e6a1c621b2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-sun-drenched-2br-private-flr/eEkyjXBLtPqJvoaDxvQzSY",
+      "title": "Sun-Drenched 2BR - Private Flr Oasis/Where Bed-Stuy Meets Clinton-Hill",
+      "price": 3395,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6835810005726,
+      "lng": -73.9539544447374,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-d4daec8d52",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-two-bedroom-two-bath/soGKC75BzPt37FPqfVZZ7k",
+      "title": "Two Bedroom Two Bath Condominium",
+      "price": 3650,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7912695640772,
+      "lng": -73.998925329117,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-b6db0c3d7d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-spacious-bedroom-in-sutton/b8Wdt2PGMFzGS9pnAuioAz",
+      "title": "✨ Spacious 3-Bedroom in Sutton Place",
+      "price": 9867,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7571012259665,
+      "lng": -73.965700079537,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-489aa86d2d",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/hoboken-looking-for-convenience-well/3UXq1ed8kZVX58GvdXknzd",
+      "title": "Looking For Convenience? Well, Look no Further!",
+      "price": 1499,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.744499592221,
+      "lng": -74.0328982886197,
+      "photos": [],
+      "sources": [
+        "craigslist"
+      ]
+    },
+    {
+      "id": "craigslist-c310854773",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-2br-apt-laundry-dw-by-barclays/a2aTxVVw6YbZ4skT4eD5xk",
+      "title": "2BR Apt Laundry DW by Barclays Center Park Slope North Prospect",
+      "price": 4395,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6833214506914,
+      "lng": -73.9778542332444,
       "photos": [],
       "sources": [
         "craigslist"
@@ -35402,18 +35490,18 @@
       ]
     },
     {
-      "id": "craigslist-3f61ff0779",
+      "id": "craigslist-2af26776fd",
       "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-two-bedrooms-two-bathrooms-two/3TTw2qvCR2RyZoPfiZCyJF",
-      "title": "Two Bedrooms, Two Bathrooms, Two Outdoor Spaces 🌇",
-      "price": 3975,
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-sprawling-charming-clinton/tPyy9oZQR7xdurYVxG8PpB",
+      "title": "Sprawling Charming Clinton Hill Prewar Railroad 1 Bedroom",
+      "price": 3300,
       "priceFrom": false,
       "currency": "USD",
-      "type": "2br",
+      "type": "1br",
       "furnished": null,
       "sqft": null,
-      "lat": 40.6902679909992,
-      "lng": -73.9552871445688,
+      "lat": 40.6926280041572,
+      "lng": -73.9589964733343,
       "photos": [],
       "sources": [
         "craigslist"
@@ -35438,18 +35526,18 @@
       ]
     },
     {
-      "id": "craigslist-2af26776fd",
+      "id": "craigslist-3f61ff0779",
       "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-sprawling-charming-clinton/tPyy9oZQR7xdurYVxG8PpB",
-      "title": "Sprawling Charming Clinton Hill Prewar Railroad 1 Bedroom",
-      "price": 3300,
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-two-bedrooms-two-bathrooms-two/3TTw2qvCR2RyZoPfiZCyJF",
+      "title": "Two Bedrooms, Two Bathrooms, Two Outdoor Spaces 🌇",
+      "price": 3975,
       "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "2br",
       "furnished": null,
       "sqft": null,
-      "lat": 40.6926280041572,
-      "lng": -73.9589964733343,
+      "lat": 40.6902679909992,
+      "lng": -73.9552871445688,
       "photos": [],
       "sources": [
         "craigslist"
@@ -37058,24 +37146,6 @@
       ]
     },
     {
-      "id": "craigslist-568d1c2861",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-two-bedroom-two-bath/55ue3SHVpfH8KuNTSX88CQ",
-      "title": "Two Bedroom Two Bath Condominium",
-      "price": 3650,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7912695640772,
-      "lng": -73.998925329117,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
       "id": "craigslist-942008cac9",
       "source": "craigslist",
       "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-spacious-bed-bath-duplex-in/cxiyxScRBDAugAZLndveqR",
@@ -37130,81 +37200,33 @@
       ]
     },
     {
-      "id": "craigslist-a3c94d77d8",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-north-park-slope-2br-apt/bnobhC9MynPkktC3NbqF4q",
-      "title": "North Park Slope 2BR Apt PacificSt border Prospect Heights Boerum Hill",
-      "price": 4395,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6833214506914,
-      "lng": -73.9778542332444,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-f478912a4d",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-24-east-80th-street-apartment/ocftu4W98ShWPxYAaLwSGn",
-      "title": "24 East 80th Street Apartment 5A",
-      "price": 4400,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7816014742427,
-      "lng": -73.9510999690022,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-d7daf5cdea",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-2br-apt-laundry-dw-by-barclays/i2BNpSiaC2DwGmuJBiWLj8",
-      "title": "2BR Apt +Laundry +DW by Barclays Center Park Slope North Prospect",
-      "price": 4395,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6833214506914,
-      "lng": -73.9778542332444,
-      "photos": [],
-      "sources": [
-        "craigslist"
-      ]
-    },
-    {
-      "id": "craigslist-7cbc53dd4d",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-brand-new-bed-bath-prime/uwFTn5eYMaCiwvvGVm2tYx",
-      "title": "🚨 BRAND NEW 🚨 3 BED 🛏️ 2 BATH 🛁 PRIME WILLIAMSBURG 🌇 ACT NOW!",
-      "price": 6800,
+      "id": "streeteasy-cf7d007006",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-pierrepont/06a",
+      "title": "146 Pierrepont Street",
+      "price": 15250,
       "priceFrom": false,
       "currency": "USD",
       "type": "3br",
-      "furnished": null,
+      "furnished": false,
       "sqft": null,
-      "lat": 40.7099215892867,
-      "lng": -73.9622949913607,
-      "photos": [],
+      "lat": 40.6946,
+      "lng": -73.9916,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/feb8412c85d0fea8ba2a15dcdcbff86a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3be33b66f7595ee939d379966078fb57-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4e24749ff631bc339b3f7a00dd6ef234-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3b96be52099c0ecaf554aec0cb6c3ca1-p_e.webp",
+        "https://photos.zillowstatic.com/fp/28a05399987c4374a7623543d0499b2b-p_e.webp"
+      ],
       "sources": [
-        "craigslist"
+        "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-d12e865ecf",
+      "id": "streeteasy-166b407e39",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/180-montague/03d",
+      "sourceUrl": "https://streeteasy.com/building/180-montague/03a",
       "title": "180 Montague Street",
       "price": 4770,
       "priceFrom": true,
@@ -37250,48 +37272,24 @@
       ]
     },
     {
-      "id": "streeteasy-cf7d007006",
+      "id": "streeteasy-68a8af8684",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-pierrepont/06a",
-      "title": "146 Pierrepont Street",
-      "price": 15250,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.6946,
-      "lng": -73.9916,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/feb8412c85d0fea8ba2a15dcdcbff86a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3be33b66f7595ee939d379966078fb57-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4e24749ff631bc339b3f7a00dd6ef234-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3b96be52099c0ecaf554aec0cb6c3ca1-p_e.webp",
-        "https://photos.zillowstatic.com/fp/28a05399987c4374a7623543d0499b2b-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-27f91353ca",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/house-55/21g",
-      "title": "55 Willoughby Street",
-      "price": 5215,
+      "sourceUrl": "https://streeteasy.com/building/hanover-house/22a",
+      "title": "17 Hanover Place",
+      "price": 4495,
       "priceFrom": true,
       "currency": "USD",
       "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.692432,
-      "lng": -73.98687,
+      "lat": 40.688644,
+      "lng": -73.98225,
       "photos": [
-        "https://photos.zillowstatic.com/fp/5e5afd21f7dad9f8aeb590665f771801-p_e.webp",
-        "https://photos.zillowstatic.com/fp/b53c684e371cb3345090f8b416bbd96f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/2e61dfa654800ae15faea62b78a6d2e2-p_e.webp",
-        "https://photos.zillowstatic.com/fp/cb0bd548d93dd7f0c18873eaca49ef95-p_e.webp",
-        "https://photos.zillowstatic.com/fp/369a72cd941f7ccad9ffc44e9585fba6-p_e.webp"
+        "https://photos.zillowstatic.com/fp/13b3852c592a72bdf41f776499f14df0-p_e.webp",
+        "https://photos.zillowstatic.com/fp/14767613ce43bc0bdde3cf265c440bfe-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4eacae871df1eae54aa31d25b74c7bc0-p_e.webp",
+        "https://photos.zillowstatic.com/fp/16adb62d65fabf9a6b09a33ce96c04dd-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5fbaa747cd4079dc692401b0e59b99ba-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -37436,6 +37434,30 @@
         "https://photos.zillowstatic.com/fp/62e549b6e104e9ea9c61782c9ad6f883-p_e.webp",
         "https://photos.zillowstatic.com/fp/7624704ef101657f36a60d73d977fefa-p_e.webp",
         "https://photos.zillowstatic.com/fp/6b01eb891f86b5bb76e07d153efd4cab-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-8210546127",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/house-55/31f",
+      "title": "55 Willoughby Street",
+      "price": 5200,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.692432,
+      "lng": -73.98687,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/d5aff62562c8bb44beaada2e2c6ad73e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/67727a9f8a0f74cbc6a722a519de275f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1cb944b20a9129092a9502e1924714da-p_e.webp",
+        "https://photos.zillowstatic.com/fp/546ed993a2540ed676b604de0c95ab91-p_e.webp",
+        "https://photos.zillowstatic.com/fp/23b73428a7e1f9d0d66ccd9e27a29794-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -37799,48 +37821,48 @@
       ]
     },
     {
-      "id": "streeteasy-d4438e952e",
+      "id": "streeteasy-2633a54028",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/147-west-22-street-new_york/rental/5021142",
-      "title": "147 West 22nd Street",
-      "price": 28000,
+      "sourceUrl": "https://streeteasy.com/building/270-west-25-street-new_york/4a",
+      "title": "270 West 25th Street",
+      "price": 5295,
       "priceFrom": false,
       "currency": "USD",
       "type": "2br",
-      "furnished": true,
+      "furnished": false,
       "sqft": null,
-      "lat": 40.74318,
-      "lng": -73.994965,
+      "lat": 40.746136,
+      "lng": -73.99707,
       "photos": [
-        "https://photos.zillowstatic.com/fp/8c4ec87458e6436af59f78c9be389414-p_e.webp",
-        "https://photos.zillowstatic.com/fp/646f836c00bc51e66a25ce0452e2e2a3-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0770415704e9ac40566c60507ae7a2d7-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a8d5729988a8f3969cbaaee6d5634924-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4d0c28c9241b20818aced1853408cefe-p_e.webp"
+        "https://photos.zillowstatic.com/fp/38dbb57a868a161a7f3bab107adbea71-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3aac21095b6969ea98f52e99758a20f2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/81b9d1d407919c9402fe3c39129cd07b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5756f4fdd9514368fb9a3c1abb1802dd-p_e.webp",
+        "https://photos.zillowstatic.com/fp/994ece7d33ad61c4f539a5e018ff2d33-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-467b010a22",
+      "id": "streeteasy-67d01b680a",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/stonehenge-18/003m",
-      "title": "364 West 18th Street",
-      "price": 4295,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/305w16-305-w-16th-street-new_york/rental/5149364",
+      "title": "305 West 16th Street",
+      "price": 16500,
+      "priceFrom": false,
       "currency": "USD",
-      "type": "studio",
-      "furnished": false,
+      "type": "3br",
+      "furnished": true,
       "sqft": null,
-      "lat": 40.743,
-      "lng": -74.0034,
+      "lat": 40.7414,
+      "lng": -74.0017,
       "photos": [
-        "https://photos.zillowstatic.com/fp/79b7800d5618f8de96889eff3efe9e24-p_e.webp",
-        "https://photos.zillowstatic.com/fp/18863ca168a32baa809861906654af5e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/1abaa5bf940d3c6cdc303e7d9c5c90d2-p_e.webp",
-        "https://photos.zillowstatic.com/fp/c40e114588e4daa8dad89ec50b3c73ec-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0f357ae26cff6ab53d5af175bf4dc31f-p_e.webp"
+        "https://photos.zillowstatic.com/fp/5bb7de91ee9b5fc0c2d1b7a9f4b22141-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ff0d526dae8d9d80728ddc11d952f86f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2c7233dfb98f46de84823bbe633a0582-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3c8afff36314a94c3f595baf687d196b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/fc9ab9415e0014ffb690cf325ca4ef3f-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -38015,6 +38037,54 @@
       ]
     },
     {
+      "id": "streeteasy-feeb58d9c0",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/beatrice-105-west-29th-street-new_york/44e",
+      "title": "105 West 29th Street",
+      "price": 9882,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7471,
+      "lng": -73.9903,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/b08f54149ccf327b70bab2c2e6dcb48e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/993af935d535b484719ca98a1cb06ba2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8ed95b7d0560fd036487f5e913c2895c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f8f8eda41fcba42ff2faf27a3077d645-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3827b4f1d5bb3d4e078cebc91ee7abf0-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-d4438e952e",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/147-west-22-street-new_york/rental/5021142",
+      "title": "147 West 22nd Street",
+      "price": 28000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": true,
+      "sqft": null,
+      "lat": 40.74318,
+      "lng": -73.994965,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/8c4ec87458e6436af59f78c9be389414-p_e.webp",
+        "https://photos.zillowstatic.com/fp/646f836c00bc51e66a25ce0452e2e2a3-p_e.webp",
+        "https://photos.zillowstatic.com/fp/0770415704e9ac40566c60507ae7a2d7-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a8d5729988a8f3969cbaaee6d5634924-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4d0c28c9241b20818aced1853408cefe-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-2f8c57cc3f",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/the-chelsea/3f",
@@ -38057,54 +38127,6 @@
         "https://photos.zillowstatic.com/fp/c7ba8a608462405b65a384f2cca7dec2-p_e.webp",
         "https://photos.zillowstatic.com/fp/045a2d6d085976f007ec47bef81d57fb-p_e.webp",
         "https://photos.zillowstatic.com/fp/5cc5deae2202256c470133a3a37a4697-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-67d01b680a",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/305w16-305-w-16th-street-new_york/rental/5149364",
-      "title": "305 West 16th Street",
-      "price": 16500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": true,
-      "sqft": null,
-      "lat": 40.7414,
-      "lng": -74.0017,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/5bb7de91ee9b5fc0c2d1b7a9f4b22141-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ff0d526dae8d9d80728ddc11d952f86f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/2c7233dfb98f46de84823bbe633a0582-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3c8afff36314a94c3f595baf687d196b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/fc9ab9415e0014ffb690cf325ca4ef3f-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-9e1697eb98",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/301-west-19th-street-new_york/21",
-      "title": "313 West 19th Street",
-      "price": 6400,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.74322,
-      "lng": -74.000595,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/2458d1cab32b577355fd0a03672ff943-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f1a33f055a38ab6a496928a6e808a8d7-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4d4a2bb2bd7d31de418649983bed287e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/c09ac9bae9280934d8113b27ff9bdb07-p_e.webp",
-        "https://photos.zillowstatic.com/fp/e77d1efe9ffba8fc14c4b89a330be1ec-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -38467,30 +38489,6 @@
       ]
     },
     {
-      "id": "streeteasy-1c99e78d35",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/624-east-9-street-new_york/1",
-      "title": "624 East 9th Street",
-      "price": 6250,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.725647,
-      "lng": -73.97934,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/515b703c64853cd23e2de255137e225f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/649e7a3ffc2f3f86603cc5ae575f816a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/318f1c9db9299eebf38b12acf59203ad-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5f5c6eb4147c618e7146f33a8acccb5f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ce538aeda7662c91bb9f8089708d5296-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-8c7d0f9e22",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/250-east-houston/11l",
@@ -38509,6 +38507,30 @@
         "https://photos.zillowstatic.com/fp/e98788b1700b857255d206db784af1af-p_e.webp",
         "https://photos.zillowstatic.com/fp/480ca3aa657fdc1398b90f81417a949e-p_e.webp",
         "https://photos.zillowstatic.com/fp/6b1ac4fa0d510768401cd26cc8b566bd-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-e9a95bd070",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/eve-433-east-13th-street-new_york/1cs",
+      "title": "433 East 13th Street",
+      "price": 4575,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "studio",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7303,
+      "lng": -73.9816,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/0441db7b199b54ad6745e0e696d64a44-p_e.webp",
+        "https://photos.zillowstatic.com/fp/abc1538975e73f1a9c78d2080ae8c4d7-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2564282755e1d2bf3c94958dea02e39c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/00f6f3c87b70546dbc859ee5763998df-p_e.webp",
+        "https://photos.zillowstatic.com/fp/09fb682cd1211362b099321ed2e9d62a-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -38563,11 +38585,11 @@
       ]
     },
     {
-      "id": "streeteasy-497bf3b86a",
+      "id": "streeteasy-905778f6b2",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/505-state-street-brooklyn/32k",
+      "sourceUrl": "https://streeteasy.com/building/505-state-street-brooklyn/16e",
       "title": "505 State Street",
-      "price": 5325,
+      "price": 4495,
       "priceFrom": true,
       "currency": "USD",
       "type": "1br",
@@ -38576,11 +38598,11 @@
       "lat": 40.68554,
       "lng": -73.97882,
       "photos": [
-        "https://photos.zillowstatic.com/fp/d36554e0ef1eb8979e552676b5543369-p_e.webp",
-        "https://photos.zillowstatic.com/fp/da58fea3bfbcb727d793b68076deba4c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0e1232bc26ae555e57981a6b5a0276f0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5e0bb074ae89b4f00ea4dbf30bc701cc-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5687490260009ac264d63204a0c85d9c-p_e.webp"
+        "https://photos.zillowstatic.com/fp/5ed6f9f26d4101c1361f151b3e9da968-p_e.webp",
+        "https://photos.zillowstatic.com/fp/72815448e92f90315b13172ea40caa26-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c8f001e9d5d78a5c45ebe73007592470-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f3428baeabe75616c2f8c1248ae2acdb-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9972d3a138d19e452bcc6f281f1828b8-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -38707,47 +38729,24 @@
       ]
     },
     {
-      "id": "streeteasy-4c2fccfdbf",
+      "id": "streeteasy-1b3e5fb224",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-mayfair-145-4th-avenue-new_york/5b",
-      "title": "145 4th Avenue",
-      "price": 6500,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/96-st-marks-place-new_york/3",
+      "title": "96 Saint Mark's Place",
+      "price": 4795,
+      "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "2br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.733856,
-      "lng": -73.989555,
+      "lat": 40.727192,
+      "lng": -73.98493,
       "photos": [
-        "https://photos.zillowstatic.com/fp/f147928464b42030aaf87bef0962980a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d25b8e84a1cc6db623bed58181b480a0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5329c219e9e5a85a617fb0798988499b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6a08e3cfb8420377b241495986774e83-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-ce1d5e429a",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/eve-433-east-13th-street-new_york/3cn",
-      "title": "433 East 13th Street",
-      "price": 4575,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7303,
-      "lng": -73.9816,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/74532a4c0bd4fd622bd18ed35c428d95-p_e.webp",
-        "https://photos.zillowstatic.com/fp/e01dedf55963675d42a7cbbc3370e9a9-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f0bef80277b072e34eb96e65be136b55-p_e.webp",
-        "https://photos.zillowstatic.com/fp/cc86190cf3fa20b141b1c1435cc4d3ca-p_e.webp",
-        "https://photos.zillowstatic.com/fp/1e245d00060469ac0d12f5e97a4aba0c-p_e.webp"
+        "https://photos.zillowstatic.com/fp/37546d4398dbf6007741ff4a66dc5a18-p_e.webp",
+        "https://photos.zillowstatic.com/fp/e69232d3bca732017abf6b0f26aa8cd5-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ee64b64934036b99b4c0650fa50d16d2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/024506e8047c9dabfd776e4d8c8d1307-p_e.webp",
+        "https://photos.zillowstatic.com/fp/7f1b32e47e6d1e93d1203bf51fa25635-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -38770,30 +38769,6 @@
         "https://photos.zillowstatic.com/fp/cf88e3c42607733fe3ffd3c973e0719f-p_e.webp",
         "https://photos.zillowstatic.com/fp/18d6d80614a180ce60e4dc954a5b4e84-p_e.webp",
         "https://photos.zillowstatic.com/fp/540b089513468a178609c7fd663e3fc5-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-1b3e5fb224",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/96-st-marks-place-new_york/3",
-      "title": "96 Saint Mark's Place",
-      "price": 4795,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.727192,
-      "lng": -73.98493,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/37546d4398dbf6007741ff4a66dc5a18-p_e.webp",
-        "https://photos.zillowstatic.com/fp/e69232d3bca732017abf6b0f26aa8cd5-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ee64b64934036b99b4c0650fa50d16d2-p_e.webp",
-        "https://photos.zillowstatic.com/fp/024506e8047c9dabfd776e4d8c8d1307-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7f1b32e47e6d1e93d1203bf51fa25635-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -38920,30 +38895,6 @@
       ]
     },
     {
-      "id": "streeteasy-06e9cbbab5",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/204-avenue-b-new_york/2",
-      "title": "204 Avenue B",
-      "price": 5000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.72845,
-      "lng": -73.97899,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/bfcc57c0417d4b087bea158330ddd488-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ee3db20143153b912db2cb4196a7d5b2-p_e.webp",
-        "https://photos.zillowstatic.com/fp/2e2407f2dc506dcd866e830181f32ea8-p_e.webp",
-        "https://photos.zillowstatic.com/fp/c7cb7b054860279e0165552f86c4b7af-p_e.webp",
-        "https://photos.zillowstatic.com/fp/250875e21a7f14050a40ee49862d870a-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-f6378fad6a",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/202-east-13-street-new_york/h3",
@@ -38958,6 +38909,30 @@
       "lng": -73.9875,
       "photos": [
         "https://photos.zillowstatic.com/fp/4e4fc5a091c3bca05177a8edb2196259-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-1c99e78d35",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/624-east-9-street-new_york/1",
+      "title": "624 East 9th Street",
+      "price": 6250,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.725647,
+      "lng": -73.97934,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/515b703c64853cd23e2de255137e225f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/649e7a3ffc2f3f86603cc5ae575f816a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/318f1c9db9299eebf38b12acf59203ad-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5f5c6eb4147c618e7146f33a8acccb5f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ce538aeda7662c91bb9f8089708d5296-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -39272,6 +39247,30 @@
       ]
     },
     {
+      "id": "streeteasy-06e9cbbab5",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/204-avenue-b-new_york/2",
+      "title": "204 Avenue B",
+      "price": 5000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.72845,
+      "lng": -73.97899,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/bfcc57c0417d4b087bea158330ddd488-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ee3db20143153b912db2cb4196a7d5b2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2e2407f2dc506dcd866e830181f32ea8-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c7cb7b054860279e0165552f86c4b7af-p_e.webp",
+        "https://photos.zillowstatic.com/fp/250875e21a7f14050a40ee49862d870a-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-3e248a0396",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/328-east-11-street-new_york/12",
@@ -39344,24 +39343,24 @@
       ]
     },
     {
-      "id": "streeteasy-92c7510437",
+      "id": "streeteasy-042efd5bc0",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/crossing-23rd/19b",
-      "title": "121 East 23rd Street",
-      "price": 8500,
-      "priceFrom": false,
+      "sourceUrl": "https://streeteasy.com/building/the-vanguard-chelsea/18d",
+      "title": "77 West 24th Street",
+      "price": 4593,
+      "priceFrom": true,
       "currency": "USD",
-      "type": "2br",
+      "type": "studio",
       "furnished": false,
       "sqft": null,
-      "lat": 40.74,
-      "lng": -73.9853,
+      "lat": 40.74369,
+      "lng": -73.99174,
       "photos": [
-        "https://photos.zillowstatic.com/fp/4613fbac46f88086d30e6660d337b937-p_e.webp",
-        "https://photos.zillowstatic.com/fp/90d4d1f3ce594bc14e93690bb6c120cf-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7aaa56cf320bdaf2b1829aa5f3346555-p_e.webp",
-        "https://photos.zillowstatic.com/fp/152d6cf8b5a1973143f9cacce62b8f13-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8dae647ae6ebe4eb5b7bff63cfd620d7-p_e.webp"
+        "https://photos.zillowstatic.com/fp/82c9256390fa8c29be07fb759bfe2813-p_e.webp",
+        "https://photos.zillowstatic.com/fp/95cb7cb1bb4e50c04d03876877777d5a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ce1bca00738099bca5be94e7d9d95e56-p_e.webp",
+        "https://photos.zillowstatic.com/fp/0d923e643e79cfae1dcb5677f4bb978b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/59395866c28e58e6759707fda9f28b3c-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -39392,9 +39391,9 @@
       ]
     },
     {
-      "id": "streeteasy-283e62d6cb",
+      "id": "streeteasy-8efe852020",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-lotus-nyc-midtown-east/11b",
+      "sourceUrl": "https://streeteasy.com/building/the-lotus-nyc-midtown-east/ph3e",
       "title": "255 East 39th Street",
       "price": 6415,
       "priceFrom": true,
@@ -39409,7 +39408,7 @@
         "https://photos.zillowstatic.com/fp/2629eadfd9965c2d5cdcbe38a074533b-p_e.webp",
         "https://photos.zillowstatic.com/fp/dbf64a74f4a76ca4c736c8d13c81bc49-p_e.webp",
         "https://photos.zillowstatic.com/fp/e1b88fd1a5f42f25b166102fab63eac4-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f4ada27171a5e09eaaa5fe228a9a2131-p_e.webp"
+        "https://photos.zillowstatic.com/fp/6ec9d5303d794a7bb0700c772d9a92fa-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -39440,48 +39439,24 @@
       ]
     },
     {
-      "id": "streeteasy-4830c7bf91",
+      "id": "streeteasy-ee11213985",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-vanguard-chelsea/15h",
-      "title": "77 West 24th Street",
-      "price": 4593,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.74369,
-      "lng": -73.99174,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/7ee167ed7c2b27ab8a572b88db0f0056-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0feb4ec2b269899c59e46410e3983950-p_e.webp",
-        "https://photos.zillowstatic.com/fp/39c81aaccfcd280437f53be9a52a549c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/396bbec4c49ffbd768e2e99367e491fe-p_e.webp",
-        "https://photos.zillowstatic.com/fp/aaa1f60c7c1f5af47a7fa971225c84bc-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-d3e8b8f226",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/one-union-square/018p",
+      "sourceUrl": "https://streeteasy.com/building/one-union-square/024c",
       "title": "1 Union Sq S",
       "price": 8000,
       "priceFrom": true,
       "currency": "USD",
-      "type": "1br",
+      "type": "2br",
       "furnished": false,
       "sqft": null,
       "lat": 40.7352,
       "lng": -73.9901,
       "photos": [
-        "https://photos.zillowstatic.com/fp/8023add62dd66d589880150f13f11b28-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3d7147eea6ada87f42f1c89eac079d13-p_e.webp",
-        "https://photos.zillowstatic.com/fp/59eeb18c5e1fa6336c2201eccd0b9a82-p_e.webp",
-        "https://photos.zillowstatic.com/fp/674959f8b8cbd99466f2c927bbf7e7d3-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7e587394fa04a7f8c0fb665d064ff0df-p_e.webp"
+        "https://photos.zillowstatic.com/fp/065fc3dda6bd27c3564f7b99871a5e6e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9edb2f912fc02cdd6e16477369ab31bc-p_e.webp",
+        "https://photos.zillowstatic.com/fp/0bb1b6a0398561c15c46b200b90649d9-p_e.webp",
+        "https://photos.zillowstatic.com/fp/71bfa87219abda2241c4d1d8f7f04f7e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/40b5dc40d40588215f36906c7e2eb462-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -39512,24 +39487,24 @@
       ]
     },
     {
-      "id": "streeteasy-15e2f654dd",
+      "id": "streeteasy-92c7510437",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/800-sixth/25f",
-      "title": "800 6th Avenue",
-      "price": 6036,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/crossing-23rd/19b",
+      "title": "121 East 23rd Street",
+      "price": 8500,
+      "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "2br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7456,
-      "lng": -73.9904,
+      "lat": 40.74,
+      "lng": -73.9853,
       "photos": [
-        "https://photos.zillowstatic.com/fp/3ab075ab132059cef24df1e344159fd0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/9ef6c4e74becd76144b433df6db17909-p_e.webp",
-        "https://photos.zillowstatic.com/fp/b180c9ad137ca19aa2fdeb6decc28200-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a164294246645197cd4bc633fdc5670d-p_e.webp",
-        "https://photos.zillowstatic.com/fp/b4cd38129279a919b8bab039e3dcfee1-p_e.webp"
+        "https://photos.zillowstatic.com/fp/4613fbac46f88086d30e6660d337b937-p_e.webp",
+        "https://photos.zillowstatic.com/fp/90d4d1f3ce594bc14e93690bb6c120cf-p_e.webp",
+        "https://photos.zillowstatic.com/fp/7aaa56cf320bdaf2b1829aa5f3346555-p_e.webp",
+        "https://photos.zillowstatic.com/fp/152d6cf8b5a1973143f9cacce62b8f13-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8dae647ae6ebe4eb5b7bff63cfd620d7-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -39578,6 +39553,30 @@
         "https://photos.zillowstatic.com/fp/771fcaa6261680cec98da3cdccade96f-p_e.webp",
         "https://photos.zillowstatic.com/fp/8793a8de0290fbadc48bdfee5882cd27-p_e.webp",
         "https://photos.zillowstatic.com/fp/07a1358b1501b350013a444a482cbe6b-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-8c29af5a4d",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/800-sixth/19g",
+      "title": "800 6th Avenue",
+      "price": 6036,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7456,
+      "lng": -73.9904,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/3bd332d545131140452994239b5789ec-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5c6e24c64754e8923cb0b3f8841c969f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c49ba4e39c687a6a5fc61a3a37c9bae5-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ebfc26be1b44def87b1cf4d96e7e6ae0-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3422699f8eb95ad03e5d64291bf56b7b-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -39703,30 +39702,6 @@
       ]
     },
     {
-      "id": "streeteasy-206168f0d9",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/245-east-19-street-new_york/604",
-      "title": "245 East 19th Street",
-      "price": 7095,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7359,
-      "lng": -73.9828,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/91e6dc1034fc3ed719e457d4de9d0353-p_e.webp",
-        "https://photos.zillowstatic.com/fp/76dfa4b0319f7c7b01de20b258095216-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7d147ae23f16fa545b67e91d43ec5b7b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5942e519d177ff11c34c6153ec54af99-p_e.webp",
-        "https://photos.zillowstatic.com/fp/c82262b290258c993e24d1c6c34a4739-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-8e1a4b4f82",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/210-east-22-street-new_york/06h",
@@ -39745,6 +39720,30 @@
         "https://photos.zillowstatic.com/fp/371c689c40b500c11925d18eb13a1767-p_e.webp",
         "https://photos.zillowstatic.com/fp/fc25ba3d76a4067cb593e0f1bd42447a-p_e.webp",
         "https://photos.zillowstatic.com/fp/daaa9b363a029790653814e9b61bf780-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-a741920f9e",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/instrata-gramercy/27a",
+      "title": "290 3rd Avenue",
+      "price": 6875,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7386,
+      "lng": -73.9837,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/67650b940b88cb5cc354613db610b11a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/630ad36c9587fbab3c0d4d3a1a72eef7-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1e77cf11a1335c686f4b1705164e70d0-p_e.webp",
+        "https://photos.zillowstatic.com/fp/7c8b86d14356daac003c79bcd900d24d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/e02afe6cb9fd1895447a945f2edad1b4-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -39798,6 +39797,30 @@
       ]
     },
     {
+      "id": "streeteasy-206168f0d9",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/245-east-19-street-new_york/604",
+      "title": "245 East 19th Street",
+      "price": 7095,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7359,
+      "lng": -73.9828,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/91e6dc1034fc3ed719e457d4de9d0353-p_e.webp",
+        "https://photos.zillowstatic.com/fp/76dfa4b0319f7c7b01de20b258095216-p_e.webp",
+        "https://photos.zillowstatic.com/fp/7d147ae23f16fa545b67e91d43ec5b7b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5942e519d177ff11c34c6153ec54af99-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c82262b290258c993e24d1c6c34a4739-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-ec8c275823",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/317-east-18-street-new_york/5b",
@@ -39838,30 +39861,6 @@
         "https://photos.zillowstatic.com/fp/fb1c9b802ab89cf373c5a2033cd263d6-p_e.webp",
         "https://photos.zillowstatic.com/fp/dfc97690e25453c7458299108e44edc2-p_e.webp",
         "https://photos.zillowstatic.com/fp/48181d07c1d9baa828d51806b545e172-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-a789145ee3",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/instrata-gramercy/7a",
-      "title": "290 3rd Avenue",
-      "price": 6875,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7386,
-      "lng": -73.9837,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/83829d273e35bd41a281e0d12592dd25-p_e.webp",
-        "https://photos.zillowstatic.com/fp/59ea3bee264b00af3a0ce4356453693f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7608a702bbcf1f2ec638667c89b84d6f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/cd651121a5948fc230fcb86ed3296bbd-p_e.webp",
-        "https://photos.zillowstatic.com/fp/51bc4a07ccc6b9279e956be7d36d1f94-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -40466,24 +40465,24 @@
       ]
     },
     {
-      "id": "streeteasy-ac0216e750",
+      "id": "streeteasy-817530e953",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/298-mulberry/2c",
-      "title": "298 Mulberry Street",
-      "price": 5750,
+      "sourceUrl": "https://streeteasy.com/building/the-roselyn/5b",
+      "title": "112 4th Avenue",
+      "price": 14750,
       "priceFrom": false,
       "currency": "USD",
-      "type": "studio",
+      "type": "2br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.725098,
-      "lng": -73.994415,
+      "lat": 40.732613,
+      "lng": -73.99046,
       "photos": [
-        "https://photos.zillowstatic.com/fp/bdf75a834bd5745d8f8b8982916b6b87-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0203c6bce8712f58a314c3eb4bfac5af-p_e.webp",
-        "https://photos.zillowstatic.com/fp/32f4b5595da71c2ad8753c3c01b2ab45-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6612a013dfd34c86f1d3bd30b151bfec-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ebd9850ecd697c0051d69711bf526a2c-p_e.webp"
+        "https://photos.zillowstatic.com/fp/a1ffe3d3dd2e3df37756ea6df7ac15ff-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8e7c76e7ee334c4c3b47abaecd1c1113-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8596e4f3cf38cd01f325221a4cf4d036-p_e.webp",
+        "https://photos.zillowstatic.com/fp/fa965611195b98e5a7019b9a1e479868-p_e.webp",
+        "https://photos.zillowstatic.com/fp/675ada6ea5881a0fb5c78d61ce6bd654-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -40508,30 +40507,6 @@
         "https://photos.zillowstatic.com/fp/e8b46fdc1dbf87fa2be5f2415c55bf59-p_e.webp",
         "https://photos.zillowstatic.com/fp/447c1d5578b3c1571dd733defca36cf9-p_e.webp",
         "https://photos.zillowstatic.com/fp/7e76dda3637a139476960ad8ebfa85a6-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-817530e953",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-roselyn/5b",
-      "title": "112 4th Avenue",
-      "price": 14750,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.732613,
-      "lng": -73.99046,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/a1ffe3d3dd2e3df37756ea6df7ac15ff-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8e7c76e7ee334c4c3b47abaecd1c1113-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8596e4f3cf38cd01f325221a4cf4d036-p_e.webp",
-        "https://photos.zillowstatic.com/fp/fa965611195b98e5a7019b9a1e479868-p_e.webp",
-        "https://photos.zillowstatic.com/fp/675ada6ea5881a0fb5c78d61ce6bd654-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -40675,6 +40650,30 @@
         "https://photos.zillowstatic.com/fp/858e0fa51400a3f37bb13b245542fa87-p_e.webp",
         "https://photos.zillowstatic.com/fp/bc98966246fd46d8235986448b5998e1-p_e.webp",
         "https://photos.zillowstatic.com/fp/0167e60ba1b9da491a7d57b5177df0d9-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-ac0216e750",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/298-mulberry/2c",
+      "title": "298 Mulberry Street",
+      "price": 5750,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "studio",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.725098,
+      "lng": -73.994415,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/bdf75a834bd5745d8f8b8982916b6b87-p_e.webp",
+        "https://photos.zillowstatic.com/fp/0203c6bce8712f58a314c3eb4bfac5af-p_e.webp",
+        "https://photos.zillowstatic.com/fp/32f4b5595da71c2ad8753c3c01b2ab45-p_e.webp",
+        "https://photos.zillowstatic.com/fp/6612a013dfd34c86f1d3bd30b151bfec-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ebd9850ecd697c0051d69711bf526a2c-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -41518,48 +41517,48 @@
       ]
     },
     {
-      "id": "streeteasy-e2b7052e22",
+      "id": "streeteasy-a68fd69d2d",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-cove/ph02",
-      "title": "43-12 Hunter Street",
-      "price": 4595,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/5_26-47th-road-long_island_city/1a",
+      "title": "5-26 47th Road",
+      "price": 8700,
+      "priceFrom": false,
       "currency": "USD",
-      "type": "2br",
-      "furnished": false,
+      "type": "3br",
+      "furnished": true,
       "sqft": null,
-      "lat": 40.7482,
-      "lng": -73.94455,
+      "lat": 40.745106,
+      "lng": -73.954865,
       "photos": [
-        "https://photos.zillowstatic.com/fp/4e84b454bb13c0e768711864ecbb1f4a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/88627b02497fe88eecfcb42315d8a954-p_e.webp",
-        "https://photos.zillowstatic.com/fp/bde00ad98456e1ed8619978b7198a17f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7d4a59422ca302e714dea95c2957aaac-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d4037469a6bb8103f4f3dca98b9fdd45-p_e.webp"
+        "https://photos.zillowstatic.com/fp/e599c3e78cec333436ce2c8e8e501d49-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4db790ab8f5e5e3cc95e725961b7ed92-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9b5a2397ec2482650fba19ac0845b1f6-p_e.webp",
+        "https://photos.zillowstatic.com/fp/24883bfce1e3fb979f1d3e5e86eacb2f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/482ee31c354359096c6174143d587af7-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-19578966a0",
+      "id": "streeteasy-db17b06945",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-corner/2d",
-      "title": "47-28 11th Street",
-      "price": 3950,
+      "sourceUrl": "https://streeteasy.com/building/the-pearson-court-square/4d",
+      "title": "45-50 Pearson Street",
+      "price": 3441,
       "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "studio",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7442,
-      "lng": -73.9514,
+      "lat": 40.744644,
+      "lng": -73.944176,
       "photos": [
-        "https://photos.zillowstatic.com/fp/0dd5e73ddb81ca8c68972407d3b3a3a7-p_e.webp",
-        "https://photos.zillowstatic.com/fp/753b76496427033611f6ad45e191cf6c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/1a655f0023edba6b242874406a139636-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f39ee00da6a9d71e0ec092e102ceef42-p_e.webp",
-        "https://photos.zillowstatic.com/fp/193c4b71ab7f00c7d3872f390255115c-p_e.webp"
+        "https://photos.zillowstatic.com/fp/c8c6fb0bdf78ac55d0a387ff232e88e5-p_e.webp",
+        "https://photos.zillowstatic.com/fp/531f259b88fafe7814758fac80d768d2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f990498c672720a417af36c6fb613990-p_e.webp",
+        "https://photos.zillowstatic.com/fp/58579a223d6a724a5c3700256268a7ef-p_e.webp",
+        "https://photos.zillowstatic.com/fp/293cb84825cc4cb8627d50540c29a0d6-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -41614,36 +41613,12 @@
       ]
     },
     {
-      "id": "streeteasy-5fe195aae5",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/nova-astoria/616",
-      "title": "11-14 35th Avenue",
-      "price": 4038,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.762203,
-      "lng": -73.938576,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/2aacf782207429a1d516d9c9cf7ceb0b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5d45d88039ca182d94357623374b9c90-p_e.webp",
-        "https://photos.zillowstatic.com/fp/cf9042c97424639f4892282dfd9cd6ae-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d083b62f7d0756c6bde49251e4f661d1-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6d640d5221c56b46596e17907574aa70-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-ef7a2136ab",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/the-italic/31c",
       "title": "26-38 Jackson Avenue",
-      "price": 5075,
-      "priceFrom": false,
+      "price": 4200,
+      "priceFrom": true,
       "currency": "USD",
       "type": "1br",
       "furnished": false,
@@ -41781,48 +41756,24 @@
       ]
     },
     {
-      "id": "streeteasy-383ca189ad",
+      "id": "streeteasy-c7e1f79a85",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/45_39-11th-st-long_island_city/garden",
-      "title": "45-39 11th Street",
-      "price": 8595,
-      "priceFrom": false,
+      "sourceUrl": "https://streeteasy.com/building/nova-astoria/718",
+      "title": "11-14 35th Avenue",
+      "price": 6700,
+      "priceFrom": true,
       "currency": "USD",
       "type": "2br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.74654,
-      "lng": -73.95001,
+      "lat": 40.762203,
+      "lng": -73.938576,
       "photos": [
-        "https://photos.zillowstatic.com/fp/118207a671a99468741067f3a4cac076-p_e.webp",
-        "https://photos.zillowstatic.com/fp/eea15d930c5639be9ed5c190029c02f5-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f2620ee67aef2228896a3af3098a040f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/b7c49c95167abf84a5ed1123b3930351-p_e.webp",
-        "https://photos.zillowstatic.com/fp/419162389b195f2f44fdc72447f50582-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-77c71f868e",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-vista/14c",
-      "title": "44-15 Purves Street",
-      "price": 4500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7471,
-      "lng": -73.941,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/4b4d597909a74700b6bb69d2613aa1ac-p_e.webp",
-        "https://photos.zillowstatic.com/fp/709da4e615e20520dfa4fcbc2463067f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/9af5a35b873b621edcc823b5fab5c8fd-p_e.webp",
-        "https://photos.zillowstatic.com/fp/618a841eed552609dfb2add6b30e4e03-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a9d6c38cd2c2362bb1184d4df19c9105-p_e.webp"
+        "https://photos.zillowstatic.com/fp/d1d55757f6a8d1ba32bebe462ac318ad-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a6fead56a14d7866efbdc6b42f48a326-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c7e3090bfe0799cda8120de0ca1dab88-p_e.webp",
+        "https://photos.zillowstatic.com/fp/54818d2a0dbbe9d241134a19847467f8-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2adfaa25ab78041af94d3b0fc41641cb-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -41853,24 +41804,72 @@
       ]
     },
     {
-      "id": "streeteasy-e6b9517db3",
+      "id": "streeteasy-0ae25e148e",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/heritage-27-on-27th/18d",
-      "title": "27-03 42nd Road",
-      "price": 3600,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/the-cove/904",
+      "title": "43-12 Hunter Street",
+      "price": 4595,
+      "priceFrom": false,
       "currency": "USD",
       "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7497,
-      "lng": -73.9401,
+      "lat": 40.7482,
+      "lng": -73.94455,
       "photos": [
-        "https://photos.zillowstatic.com/fp/e65a93c44efd65653b0679adfc6ed693-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7ecad246eaafa11876282ec8be6ae009-p_e.webp",
-        "https://photos.zillowstatic.com/fp/285d396f4561bbc9544e0e2fc1d64f1a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f7fce660d898abe8e29c4809ddf14512-p_e.webp",
-        "https://photos.zillowstatic.com/fp/c8fbf408d6932c094e11e5f8dbb574a3-p_e.webp"
+        "https://photos.zillowstatic.com/fp/2de305d9eaf81f4414726bb54e337d5d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ff953b2a81f744fad661e67191f9917a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/41fb0e4ba6c375ab58a84c8d90ed9d37-p_e.webp",
+        "https://photos.zillowstatic.com/fp/aa537c16df14c50a65a4a2b4cb3196af-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f6a51f697a30aceae6ee7887889ca396-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-c961545dc3",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/5pointz-lic/4907",
+      "title": "22-44 Jackson Avenue",
+      "price": 4716,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.744743,
+      "lng": -73.94551,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/9532a77ecf4ccad57596d8917c594651-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d34f16e98d7d50785e576bacd676683a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d2bbbf414a8057660a50a4ef8b12da83-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1f9a133f97fafdeaa9bd1ca4bd306f27-p_e.webp",
+        "https://photos.zillowstatic.com/fp/68f35643ca5c2bfd516116d7a8de4ec4-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-77c71f868e",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-vista/14c",
+      "title": "44-15 Purves Street",
+      "price": 4500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7471,
+      "lng": -73.941,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/4b4d597909a74700b6bb69d2613aa1ac-p_e.webp",
+        "https://photos.zillowstatic.com/fp/709da4e615e20520dfa4fcbc2463067f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9af5a35b873b621edcc823b5fab5c8fd-p_e.webp",
+        "https://photos.zillowstatic.com/fp/618a841eed552609dfb2add6b30e4e03-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a9d6c38cd2c2362bb1184d4df19c9105-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -41901,30 +41900,6 @@
       ]
     },
     {
-      "id": "streeteasy-d65239e4e4",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/5pointz-lic/3223",
-      "title": "22-44 Jackson Avenue",
-      "price": 4716,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.744743,
-      "lng": -73.94551,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/0184d9a460ee8a599bfcb2f095272ff5-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7b3d9f77f06dab42a978300a7164e4e7-p_e.webp",
-        "https://photos.zillowstatic.com/fp/180b411f860040dcc7ada78f1f811f6a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a3ad9edb13497447c16b710ca1f1da0a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/417afc4a77290f35b50da4b88d36f395-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-78a6c977da",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/1-qps/007j",
@@ -41943,6 +41918,30 @@
         "https://photos.zillowstatic.com/fp/3edd6940d00a9eff8e6f6a442dc506b0-p_e.webp",
         "https://photos.zillowstatic.com/fp/c60449b1d7e53ae72ff0459ee3a71351-p_e.webp",
         "https://photos.zillowstatic.com/fp/6a3add400f87520a02fc15bc4ccb1f65-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-383ca189ad",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/45_39-11th-st-long_island_city/garden",
+      "title": "45-39 11th Street",
+      "price": 8595,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.74654,
+      "lng": -73.95001,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/118207a671a99468741067f3a4cac076-p_e.webp",
+        "https://photos.zillowstatic.com/fp/eea15d930c5639be9ed5c190029c02f5-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f2620ee67aef2228896a3af3098a040f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/b7c49c95167abf84a5ed1123b3930351-p_e.webp",
+        "https://photos.zillowstatic.com/fp/419162389b195f2f44fdc72447f50582-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -41997,48 +41996,72 @@
       ]
     },
     {
-      "id": "streeteasy-1ee8b083ab",
+      "id": "streeteasy-489a0be0f1",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/150-west-51-street-new_york/923",
-      "title": "150 West 51st Street",
+      "sourceUrl": "https://streeteasy.com/building/heritage-27-on-27th/26f",
+      "title": "27-03 42nd Road",
       "price": 3600,
       "priceFrom": true,
       "currency": "USD",
-      "type": "2br",
-      "furnished": true,
+      "type": "studio",
+      "furnished": false,
       "sqft": null,
-      "lat": 40.7613,
-      "lng": -73.9827,
+      "lat": 40.7497,
+      "lng": -73.9401,
       "photos": [
-        "https://photos.zillowstatic.com/fp/9833374dc52b23a792c0fa3a548733aa-p_e.webp",
-        "https://photos.zillowstatic.com/fp/b369a9b2f0955e5d72940b0799dd973a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/30284be2b5c1c292af270caa2a51a42a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/cfed97b40fed530036f1b7f916f5a194-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a6d838c02a7396e865177a68db4a3cf1-p_e.webp"
+        "https://photos.zillowstatic.com/fp/ca99916c1cc0eb89d363c800a3869662-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c5a4e21e3f160c37a5536a4936389954-p_e.webp",
+        "https://photos.zillowstatic.com/fp/001d090c97e472f56a23b7dded724dba-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c8fbf408d6932c094e11e5f8dbb574a3-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3880dfec1b7c7a41c04a046316525c67-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-6cd286a179",
+      "id": "streeteasy-e02c2bc852",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-ellington/04f",
-      "title": "260 West 52nd Street",
-      "price": 4546,
+      "sourceUrl": "https://streeteasy.com/building/the-meurice/7k",
+      "title": "145 West 58th Street",
+      "price": 5500,
       "priceFrom": true,
       "currency": "USD",
       "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7632,
-      "lng": -73.9849,
+      "lat": 40.7658,
+      "lng": -73.9781,
       "photos": [
-        "https://photos.zillowstatic.com/fp/71da94f331ad669eab0812d8a63699a6-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a4f1e280d729826a178af383843717f8-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8294d1df2340337af3dd64cffdcc3237-p_e.webp",
-        "https://photos.zillowstatic.com/fp/fed12afcec58f2389c01d14ae200f2c2-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4ddbcf6b46f53da70dfd3d68cd684d60-p_e.webp"
+        "https://photos.zillowstatic.com/fp/49458a2d69224c74165b723844320087-p_e.webp",
+        "https://photos.zillowstatic.com/fp/60a21287e1ca0e169ab5887f15a971d4-p_e.webp",
+        "https://photos.zillowstatic.com/fp/bce9ee98c5a2bdf0603e73a4dbd82c3a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/911c2e3368f350d170fe8f62d5b7db6c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/b7e7e441b9a0ee04780b2f76cc4ba243-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-97289cc1b3",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/7-w-57/ph",
+      "title": "7 West 57th Street",
+      "price": 16495,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": true,
+      "sqft": null,
+      "lat": 40.763523,
+      "lng": -73.974556,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/2dba7438eb29a8946d858afa87e34825-p_e.webp",
+        "https://photos.zillowstatic.com/fp/97a4606747d8df3703fe548cf263981f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f1085d699dd006c288fbcbb09ee076f4-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1d1efa5404346c4a374efc159808438c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d5c1d958fefae9459182278a062c2d19-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42069,24 +42092,24 @@
       ]
     },
     {
-      "id": "streeteasy-9cff885f34",
+      "id": "streeteasy-1ee8b083ab",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-meurice/6k",
-      "title": "145 West 58th Street",
-      "price": 5500,
+      "sourceUrl": "https://streeteasy.com/building/150-west-51-street-new_york/923",
+      "title": "150 West 51st Street",
+      "price": 3600,
       "priceFrom": true,
       "currency": "USD",
-      "type": "1br",
-      "furnished": false,
+      "type": "2br",
+      "furnished": true,
       "sqft": null,
-      "lat": 40.7658,
-      "lng": -73.9781,
+      "lat": 40.7613,
+      "lng": -73.9827,
       "photos": [
-        "https://photos.zillowstatic.com/fp/941b02f703a6f0a597d9da7d59d5dd54-p_e.webp",
-        "https://photos.zillowstatic.com/fp/80ed0a6f19716772333d5abcac307a8e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d39fd0e65569c9cccf4c2054e6d6c6a3-p_e.webp",
-        "https://photos.zillowstatic.com/fp/25baf5f50677a9b2506df0fb298dbb4c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/52d48f6427dbe9ea0affbf1747a86153-p_e.webp"
+        "https://photos.zillowstatic.com/fp/9833374dc52b23a792c0fa3a548733aa-p_e.webp",
+        "https://photos.zillowstatic.com/fp/b369a9b2f0955e5d72940b0799dd973a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/30284be2b5c1c292af270caa2a51a42a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/cfed97b40fed530036f1b7f916f5a194-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a6d838c02a7396e865177a68db4a3cf1-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42141,48 +42164,46 @@
       ]
     },
     {
-      "id": "streeteasy-97289cc1b3",
+      "id": "streeteasy-6f933b8c5c",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/7-w-57/ph",
-      "title": "7 West 57th Street",
-      "price": 16495,
+      "sourceUrl": "https://streeteasy.com/building/the-ritz-plaza/010m",
+      "title": "235 West 48th Street",
+      "price": 4035,
       "priceFrom": true,
       "currency": "USD",
-      "type": "2br",
-      "furnished": true,
+      "type": "1br",
+      "furnished": false,
       "sqft": null,
-      "lat": 40.763523,
-      "lng": -73.974556,
+      "lat": 40.7609,
+      "lng": -73.9861,
       "photos": [
-        "https://photos.zillowstatic.com/fp/2dba7438eb29a8946d858afa87e34825-p_e.webp",
-        "https://photos.zillowstatic.com/fp/97a4606747d8df3703fe548cf263981f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f1085d699dd006c288fbcbb09ee076f4-p_e.webp",
-        "https://photos.zillowstatic.com/fp/1d1efa5404346c4a374efc159808438c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d5c1d958fefae9459182278a062c2d19-p_e.webp"
+        "https://photos.zillowstatic.com/fp/43c81f707349dc2a47d45d15e16e1a5d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/b5383b1f9e42add44675ef58387d1e1a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8e63b6bc6e48ba612348ac74f85a7653-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5592b94e8f9f260df67d1c550df9e15a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/57564aec0d64640c754a2c4fabef70ec-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-da65069bdb",
+      "id": "streeteasy-e3fd560402",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/830-8-avenue-new_york/7a",
-      "title": "830 8th Avenue",
-      "price": 5290,
-      "priceFrom": false,
+      "sourceUrl": "https://streeteasy.com/building/the-ellington/23f",
+      "title": "260 West 52nd Street",
+      "price": 4388,
+      "priceFrom": true,
       "currency": "USD",
-      "type": "1br",
-      "furnished": true,
+      "type": "studio",
+      "furnished": false,
       "sqft": null,
-      "lat": 40.76228,
-      "lng": -73.98577,
+      "lat": 40.7632,
+      "lng": -73.9849,
       "photos": [
-        "https://photos.zillowstatic.com/fp/d5e81bcd8b188ed4dd58ea83a93ec008-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4991d518a21fb9692cc782a1021ff904-p_e.webp",
-        "https://photos.zillowstatic.com/fp/574e1c0be98c76a4337e99bfbb9ecf96-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8e7482a1d4f948385cdeeb22da993ac0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/193ecc8252aa3ecc800bfedfee66cfcc-p_e.webp"
+        "https://photos.zillowstatic.com/fp/7baf56b8a53c11cd14f0c3389287ef97-p_e.webp",
+        "https://photos.zillowstatic.com/fp/fe81ea9ae8c1068d3d02d32eb947f655-p_e.webp",
+        "https://photos.zillowstatic.com/fp/35fa86be41353c320021641cfcf8af39-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42285,24 +42306,24 @@
       ]
     },
     {
-      "id": "streeteasy-ea87bab4ce",
+      "id": "streeteasy-da65069bdb",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-ritz-plaza/010e",
-      "title": "235 West 48th Street",
-      "price": 4035,
+      "sourceUrl": "https://streeteasy.com/building/830-8-avenue-new_york/7a",
+      "title": "830 8th Avenue",
+      "price": 5290,
       "priceFrom": false,
       "currency": "USD",
-      "type": "studio",
-      "furnished": false,
+      "type": "1br",
+      "furnished": true,
       "sqft": null,
-      "lat": 40.7609,
-      "lng": -73.9861,
+      "lat": 40.76228,
+      "lng": -73.98577,
       "photos": [
-        "https://photos.zillowstatic.com/fp/e6e194a03929567aa48dde542f62bb77-p_e.webp",
-        "https://photos.zillowstatic.com/fp/77fbb47af624a48796255bd00ca737fe-p_e.webp",
-        "https://photos.zillowstatic.com/fp/22612d198a39e4ca085ccccacf226d92-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f15bf702d07092d03c5f6cd5140125a9-p_e.webp",
-        "https://photos.zillowstatic.com/fp/eb3d3b285d6520a184512967088943b5-p_e.webp"
+        "https://photos.zillowstatic.com/fp/d5e81bcd8b188ed4dd58ea83a93ec008-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4991d518a21fb9692cc782a1021ff904-p_e.webp",
+        "https://photos.zillowstatic.com/fp/574e1c0be98c76a4337e99bfbb9ecf96-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8e7482a1d4f948385cdeeb22da993ac0-p_e.webp",
+        "https://photos.zillowstatic.com/fp/193ecc8252aa3ecc800bfedfee66cfcc-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42327,30 +42348,6 @@
         "https://photos.zillowstatic.com/fp/eee25e3b9cccf4993c31f201dcbf48da-p_e.webp",
         "https://photos.zillowstatic.com/fp/3d6d5a325e1b0c7ff82c22084f591e6c-p_e.webp",
         "https://photos.zillowstatic.com/fp/c68166715cf5a1f31026d7ed40311f20-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-d6974df77f",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/carnegie-mews/a07",
-      "title": "211 West 56th Street",
-      "price": 4750,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7655,
-      "lng": -73.9815,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/06714011f90a92808527c9b4b9ebb6ef-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a45dfeb69e8cb6a01dec3a52ffc669f5-p_e.webp",
-        "https://photos.zillowstatic.com/fp/63894dc261cac788edb439e3e4fa5738-p_e.webp",
-        "https://photos.zillowstatic.com/fp/e1fa6b84621a7691f054b225a3e83d81-p_e.webp",
-        "https://photos.zillowstatic.com/fp/704cf332b735f15eb3af4e797033e31c-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42429,6 +42426,30 @@
       ]
     },
     {
+      "id": "streeteasy-26dfee5f07",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/lex-54/3h",
+      "title": "135 East 54th Street",
+      "price": 5500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7593,
+      "lng": -73.9707,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/d8fb63750513a51a1c80e5d87879b07b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8793a6f618c62791a7a569d61c4f7895-p_e.webp",
+        "https://photos.zillowstatic.com/fp/324277aa2009e73cacb51d48664075b4-p_e.webp",
+        "https://photos.zillowstatic.com/fp/03021091be282ecf82e371fcba3efa15-p_e.webp",
+        "https://photos.zillowstatic.com/fp/6490f66b458252be5c550ce79edb1dbf-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-304b6c0202",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/18w55-18-west-55th-street-new_york/7c",
@@ -42453,72 +42474,46 @@
       ]
     },
     {
-      "id": "streeteasy-6c37772012",
+      "id": "streeteasy-de45844248",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/520-fifth-avenue-new_york/64a",
-      "title": "520 5th Avenue",
-      "price": 27000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.75447,
-      "lng": -73.98063,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/dcd92c0752417b9cbdfe58c2abc75e22-p_e.webp",
-        "https://photos.zillowstatic.com/fp/394c74625b820a0284e25a9cfe47fd54-p_e.webp",
-        "https://photos.zillowstatic.com/fp/bb324ca9f5fc4e877f9e3f009f4c92eb-p_e.webp",
-        "https://photos.zillowstatic.com/fp/197ffedbfc6dfb87121f57dd3dc5acba-p_e.webp",
-        "https://photos.zillowstatic.com/fp/83c9f32c74d390a65d821a241637a630-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-da4f4cd93f",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/28-east-38-street-new_york/4c",
-      "title": "30 East 38th Street",
-      "price": 5800,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7498,
-      "lng": -73.98055,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/3ff7fd0122c19ea5e3424a6c3b94302e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8c50e78017f86f58a07ead1952f8dad6-p_e.webp",
-        "https://photos.zillowstatic.com/fp/fb95217ea5ffd91a0b40972ed29043e1-p_e.webp",
-        "https://photos.zillowstatic.com/fp/30f39a12bd126fd55b1912db3cac7674-p_e.webp",
-        "https://photos.zillowstatic.com/fp/da690de1de50b59177ed02de1d64ee01-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-70236e2a58",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/213-east-37th-street-new_york/5g",
-      "title": "213 East 37th Street",
-      "price": 3450,
+      "sourceUrl": "https://streeteasy.com/building/5-tudor-city-place-new_york/1310",
+      "title": "5 Tudor City Place",
+      "price": 3145,
       "priceFrom": false,
       "currency": "USD",
       "type": "studio",
       "furnished": false,
       "sqft": null,
-      "lat": 40.747482,
-      "lng": -73.97583,
+      "lat": 40.7479,
+      "lng": -73.9709,
       "photos": [
-        "https://photos.zillowstatic.com/fp/82c31867fc88bbccf125e936038e3dc5-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5490c1fdfabc2083c63c5fe73b9d65ff-p_e.webp",
-        "https://photos.zillowstatic.com/fp/77e9d52083251f641cfbcf9b1bb91cee-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6dce9142dc997e7aebd3c1981da637be-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f74652dca409c58610b805b5eac425c5-p_e.webp"
+        "https://photos.zillowstatic.com/fp/96f41a357ae161c2f11a86810d0136ae-p_e.webp",
+        "https://photos.zillowstatic.com/fp/70a688238617225e66ee1b1e7dd44051-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3f93c4a4ecc429e309b5f82877315c52-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-4b3f5db224",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/165-east-35-street-new_york/6b",
+      "title": "165 East 35th Street",
+      "price": 5400,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.74671,
+      "lng": -73.97781,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/a07a853fc7ba9c40c4046c048ab06fba-p_e.webp",
+        "https://photos.zillowstatic.com/fp/b15d5c39d2c388b15809c6397e64712f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9c23dd022af8dd1e2a4d3e7653194efa-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d7fbb75b16c21d94062bde75846b3b65-p_e.webp",
+        "https://photos.zillowstatic.com/fp/6ce964be930f732755990a78e547b9a0-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42573,11 +42568,11 @@
       ]
     },
     {
-      "id": "streeteasy-39393c60ac",
+      "id": "streeteasy-b43e95d967",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/summit-nyc/38a",
+      "sourceUrl": "https://streeteasy.com/building/summit-nyc/36n",
       "title": "222 East 44th Street",
-      "price": 5350,
+      "price": 7820,
       "priceFrom": true,
       "currency": "USD",
       "type": "1br",
@@ -42586,11 +42581,11 @@
       "lat": 40.7513,
       "lng": -73.9729,
       "photos": [
-        "https://photos.zillowstatic.com/fp/f12c7b129304477645c6048d1007680d-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d2eee68cba95fff6372134dda4e09f7f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4d1eb5fa23d5a350497bc7cf61e30474-p_e.webp",
-        "https://photos.zillowstatic.com/fp/007d85f2c3ff09e61727357ff19ef419-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f2e0815c5257277ddeccd2b7d6706d25-p_e.webp"
+        "https://photos.zillowstatic.com/fp/01177cb26ce00eb58a0f3e828da686ee-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ddac9f57772789135a89c2b5fd791b59-p_e.webp",
+        "https://photos.zillowstatic.com/fp/072b93be5d67ba0fc1d723d784aa66ae-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ef3f3be54ba950f05f20c4606ed5e291-p_e.webp",
+        "https://photos.zillowstatic.com/fp/846a8743b73d9245aad38fac6faa3ad2-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42625,7 +42620,7 @@
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/view-34/s23h",
       "title": "401 East 34th Street",
-      "price": 4741,
+      "price": 5047,
       "priceFrom": true,
       "currency": "USD",
       "type": "1br",
@@ -42645,14 +42640,14 @@
       ]
     },
     {
-      "id": "streeteasy-ad6f82af4b",
+      "id": "streeteasy-7f5d418f7d",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/murray-hill-tower/32a",
+      "sourceUrl": "https://streeteasy.com/building/murray-hill-tower/17e",
       "title": "245 E. 40th Street",
-      "price": 5494,
-      "priceFrom": false,
+      "price": 8843,
+      "priceFrom": true,
       "currency": "USD",
-      "type": "1br",
+      "type": "2br",
       "furnished": false,
       "sqft": null,
       "lat": 40.7489,
@@ -42717,46 +42712,24 @@
       ]
     },
     {
-      "id": "streeteasy-de45844248",
+      "id": "streeteasy-aca854bfc5",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/5-tudor-city-place-new_york/1310",
-      "title": "5 Tudor City Place",
-      "price": 3145,
+      "sourceUrl": "https://streeteasy.com/building/knox-49-east-34th-street-new_york/7b",
+      "title": "49 East 34th Street",
+      "price": 5300,
       "priceFrom": false,
       "currency": "USD",
-      "type": "studio",
+      "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7479,
-      "lng": -73.9709,
+      "lat": 40.7476,
+      "lng": -73.9822,
       "photos": [
-        "https://photos.zillowstatic.com/fp/96f41a357ae161c2f11a86810d0136ae-p_e.webp",
-        "https://photos.zillowstatic.com/fp/70a688238617225e66ee1b1e7dd44051-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3f93c4a4ecc429e309b5f82877315c52-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-42b7848528",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-townsley/7j",
-      "title": "245 East 35th Street",
-      "price": 4400,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7459,
-      "lng": -73.9759,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/efdd1e2c486de91c0df1c48602734e3a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8be35dc37dafe66980f278f2d6e31a9b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/bd3c9944de26911ed9a19378fb287088-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4d7d2785d6624104c430247f7a6e14e2-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6951bc041964c7ee23ece8c82c4ed00c-p_e.webp"
+        "https://photos.zillowstatic.com/fp/da88d63dc3d8f4a1d120bddd6904c88c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/127903f16ec1bfda06ad1a4078f88845-p_e.webp",
+        "https://photos.zillowstatic.com/fp/43db83ece702868f3910ffdf628e0066-p_e.webp",
+        "https://photos.zillowstatic.com/fp/680b02db93d7e44e918eebf66ecf1709-p_e.webp",
+        "https://photos.zillowstatic.com/fp/13f40be8ab8b9c115425328187c17c2a-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42787,48 +42760,48 @@
       ]
     },
     {
-      "id": "streeteasy-9d96a0cf20",
+      "id": "streeteasy-5bbc1c58a9",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/57-thompson-street-new_york/1b",
-      "title": "57 Thompson Street",
-      "price": 5295,
-      "priceFrom": false,
+      "sourceUrl": "https://streeteasy.com/building/188-6th-avenue-new_york/4rn",
+      "title": "188 Sixth Avenue",
+      "price": 4500,
+      "priceFrom": true,
       "currency": "USD",
       "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7241,
-      "lng": -74.0036,
+      "lat": 40.726254,
+      "lng": -74.0033,
       "photos": [
-        "https://photos.zillowstatic.com/fp/a3a1726975fed0d9fb599f7dcbab8258-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7ea02a1879e2b2de2283233fce19fea1-p_e.webp",
-        "https://photos.zillowstatic.com/fp/aa305d488262fa6388b35e4b21197a24-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5e67b21c9a47227134e9e23f8c34e9c7-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a3192a432d77c75c713facf5f61873be-p_e.webp"
+        "https://photos.zillowstatic.com/fp/29fe8e995b78786cb2a66de11e14ad5e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/73a63724ab491c9cb3a24dbf21ca0ebd-p_e.webp",
+        "https://photos.zillowstatic.com/fp/08a9039f2df1ab4cded9fa912f9dddfe-p_e.webp",
+        "https://photos.zillowstatic.com/fp/664ead4bda383b844ac4363bf1b3c3eb-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1d1ff0d89a36c361baba96547d23a0d9-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-f709512741",
+      "id": "streeteasy-3d6717965c",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/188-6th-avenue-new_york/5fn",
-      "title": "188 Sixth Avenue",
-      "price": 4500,
+      "sourceUrl": "https://streeteasy.com/building/102-charlton-street-new_york/17d",
+      "title": "102 Charlton Street",
+      "price": 4950,
       "priceFrom": true,
       "currency": "USD",
-      "type": "2br",
+      "type": "studio",
       "furnished": false,
       "sqft": null,
-      "lat": 40.726254,
-      "lng": -74.0033,
+      "lat": 40.727173,
+      "lng": -74.0081,
       "photos": [
-        "https://photos.zillowstatic.com/fp/0c728ae3eb865254b68050a4b0f6ee12-p_e.webp",
-        "https://photos.zillowstatic.com/fp/9e48d90a532563582fee5d6b437c523b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5e5f5df31a637319c951b0db03f6f9ac-p_e.webp",
-        "https://photos.zillowstatic.com/fp/31c37e3298cf745884f082dfda3e580d-p_e.webp",
-        "https://photos.zillowstatic.com/fp/722b802d3f9a4de4e7d5e715de14ff58-p_e.webp"
+        "https://photos.zillowstatic.com/fp/ba8e69767bf213c407f6b893f0a18696-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a42376c5315a2ab7dfa83324ac2330dd-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9d40349117fb110031022a73481a1fb1-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8d986a2bfd26c9f3f503d196445154e3-p_e.webp",
+        "https://photos.zillowstatic.com/fp/01ba77382c237023ad321449506c739f-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -42931,6 +42904,30 @@
       ]
     },
     {
+      "id": "streeteasy-9d96a0cf20",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/57-thompson-street-new_york/1b",
+      "title": "57 Thompson Street",
+      "price": 5295,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7241,
+      "lng": -74.0036,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/a3a1726975fed0d9fb599f7dcbab8258-p_e.webp",
+        "https://photos.zillowstatic.com/fp/7ea02a1879e2b2de2283233fce19fea1-p_e.webp",
+        "https://photos.zillowstatic.com/fp/aa305d488262fa6388b35e4b21197a24-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5e67b21c9a47227134e9e23f8c34e9c7-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a3192a432d77c75c713facf5f61873be-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-23bf583efb",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/159-prince-street-new_york/3",
@@ -42997,30 +42994,6 @@
         "https://photos.zillowstatic.com/fp/eb75b4c0124084dde7ff035a2af0efb4-p_e.webp",
         "https://photos.zillowstatic.com/fp/92b9e48d3f45f97ea9a1a42f6dc4a541-p_e.webp",
         "https://photos.zillowstatic.com/fp/84152f0623daa0d928b20c5cf792dd42-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-3d6717965c",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/102-charlton-street-new_york/17d",
-      "title": "102 Charlton Street",
-      "price": 4950,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.727173,
-      "lng": -74.0081,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/ba8e69767bf213c407f6b893f0a18696-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a42376c5315a2ab7dfa83324ac2330dd-p_e.webp",
-        "https://photos.zillowstatic.com/fp/9d40349117fb110031022a73481a1fb1-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8d986a2bfd26c9f3f503d196445154e3-p_e.webp",
-        "https://photos.zillowstatic.com/fp/01ba77382c237023ad321449506c739f-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -43698,48 +43671,24 @@
       ]
     },
     {
-      "id": "streeteasy-cbb2a991e7",
+      "id": "streeteasy-49efa98081",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/53-park-place-new_york/202a",
-      "title": "53 Park Place",
-      "price": 5995,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "4br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.714,
-      "lng": -74.0102,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/69f9f6d7d76c7250dba43214a3b1d29e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5c013e446692ccf8f822d90ed632bcc5-p_e.webp",
-        "https://photos.zillowstatic.com/fp/9516ab65176a1f3ee55b511a829909a8-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8a70fccdbb016e0897ae21ca48427885-p_e.webp",
-        "https://photos.zillowstatic.com/fp/c791275228f293bdc67312f2d3e8bc58-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-f79bb148c7",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/110-reade-street-new_york/ph",
+      "sourceUrl": "https://streeteasy.com/building/110-reade-street-new_york/4",
       "title": "110 Reade Street",
       "price": 16750,
       "priceFrom": true,
       "currency": "USD",
-      "type": "2br",
+      "type": "3br",
       "furnished": false,
       "sqft": null,
       "lat": 40.716038,
       "lng": -74.00847,
       "photos": [
-        "https://photos.zillowstatic.com/fp/0c7081f1f22d039265673c82268df189-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6b248d33a964041001d2e02c17669bd9-p_e.webp",
-        "https://photos.zillowstatic.com/fp/343fb5e5b60b273e3854fc2a32e7392b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/394364a198cc759386e4e0bc75519607-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d0d28c806fff2428805fb00df5bbc90d-p_e.webp"
+        "https://photos.zillowstatic.com/fp/98345f62312316e4612962d8a085445b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/bca25fc98a999b1abe985b5ba40ab4de-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d493a65d8c5c05b1b31e4129624c95e6-p_e.webp",
+        "https://photos.zillowstatic.com/fp/23ebf5beab411ada52f0bfef9b48b1ec-p_e.webp",
+        "https://photos.zillowstatic.com/fp/079282025298fe05407838976fa890b7-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -43812,6 +43761,30 @@
         "https://photos.zillowstatic.com/fp/536795c20f1b0e0df96e0eee117b370d-p_e.webp",
         "https://photos.zillowstatic.com/fp/34eec492056d02b431f7b409e8b2f309-p_e.webp",
         "https://photos.zillowstatic.com/fp/cf2fe7fb0df2830613a818ed78b3cb98-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-8b12a9065a",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/53-park-place-new_york/10o",
+      "title": "53 Park Place",
+      "price": 5995,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.714,
+      "lng": -74.0102,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/1794902794af85f99a0b64b2fd68c54b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a1d7e941a9e2ce11b47d34de29fe335b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/0fb79acf3be1ec68b4108331e414f08f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ac99f5102a26eecbc1213423dda7d694-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a6fb8b19ef83b6f3aacf09afb73a8c30-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -43918,8 +43891,8 @@
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/saranac-95-worth-street-new_york/712",
       "title": "95 Worth Street",
-      "price": 5550,
-      "priceFrom": true,
+      "price": 7795,
+      "priceFrom": false,
       "currency": "USD",
       "type": "2br",
       "furnished": false,
@@ -44028,54 +44001,6 @@
         "https://photos.zillowstatic.com/fp/ab711bc8d086f40faf94cb7196371700-p_e.webp",
         "https://photos.zillowstatic.com/fp/252bb8281d7084aca89460b4d3269afc-p_e.webp",
         "https://photos.zillowstatic.com/fp/c06605cf0ec13308c576c7572b0a1573-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-7fa34372d1",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/60-beach-street-new_york/th1",
-      "title": "60 Beach Street",
-      "price": 45000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": true,
-      "sqft": null,
-      "lat": 40.7205,
-      "lng": -74.0093,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/60b8c9a4692c0ffa7a1c7fd8217b6094-p_e.webp",
-        "https://photos.zillowstatic.com/fp/39ee328926ed9a0c2bebacc7f17c0a2c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ca5111263ad9cd229a132bf291ed9ff7-p_e.webp",
-        "https://photos.zillowstatic.com/fp/55dff36a60556b32d70e13e508ddfd94-p_e.webp",
-        "https://photos.zillowstatic.com/fp/53ceb3156914fd671032338c61fcc7fa-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-b48e8a10d3",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/80-north-moore-street-new_york/8028k",
-      "title": "80 North Moore Street",
-      "price": 8595,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7201,
-      "lng": -74.0103,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/ee853b7d0db2a15c3a0bcfa75a50839c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/47641617aee4bda095e48481ddfea1c1-p_e.webp",
-        "https://photos.zillowstatic.com/fp/58f7ed5188a5934948861e4a51acc88f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3da7d4078b5fd48619b4e791ae85cd3a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d8d21caeed62f2c5953f482ce1a82100-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -44442,48 +44367,47 @@
       ]
     },
     {
-      "id": "streeteasy-f090b58662",
+      "id": "streeteasy-34ed299d0f",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/1510-lex-carnegie-hill-place/phu",
-      "title": "1510 Lexington Avenue",
-      "price": 4200,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/the-valerie-163-east-89-street-new_york/1a",
+      "title": "163 East 89th Street",
+      "price": 3250,
+      "priceFrom": false,
       "currency": "USD",
-      "type": "studio",
+      "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.78702,
-      "lng": -73.95045,
+      "lat": 40.781258,
+      "lng": -73.953186,
       "photos": [
-        "https://photos.zillowstatic.com/fp/b287d9203ceca313e697f761f5bd32ad-p_e.webp",
-        "https://photos.zillowstatic.com/fp/cf51c9e6bf0f8e8c6f4bc58b1f16adc6-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a94a1aa4f2663f6e6f8cbb6fc861065f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ca77e054001b21bb7fc44aa27da95ac0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/44dc2e4d85b9409af8f16b8eb75650cb-p_e.webp"
+        "https://photos.zillowstatic.com/fp/781eb9b30b60c1be1c283044e2efb949-p_e.webp",
+        "https://photos.zillowstatic.com/fp/60a77606b0daf5053f569f9b7979ee49-p_e.webp",
+        "https://photos.zillowstatic.com/fp/32485d84803a27b5a20f9e9d7da99ffe-p_e.webp",
+        "https://photos.zillowstatic.com/fp/6583398754b2a06f30738a9497025422-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-cd8ec74849",
+      "id": "streeteasy-f79e71bac2",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/209-east-66-street-manhattan/102",
-      "title": "209 E. 66th Street",
-      "price": 4295,
+      "sourceUrl": "https://streeteasy.com/building/85-east-end-avenue-new_york/04f",
+      "title": "85 East End Avenue",
+      "price": 10195,
       "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "2br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7657,
-      "lng": -73.9621,
+      "lat": 40.773,
+      "lng": -73.9456,
       "photos": [
-        "https://photos.zillowstatic.com/fp/07f6f0d11358189b9d9f996332856d7e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/068e1345bc6b4ff8eade7b979f2eb04c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/acdb8568b127609171ca9d03490aea1a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/7c27660d1f52ba843c64eb67d5b38f3a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/20a9ce1b23a7d1add5d4c4a0f0a2daee-p_e.webp"
+        "https://photos.zillowstatic.com/fp/f4877c6da6bdd84d4f6c6bafd80626ff-p_e.webp",
+        "https://photos.zillowstatic.com/fp/aebbad44ee420938b1b7707acf89b72d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f0720f7839585b0bd8b34fc18bc3f5e9-p_e.webp",
+        "https://photos.zillowstatic.com/fp/23987153ff38b363fc667fca2e885296-p_e.webp",
+        "https://photos.zillowstatic.com/fp/19538245f0a1723b2b2c9baa34e3497d-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -44556,6 +44480,30 @@
         "https://photos.zillowstatic.com/fp/25534c0d471f2370eee7163084ec9c65-p_e.webp",
         "https://photos.zillowstatic.com/fp/4c09a80f39a48783d71e06cdd9391d22-p_e.webp",
         "https://photos.zillowstatic.com/fp/f5a2e91d82d52e51ed8f322cd1b11cce-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-0bfabf48dd",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/1510-lex-carnegie-hill-place/12m",
+      "title": "1510 Lexington Avenue",
+      "price": 4200,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "studio",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.78702,
+      "lng": -73.95045,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/9bf8f8db4595863a146c8bf8ff500104-p_e.webp",
+        "https://photos.zillowstatic.com/fp/471971de9de18652e0fafdf58e7c4cad-p_e.webp",
+        "https://photos.zillowstatic.com/fp/295208bf2fb63fef88e24aa4a4e59954-p_e.webp",
+        "https://photos.zillowstatic.com/fp/020f0172a2079a1c1b6c3f8188e89453-p_e.webp",
+        "https://photos.zillowstatic.com/fp/dc6297f3adff1efbfdd18bc4bbf02d18-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -44658,48 +44606,48 @@
       ]
     },
     {
-      "id": "streeteasy-582e16eb77",
+      "id": "streeteasy-83e3e5a3df",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/265-east-66th-street-new_york/7f",
-      "title": "265 East 66th Street",
-      "price": 7700,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/421-east-65-street-new_york/4e",
+      "title": "421 East 65th Street",
+      "price": 3500,
+      "priceFrom": false,
       "currency": "USD",
-      "type": "2br",
+      "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7658,
-      "lng": -73.9616,
+      "lat": 40.76308,
+      "lng": -73.95798,
       "photos": [
-        "https://photos.zillowstatic.com/fp/435002eb9616dd87b1621b40829e44fc-p_e.webp",
-        "https://photos.zillowstatic.com/fp/03c3315ec551ed809155b34d66367cc2-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d6aaf10f883cb3a67b8627dde2cefccc-p_e.webp",
-        "https://photos.zillowstatic.com/fp/2b1dd06431f84e8eb649ed986945eb5a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5d327b100fc91e274cd3a4e9a7239c23-p_e.webp"
+        "https://photos.zillowstatic.com/fp/92c46927bfebbd6b119804f9ea5036fc-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c540da19506c0adf96e34503e2aec51c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d527c188171546cbf60d4479be78250f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9139dbc39d93064bbcda324790264d2d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/57c6d9b69eb780e1a48d586903995b7f-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-9b2868b41e",
+      "id": "streeteasy-787f5a07d9",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/two-sutton-place-north/4a",
-      "title": "1113 York Avenue",
-      "price": 5650,
+      "sourceUrl": "https://streeteasy.com/building/220-east-72nd-street-new_york/27f0",
+      "title": "220 East 72nd Street",
+      "price": 24995,
       "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "4br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7597,
-      "lng": -73.9594,
+      "lat": 40.7691,
+      "lng": -73.9598,
       "photos": [
-        "https://photos.zillowstatic.com/fp/03fd5689d4db0793876fa3c817b18a74-p_e.webp",
-        "https://photos.zillowstatic.com/fp/81fcd1f374c18c3bd921198fa2f1d936-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d0825fae41acc5e808c15f1798d06a81-p_e.webp",
-        "https://photos.zillowstatic.com/fp/1b5e2977e9052cdd5e9e1cb2fda4cb33-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a5b3594e01948b2f28c81ba8fcbef28d-p_e.webp"
+        "https://photos.zillowstatic.com/fp/ec88ce77541362f94c6b763d7f14c696-p_e.webp",
+        "https://photos.zillowstatic.com/fp/859d9f1bf89c82300b4f79b84c89a0cc-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5a943507600d8baf62db26379098c205-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1378471b5df582ea3942f8f27bfa4009-p_e.webp",
+        "https://photos.zillowstatic.com/fp/304536aee7431c578863ba3149f0b211-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -44844,6 +44792,30 @@
         "https://photos.zillowstatic.com/fp/8495e4ad8f9105b8e3fbaae2a61d5a95-p_e.webp",
         "https://photos.zillowstatic.com/fp/ba6bd4977a41e393be81193d9fddac85-p_e.webp",
         "https://photos.zillowstatic.com/fp/a984b1e75a16ee811dcf02c4378faddd-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-37072dce74",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/303-east-83rd/27a",
+      "title": "303 East 83rd Street",
+      "price": 6961,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.776,
+      "lng": -73.9527,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/0482b551fb90e50fa1c5d13ed05affc6-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c66607b0e7fc05936e06554a1469258f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/dbd4df2788f03761ca6d8486e467f5a2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2488b64f1179ab61328316c69bd5bf0e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9bb87bc69c919f94d0d0c0707345f044-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -45138,6 +45110,30 @@
       ]
     },
     {
+      "id": "streeteasy-582e16eb77",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/265-east-66th-street-new_york/7f",
+      "title": "265 East 66th Street",
+      "price": 7700,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7658,
+      "lng": -73.9616,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/435002eb9616dd87b1621b40829e44fc-p_e.webp",
+        "https://photos.zillowstatic.com/fp/03c3315ec551ed809155b34d66367cc2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d6aaf10f883cb3a67b8627dde2cefccc-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2b1dd06431f84e8eb649ed986945eb5a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5d327b100fc91e274cd3a4e9a7239c23-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-cdb94871cf",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/the-cole-by-stonehenge/1602",
@@ -45228,6 +45224,30 @@
         "https://photos.zillowstatic.com/fp/09f811197fb9d10acc99faa716d415d1-p_e.webp",
         "https://photos.zillowstatic.com/fp/378e65a4e72cb201472845efe90716da-p_e.webp",
         "https://photos.zillowstatic.com/fp/912d556e682ae275036edb32bc99d258-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-9b2868b41e",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/two-sutton-place-north/4a",
+      "title": "1113 York Avenue",
+      "price": 5650,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7597,
+      "lng": -73.9594,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/03fd5689d4db0793876fa3c817b18a74-p_e.webp",
+        "https://photos.zillowstatic.com/fp/81fcd1f374c18c3bd921198fa2f1d936-p_e.webp",
+        "https://photos.zillowstatic.com/fp/d0825fae41acc5e808c15f1798d06a81-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1b5e2977e9052cdd5e9e1cb2fda4cb33-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a5b3594e01948b2f28c81ba8fcbef28d-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -45330,29 +45350,6 @@
       ]
     },
     {
-      "id": "streeteasy-34ed299d0f",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-valerie-163-east-89-street-new_york/1a",
-      "title": "163 East 89th Street",
-      "price": 3250,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.781258,
-      "lng": -73.953186,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/781eb9b30b60c1be1c283044e2efb949-p_e.webp",
-        "https://photos.zillowstatic.com/fp/60a77606b0daf5053f569f9b7979ee49-p_e.webp",
-        "https://photos.zillowstatic.com/fp/32485d84803a27b5a20f9e9d7da99ffe-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6583398754b2a06f30738a9497025422-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-487660de4a",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/413-east-90-street-new_york/3sw",
@@ -45401,30 +45398,6 @@
       ]
     },
     {
-      "id": "streeteasy-f79e71bac2",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/85-east-end-avenue-new_york/04f",
-      "title": "85 East End Avenue",
-      "price": 10195,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.773,
-      "lng": -73.9456,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/f4877c6da6bdd84d4f6c6bafd80626ff-p_e.webp",
-        "https://photos.zillowstatic.com/fp/aebbad44ee420938b1b7707acf89b72d-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f0720f7839585b0bd8b34fc18bc3f5e9-p_e.webp",
-        "https://photos.zillowstatic.com/fp/23987153ff38b363fc667fca2e885296-p_e.webp",
-        "https://photos.zillowstatic.com/fp/19538245f0a1723b2b2c9baa34e3497d-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-34e16f048a",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/1377-lexington-avenue-new_york/3c",
@@ -45449,33 +45422,57 @@
       ]
     },
     {
-      "id": "streeteasy-9f3fec4c88",
+      "id": "streeteasy-306934e9d2",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/120-riverside-drive-new_york/8g",
-      "title": "120 Riverside Drive",
-      "price": 4000,
+      "sourceUrl": "https://streeteasy.com/building/south-park-tower/21n",
+      "title": "124 West 60th Street",
+      "price": 8500,
       "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "2br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.78856,
-      "lng": -73.980774,
+      "lat": 40.77,
+      "lng": -73.986,
       "photos": [
-        "https://photos.zillowstatic.com/fp/47f22b30180f4bc24397e5f1cf0ae2b8-p_e.webp",
-        "https://photos.zillowstatic.com/fp/2a55c873bca6f67f44ca85019c10ebca-p_e.webp",
-        "https://photos.zillowstatic.com/fp/29a66751dc8f6d16f0431e61c612ef42-p_e.webp",
-        "https://photos.zillowstatic.com/fp/59c8c6ec3c19ad35c28aaa0861ca831d-p_e.webp",
-        "https://photos.zillowstatic.com/fp/54c04382aa7314ba2d9fb2bfca87689b-p_e.webp"
+        "https://photos.zillowstatic.com/fp/a2a6f50d9ef594ba0118a497b884350d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/b8fc5137dda1c9fff171b33f53cb4e6d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/3784f96f4f5fceca873d6b41a2db56c5-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c03eeb0718829437a1b977051919bb47-p_e.webp",
+        "https://photos.zillowstatic.com/fp/887420679e38dbbdbd116959a0806c78-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-bb41298078",
+      "id": "streeteasy-574956ff15",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-melar/12b",
+      "sourceUrl": "https://streeteasy.com/building/400-west-61st-street-lincoln_square/710",
+      "title": "400 West 61st Street",
+      "price": 6627,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.773293,
+      "lng": -73.991585,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/c4bc9cc01fce29e4220f64e3cb4d8a3e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c5151bd98d30ebd11d59389d4ff9c7b2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/48cc67d3f88f3e8cb7d25157911ecb2a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/768792baf492ab300db24e5c34fd457f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5f1c711e38dc3753b219e1212844d2a9-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-5ea0819ce5",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-melar/15b",
       "title": "250 West 93rd Street",
       "price": 6755,
       "priceFrom": true,
@@ -45521,30 +45518,6 @@
       ]
     },
     {
-      "id": "streeteasy-31db77372f",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/1998-2nd-avenue-new_york/7l",
-      "title": "1998 2nd Avenue",
-      "price": 3195,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.788296,
-      "lng": -73.94374,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/83aee5ec65a8806f5152eccc578f999d-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6e50f28b4e4fcebc69e8987b603dfef6-p_e.webp",
-        "https://photos.zillowstatic.com/fp/39faf7cea5b972b123cd7b33ce54248f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/66230158be83c46a62c4befe2fbc193a-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5776f92e07afcca88efc02d332335897-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
       "id": "streeteasy-e17b23b32f",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/645-west-59th-street-lincoln_square/2101",
@@ -45563,30 +45536,6 @@
         "https://photos.zillowstatic.com/fp/ee42c65fe27f53dc46d6fb80c4360cb5-p_e.webp",
         "https://photos.zillowstatic.com/fp/64fef69cc5120a062a1556a4473831cf-p_e.webp",
         "https://photos.zillowstatic.com/fp/8f7b1d7745e2ae7cfe021d99548fd7d5-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-7d36153f3d",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/400-west-61st-street-lincoln_square/903",
-      "title": "400 West 61st Street",
-      "price": 6627,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.773293,
-      "lng": -73.991585,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/47218d36b675cdb0b1cecbdde90a6a54-p_e.webp",
-        "https://photos.zillowstatic.com/fp/774a9a8547c677ace446ceb816c3797e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0c952ecfffa2ca0bc5b978c2b3aaae3c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/50521f2c3ab807724340f63d73e89dfe-p_e.webp",
-        "https://photos.zillowstatic.com/fp/5f1c711e38dc3753b219e1212844d2a9-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -45641,24 +45590,48 @@
       ]
     },
     {
-      "id": "streeteasy-26042bdd48",
+      "id": "streeteasy-6224d2affc",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/8-west-108-street-new_york/44",
-      "title": "8 West 108th Street",
-      "price": 5665,
-      "priceFrom": false,
+      "sourceUrl": "https://streeteasy.com/building/180-riverside-blvd/6c",
+      "title": "180 Riverside Boulevard",
+      "price": 4463,
+      "priceFrom": true,
       "currency": "USD",
-      "type": "4br",
+      "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.799458,
-      "lng": -73.95993,
+      "lat": 40.7784,
+      "lng": -73.9879,
       "photos": [
-        "https://photos.zillowstatic.com/fp/a4f171f3656ce1b904f913d18dce591e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/36032f9872ad509b9f30657b847b4374-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ec61d7dc2674b1ed829ef8da7be5b061-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0f89a6bf0bebf93128ec78984b5ff010-p_e.webp",
-        "https://photos.zillowstatic.com/fp/a250588ac3b914784c648130bf9222dd-p_e.webp"
+        "https://photos.zillowstatic.com/fp/29ef338536398b4ca653fcb4385eff93-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2d5d9f15eee2609f8d9f9bf3d0d17556-p_e.webp",
+        "https://photos.zillowstatic.com/fp/613fd82cdfad7e38db183ba1ff551ee5-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9e0d7695344f1cf5d320573ea44eb790-p_e.webp",
+        "https://photos.zillowstatic.com/fp/fb8010717c4f5f6869ee423cfc914b56-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-bf312f949d",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/316-west-104-street-new_york/1d",
+      "title": "316 West 104th Street",
+      "price": 5500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.800518,
+      "lng": -73.97053,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/ce9c93007c046dfccc821c250a454c34-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ed84ed8fc6b9b300ebcc77e631f88f9f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/763f8ffc566d4edb00ab0f43ccee077b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f033f6a2566454d3ffd1a5be6010312b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/64e668c929d2dba89b87e32867d89bf2-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -45726,59 +45699,35 @@
       "lat": 40.7911,
       "lng": -73.9738,
       "photos": [
-        "https://photos.zillowstatic.com/fp/192517f273aea4f18a6f880a77ecb533-p_e.webp",
+        "https://photos.zillowstatic.com/fp/51e4fea8f6c2a74c66e6e7b033112fb0-p_e.webp",
         "https://photos.zillowstatic.com/fp/8998c25419edc46745c8a822a2464aeb-p_e.webp",
         "https://photos.zillowstatic.com/fp/a5963f65c678820a57f80cca10bf0aea-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f0d20c9cd945315981d841d532e3085d-p_e.webp",
-        "https://photos.zillowstatic.com/fp/bb022fad19d0c7155d0e2019bc14f238-p_e.webp"
+        "https://photos.zillowstatic.com/fp/335c3f546968a7055193441fe52a5240-p_e.webp",
+        "https://photos.zillowstatic.com/fp/e92ddc941c25bdcbf29b6022d4278a9a-p_e.webp"
       ],
       "sources": [
         "streeteasy"
       ]
     },
     {
-      "id": "streeteasy-a94f6eb605",
+      "id": "streeteasy-542e88ea87",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/the-lyric/10w",
-      "title": "255 West 94th Street",
-      "price": 5940,
+      "sourceUrl": "https://streeteasy.com/building/324-west-108/ph2",
+      "title": "324 West 108th Street",
+      "price": 17400,
       "priceFrom": false,
       "currency": "USD",
-      "type": "1br",
+      "type": "3br",
       "furnished": true,
       "sqft": null,
-      "lat": 40.7937,
-      "lng": -73.973,
+      "lat": 40.803127,
+      "lng": -73.968636,
       "photos": [
-        "https://photos.zillowstatic.com/fp/4a07713d298f485015700dca0431546f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4991d518a21fb9692cc782a1021ff904-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3be00a3915f49b4da3ac416e03bb7cd0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/bbc0ee8c1463f471db4decb536cf362f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/31675f512226f2c2f877f225cfd4daa1-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-6a71150a2a",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/205-west-91-street-new_york/1a",
-      "title": "205 West 91st Street",
-      "price": 3000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7913,
-      "lng": -73.97317,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/6694a689d8f98c1bf452c51345288adc-p_e.webp",
-        "https://photos.zillowstatic.com/fp/73cb79ef439709918a6c7b10d51d2804-p_e.webp",
-        "https://photos.zillowstatic.com/fp/6c28170dbabf7f47a37ad96f098eaa62-p_e.webp",
-        "https://photos.zillowstatic.com/fp/685a92fa169bad3d92766665ca4ab508-p_e.webp",
-        "https://photos.zillowstatic.com/fp/e46672d95ab6a9f92ddce8facafa3ca8-p_e.webp"
+        "https://photos.zillowstatic.com/fp/847f8b238aff9302ceca99201d333272-p_e.webp",
+        "https://photos.zillowstatic.com/fp/eef47f9c6d7baa479d72f1de607bd818-p_e.webp",
+        "https://photos.zillowstatic.com/fp/68de2eb7824ecb5f4d12079f3f3b4825-p_e.webp",
+        "https://photos.zillowstatic.com/fp/abe56c2dd82220843fff39dbec2efdce-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4102f602c6e8c3a0a3eb57970171c9d8-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -45803,6 +45752,30 @@
         "https://photos.zillowstatic.com/fp/05ac79fa3f9f0f8c9f72cb9a7c021cb4-p_e.webp",
         "https://photos.zillowstatic.com/fp/8fdbe76dac1c798c7c1f052b4b964882-p_e.webp",
         "https://photos.zillowstatic.com/fp/176f1beec4daaa7c645d6e41918a100b-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-31db77372f",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/1998-2nd-avenue-new_york/7l",
+      "title": "1998 2nd Avenue",
+      "price": 3195,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.788296,
+      "lng": -73.94374,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/83aee5ec65a8806f5152eccc578f999d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/6e50f28b4e4fcebc69e8987b603dfef6-p_e.webp",
+        "https://photos.zillowstatic.com/fp/39faf7cea5b972b123cd7b33ce54248f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/66230158be83c46a62c4befe2fbc193a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5776f92e07afcca88efc02d332335897-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -45929,6 +45902,30 @@
       ]
     },
     {
+      "id": "streeteasy-26042bdd48",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/8-west-108-street-new_york/44",
+      "title": "8 West 108th Street",
+      "price": 5665,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "4br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.799458,
+      "lng": -73.95993,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/a4f171f3656ce1b904f913d18dce591e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/36032f9872ad509b9f30657b847b4374-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ec61d7dc2674b1ed829ef8da7be5b061-p_e.webp",
+        "https://photos.zillowstatic.com/fp/0f89a6bf0bebf93128ec78984b5ff010-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a250588ac3b914784c648130bf9222dd-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-1cf8847e8f",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/the-sagamore/10c",
@@ -45971,30 +45968,6 @@
         "https://photos.zillowstatic.com/fp/be084de5b969d0ced62f7f7bd22ca19c-p_e.webp",
         "https://photos.zillowstatic.com/fp/4694960925e6801b26bc7c8b9b38c2d3-p_e.webp",
         "https://photos.zillowstatic.com/fp/04fd6923e9df0c3ea32cb2d30ec479c2-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-542e88ea87",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/324-west-108/ph2",
-      "title": "324 West 108th Street",
-      "price": 17400,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": true,
-      "sqft": null,
-      "lat": 40.803127,
-      "lng": -73.968636,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/847f8b238aff9302ceca99201d333272-p_e.webp",
-        "https://photos.zillowstatic.com/fp/eef47f9c6d7baa479d72f1de607bd818-p_e.webp",
-        "https://photos.zillowstatic.com/fp/68de2eb7824ecb5f4d12079f3f3b4825-p_e.webp",
-        "https://photos.zillowstatic.com/fp/abe56c2dd82220843fff39dbec2efdce-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4102f602c6e8c3a0a3eb57970171c9d8-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -46097,6 +46070,30 @@
       ]
     },
     {
+      "id": "streeteasy-9f3fec4c88",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/120-riverside-drive-new_york/8g",
+      "title": "120 Riverside Drive",
+      "price": 4000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.78856,
+      "lng": -73.980774,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/47f22b30180f4bc24397e5f1cf0ae2b8-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2a55c873bca6f67f44ca85019c10ebca-p_e.webp",
+        "https://photos.zillowstatic.com/fp/29a66751dc8f6d16f0431e61c612ef42-p_e.webp",
+        "https://photos.zillowstatic.com/fp/59c8c6ec3c19ad35c28aaa0861ca831d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/54c04382aa7314ba2d9fb2bfca87689b-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
       "id": "streeteasy-9e9f582292",
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/35-west-95-street-new_york/garden",
@@ -46121,48 +46118,24 @@
       ]
     },
     {
-      "id": "streeteasy-bc10ef480b",
+      "id": "streeteasy-9d66348009",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/one-south-first/35j",
-      "title": "1 South 1st Street",
-      "price": 6450,
+      "sourceUrl": "https://streeteasy.com/building/one-domino-square-rentals/1005",
+      "title": "5 South 5th Street",
+      "price": 6495,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.715805,
-      "lng": -73.966736,
+      "lat": 40.71267,
+      "lng": -73.96796,
       "photos": [
-        "https://photos.zillowstatic.com/fp/92e6498154f410768fd8624c03066308-p_e.webp",
-        "https://photos.zillowstatic.com/fp/986b11be4829477167f5dc294fe451d7-p_e.webp",
-        "https://photos.zillowstatic.com/fp/69d399b80220d3bc3cdfff0f4db1624f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/8eab75c9cde6fa54898bef0f6c5a9a2c-p_e.webp",
-        "https://photos.zillowstatic.com/fp/2c8221a305e33844ba13aedb433af077-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-0625e21fe6",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/1n4th-1-north-4th-place-brooklyn/12d",
-      "title": "1 North 4th Place",
-      "price": 7750,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.7193,
-      "lng": -73.9643,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/063a8cfb74b4868ea8a6cce5ebbe580b-p_e.webp",
-        "https://photos.zillowstatic.com/fp/bec5470d490200b31fd375c5ce8495df-p_e.webp",
-        "https://photos.zillowstatic.com/fp/4e6a03f5f242408b993cd90c5249c514-p_e.webp",
-        "https://photos.zillowstatic.com/fp/2bd1c816a6137332e3d1ac79d1de3eb0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d7b3703ba32206fd2a51c11a2d8b165c-p_e.webp"
+        "https://photos.zillowstatic.com/fp/2a6a5548d2222928fc147da21a454e90-p_e.webp",
+        "https://photos.zillowstatic.com/fp/5cf67bb234333cda0976519702f098e8-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4ec567aeb0ab1d9fc277476d0db30bd1-p_e.webp",
+        "https://photos.zillowstatic.com/fp/868b9f8bc8b1ed91ec38b440f6023e29-p_e.webp",
+        "https://photos.zillowstatic.com/fp/6f8a967cc2e79e6afb0e99265683af97-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -46211,30 +46184,6 @@
         "https://photos.zillowstatic.com/fp/6fcc2b5fb1593ab983a4b6a4d4b02aa3-p_e.webp",
         "https://photos.zillowstatic.com/fp/0db03626fa1f297c795a54bb3aa77446-p_e.webp",
         "https://photos.zillowstatic.com/fp/0f538129e34208afdbb61bb9ab9e9449-p_e.webp"
-      ],
-      "sources": [
-        "streeteasy"
-      ]
-    },
-    {
-      "id": "streeteasy-5dddeb96e6",
-      "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/hanover-house/20e",
-      "title": "17 Hanover Place",
-      "price": 4495,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.688644,
-      "lng": -73.98225,
-      "photos": [
-        "https://photos.zillowstatic.com/fp/92510b614ff21a2b9c8a488877bd212e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/0ef5453e849cfea3e79f7da484960849-p_e.webp",
-        "https://photos.zillowstatic.com/fp/3ad14e302abeae5f763ad03b87599a92-p_e.webp",
-        "https://photos.zillowstatic.com/fp/329e6029eb08266e05a4d22e3dc1d3ea-p_e.webp",
-        "https://photos.zillowstatic.com/fp/ddf609866c0f3f167e0792d08c731834-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -46361,24 +46310,48 @@
       ]
     },
     {
-      "id": "streeteasy-83755e0c17",
+      "id": "streeteasy-6218023387",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/475-kent-williamsburg-lofts/306",
-      "title": "475 Kent Avenue",
-      "price": 8400,
-      "priceFrom": false,
+      "sourceUrl": "https://streeteasy.com/building/420-kent-avenue-brooklyn/213t",
+      "title": "420 Kent Avenue",
+      "price": 3712,
+      "priceFrom": true,
       "currency": "USD",
-      "type": "2br",
+      "type": "studio",
       "furnished": false,
       "sqft": null,
-      "lat": 40.707394,
-      "lng": -73.96807,
+      "lat": 40.7099,
+      "lng": -73.9691,
       "photos": [
-        "https://photos.zillowstatic.com/fp/cfd0ea9717c56dd65aa3f471dd60456e-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f926d4b87979b0b442f0ec9c1270fef6-p_e.webp",
-        "https://photos.zillowstatic.com/fp/79b224b28d4cb5710847c102347316a0-p_e.webp",
-        "https://photos.zillowstatic.com/fp/9393ac8b8c055abde61e5ad41009a4f3-p_e.webp",
-        "https://photos.zillowstatic.com/fp/fb9b5493b11517a2a46054fe64339018-p_e.webp"
+        "https://photos.zillowstatic.com/fp/a043987dc19d02fcdb96aa12bc929a86-p_e.webp",
+        "https://photos.zillowstatic.com/fp/9b7356c09f34d56ecaa3ec2b789d173b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2448a428d6ef5580d044dea754de0883-p_e.webp",
+        "https://photos.zillowstatic.com/fp/6520a3d7a406722fe8e71e8ee0ffb32f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/03fc085772ed8f30158544bde5dc10e0-p_e.webp"
+      ],
+      "sources": [
+        "streeteasy"
+      ]
+    },
+    {
+      "id": "streeteasy-bc10ef480b",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/one-south-first/35j",
+      "title": "1 South 1st Street",
+      "price": 6450,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.715805,
+      "lng": -73.966736,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/92e6498154f410768fd8624c03066308-p_e.webp",
+        "https://photos.zillowstatic.com/fp/986b11be4829477167f5dc294fe451d7-p_e.webp",
+        "https://photos.zillowstatic.com/fp/69d399b80220d3bc3cdfff0f4db1624f-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8eab75c9cde6fa54898bef0f6c5a9a2c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2c8221a305e33844ba13aedb433af077-p_e.webp"
       ],
       "sources": [
         "streeteasy"
@@ -46601,24 +46574,24 @@
       ]
     },
     {
-      "id": "streeteasy-5df7b18d7f",
+      "id": "streeteasy-d6e3bd87c1",
       "source": "streeteasy",
-      "sourceUrl": "https://streeteasy.com/building/420-kent-avenue-brooklyn/1009",
-      "title": "420 Kent Avenue",
-      "price": 3712,
-      "priceFrom": true,
+      "sourceUrl": "https://streeteasy.com/building/nv-condominium/3j",
+      "title": "101 North 5th Street",
+      "price": 7600,
+      "priceFrom": false,
       "currency": "USD",
       "type": "2br",
       "furnished": false,
       "sqft": null,
-      "lat": 40.7099,
-      "lng": -73.9691,
+      "lat": 40.7179,
+      "lng": -73.9604,
       "photos": [
-        "https://photos.zillowstatic.com/fp/a043987dc19d02fcdb96aa12bc929a86-p_e.webp",
-        "https://photos.zillowstatic.com/fp/bf3a10e73ba0ddd6aed1f3dd463c9adf-p_e.webp",
-        "https://photos.zillowstatic.com/fp/f83e56eaf4e80801419f25b1e89049da-p_e.webp",
-        "https://photos.zillowstatic.com/fp/40b0b757f023ac89f3c52dd387f0f5b5-p_e.webp",
-        "https://photos.zillowstatic.com/fp/58db623789c62a371fe6a8fe3617b4fa-p_e.webp"
+        "https://photos.zillowstatic.com/fp/06b3f228644db6edb5d62d3ea3cc6e63-p_e.webp",
+        "https://photos.zillowstatic.com/fp/185d280667cba5f733fd45955b7fb6a2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/bd41f5fb4cf53b118a8f212b0dabad95-p_e.webp",
+        "https://photos.zillowstatic.com/fp/4c32b74a5413bff1fee9a0d69351344a-p_e.webp",
+        "https://photos.zillowstatic.com/fp/34c43093798b344de61fb4056f99e222-p_e.webp"
       ],
       "sources": [
         "streeteasy"
