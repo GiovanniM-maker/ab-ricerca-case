@@ -115,7 +115,14 @@ async function crawl(source, headed) {
 
         if (blocked(html, title)) {
           blocks++;
+          // Salviamo il muro cosi' com'e': senza, "bloccato" resta una nostra
+          // supposizione e non si distingue un captcha vero da un falso
+          // positivo del rilevatore. Fuori da pages/, che e' solo roba buona.
+          const dump = join(HERE, "blocked");
+          mkdirSync(dump, { recursive: true });
+          writeFileSync(join(dump, `${source}-${blocks}.html`), html);
           console.log(`  ⚠︎  bloccato: ${url}`);
+          console.log(`      titolo: "${title}" · ${html.length} byte`);
           if (blocks >= 3) {
             console.log(
               `\n${source}: bloccato 3 volte di fila. Rilancia con:\n` +
