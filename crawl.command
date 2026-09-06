@@ -24,9 +24,9 @@ START=$(date +%s)
 exec > >(tee "$LOG") 2>&1
 
 hr()  { printf '─%.0s' {1..58}; echo; }
-# Notifica di sistema: il crawl dura una decina di minuti e l'idea e' che tu
-# faccia altro. Se serve il tuo intervento devi saperlo senza restare a guardare.
-notify() { osascript -e "display notification \"$2\" with title \"$1\" sound name \"Glass\"" >/dev/null 2>&1 || true; }
+# Avvisi sul Mac e sul telefono: il crawl dura una decina di minuti e l'idea
+# e' che tu faccia altro, anche lontano dalla scrivania.
+. "$ROOT/tools/notify.sh"
 step() { echo; hr; echo "  $1"; hr; }
 ok()   { echo "  ✓ $1"; }
 warn() { echo "  ⚠︎  $1"; }
@@ -83,23 +83,17 @@ if [ "$HAVE_NODE" = "1" ]; then
     npm install --silent && npx playwright install chromium
   fi
   rm -f .needs-login
-  node fetch.mjs --all
-
-  # Chi resiste anche a Playwright lo ritentiamo con Chrome vero: e' un
-  # processo lanciato normalmente, senza la trentina di switch da automazione
-  # che sono essi stessi un'impronta riconoscibile.
-  if [ -f .needs-login ]; then
-    echo
-    echo "  Ritento con Chrome vero: $(tr '\n' ' ' < .needs-login)"
-    notify "Flatiron Radar" "Apro Chrome: se chiede una verifica, risolvila quando puoi."
-    node fetch-cdp.mjs $(cat .needs-login) || true
-    # Le fonti che ora hanno pagine sono risolte: non chiedere il login per quelle.
-    STILL=""
-    for s in $(cat .needs-login); do
-      [ -d "pages/$s" ] || STILL="$STILL $s"
-    done
-    NEEDS_LOGIN="$STILL"
+  # Dritti al Chrome vero per TUTTI e quattro. Provare prima con Playwright su
+  # siti che sappiamo riconoscerlo e' solo tempo perso: quando serve una
+  # verifica il crawl porta avanti la finestra, avvisa e riprova da solo.
+  notify "Flatiron Radar" "Apro Chrome per StreetEasy, Zillow, Apartments e RentHop. Se chiede una verifica ti avviso."
+  if ! node fetch-cdp.mjs --all; then
+    warn "Chrome non disponibile: ripiego su Playwright"
+    node fetch.mjs --all || true
   fi
+  for s in streeteasy zillow apartments renthop; do
+    [ -d "pages/$s" ] || NEEDS_LOGIN="$NEEDS_LOGIN $s"
+  done
 
   cd "$ROOT/apps/scraper" || exit 1
   for s in streeteasy zillow apartments renthop; do
@@ -163,17 +157,13 @@ if [ -n "$NEEDS_LOGIN" ]; then
   echo "  Questi siti ti hanno bloccato:"
   for s in $NEEDS_LOGIN; do echo "    · $s"; done
   echo
-  echo "  Si risolve loggandosi una volta: si apre una finestra vera, ti logghi"
-  echo "  (o risolvi il captcha) e da domani il crawl la riusa da solo."
+  echo "  Il crawl ha aspettato dieci minuti che risolvessi la verifica."
+  echo "  Se non eri al computer, basta rilanciare. Se invece il muro resta"
+  echo "  anche stando li', l'ultima carta e' navigare tu e farmi salvare le"
+  echo "  schede aperte:"
   echo
-  # Con un timeout: se sei altrove non deve restare appeso a un tasto.
-  read -t 60 -n 1 -r -p "  Vuoi farlo ora? [s/N, 60s]  " ANS; echo
-  if [[ "$ANS" =~ ^[sSyY]$ ]]; then
-    cd "$BROWSER" || exit 1
-    for s in $NEEDS_LOGIN; do node fetch.mjs --login "$s"; done
-    echo
-    echo "  Fatto. Rilancia il crawl per prendere anche quei siti."
-  fi
+  echo "    cd apps/scraper/browser && node fetch-cdp.mjs --manual"
+  notify "Flatiron Radar" "Non sono entrato in:$NEEDS_LOGIN. Rilancia quando puoi."
 fi
 
 # Col doppio clic la finestra si chiuderebbe subito portandosi via il riepilogo,

@@ -94,6 +94,22 @@ export function notify(title, message) {
     ["-e", `display notification ${esc(message)} with title ${esc(title)} sound name "Glass"`],
     () => {}
   );
+
+  // Anche sul telefono. Questo avviso in particolare — "serve una verifica" —
+  // arriva proprio quando non sei alla scrivania: sul Mac non lo vedresti.
+  try {
+    const conf = readFileSync(join(HERE, "../../../notify.conf"), "utf8");
+    const topic = (conf.match(/NTFY_TOPIC=(\S+)/) || [])[1];
+    if (topic) {
+      fetch(`https://ntfy.sh/${topic}`, {
+        method: "POST",
+        headers: { Title: String(title).replace(/[\r\n]/g, " ") },
+        body: String(message),
+      }).catch(() => {});
+    }
+  } catch {
+    /* nessun canale configurato: la notifica sul Mac basta */
+  }
 }
 
 /** Qualche gesto umano: questi sistemi guardano se il mouse si muove. */

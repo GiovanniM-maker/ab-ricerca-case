@@ -45,3 +45,6 @@ logs/
 !logs/ultimo-crawl.txt
 apps/scraper/browser/blocked/
 apps/scraper/browser/.chrome-profile/
+
+# Canale notifiche: e' un nome segreto, chi lo conosce riceve i tuoi avvisi.
+notify.conf
