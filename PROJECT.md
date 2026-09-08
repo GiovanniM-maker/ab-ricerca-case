@@ -127,6 +127,36 @@ Configurazione: `NEXT_PUBLIC_SUPABASE_URL` e
 stesso e la wishlist resta sul singolo browser. La `service_role` key non entra
 mai nel frontend né nel repo.
 
+## 6-ter. Chi scarica cosa, e da dove
+
+Misurato provando le fonti da un IP di datacenter (uguale a quello di GitHub
+Actions):
+
+| fonte | da datacenter | dal Mac | dove gira |
+|---|---|---|---|
+| ApartmentAdvisor | 1665 ✓ | 1638 | **GitHub Actions**, ogni mattina |
+| Craigslist | 189 ✓ | 194 | **GitHub Actions**, ogni mattina |
+| Trulia | **0** ✗ | 94 | Mac |
+| StreetEasy, Zillow, Apartments.com | bloccati | 835 | Mac, estensione Chrome |
+
+`.github/workflows/crawl.yml` copre il ~68% delle case senza che tu tocchi
+niente. Il resto resta al doppio clic: Trulia rifiuta gli IP dei datacenter, e
+gli altri tre passano solo dall'estensione dentro il Chrome vero e loggato —
+un browser in cloud è il profilo preciso che quei sistemi cercano.
+
+Due difese aggiunte per rendere sicuro il crawl non sorvegliato:
+
+- **`run.py` non sovrascrive uno snapshot buono con uno vuoto.** Una fonte che
+  smette di rispondere finiva "senza errori" con zero annunci, e la fusione
+  cancellava in silenzio tutte le sue case: successo apparente, danno reale.
+  Sotto un quinto del giro precedente si ferma e esce con errore.
+- **`aggregate.py --su-quelle-di-ieri`** fonde sopra il `listings.json`
+  pubblicato. Regola: una casa si porta avanti se ha almeno una fonte che oggi
+  non è stata interrogata; se invece tutte le sue fonti sono state riguardate e
+  lei non c'è più, è sparita davvero e se ne va. Così la lista si accorcia
+  quando deve, invece di riempirsi di fantasmi. Il crawl completo dal Mac non
+  usa l'opzione: lì le fonti ci sono tutte e ricostruire da zero è più pulito.
+
 ## 7. Stato di avanzamento
 - [x] **Fase 0** — Scaffold monorepo, schema DB, config Flatiron, docs.
 - [x] **Fase 1** — Isocrone (GeoJSON) + `classify()` + mappa interattiva.

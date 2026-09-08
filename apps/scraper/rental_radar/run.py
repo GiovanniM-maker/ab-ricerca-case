@@ -58,6 +58,11 @@ def main() -> None:
         action="store_true",
         help="usa la ricerca di quartiere (solo Flatiron) invece dell'area dei 3 tier",
     )
+    ap.add_argument(
+        "--force",
+        action="store_true",
+        help="scrivi lo snapshot anche se il numero di annunci e' crollato",
+    )
     args = ap.parse_args()
 
     url = args.url or url_for(args.source)
@@ -90,6 +95,27 @@ def main() -> None:
     print(f"  in-tier: {len(listings)} · per tier: {dict(tiers)}")
 
     out = Path(args.out or f"{args.source}.snapshot.json")
+
+    # Uno snapshot buono non si sovrascrive con uno vuoto.
+    #
+    # Quando una fonte smette di rispondere — un IP sgradito, il sito che cambia
+    # struttura — il crawl finisce "senza errori" con zero annunci, e la fusione
+    # cancella in silenzio tutte le case di quella fonte. Successo apparente,
+    # danno reale: e' esattamente com'e' sparita Trulia provandola da un IP di
+    # datacenter. Meglio tenersi i dati di ieri e fallire rumorosamente.
+    if not args.force and out.exists():
+        try:
+            prima = len(json.loads(out.read_text()))
+        except (json.JSONDecodeError, OSError):
+            prima = 0
+        if prima and len(listings) < max(1, prima // 5):
+            print(
+                f"✗ {args.source}: {len(listings)} annunci contro i {prima} di prima. "
+                f"Non sovrascrivo {out.name}: sembra un guasto, non un calo.\n"
+                f"  Se il calo e' vero, rilancia con --force."
+            )
+            raise SystemExit(1)
+
     out.write_text(json.dumps([asdict(l) for l in listings], indent=2, ensure_ascii=False))
     print(f"💾 snapshot -> {out}")
 

@@ -86,6 +86,20 @@ def _to_public(item: dict) -> dict:
 
 def _merge(into: dict, other: dict) -> None:
     """Combina `other` in `into`: riempie i campi mancanti, prezzo minimo, furnished OR."""
+    # Il prezzo minimo ha senso fra fonti diverse dello STESSO giro: e' il "da"
+    # di un palazzo con piu' unita'. Fra ieri e oggi no: se oggi il prezzo e'
+    # salito, il minimo terrebbe quello di ieri e mostreremmo un affitto che
+    # non esiste piu'. Sulla prima cosa fresca che tocca una casa riportata,
+    # quindi, il dato di oggi sostituisce invece di fondersi.
+    if into.pop("_riportata", False):
+        for f in ("price", "priceFrom", "title", "photos", "type", "sqft", "furnished"):
+            if other.get(f) not in (None, "", []):
+                into[f] = other[f]
+        into.setdefault("sources", [])
+        src = other.get("source")
+        if src and src not in into["sources"]:
+            into["sources"].append(src)
+        return
     if into.get("price") and other.get("price"):
         if into["price"] != other["price"]:
             # prezzi diversi per la stessa chiave: quello mostrato e' il minimo
@@ -116,21 +130,92 @@ def _merge(into: dict, other: dict) -> None:
         into["sources"].append(src)
 
 
+def _riporta(precedenti: list[dict], aggiornate: set[str]) -> list[dict]:
+    """Le case del giro precedente che nessuno degli snapshot di oggi copre.
+
+    Serve al crawl automatico su GitHub Actions, che raggiunge solo le fonti
+    aperte: senza questo ogni notte cancellerebbe le ~885 case di Trulia e dei
+    tre siti anti-bot, che solo il Mac sa scaricare.
+
+    La regola sta tutta in una riga: una casa si porta avanti se ha ALMENO UNA
+    fonte che oggi non abbiamo interrogato. Se invece tutte le sue fonti sono
+    state riguardate e lei non c'e' piu', e' sparita davvero — l'hanno
+    affittata — e sparisce anche dall'elenco. Cosi' la lista si accorcia quando
+    deve, invece di riempirsi di fantasmi.
+    """
+    return [
+        l
+        for l in precedenti
+        if not set(l.get("sources") or [l.get("source")]).issubset(aggiornate)
+    ]
+
+
 def main() -> None:
-    if len(sys.argv) < 2:
-        sys.exit("Uso: python -m rental_radar.aggregate <snapshot.json> [snapshot2.json ...]")
+    argv = [a for a in sys.argv[1:] if not a.startswith("--")]
+    # --su-quelle-di-ieri: fondi sopra il listings.json gia' pubblicato invece
+    # che sul vuoto. Il crawl completo dal Mac NON lo usa: li' le fonti ci sono
+    # tutte e ricostruire da zero e' piu' pulito.
+    sopra = "--su-quelle-di-ieri" in sys.argv
+    if not argv:
+        sys.exit(
+            "Uso: python -m rental_radar.aggregate <snapshot.json> [...] "
+            "[--su-quelle-di-ieri]"
+        )
 
     by_key: dict[str, dict] = {}
     order: list[str] = []
+    # id o chiave -> la chiave con cui la casa sta davvero in by_key
+    alias: dict[str, str] = {}
 
-    for path in sys.argv[1:]:
+    if sopra and OUT.exists():
+        vecchio = json.loads(OUT.read_text())
+        # dal NOME del file ("trulia.snapshot.json" -> "trulia"): ricavarla dal
+        # contenuto significherebbe non riconoscere una fonte il cui snapshot e'
+        # vuoto, e quindi riportarne le case come se non l'avessimo guardata.
+        fonti_di_oggi = {Path(p).name.split(".")[0] for p in argv}
+        tenute = _riporta(vecchio.get("listings", []), fonti_di_oggi)
+        print(
+            f"↺ tengo {len(tenute)} case su {len(vecchio.get('listings', []))} "
+            f"dalle fonti non interrogate oggi ({', '.join(sorted(fonti_di_oggi))} sono nuove)"
+        )
+        for l in tenute:
+            key = l.get("chiave") or l["id"]
+            if key not in by_key:
+                by_key[key] = {**l, "_riportata": True}
+                order.append(key)
+                # Anche sotto l'id, non solo sotto la chiave. Le schede
+                # pubblicate prima che esistesse il campo "chiave" ce l'hanno a
+                # None e si indicizzano sull'id: senza questo alias la versione
+                # fresca della stessa casa, che una chiave ce l'ha, non le
+                # riconoscerebbe e finiremmo con due schede per lo stesso
+                # palazzo. Ne avevo contate 12 alla prima prova.
+                alias[l["id"]] = key
+
+    for path in argv:
         for it in json.loads(Path(path).read_text()):
             if it.get("lat") is None or it.get("lng") is None:
                 continue
             addr = _norm_address(it.get("address_raw"))
             key = addr or _id(it)
-            if key in by_key:
-                _merge(by_key[key], _to_public(it))
+            # Si cerca per chiave E per id, in entrambi gli indici: una casa
+            # riportata da ieri sta sotto il suo vecchio id, e dopo aver
+            # adottato una chiave e' raggiungibile solo dall'alias. Cercando
+            # solo per id, la seconda unita' dello stesso palazzo non la
+            # trovava e si creava una scheda gemella.
+            esistente = key if key in by_key else (alias.get(key) or alias.get(_id(it)))
+            if esistente:
+                vecchia = by_key[esistente]
+                _merge(vecchia, _to_public(it))
+                # e da ora in poi la casa ha una chiave vera — ma solo se
+                # nessun altro la sta gia' usando. Due unita' dello stesso
+                # palazzo arrivate separate dal file di ieri hanno lo stesso
+                # indirizzo normalizzato: dando la chiave a entrambe avrebbero
+                # la stessa identita', e la wishlist non saprebbe piu' quale
+                # delle due hai salvato. Chi resta senza tiene la sua identita'
+                # per id, e al primo crawl completo si fondono da sole.
+                if not vecchia.get("chiave") and addr and addr not in alias and addr not in by_key:
+                    vecchia["chiave"] = addr
+                    alias[addr] = esistente
             else:
                 rec = _to_public(it)
                 # La chiave di merge esce anche nel JSON pubblico: e' l'unico
@@ -145,8 +230,9 @@ def main() -> None:
                 rec["chiave"] = addr
                 by_key[key] = rec
                 order.append(key)
+                alias[rec["id"]] = key
 
-    listings = [by_key[k] for k in order]
+    listings = [{k: v for k, v in by_key[key].items() if k != "_riportata"} for key in order]
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",

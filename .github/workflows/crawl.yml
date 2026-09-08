@@ -1,0 +1,111 @@
+# Il crawl automatico delle fonti aperte.
+#
+# Ogni mattina presto ApartmentAdvisor e Craigslist si aggiornano da soli e il
+# risultato finisce su Vercel senza che tu tocchi niente. Le altre quattro
+# fonti restano al doppio clic sul Mac: Trulia rifiuta gli IP dei datacenter
+# (provata da qui: 1665 case da ApartmentAdvisor, 189 da Craigslist, zero da
+# Trulia), e StreetEasy, Zillow e Apartments.com passano solo dall'estensione
+# dentro il tuo Chrome vero, loggato — un browser in cloud e' esattamente il
+# profilo che quei sistemi cercano.
+#
+# Quindi questo giro NON sostituisce il crawl del mattino: gli toglie il 68%
+# del lavoro e lo rende una scelta invece che un dovere.
+
+name: Crawl fonti aperte
+
+on:
+  schedule:
+    # 05:30 UTC = 07:30 in Italia d'estate, 06:30 d'inverno: prima che tu ti
+    # metta al computer, cosi' quando apri l'app e' gia' fresca.
+    - cron: "30 5 * * *"
+  workflow_dispatch: # e a mano, dal tab Actions, quando vuoi
+
+# Il push del risultato lo fa il token di default: nessun segreto da gestire.
+permissions:
+  contents: write
+
+concurrency:
+  # Due giri insieme si sovrascriverebbero listings.json a vicenda.
+  group: crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dipendenze
+        # Solo httpx: requirements.txt tira dentro anche playwright e psycopg,
+        # che servono ad altri pezzi del progetto e non a questo giro. Sono
+        # minuti di installazione per niente.
+        run: pip install --quiet httpx
+
+      - name: Fonti aperte
+        id: fonti
+        working-directory: apps/scraper
+        run: |
+          # GitHub esegue questi passi con "set -e", ma una fonte caduta non
+          # deve fermare l'altra: per questo ognuna sta dentro un "if", che di
+          # set -e non risente. E run.py si rifiuta di sovrascrivere uno
+          # snapshot buono con uno vuoto, quindi il fallimento lascia i dati di
+          # ieri al loro posto invece di cancellarli.
+          fatte=""
+          for s in apartmentadvisor craigslist; do
+            if python3 -m rental_radar.run --source "$s"; then
+              fatte="$fatte $s.snapshot.json"
+            else
+              echo "::warning::$s non ha prodotto nulla: tengo i dati di ieri"
+            fi
+          done
+          echo "snapshot=$fatte" >> "$GITHUB_OUTPUT"
+
+      - name: Fondi sopra il giro di ieri
+        if: steps.fonti.outputs.snapshot != ''
+        working-directory: apps/scraper
+        run: |
+          # --su-quelle-di-ieri e' obbligatorio qui: senza, la fusione
+          # cancellerebbe le ~900 case delle quattro fonti che questo runner
+          # non sa raggiungere.
+          python3 -m rental_radar.aggregate ${{ steps.fonti.outputs.snapshot }} --su-quelle-di-ieri
+
+      - name: Controllo di sicurezza
+        if: steps.fonti.outputs.snapshot != ''
+        run: |
+          # Un crollo del totale vuol dire che qualcosa e' andato storto in un
+          # modo che non ha sollevato eccezioni. Meglio non pubblicare.
+          python3 - <<'PY'
+          import json, subprocess, sys
+          f = "apps/web/public/data/listings.json"
+          nuovo = json.load(open(f))["listings"]
+          vecchio = json.loads(subprocess.run(
+              ["git", "show", f"HEAD:{f}"], capture_output=True, text=True).stdout
+          )["listings"]
+          print(f"{len(vecchio)} -> {len(nuovo)} schede")
+          if len(nuovo) < len(vecchio) * 0.7:
+              sys.exit(f"::error::calo sospetto: {len(vecchio)} -> {len(nuovo)}. Non pubblico.")
+          rif = [l.get("chiave") or l["id"] for l in nuovo]
+          if len(rif) != len(set(rif)):
+              sys.exit("::error::identita' duplicate: la wishlist non ritroverebbe le case.")
+          PY
+
+      - name: Pubblica
+        if: steps.fonti.outputs.snapshot != ''
+        run: |
+          git config user.name "flatiron-radar"
+          git config user.email "actions@github.com"
+          git add apps/web/public/data/listings.json
+          git diff --staged --quiet && { echo "Niente di nuovo."; exit 0; }
+          git commit -m "crawl automatico $(date -u +%F): fonti aperte"
+          # Il crawl dal Mac puo' aver pushato mentre giravamo.
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" \
+              && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            echo "ritento fra ${i}0s"; sleep "${i}0"
+          done
+          exit 1
