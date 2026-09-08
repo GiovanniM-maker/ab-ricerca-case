@@ -127,11 +127,23 @@ def main() -> None:
         for it in json.loads(Path(path).read_text()):
             if it.get("lat") is None or it.get("lng") is None:
                 continue
-            key = _norm_address(it.get("address_raw")) or _id(it)
+            addr = _norm_address(it.get("address_raw"))
+            key = addr or _id(it)
             if key in by_key:
                 _merge(by_key[key], _to_public(it))
             else:
-                by_key[key] = _to_public(it)
+                rec = _to_public(it)
+                # La chiave di merge esce anche nel JSON pubblico: e' l'unico
+                # aggancio stabile fra un crawl e il successivo. L'id porta il
+                # nome della fonte che ha visto per prima quell'indirizzo, e
+                # quando quella fonte perde l'annuncio mentre un'altra ce l'ha
+                # ancora, l'id della stessa identica casa cambia: fra due crawl
+                # ne evapora il 4-6%, contro il 3% delle chiavi. Chi salva una
+                # casa deve poterla ritrovare domani.
+                # Resta None per le schede senza civico (~7%): li' non c'e' che
+                # l'id, e chi legge deve ripiegare su quello.
+                rec["chiave"] = addr
+                by_key[key] = rec
                 order.append(key)
 
     listings = [by_key[k] for k in order]

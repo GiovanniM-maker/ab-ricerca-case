@@ -39,4 +39,12 @@ export interface Listing {
   /** servizi dell'edificio: portineria, ascensore, lavanderia… */
   amenities?: string[];
   sources?: string[];
+  /**
+   * Indirizzo normalizzato, la stessa chiave con cui l'aggregatore fonde le
+   * fonti ("133 w 22|4b"). E' l'aggancio con cui le case salvate si ritrovano
+   * nel crawl del giorno dopo: sopravvive ai cambi di fonte, cosa che l'id non
+   * fa. Assente per le schede senza civico e per i listings.json generati
+   * prima di questo campo: in quei casi si ripiega sull'id.
+   */
+  chiave?: string | null;
 }
