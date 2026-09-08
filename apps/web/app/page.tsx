@@ -16,6 +16,9 @@ import { loadStations, type Station } from "@/lib/subway";
 import ListingCard from "@/components/ListingCard";
 import ListingDetail from "@/components/ListingDetail";
 import FilterPopover from "@/components/FilterPopover";
+import SavedList from "@/components/SavedList";
+import AuthLine from "@/components/AuthLine";
+import { useWishlist, indice, rifDi, rifSalvata } from "@/lib/wishlist";
 
 const MapView = dynamic(() => import("@/components/MapView"), { ssr: false });
 
@@ -90,6 +93,13 @@ export default function Home() {
   const [selectedId, setSelectedId] = useState<string | number | null>(null);
   const [detail, setDetail] = useState<ScoredListing | null>(null);
   const [mobileMap, setMobileMap] = useState(false);
+  // "salvate" non e' un filtro sull'elenco: le case che hai salvato e che nel
+  // frattempo sono state affittate non stanno piu' in listings.json, e sono
+  // proprio quelle che vuoi ancora poter rileggere. E' un'altra vista.
+  const [vista, setVista] = useState<"tutte" | "salvate">("tutte");
+
+  const wl = useWishlist();
+  const salvateIdx = useMemo(() => indice(wl.salvate), [wl.salvate]);
 
   useEffect(() => {
     Promise.all([loadIsochrones(), loadListings(), loadStations()]).then(
@@ -172,6 +182,27 @@ export default function Home() {
     n.name.toLowerCase().includes(hoodQuery.toLowerCase())
   );
 
+  // Le salvate ritrovate nel crawl di oggi. Si cerca su tutto `scored` e non
+  // sui filtrati: una casa salvata resta tua anche quando i filtri correnti la
+  // escludono, e senza questo risulterebbe "non piu' in elenco" per sbaglio.
+  const vive = useMemo(() => {
+    const m = new Map<string, ScoredListing>();
+    for (const l of scored) {
+      m.set(rifDi(l), l);
+      m.set(String(l.id), l);
+    }
+    return m;
+  }, [scored]);
+
+  /** Segnalibro: salva, oppure toglie se c'era gia'. */
+  const toggleSalva = (l: ScoredListing) => {
+    const s = salvateIdx.get(rifDi(l)) ?? salvateIdx.get(String(l.id));
+    if (!s) return wl.salva(l);
+    // Una nota e' lavoro tuo: non la si butta per un tocco di troppo.
+    if (s.nota && !confirm("Questa casa ha una nota. La tolgo lo stesso?")) return;
+    wl.rimuovi(rifSalvata(s));
+  };
+
   return (
     <main className="flex h-[100dvh] w-screen flex-col bg-neutral-950 md:flex-row">
       {/* Sidebar */}
@@ -189,13 +220,42 @@ export default function Home() {
               Flatiron <span className="text-emerald-400">Radar</span>
             </h1>
             <span className="whitespace-nowrap text-sm font-medium text-neutral-400">
-              {loading ? "…" : `${visible.length} case`}
+              {loading
+                ? "…"
+                : vista === "salvate"
+                  ? `${wl.salvate.length} ${wl.salvate.length === 1 ? "salvata" : "salvate"}`
+                  : `${visible.length} case`}
             </span>
           </div>
           <p className="mt-0.5 truncate text-xs text-neutral-500">
             Tempo reale di arrivo a {FLATIRON.label}
           </p>
 
+          {/* Tutte / Salvate. Sono due insiemi diversi, non un filtro: fra le
+              salvate ci sono case che dall'elenco sono sparite. */}
+          <div className="mt-3 flex w-full gap-1 rounded-full bg-neutral-900 p-1">
+            {(
+              [
+                ["tutte", "Tutte"],
+                ["salvate", `Salvate${wl.salvate.length ? ` (${wl.salvate.length})` : ""}`],
+              ] as const
+            ).map(([v, label]) => (
+              <button
+                key={v}
+                onClick={() => setVista(v)}
+                className={`flex-1 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                  vista === v
+                    ? "bg-neutral-100 text-neutral-900"
+                    : "text-neutral-400 hover:text-neutral-200"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {vista === "tutte" && (
+            <>
           {/* Barra filtri: i chip vanno a capo anche sul telefono. Prima scorrevano in
               orizzontale con la barra nascosta: "Prezzo" e "Tipo" finivano
               fuori schermo e nulla faceva capire che ci fosse dell'altro.
@@ -368,11 +428,30 @@ export default function Home() {
               </button>
             </div>
           )}
+            </>
+          )}
         </div>
 
         {/* Lista card */}
         <div className="flex-1 overflow-y-auto px-5 py-4">
-          {loading ? (
+          {vista === "salvate" ? (
+            <>
+              <AuthLine
+                utente={wl.utente}
+                sincronizzabile={wl.sincronizzabile}
+                errore={wl.errore}
+                onEntra={wl.entra}
+                onEsci={wl.esci}
+              />
+              <SavedList
+                salvate={wl.salvate}
+                vive={vive}
+                onStato={wl.cambiaStato}
+                onNota={wl.scriviNota}
+                onRimuovi={wl.rimuovi}
+              />
+            </>
+          ) : loading ? (
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {Array.from({ length: 6 }).map((_, i) => (
                 <div key={i} className="aspect-[16/13] animate-pulse rounded-2xl bg-neutral-800" />
@@ -400,6 +479,10 @@ export default function Home() {
                     selected={l.id === selectedId}
                     onSelect={() => setSelectedId(l.id)}
                     onOpen={() => openDetail(l.id)}
+                    stato={
+                      (salvateIdx.get(rifDi(l)) ?? salvateIdx.get(String(l.id)))?.stato ?? null
+                    }
+                    onSalva={() => toggleSalva(l)}
                   />
                 ))}
               </div>
@@ -438,7 +521,32 @@ export default function Home() {
         {mobileMap ? "☰ Lista" : "◵ Mappa"}
       </button>
 
-      <ListingDetail listing={detail} onClose={() => setDetail(null)} />
+      <ListingDetail
+        listing={detail}
+        onClose={() => setDetail(null)}
+        salvata={
+          detail
+            ? salvateIdx.get(rifDi(detail)) ?? salvateIdx.get(String(detail.id)) ?? null
+            : null
+        }
+        onStato={(stato) => {
+          if (!detail) return;
+          const s = salvateIdx.get(rifDi(detail)) ?? salvateIdx.get(String(detail.id));
+          // Scegliere "Vista" su una casa mai salvata la salva gia' vista:
+          // chiedere prima di salvarla sarebbe un passaggio in piu' per nulla.
+          s ? wl.cambiaStato(rifSalvata(s), stato) : wl.salva(detail, stato);
+        }}
+        onNota={(nota) => {
+          if (!detail) return;
+          const s = salvateIdx.get(rifDi(detail)) ?? salvateIdx.get(String(detail.id));
+          if (s) wl.scriviNota(rifSalvata(s), nota);
+        }}
+        onRimuovi={() => {
+          if (!detail) return;
+          const s = salvateIdx.get(rifDi(detail)) ?? salvateIdx.get(String(detail.id));
+          if (s) wl.rimuovi(rifSalvata(s));
+        }}
+      />
     </main>
   );
 }

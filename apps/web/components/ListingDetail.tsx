@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
+import type { Salvata, Stato } from "@/lib/wishlist";
 import {
   formatPrice,
   formatType,
@@ -13,14 +14,50 @@ import {
 type Props = {
   listing: ScoredListing | null;
   onClose: () => void;
+  /** la riga della wishlist per questa casa, null se non e' salvata */
+  salvata: Salvata | null;
+  onStato: (stato: Stato) => void;
+  onNota: (nota: string) => void;
+  onRimuovi: () => void;
 };
 
-export default function ListingDetail({ listing, onClose }: Props) {
+export default function ListingDetail({
+  listing,
+  onClose,
+  salvata,
+  onStato,
+  onNota,
+  onRimuovi,
+}: Props) {
   const [imgOk, setImgOk] = useState(true);
+  // La nota si scrive qui e si salva da sola poco dopo che hai smesso di
+  // digitare: un bottone "salva" su un campo del genere si dimentica, e la
+  // nota che pensavi di aver scritto non c'e' piu'.
+  const [bozza, setBozza] = useState("");
+  const [salvataOra, setSalvataOra] = useState(false);
+  const primoRender = useRef(true);
 
   useEffect(() => {
     setImgOk(true);
-  }, [listing]);
+    setBozza(salvata?.nota ?? "");
+    primoRender.current = true;
+  }, [listing, salvata?.nota]);
+
+  useEffect(() => {
+    // Non scrivere al montaggio: sovrascriverebbe la nota con se stessa a ogni
+    // apertura della scheda, e ogni apertura sarebbe una scrittura sul DB.
+    if (primoRender.current) {
+      primoRender.current = false;
+      return;
+    }
+    if (bozza === (salvata?.nota ?? "")) return;
+    const t = setTimeout(() => {
+      onNota(bozza);
+      setSalvataOra(true);
+      setTimeout(() => setSalvataOra(false), 1800);
+    }, 700);
+    return () => clearTimeout(t);
+  }, [bozza, salvata?.nota, onNota]);
 
   useEffect(() => {
     if (!listing) return;
@@ -132,6 +169,68 @@ export default function ListingDetail({ listing, onClose }: Props) {
               </div>
             </div>
           )}
+
+          {/* La wishlist. Due livelli e una nota: prima della visita la nota
+              e' un promemoria di cosa chiedere, dopo e' l'impressione che
+              altrimenti si confonde con quella delle altre nove case viste. */}
+          <div className="rounded-xl border border-neutral-800 p-3">
+            <div className="flex flex-wrap items-center gap-2">
+              {(
+                [
+                  ["da_vedere", "Da vedere"],
+                  ["vista", "Vista"],
+                ] as [Stato, string][]
+              ).map(([s, label]) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => onStato(s)}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+                    salvata?.stato === s
+                      ? "border-emerald-500/60 bg-emerald-500/15 text-emerald-300"
+                      : "border-neutral-700 text-neutral-300 hover:bg-neutral-800"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+              {salvata && (
+                <button
+                  type="button"
+                  onClick={onRimuovi}
+                  className="ml-auto text-xs text-neutral-500 transition hover:text-neutral-300"
+                >
+                  Togli
+                </button>
+              )}
+            </div>
+
+            {salvata && (
+              <>
+                <textarea
+                  value={bozza}
+                  onChange={(e) => setBozza(e.target.value)}
+                  rows={3}
+                  placeholder={
+                    salvata.stato === "vista"
+                      ? "Che impressione ti ha fatto?"
+                      : "Cosa vuoi ricordarti di chiedere?"
+                  }
+                  className="mt-2.5 w-full resize-y rounded-lg border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-neutral-200 outline-none transition placeholder:text-neutral-600 focus:border-neutral-600"
+                />
+                <div className="mt-1 flex items-center justify-between text-[11px] text-neutral-600">
+                  <span>
+                    {salvata.vistaIl
+                      ? `Vista il ${new Date(salvata.vistaIl).toLocaleDateString("it-IT")}`
+                      : `Salvata il ${new Date(salvata.salvataIl).toLocaleDateString("it-IT")}`}
+                  </span>
+                  <span className={salvataOra ? "text-emerald-500" : "opacity-0"}>
+                    nota salvata
+                  </span>
+                </div>
+              </>
+            )}
+          </div>
 
           <div className="rounded-xl border border-neutral-800 p-3">
             <div className="flex items-center justify-between text-sm">

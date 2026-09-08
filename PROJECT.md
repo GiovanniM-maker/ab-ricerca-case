@@ -94,6 +94,39 @@ frontend. "Conveniente" = miglior compromesso, non solo "economico".
 lat, lng, address_raw, geocoded, tier, travel_minutes, photos[], first_seen,
 last_seen, raw_json. Indice geografico su (lat,lng). Storico prezzi a parte.
 
+## 6-bis. La wishlist (l'unica cosa che non sta in git)
+
+Le case salvate hanno due livelli — **da vedere** e **viste** — e una **nota**.
+Sono l'unico dato del progetto che **non** può stare nel repo: il repo è
+pubblico, e "che impressione mi aveva fatto" è la cosa più personale che ci sia
+qui dentro. Vivono su **Supabase** (org `Flat Iron`, piano free), tabella
+`public.salvate`, protetta da RLS: ogni riga è visibile solo a chi l'ha scritta.
+Accesso con magic link via email. Nessuna route server: PostgREST *è* l'API, il
+frontend resta la Next.js statica di sempre.
+
+Due decisioni che spiegano il resto:
+
+- **Si salva una copia della scheda, non un puntatore.** Una casa che ti
+  interessava sparisce dal crawl esattamente quando la affittano, ed è allora
+  che vuoi ancora poter rileggere cos'era e cosa ne pensavi. La copia regala
+  anche il confronto "era 3.200, ora 3.050".
+- **L'aggancio al crawl del giorno dopo è l'indirizzo normalizzato** (campo
+  `chiave` in `listings.json`), non l'`id`. L'id porta il nome della fonte che
+  ha visto per prima quell'indirizzo: quando quella fonte perde l'annuncio ma
+  un'altra ce l'ha ancora, l'id della stessa casa cambia. Misurato sugli
+  snapshot in git: fra due crawl evapora il 4-6% degli id contro il 3% delle
+  chiavi. Per il ~7% di schede senza civico la chiave non esiste e si ripiega
+  sull'id: per questo la riga salvata ne tiene entrambi.
+
+`localStorage` fa da copia di lavoro: la lista compare subito, e continua a
+leggersi offline o se il progetto free va in pausa per inattività (succede dopo
+7 giorni senza traffico; una riga in `crawl.command` lo tiene sveglio).
+
+Configurazione: `NEXT_PUBLIC_SUPABASE_URL` e
+`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` su Vercel. Senza, l'app funziona lo
+stesso e la wishlist resta sul singolo browser. La `service_role` key non entra
+mai nel frontend né nel repo.
+
 ## 7. Stato di avanzamento
 - [x] **Fase 0** — Scaffold monorepo, schema DB, config Flatiron, docs.
 - [x] **Fase 1** — Isocrone (GeoJSON) + `classify()` + mappa interattiva.

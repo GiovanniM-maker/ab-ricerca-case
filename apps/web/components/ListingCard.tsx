@@ -3,15 +3,26 @@
 import { useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
 import { formatPrice, formatDistance, tierMeta, sourceLabel } from "@/lib/format";
+import type { Stato } from "@/lib/wishlist";
 
 type Props = {
   listing: ScoredListing;
   selected: boolean;
   onSelect: () => void;
   onOpen: () => void;
+  /** null se la casa non e' fra le salvate */
+  stato: Stato | null;
+  onSalva: () => void;
 };
 
-export default function ListingCard({ listing, selected, onSelect, onOpen }: Props) {
+export default function ListingCard({
+  listing,
+  selected,
+  onSelect,
+  onOpen,
+  stato,
+  onSalva,
+}: Props) {
   const [imgOk, setImgOk] = useState(true);
   const meta = tierMeta(listing.tier);
   const photo = listing.photos?.[0];
@@ -106,6 +117,34 @@ export default function ListingCard({ listing, selected, onSelect, onOpen }: Pro
         </div>
 
         <div className="mt-2.5 flex flex-wrap items-center gap-2">
+          {/* Salva. Il segnalibro pieno dice a colpo d'occhio quali case hai
+              gia' messo da parte mentre scorri l'elenco intero. */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onSalva();
+            }}
+            aria-pressed={stato !== null}
+            className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-medium transition ${
+              stato
+                ? "border-emerald-500/60 bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/25"
+                : "border-neutral-700 text-neutral-300 hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+            }`}
+          >
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 12 12"
+              fill={stato ? "currentColor" : "none"}
+              stroke="currentColor"
+              strokeWidth="1.6"
+            >
+              <path d="M3 1.5h6v9L6 8.25 3 10.5v-9Z" strokeLinejoin="round" />
+            </svg>
+            {stato === "vista" ? "Vista" : stato ? "Da vedere" : "Salva"}
+          </button>
+
           {/* La scheda completa si apriva solo col doppio clic: sul telefono
               non e' un gesto che qualcuno prova, e nulla diceva che ci fosse
               dell'altro da vedere. Il doppio clic resta, ma ora c'e' anche un
