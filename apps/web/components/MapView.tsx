@@ -8,6 +8,7 @@ import { FLATIRON } from "@/lib/config";
 import { TIERS, OUT_META } from "@/lib/types";
 import type { IsochroneSet } from "@/lib/geo";
 import type { ScoredListing } from "@/lib/listings";
+import { rifDi } from "@/lib/wishlist";
 
 // CARTO ha iniziato a chiedere una chiave e serve mattonelle con scritto
 // "API KEY REQUIRED" sopra tutta la citta'. Esri Dark Gray e' scuro di suo e
@@ -33,13 +34,15 @@ type Props = {
   listings: ScoredListing[];
   selectedId: string | number | null;
   onSelect: (id: string | number) => void;
+  /** i "rif" delle case salvate: quelle prendono un alone */
+  salvate: Set<string>;
 };
 
 function fc(feat: Feature<Polygon | MultiPolygon> | null) {
   return { type: "FeatureCollection" as const, features: feat ? [feat] : [] };
 }
 
-function listingsFC(listings: ScoredListing[]): FeatureCollection {
+function listingsFC(listings: ScoredListing[], salvate: Set<string>): FeatureCollection {
   return {
     type: "FeatureCollection",
     features: listings.map((l) => ({
@@ -51,12 +54,16 @@ function listingsFC(listings: ScoredListing[]): FeatureCollection {
         color: l.tier === "out" ? OUT_META.color : TIERS[l.tier].color,
         title: l.title,
         price: l.price ?? 0,
+        // Sta nel dato e non in un livello a parte con un filtro per id:
+        // cosi' l'alone segue i pallini a ogni setData senza doversi
+        // ricostruire, e non puo' finire fuori sincrono con loro.
+        salvata: salvate.has(rifDi(l)) || salvate.has(String(l.id)),
       },
     })),
   };
 }
 
-export default function MapView({ iso, listings, selectedId, onSelect }: Props) {
+export default function MapView({ iso, listings, selectedId, onSelect, salvate }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const readyRef = useRef(false);
@@ -68,6 +75,8 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
   isoRef.current = iso;
   const listingsRef = useRef(listings);
   listingsRef.current = listings;
+  const salvateRef = useRef(salvate);
+  salvateRef.current = salvate;
   const selectedRef = useRef(selectedId);
   selectedRef.current = selectedId;
   const applyRef = useRef<(() => void) | null>(null);
@@ -131,9 +140,28 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
       });
 
       const pins = map.getSource("listings") as maplibregl.GeoJSONSource | undefined;
-      if (pins) return pins.setData(listingsFC(listingsRef.current));
+      if (pins) return pins.setData(listingsFC(listingsRef.current, salvateRef.current));
 
-      map.addSource("listings", { type: "geojson", data: listingsFC(listingsRef.current) });
+      map.addSource("listings", {
+        type: "geojson",
+        data: listingsFC(listingsRef.current, salvateRef.current),
+      });
+
+      // L'alone va PRIMA dei pallini, cosi' resta sotto e non ne copre il colore
+      // del tier, che e' l'informazione principale.
+      map.addLayer({
+        id: "salvate-alone",
+        type: "circle",
+        source: "listings",
+        filter: ["==", ["get", "salvata"], true],
+        paint: {
+          "circle-radius": 13,
+          "circle-color": "#10b981",
+          "circle-opacity": 0.22,
+          "circle-stroke-width": 1.5,
+          "circle-stroke-color": "#10b981",
+        },
+      });
       map.addLayer({
         id: "listings-circles",
         type: "circle",
@@ -215,7 +243,7 @@ export default function MapView({ iso, listings, selectedId, onSelect }: Props) 
   // serve fare nulla: al termine del caricamento chiama lei la stessa funzione.
   useEffect(() => {
     applyRef.current?.();
-  }, [iso, listings]);
+  }, [iso, listings, salvate]);
 
   // evidenzia + centra il selezionato
   useEffect(() => {

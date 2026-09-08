@@ -194,6 +194,23 @@ export default function Home() {
     return m;
   }, [scored]);
 
+  const rifSalvati = useMemo(
+    () => new Set(wl.salvate.flatMap((s) => [rifSalvata(s), s.listingId])),
+    [wl.salvate]
+  );
+
+  // In vista "Salvate" la mappa mostra solo le tue case: vederle disegnate
+  // sulla citta' e' meta' del motivo per cui una wishlist serve. Quelle
+  // sparite dal crawl non hanno un pallino — non sappiamo piu' che tier
+  // abbiano oggi — ma restano nell'elenco a sinistra.
+  const salvateVive = useMemo(
+    () =>
+      wl.salvate
+        .map((s) => vive.get(rifSalvata(s)) ?? vive.get(s.listingId))
+        .filter((l): l is ScoredListing => Boolean(l)),
+    [wl.salvate, vive]
+  );
+
   /** Segnalibro: salva, oppure toglie se c'era gia'. */
   const toggleSalva = (l: ScoredListing) => {
     const s = salvateIdx.get(rifDi(l)) ?? salvateIdx.get(String(l.id));
@@ -504,7 +521,8 @@ export default function Home() {
       <div className={`relative h-full w-full flex-1 ${mobileMap ? "block" : "hidden md:block"}`}>
         <MapView
           iso={iso}
-          listings={visible}
+          listings={vista === "salvate" ? salvateVive : visible}
+          salvate={rifSalvati}
           selectedId={selectedId}
           onSelect={(id) => {
             setSelectedId(id);

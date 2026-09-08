@@ -47,6 +47,29 @@ done
 HAVE_NODE=1
 command -v node >/dev/null || { HAVE_NODE=0; warn "node non trovato: salto i siti col browser"; }
 
+# --------------------------------------------------- la wishlist resta sveglia
+# Supabase mette in pausa i progetti del piano gratuito dopo 7 giorni senza
+# traffico, e al risveglio la wishlist non caricherebbe finche' non la riattivi
+# a mano dal loro pannello. Una richiesta qualsiasi azzera quel contatore, e
+# questo giro lo fai quasi ogni mattina: il posto giusto per farla e' qui.
+# Legge da supabase.conf, che non sta nel repo (il repo e' pubblico).
+if [ -f "$ROOT/supabase.conf" ]; then
+  # shellcheck disable=SC1091
+  . "$ROOT/supabase.conf"
+  if [ -n "${SUPABASE_URL:-}" ] && [ -n "${SUPABASE_KEY:-}" ]; then
+    # -o /dev/null: la risposta e' una lista vuota, e senza login lo sarebbe
+    # comunque. Qui conta il fatto di aver bussato, non cosa risponde.
+    if curl -fsS -m 10 -o /dev/null \
+        -H "apikey: $SUPABASE_KEY" -H "Authorization: Bearer $SUPABASE_KEY" \
+        "$SUPABASE_URL/rest/v1/salvate?select=rif&limit=1"; then
+      ok "wishlist raggiungibile"
+    else
+      # Non e' un motivo per fermare il crawl: le case si scaricano lo stesso.
+      warn "wishlist non raggiungibile (forse il progetto e' in pausa: riattivalo su supabase.com)"
+    fi
+  fi
+fi
+
 # ------------------------------------------------------------ codice aggiornato
 step "1/6  Aggiorno il codice"
 git pull --rebase --autostash origin "$(git rev-parse --abbrev-ref HEAD)" && ok "codice aggiornato" \

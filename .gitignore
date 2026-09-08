@@ -49,3 +49,8 @@ apps/scraper/browser/.chrome-profile/
 # Canale notifiche: e' un nome segreto, chi lo conosce riceve i tuoi avvisi.
 notify.conf
 logs/.inizio-giro
+
+# Chiavi Supabase per il ping della wishlist in crawl.command.
+# Sono pubblicabili, ma il repo lo e' pure: chi le legge puo' consumarti la
+# quota gratuita. Restano fuori.
+supabase.conf
