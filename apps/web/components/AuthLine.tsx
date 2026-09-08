@@ -77,15 +77,20 @@ export default function AuthLine({
   return (
     <div className="mb-3">
       {!apri ? (
-        <p className="text-[11px] text-neutral-600">
-          Salvate solo su questo browser.{" "}
+        // Era una parolina grigia dentro una riga da 11 pixel: la cosa che
+        // sblocca la sincronizzazione non puo' essere la meno visibile della
+        // pagina. Ora e' un bottone pieno, e la spiegazione gli sta sotto.
+        <div className="rounded-xl border border-neutral-800 bg-neutral-900/60 p-3">
           <button
             onClick={() => setApri(true)}
-            className="text-neutral-400 underline-offset-2 hover:text-neutral-200 hover:underline"
+            className="w-full rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
           >
             Accedi per ritrovarle sul telefono
           </button>
-        </p>
+          <p className="mt-2 text-center text-[11px] text-neutral-500">
+            Per ora sono salvate solo su questo browser.
+          </p>
+        </div>
       ) : (
         <form
           onSubmit={(e) => {
