@@ -171,9 +171,21 @@ function Riga({
   );
 }
 
+type Nota = "tutte" | "con" | "senza";
+
 export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }: Props) {
-  const daVedere = salvate.filter((s) => s.stato === "da_vedere");
-  const viste = salvate.filter((s) => s.stato === "vista");
+  // Le note sono il motivo per cui torni qui: dopo dieci visite vuoi rileggere
+  // quello che avevi scritto senza scorrere anche le case su cui non hai
+  // ancora un'opinione. E il contrario — "senza nota" — e' l'elenco di quelle
+  // che devi ancora giudicare.
+  const [conNota, setConNota] = useState<Nota>("tutte");
+  const quante = salvate.filter((s) => s.nota.trim()).length;
+
+  const filtrate = salvate.filter((s) =>
+    conNota === "tutte" ? true : conNota === "con" ? s.nota.trim() : !s.nota.trim()
+  );
+  const daVedere = filtrate.filter((s) => s.stato === "da_vedere");
+  const viste = filtrate.filter((s) => s.stato === "vista");
 
   if (!salvate.length) {
     return (
@@ -212,8 +224,43 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
 
   return (
     <>
-      <Sezione titolo="Da vedere" righe={daVedere} />
-      <Sezione titolo="Viste" righe={viste} />
+      {/* Compare solo quando c'e' qualcosa da separare: con zero note, o con
+          tutte annotate, sarebbe una riga di comandi che non fanno niente. */}
+      {quante > 0 && quante < salvate.length && (
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          {(
+            [
+              ["tutte", `Tutte (${salvate.length})`],
+              ["con", `Con nota (${quante})`],
+              ["senza", `Senza nota (${salvate.length - quante})`],
+            ] as [Nota, string][]
+          ).map(([v, label]) => (
+            <button
+              key={v}
+              type="button"
+              onClick={() => setConNota(v)}
+              className={`rounded-full border px-2.5 py-1 text-[11px] font-medium transition ${
+                conNota === v
+                  ? "border-neutral-500 bg-neutral-800 text-neutral-100"
+                  : "border-neutral-800 text-neutral-400 hover:bg-neutral-800/60"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {!filtrate.length ? (
+        <p className="py-8 text-center text-sm text-neutral-500">
+          Nessuna casa {conNota === "con" ? "con una nota" : "senza nota"}.
+        </p>
+      ) : (
+        <>
+          <Sezione titolo="Da vedere" righe={daVedere} />
+          <Sezione titolo="Viste" righe={viste} />
+        </>
+      )}
     </>
   );
 }
