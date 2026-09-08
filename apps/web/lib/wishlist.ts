@@ -177,10 +177,16 @@ export function useWishlist(): Wishlist {
   /** Manda una riga al DB. Silenzioso se non c'e' sessione: resta locale. */
   const spingi = useCallback(async (s: Salvata) => {
     if (!supabase || !utente) return;
-    const { error } = await supabase
-      .from("salvate")
-      .upsert(aRemota(s), { onConflict: "user_id,rif" });
-    if (error) setErrore(error.message);
+    try {
+      const { error } = await supabase
+        .from("salvate")
+        .upsert(aRemota(s), { onConflict: "user_id,rif" });
+      if (error) setErrore(error.message);
+    } catch {
+      // La casa e' gia' salvata nel browser: la sincronizzazione riparte alla
+      // prossima apertura. Fermare l'interfaccia per una rete ballerina
+      // sarebbe peggio del problema.
+    }
   }, [utente]);
 
   // primo caricamento: locale subito, remoto appena si sa chi sei
@@ -188,9 +194,13 @@ export function useWishlist(): Wishlist {
     setSalvate(leggiLocale());
     setPronta(true);
     if (!supabase) return;
-    supabase.auth.getSession().then(({ data }) => {
-      setUtente(data.session?.user.email ?? null);
-    });
+    // Il .catch non e' di cortesia: senza, una rete assente rifiuta la
+    // promise e nessuno la raccoglie. E la rete assente qui e' la normalita' —
+    // questa app la apri camminando per strada o in metropolitana.
+    supabase.auth
+      .getSession()
+      .then(({ data }) => setUtente(data.session?.user.email ?? null))
+      .catch(() => setUtente(null));
     const { data: sub } = supabase.auth.onAuthStateChange((_e, sessione) => {
       setUtente(sessione?.user.email ?? null);
     });
@@ -217,7 +227,12 @@ export function useWishlist(): Wishlist {
       const righe = (data as RigaRemota[]).map(daRemota);
       setSalvate(righe);
       scriviLocale(righe);
-    })();
+    })().catch(() => {
+      // Rete caduta a meta' sincronizzazione: si tiene quello che c'e' nel
+      // browser. Non e' un errore da mostrare — le case salvate sono tutte
+      // li' e l'allineamento riparte da solo alla prossima apertura.
+      if (vivo) setErrore(null);
+    });
     return () => {
       vivo = false;
     };
@@ -291,11 +306,15 @@ export function useWishlist(): Wishlist {
 
   const entra = useCallback(async (email: string) => {
     if (!supabase) return "Sincronizzazione non configurata.";
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: window.location.origin },
-    });
-    return error ? error.message : "Ti ho mandato un link per email: aprilo da qui.";
+    try {
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: { emailRedirectTo: window.location.origin },
+      });
+      return error ? error.message : "Ti ho mandato un link per email: aprilo da qui.";
+    } catch {
+      return "Non riesco a raggiungere il server. Riprova fra poco.";
+    }
   }, []);
 
   const esci = useCallback(async () => {
