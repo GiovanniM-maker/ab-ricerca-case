@@ -150,7 +150,8 @@ export interface Wishlist {
   cambiaStato: (rif: string, stato: Stato) => void;
   scriviNota: (rif: string, nota: string) => void;
   rimuovi: (rif: string) => void;
-  entra: (email: string) => Promise<string>;
+  entra: (email: string, password: string) => Promise<string>;
+  registra: (email: string, password: string) => Promise<string>;
   esci: () => Promise<void>;
 }
 
@@ -304,14 +305,50 @@ export function useWishlist(): Wishlist {
     [applica, utente]
   );
 
-  const entra = useCallback(async (email: string) => {
+/**
+ * Traduce gli errori che contano. supabase-js gli errori di rete li RESTITUISCE
+ * invece di lanciarli, quindi il try/catch non li vede: senza questa riga, chi
+ * prova ad accedere in metropolitana si legge "Failed to fetch".
+ */
+function inItaliano(messaggio: string): string {
+  if (/failed to fetch|networkerror|fetch failed|load failed/i.test(messaggio)) {
+    return "Non riesco a raggiungere il server. Controlla la connessione e riprova.";
+  }
+  if (/invalid login/i.test(messaggio)) {
+    // Supabase da' lo stesso errore per password sbagliata e utente
+    // inesistente, apposta: distinguerli aiuterebbe chi prova le email altrui.
+    return "Email o password non corrispondono. Se e' la prima volta, usa «Crea account».";
+  }
+  if (/already registered/i.test(messaggio)) return "Questo account esiste gia': usa «Accedi».";
+  if (/password should be at least/i.test(messaggio)) {
+    return "La password e' troppo corta: servono almeno sei caratteri.";
+  }
+  return messaggio;
+}
+
+  // Email e password invece del link per email. Il link era piu' sicuro sulla
+  // carta, ma andava aperto su OGNI dispositivo, e il piano gratuito manda
+  // pochissime email all'ora: due telefoni in un pomeriggio e resti fuori.
+  const entra = useCallback(async (email: string, password: string) => {
     if (!supabase) return "Sincronizzazione non configurata.";
     try {
-      const { error } = await supabase.auth.signInWithOtp({
-        email,
-        options: { emailRedirectTo: window.location.origin },
-      });
-      return error ? error.message : "Ti ho mandato un link per email: aprilo da qui.";
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      return error ? inItaliano(error.message) : "";
+    } catch {
+      return "Non riesco a raggiungere il server. Riprova fra poco.";
+    }
+  }, []);
+
+  const registra = useCallback(async (email: string, password: string) => {
+    if (!supabase) return "Sincronizzazione non configurata.";
+    try {
+      const { data, error } = await supabase.auth.signUp({ email, password });
+      if (error) return inItaliano(error.message);
+      // Se il progetto chiede la conferma via email, l'utente esiste ma non ha
+      // sessione: senza questo messaggio sembrerebbe che non sia successo nulla.
+      return data.session
+        ? ""
+        : "Account creato. Conferma dalla mail che ti e' arrivata, poi accedi.";
     } catch {
       return "Non riesco a raggiungere il server. Riprova fra poco.";
     }
@@ -334,9 +371,10 @@ export function useWishlist(): Wishlist {
       scriviNota,
       rimuovi,
       entra,
+      registra,
       esci,
     }),
-    [salvate, pronta, utente, errore, salva, cambiaStato, scriviNota, rimuovi, entra, esci]
+    [salvate, pronta, utente, errore, salva, cambiaStato, scriviNota, rimuovi, entra, registra, esci]
   );
 }
 

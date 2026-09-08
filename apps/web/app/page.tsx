@@ -458,6 +458,7 @@ export default function Home() {
                 sincronizzabile={wl.sincronizzabile}
                 errore={wl.errore}
                 onEntra={wl.entra}
+                onRegistra={wl.registra}
                 onEsci={wl.esci}
               />
               <SavedList
