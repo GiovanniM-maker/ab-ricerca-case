@@ -109,6 +109,26 @@ def parse_listings(html: str) -> list[Listing]:
     return out
 
 
+# Craigslist e' l'unica fonte che dice dove sta la lavanderia con parole sue,
+# sempre le stesse, e che dice anche quando NON c'e'. E' la controprova che
+# altrove ci manca: ovunque, il silenzio poteva voler dire entrambe le cose.
+_LAVANDERIA = re.compile(
+    r"(w/d in unit|laundry in bldg|laundry on site|no laundry on site|w/d hookups)",
+    re.I,
+)
+
+
+def amenities_of(listing: Listing) -> list[str]:
+    """I servizi dichiarati nella pagina di dettaglio di un annuncio.
+
+    Cerca in tutta la pagina e non solo nel riquadro degli attributi: Craigslist
+    cambia spesso il contorno HTML, mentre queste cinque diciture sono un
+    vocabolario chiuso suo e non compaiono per caso.
+    """
+    html = _get(listing.source_url)
+    return sorted({m.group(1).lower() for m in _LAVANDERIA.finditer(html)})
+
+
 def fetch_listings(search_distance_mi: float = 6.0) -> list[Listing]:
     params = urllib.parse.urlencode({
         "lat": FLAT_LAT,

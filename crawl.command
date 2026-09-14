@@ -85,8 +85,12 @@ python3 "$ROOT/tools/generate_subway_stations.py" >/dev/null 2>&1 && ok "stazion
 # In parallelo: sono tre attese di rete indipendenti, in fila ci mettono il
 # triplo del tempo senza alcun vantaggio.
 OPEN_SOURCES="apartmentadvisor trulia craigslist"
+# --servizi: la lavanderia sta solo nelle pagine di dettaglio, una per annuncio.
+# Il tetto e' basso di proposito — qui stai aspettando davanti allo schermo, e
+# il grosso lo riempie il giro automatico di GitHub ogni mattina. Trulia non ha
+# un lettore di dettaglio e ignora l'opzione con un avviso.
 for s in $OPEN_SOURCES; do
-  ( python3 -m rental_radar.run --source "$s" >"$LOGDIR/.$s.out" 2>&1 ) &
+  ( python3 -m rental_radar.run --source "$s" --servizi 150 >"$LOGDIR/.$s.out" 2>&1 ) &
 done
 wait
 # Attenzione a cosa si guarda: se una fonte fallisce, il suo snapshot di ieri
@@ -177,7 +181,9 @@ python3 tools/crawl_report.py | tee logs/ultimo-crawl.txt
 
 # ------------------------------------------------------------------ pubblica
 step "6/6  Pubblico su Vercel"
-if git diff --quiet -- apps/web/public/data/; then
+# Anche la cache dei servizi conta come novita': se non la committiamo, le
+# pagine di dettaglio scaricate stamattina vengono riscaricate domani.
+if git diff --quiet -- apps/web/public/data/ apps/scraper/servizi-cache.json; then
   ok "nessuna novita': niente da pubblicare"
   notify "Flatiron Radar" "Crawl finito: nessuna novita' oggi."
 else

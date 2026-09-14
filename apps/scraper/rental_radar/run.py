@@ -59,6 +59,13 @@ def main() -> None:
         help="usa la ricerca di quartiere (solo Flatiron) invece dell'area dei 3 tier",
     )
     ap.add_argument(
+        "--servizi",
+        type=int,
+        default=0,
+        metavar="N",
+        help="leggi i servizi dalle pagine di dettaglio, al massimo N nuove per giro",
+    )
+    ap.add_argument(
         "--force",
         action="store_true",
         help="scrivi lo snapshot anche se il numero di annunci e' crollato",
@@ -93,6 +100,35 @@ def main() -> None:
 
     tiers = Counter(l.tier for l in listings)
     print(f"  in-tier: {len(listings)} · per tier: {dict(tiers)}")
+
+    # I servizi — la lavanderia sopra tutti — stanno solo nelle pagine di
+    # dettaglio, una per annuncio. Si leggono con un tetto per giro e si
+    # ricordano: vedi servizi.py per il perche'.
+    if args.servizi:
+        from rental_radar import servizi as _servizi
+
+        leggi = None
+        if args.source == "craigslist":
+            from rental_radar.sources import craigslist as _cl
+
+            leggi = _cl.amenities_of
+        elif args.source == "apartmentadvisor":
+            from rental_radar.sources import apartmentadvisor as _aa
+
+            build = _aa.build_id(_aa._get(url_for("apartmentadvisor")))
+            if build:
+                leggi = lambda l: _aa.amenities_of(l, build)  # noqa: E731
+            else:
+                print("  ⚠︎  servizi: non trovo il buildId, salto")
+        else:
+            print(f"  ⚠︎  servizi: '{args.source}' non ha un lettore di dettaglio")
+
+        if leggi:
+            web, cache = _servizi.arricchisci(
+                listings, args.source, leggi, max_nuovi=args.servizi
+            )
+            con = sum(1 for l in listings if l.amenities)
+            print(f"  servizi: {web} dalla rete, {cache} ricordati · {con}/{len(listings)} annunci serviti")
 
     out = Path(args.out or f"{args.source}.snapshot.json")
 

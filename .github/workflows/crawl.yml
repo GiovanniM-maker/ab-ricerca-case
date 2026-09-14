@@ -32,7 +32,7 @@ concurrency:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -55,9 +55,13 @@ jobs:
           # set -e non risente. E run.py si rifiuta di sovrascrivere uno
           # snapshot buono con uno vuoto, quindi il fallimento lascia i dati di
           # ieri al loro posto invece di cancellarli.
+          # --servizi N: legge la lavanderia dalle pagine di dettaglio, al
+          # massimo N nuove per giro. Craigslist ne ha ~160 e si completa in un
+          # colpo; ApartmentAdvisor ne ha 1660 e si riempie in quattro o cinque
+          # mattine, poi paga solo le case nuove. Vedi rental_radar/servizi.py.
           fatte=""
           for s in apartmentadvisor craigslist; do
-            if python3 -m rental_radar.run --source "$s"; then
+            if python3 -m rental_radar.run --source "$s" --servizi 400; then
               fatte="$fatte $s.snapshot.json"
             else
               echo "::warning::$s non ha prodotto nulla: tengo i dati di ieri"
@@ -99,7 +103,9 @@ jobs:
         run: |
           git config user.name "flatiron-radar"
           git config user.email "actions@github.com"
-          git add apps/web/public/data/listings.json
+          # La cache dei servizi va committata insieme: e' cio' che evita al
+          # giro di domani di riscaricare le stesse 1660 pagine di dettaglio.
+          git add apps/web/public/data/listings.json apps/scraper/servizi-cache.json
           git diff --staged --quiet && { echo "Niente di nuovo."; exit 0; }
           git commit -m "crawl automatico $(date -u +%F): fonti aperte"
           # Il crawl dal Mac puo' aver pushato mentre giravamo.

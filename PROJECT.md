@@ -101,7 +101,8 @@ Sono l'unico dato del progetto che **non** può stare nel repo: il repo è
 pubblico, e "che impressione mi aveva fatto" è la cosa più personale che ci sia
 qui dentro. Vivono su **Supabase** (org `Flat Iron`, piano free), tabella
 `public.salvate`, protetta da RLS: ogni riga è visibile solo a chi l'ha scritta.
-Accesso con magic link via email. Nessuna route server: PostgREST *è* l'API, il
+Accesso con email e password: il link via email andava aperto su ogni
+dispositivo e il piano gratuito ne manda pochissime all'ora. Nessuna route server: PostgREST *è* l'API, il
 frontend resta la Next.js statica di sempre.
 
 Due decisioni che spiegano il resto:
@@ -156,6 +157,46 @@ Due difese aggiunte per rendere sicuro il crawl non sorvegliato:
   lei non c'è più, è sparita davvero e se ne va. Così la lista si accorcia
   quando deve, invece di riempirsi di fantasmi. Il crawl completo dal Mac non
   usa l'opzione: lì le fonti ci sono tutte e ricostruire da zero è più pulito.
+
+## 6-quater. La lavanderia, e perché è costata una pipeline
+
+A New York fare il bucato fuori casa vuol dire passarci i sabati. Chi ci abita
+lo mette davanti alla portineria e a quasi tutto il resto: **in casa** è il
+massimo, **nell'edificio** si accetta, altrimenti l'appartamento si scarta.
+
+Il punteggio lo rispecchia: lavatrice in casa 2.0, lavanderia in edificio 0.8,
+portiere e concierge **0** (valevano 1.0 a testa). Sull'interfaccia c'è
+un'etichetta per scheda e un filtro a tre livelli.
+
+**Il problema non era la regola, era il dato.** Nessuna pagina di *ricerca*
+dice dove sta la lavanderia — verificato fonte per fonte: `amenities` di
+ApartmentAdvisor è un array vuoto, e la sua API di ricerca non ha proprio il
+campo. All'inizio solo l'8% delle schede aveva un elenco di servizi, tutte da
+Apartments.com, e 192 su 205 si fermavano a **sette voci esatte** perché quel
+sito tronca lì: una casa senza lavanderia fra le sette non è una casa senza
+lavanderia, è un elenco tagliato.
+
+Il dato sta nelle pagine di **dettaglio**, una per annuncio:
+
+| fonte | dove | vocabolario |
+|---|---|---|
+| Craigslist | pagina di dettaglio | `w/d in unit`, `laundry in bldg`, `laundry on site`, `no laundry on site`, `w/d hookups` |
+| ApartmentAdvisor | `_next/data/<buildId>/details/<slug>.json` (69 KB invece dei 167 della pagina) | `washer-dryer-in-unit`, `washer-dryer`, `dishwasher` |
+
+Craigslist è l'unica fonte che dice anche quando la lavanderia **non c'è**: è
+la controprova che altrove manca, perché ovunque il silenzio poteva voler dire
+entrambe le cose.
+
+Scaricare 1660 pagine ogni mattina sarebbe un'ora di rete per riconfermare
+quello che già sapevamo, quindi `rental_radar/servizi.py` le **ricorda** in
+`apps/scraper/servizi-cache.json`, committato nel repo perché il crawl gira in
+due posti (il Mac e GitHub Actions) e senza un posto condiviso il runner
+ripartirebbe da zero ogni volta. Tetto di richieste per giro, validità 30
+giorni, e chi non risponde si riprova dopo una settimana invece che domani.
+
+> **Una regola che attraversa tutto questo pezzo**: `sconosciuta` non è
+> `assente`. Il tag non compare quando non sappiamo, il filtro lo dice prima
+> che lo usi, e non si scarta nessuna casa su un silenzio.
 
 ## 7. Stato di avanzamento
 - [x] **Fase 0** — Scaffold monorepo, schema DB, config Flatiron, docs.

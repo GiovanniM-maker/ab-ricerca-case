@@ -67,18 +67,28 @@ const NESSUNA = /\bno\b[^.]{0,20}\b(laundry|washer|dryer)\b/i;
 // non e' una lavatrice. Se un giorno decidi che vale, e' questa riga da togliere.
 const SOLO_ATTACCHI = /\bhook[- ]?ups?\b/i;
 
-/** Dove sta la lavanderia, letta dall'elenco dei servizi. */
-export function lavanderiaDi(amenities?: string[] | null): Lavanderia {
-  if (!amenities?.length) return "sconosciuta";
-  const righe = amenities.filter((a) => PAROLA_LAVANDERIA.test(a));
-  if (!righe.length) return "sconosciuta"; // l'elenco c'e' ma e' troncato
-  if (righe.some((a) => NESSUNA.test(a))) return "assente";
-  if (righe.every((a) => SOLO_ATTACCHI.test(a))) return "assente";
-  if (righe.some((a) => IN_CASA.test(a))) return "in-casa";
+/** Che cosa dice UNA voce dell'elenco sulla lavanderia. */
+function leggiVoce(a: string): Lavanderia {
+  if (!PAROLA_LAVANDERIA.test(a)) return "sconosciuta";
+  // L'ordine conta: "no laundry on site" contiene "laundry on site", e se
+  // guardassimo prima l'edificio leggeremmo un'assenza come una presenza.
+  if (NESSUNA.test(a) || SOLO_ATTACCHI.test(a)) return "assente";
+  if (IN_CASA.test(a)) return "in-casa";
   // Una lavanderia senza indicazione di dove sia la diamo per condominiale:
   // promuoverla a "in casa" farebbe promettere alla scheda piu' di quel che sa.
-  if (righe.some((a) => NELL_EDIFICIO.test(a))) return "edificio";
   return "edificio";
+}
+
+/** Dove sta la lavanderia, letta dall'elenco dei servizi. */
+export function lavanderiaDi(amenities?: string[] | null): Lavanderia {
+  if (!amenities?.length) return "sconosciuta"; // nessuno ce l'ha detto
+  // Si guarda voce per voce e vince la migliore. Craigslist elenca sia
+  // "w/d in unit" sia altre righe sulla lavanderia, e una prova positiva non
+  // deve essere cancellata da una negativa che parla d'altro.
+  const ordine: Lavanderia[] = ["in-casa", "edificio", "assente"];
+  const lette = amenities.map(leggiVoce);
+  for (const livello of ordine) if (lette.includes(livello)) return livello;
+  return "sconosciuta"; // l'elenco c'e' ma non parla di lavanderia
 }
 
 /** Quanto vale la lavanderia dentro il punteggio servizi. */

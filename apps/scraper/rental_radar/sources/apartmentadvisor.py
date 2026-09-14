@@ -85,6 +85,38 @@ def _to_listing(e: dict) -> Listing | None:
     )
 
 
+# I servizi non stanno nella risposta di ricerca — li ho cercati, non ci sono
+# proprio come campo. Stanno nel dettaglio, e Next.js lo serve anche come JSON:
+# 69 KB invece dei 167 della pagina, con dentro lo stesso "normalizedAmenities".
+# Il buildId cambia a ogni loro rilascio, quindi va riletto dalla pagina di
+# ricerca che scarichiamo comunque.
+_BUILD = re.compile(r'"buildId"\s*:\s*"([^"]+)"')
+_NORM = re.compile(r'"normalizedAmenities"\s*:\s*\[([^\]]*)\]')
+
+
+def build_id(html: str) -> str | None:
+    m = _BUILD.search(html)
+    return m.group(1) if m else None
+
+
+def amenities_of(listing: Listing, build: str) -> list[str]:
+    """I servizi normalizzati di un annuncio, dal JSON della pagina di dettaglio.
+
+    Il vocabolario e' loro e sta in minuscolo con i trattini: washer-dryer,
+    washer-dryer-in-unit, dishwasher, elevator... A noi interessano i primi due,
+    e il terzo e' proprio quello da non confondere.
+    """
+    slug = listing.source_url.rstrip("/").rsplit("/", 1)[-1]
+    url = f"{ORIGIN}/_next/data/{build}/details/{slug}.json?listingId={slug}"
+    testo = _get(url)
+    return sorted({
+        v.strip().strip('"')
+        for blob in _NORM.findall(testo)
+        for v in blob.split(",")
+        if v.strip().strip('"')
+    })
+
+
 def _search_params(html: str) -> dict:
     """Estrae i parametri di ricerca (geoID, location, ...) dal JSON della pagina."""
     m = _NEXT.search(html)
