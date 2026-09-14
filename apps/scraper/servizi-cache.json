@@ -1,4 +1,3836 @@
 {
+"apartmentadvisor:1-7-ave-s-manhattan-ny-10014": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1-astor-pl-ny-ny-10003": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1-harborside-pl-jersey-city-nj-07311": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1-irving-pl-ny-ny-10003": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1-northside-piers-brooklyn-ny-11211": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1-platt-st-ny-ny-10038": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:10-nevins-st-ny-ny-11217": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:100-atlantic-ave-ny-ny-11201": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:100-cedar-st-manhattan-ny-10038": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:101-lexington-ave-ny-ny-10016": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:101-w-55-st-ny-ny-10019": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:104-w-70-st-ny-ny-10023": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"furnished",
+"garbage-disposal",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:105-lexington-ave-ny-ny-11238": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:105-thompson-st-ny-ny-10012": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1057-2-ave-ny-ny-10022": {
+"a": [
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:106-central-park-s-manhattan-ny-10019": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-hookup",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:106-engert-ave-brooklyn-ny-11222": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:106-macdougal-st-ny-ny-10012": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:107-e-31-st-ny-ny-10016": {
+"a": [
+"balcony",
+"elevator",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:108-e-38-st-ny-ny-10016": {
+"a": [
+"elevator",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:108-flushing-ave-brooklyn-ny-11205": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:109-lafayette-st-ny-ny-10013": {
+"a": [
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:11-e-36-st-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:11-hoyt-st-brooklyn-ny-11201": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garbage-disposal",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-hookup",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:110-w-32-st-ny-ny-10001": {
+"a": [
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1104-palisade-ave-union-city-nj-07087": {
+"a": [
+"cats",
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:111-broad-st-manhattan-ny-10004": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:111-e-56-st-ny-ny-10022": {
+"a": [
+"fitness-center",
+"furnished",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:111-fulton-st-ny-ny-10038": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:111-hicks-st-brooklyn-ny-11201": {
+"a": [
+"balcony",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:111-lawrence-st-brooklyn-ny-11201": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:113-sullivan-st-manhattan-ny-10012": {
+"a": [
+"air-conditioning",
+"cats",
+"dishwasher",
+"dogs",
+"hardwood-floors",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1130-grand-st-hoboken-nj-07030": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:114-greenpoint-ave-brooklyn-ny-11222": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:114-suffolk-st-manhattan-ny-10002": {
+"a": [
+"air-conditioning",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:115-sullivan-st-ny-ny-10012": {
+"a": [
+"air-conditioning",
+"cats",
+"dishwasher",
+"dogs",
+"hardwood-floors",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:117-w-58-st-ny-ny-10019": {
+"a": [
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:120-church-st-manhattan-ny-10007": {
+"a": [
+"air-conditioning",
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"garage",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:120-e-34-st-ny-ny-10016": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:120-india-st-greenpoint-ny-11222": {
+"a": [
+"furnished",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:120-nassau-st-brooklyn-ny-11201": {
+"a": [
+"fitness-center",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:121-e-23-st-ny-ny-10010": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:121-mulberry-st-ny-ny-10013": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:122-ashland-pl-brooklyn-ny-11201": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:122-w-st-ny-ny-11222": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:123-guernsey-st-ny-ny-11222": {
+"a": [
+"hardwood-floors",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:125-ainslie-st-brooklyn-ny-11211": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:126-hall-st-ny-ny-11205": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:128-e-62-st-ny-ny-10065": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1288-1-ave-manhattan-ny-10021": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:130-2-st-brooklyn-ny-11231": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"patio",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:130-e-63-st-ny-ny-10065": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"furnished",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1305-paterson-plank-rd-north-bergen-nj-07047": {
+"a": [
+"fitness-center",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:131-columbia-st-ny-ny-11231": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:131-dudley-st-jersey-city-nj-07302": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:132-e-45-st-manhattan-ny-10017": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:136-n-8-st-ny-ny-11249": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:137-e-27-st-ny-ny-10016": {
+"a": [
+"balcony",
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:139-e-27-st-ny-ny-10016": {
+"a": [
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:139-hopkins-st-brooklyn-ny-11206": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:139-w-83-st-ny-ny-10024": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1392-madison-ave-ny-ny-10128": {
+"a": [
+"balcony",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:14-judge-st-brooklyn-ny-11211": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:14-orch-st-manhattan-ny-10002": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:140-71-st-guttenberg-nj-07093": {
+"a": [
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:140-w-10-st-ny-ny-10014": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:141-e-55-st-ny-ny-10022": {
+"a": [
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1415-manhattan-ave-union-city-nj-07087": {
+"a": [
+"balcony",
+"fitness-center",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:142-e-49-st-ny-ny-10017": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:144-w-109-st-ny-ny-10025": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:144-w-16-st-manhattan-ny-10011": {
+"a": [
+"balcony"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:145-e-48-st-ny-ny-10017": {
+"a": [
+"balcony",
+"dishwasher",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:145-w-78-st-ny-ny-10024": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:146-fulton-st-manhattan-ny-10038": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:146-s-4-st-brooklyn-ny-11211": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"furnished",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:147-e-90-st-manhattan-ny-10128": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:147-s-oxford-st-brooklyn-ny-11217": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:147-sullivan-st-manhattan-ny-10012": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:148-w-68-st-ny-ny-10023": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:149-e-81-st-ny-ny-10028": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:15-broad-st-ny-ny-10005": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:15-park-row-manhattan-ny-10038": {
+"a": [
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:15-somerset-ln-edgewater-nj-07001": {
+"a": [
+"balcony",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:15-w-53-st-ny-ny-10019": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:150-e-3-st-ny-ny-10009": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:150-w-51-st-ny-ny-10019": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"furnished",
+"garage",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:150-w-56-st-manhattan-ny-10019": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1500-lexington-ave-ny-ny-10029": {
+"a": [
+"balcony",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1509-67-st-north-bergen-nj-07047": {
+"a": [
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:151-e-81-st-ny-ny-10028": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:154-broadway-ny-ny-11211": {
+"a": [
+"balcony",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:154-columbus-ave-ny-ny-10023": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:155-washington-st-jersey-city-nj-07302": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"parking",
+"patio",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:156-clinton-st-brooklyn-ny-11201": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1598-lexington-ave-ny-ny-10029": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1607-washington-blvd-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"pool",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:161-w-10-ny-ny-10014": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:170-john-st-manhattan-ny-10038": {
+"a": [
+"dishwasher",
+"elevator",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1713-w-hh-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:172-huntington-st-ny-ny-11231": {
+"a": [
+"cats",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:172-w-77-st-ny-ny-10024": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:174-7-ave-ny-ny-10011": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:174-elizabeth-st-manhattan-ny-10012": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:175-kent-ave-brooklyn-ny-11249": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:177-concord-st-brooklyn-ny-11201": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:1775-york-ave-manhattan-ny-10128": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"parking",
+"patio",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:178-182-concord-st-brooklyn-ny-11201": {
+"a": [
+"dishwasher",
+"elevator",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:180-front-st-ny-ny-11201": {
+"a": [
+"air-conditioning",
+"balcony",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:180-riverside-blvd-manhattan-ny-10069": {
+"a": [
+"air-conditioning",
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"patio",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:181-greenpoint-ave-ny-ny-11222": {
+"a": [
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:184-eagle-st-ny-ny-11222": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"parking",
+"patio",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:185-w-end-ave-manhattan-ny-10023": {
+"a": [
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:189-c-ny-ny-10009": {
+"a": [
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:189-schermerhorn-st-brooklyn-ny-11201": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:19-commerce-st-manhattan-ny-10014": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:192-bleecker-st-ny-ny-10012": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:196-7-ave-brooklyn-ny-11215": {
+"a": [
+"balcony",
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:198-van-vorst-st-jersey-city-nj-07302": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:20-pine-st-ny-ny-10005": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:20-w-st-ny-ny-10004": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"furnished",
+"garbage-disposal",
+"hardwood-floors",
+"patio",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:200-rector-pl-ny-ny-10280": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:201-w-108-st-ny-ny-10025": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:202-ruelle-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:204-huntington-st-brooklyn-ny-11231": {
+"a": [
+"balcony",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:205-s-oxford-st-brooklyn-ny-11217": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:208-e-20-st-ny-ny-10003": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:209-e-66-st-manhattan-ny-10065": {
+"a": [
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:20th-street-loop-manhattan-ny-10009": {
+"a": [
+"cats",
+"dogs",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:21-w-st-manhattan-ny-10006": {
+"a": [
+"balcony",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:210-e-47-st-ny-ny-10017": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"furnished",
+"garage",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:211-e-18-st-manhattan-ny-10003": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"garage",
+"hardwood-floors",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:211-mcguinness-blvd-brooklyn-ny-11222": {
+"a": [
+"balcony",
+"fitness-center",
+"garage",
+"parking",
+"patio",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:213-greenpoint-ave-ny-ny-11222": {
+"a": [
+"dishwasher",
+"garbage-disposal"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:214-64-st-west-ny-nj-07093": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:214-e-82-st-ny-ny-10028": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:217-s-4-st-brooklyn-ny-11211": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:22-w-90-st-ny-ny-10024": {
+"a": [
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:221-e-76-st-ny-ny-10021": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:222-johnson-ave-brooklyn-ny-11206": {
+"a": [
+"balcony",
+"elevator",
+"fitness-center",
+"furnished",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:223-9-st-brooklyn-ny-11215": {
+"a": [
+"dogs"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:223-e-66-st-manhattan-ny-10065": {
+"a": [
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:224-e-27-st-ny-ny-10016": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:230-w-55-st-ny-ny-10019": {
+"a": [
+"balcony",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:2302-washington-blvd-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:231-lexington-ave-manhattan-ny-10016": {
+"a": [
+"dishwasher",
+"elevator",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:232-elizabeth-st-ny-ny-10012": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:237-madison-ave-manhattan-ny-10016": {
+"a": [
+"elevator",
+"fitness-center",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:238-e-50-st-manhattan-ny-10022": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:239-n-9-st-brooklyn-ny-11211": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:24-e-97-st-ny-ny-10128": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:240-e-27-st-manhattan-ny-10016": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:241-mulberry-st-manhattan-ny-10012": {
+"a": [
+"hardwood-floors",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:242-e-10-st-ny-ny-10009": {
+"a": [
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:243-e-71-st-ny-ny-10021": {
+"a": [
+"dishwasher",
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:243-w-98-st-ny-ny-10025": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:244-e-32-st-manhattan-ny-10016": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:244-madison-ave-manhatan-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garbage-disposal",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:245-e-35-st-ny-ny-10016": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"patio",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:245-e-40-st-manhattan-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:245-e-58-st-ny-ny-10022": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"doorman",
+"elevator",
+"fitness-center",
+"garage",
+"patio",
+"pool",
+"washer-dryer-hookup"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:245-w-113-st-ny-ny-10026": {
+"a": [
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:245-w-25-st-ny-ny-10001": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:247-e-62-st-ny-ny-10065": {
+"a": [
+"dishwasher",
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:247-n-7-st-brooklyn-ny-11211": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:247-w-46-st-ny-ny-10036": {
+"a": [
+"balcony",
+"fitness-center",
+"garbage-disposal",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:25-broad-st-ny-ny-10004": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:25-tudor-city-pl-ny-ny-10017": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:251-14-st-hoboken-nj-07030": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:251-van-brunt-st-brooklyn-ny-11231": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:252-1-ave-manhattan-ny-10009": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:252-w-30-st-ny-ny-10001": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"furnished",
+"garbage-disposal",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:254-park-ave-s-ny-ny-10010": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:257-w-91-st-ny-ny-10024": {
+"a": [
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:258-w-15-st-ny-ny-10011": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:26-26-jackson-ave-long-island-city-ny-11101": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:267-6-st-brooklyn-ny-11215": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:27-w-16-st-manhattan-ny-10012": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:275-park-ave-brooklyn-ny-11205": {
+"a": [
+"balcony",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:2790-broadway-ny-ny-10025": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"patio",
+"pool",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:28-30-sherman-pl-jersey-city-nj-07307": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:28-jones-st-manhattan-ny-10014": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:280-riverside-dr-manhattan-ny-10025": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:283-devoe-st-brooklyn-ny-11211": {
+"a": [
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:2841-broadway-st-ny-ny-10022": {
+"a": [
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:29-11-queens-plz-n-ny-ny-11101": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:29-s-3-st-ny-ny-11249": {
+"a": [
+"elevator",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:290-5-ave-ny-ny-11215": {
+"a": [
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:295-greenwich-st-ny-ny-10007": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:3-hanover-sq-manhattan-ny-10014": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:300-e-33-st-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:300-e-39-st-manhattan-ny-10016": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:300-e-93-st-ny-ny-10128": {
+"a": [
+"balcony",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:300-w-30-st-ny-ny-10001": {
+"a": [
+"balcony",
+"fitness-center",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:301-w-20-st-manhattan-ny-10011": {
+"a": [
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:301-wh-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:302-2-st-brooklyn-ny-11215": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"patio",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:303-e-57-st-ny-ny-10022": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:303-e-83-st-manhattan-ny-10028": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:304-e-20-st-ny-ny-10003": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:304-s-3-st-brooklyn-ny-11211": {
+"a": [
+"air-conditioning",
+"cats",
+"dogs"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:305-w-50-st-manhattan-ny-10019": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:306-w-51-st-manhattan-ny-10019": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:308-e-38-st-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:309-311-11-st-union-city-nj-07087": {
+"a": [
+"hardwood-floors",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:309-311-6-st-union-city-nj-07087": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:309-w-57-st-ny-ny-10019": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:309-w-72-st-ny-ny-10023": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:310-e-46-st-ny-ny-10017": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"garage",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:310-greenwich-st-manhattan-ny-10013": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"patio",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:310-w-20-st-ny-ny-10011": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:310-w-89-st-ny-ny-10024": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:312-w-23-st-ny-ny-10011": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:315-7-ave-ny-ny-10001": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"furnished",
+"garbage-disposal",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:315-e-95-st-manhattan-ny-10128": {
+"a": [
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:318-e-90-st-ny-ny-10128": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"patio",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:319-broadway-brooklyn-ny-11211": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:320-53-st-west-ny-nj-07093": {
+"a": [
+"balcony",
+"doorman",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:322-e-50-st-manhattan-ny-10022": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:323-undisclosed-address-manhattan-ny-10128": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:324-dean-st-brooklyn-ny-11217": {
+"a": [
+"air-conditioning",
+"elevator",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:325-5-ave-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:327-w-22-st-ny-ny-10011": {
+"a": [
+"air-conditioning",
+"elevator",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:327-w-30-st-ny-ny-10001": {
+"a": [
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:33-s-elliott-pl-brooklyn-ny-11217": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:330-e-38-st-ny-ny-10016": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:330-e-39-st-ny-ny-10016": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:331-w-88-st-ny-ny-10024": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:3316-3318-new-york-ave-union-city-nj-07087": {
+"a": [
+"hardwood-floors",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:333-e-46-st-manhattan-ny-11360": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:333-e-46-st-ny-ny-10017": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"garage",
+"hardwood-floors",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:333-rector-pl-ny-ny-10280": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:333-w-57-st-ny-ny-10019": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:340-e-23-st-ny-ny-10010": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:340-e-58-st-ny-ny-10022": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:340-e-83-st-manhattan-ny-10028": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:340-nevins-st-ny-ny-11215": {
+"a": [
+"balcony",
+"fitness-center",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:344-dean-st-ny-ny-11217": {
+"a": [
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:344-e-78-st-ny-ny-10075": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:345-e-72-st-manhattan-ny-10021": {
+"a": [
+"dishwasher",
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:349-w-30-st-ny-ny-10001": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:35-central-park-n-ny-ny-10026": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:35-w-95-st-ny-ny-10025": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:350-w-42-st-ny-ny-10036": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:350-w-50-st-ny-ny-10019": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:350-warren-st-jersey-city-nj-07302": {
+"a": [
+"cats",
+"dogs",
+"fitness-center",
+"garage",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:355-w-51-st-ny-ny-10019": {
+"a": [
+"dishwasher",
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:36-50-st-weehawken-nj-07086": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:360-furman-st-brooklyn-heights-ny-11201": {
+"a": [
+"fitness-center",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:3603-kennedy-blvd-jersey-city-nj-07307": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:3604-park-ave-weehawken-nj-07086": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:363-w-22-st-ny-ny-10011": {
+"a": [
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:363-w-30-st-ny-ny-10001": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:364-w-19-st-ny-ny-10011": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:3656-kennedy-blvd-jersey-city-nj-07307": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:37-hague-st-jersey-city-nj-07307": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:370-columbus-ave-manhattan-ny-10024": {
+"a": [
+"elevator",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:371-1-ave-ny-ny-10010": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:378-greenwich-st-ny-ny-10013": {
+"a": [
+"balcony",
+"cats",
+"dogs",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:378-lafayette-ave-brooklyn-ny-11238": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:38-nostrand-ave-brooklyn-ny-11205": {
+"a": [
+"cats",
+"dogs",
+"hardwood-floors",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:380-e-10-st-ny-ny-10009": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:388-brg-st-brooklyn-ny-11201": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:39-w-16-st-manhattan-ny-10011": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:39-w-58-st-manhattan-ny-10019": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:392-adelphi-st-brooklyn-ny-11238": {
+"a": [
+"air-conditioning",
+"patio",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:395-s-end-ave-ny-ny-10280": {
+"a": [
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:395-saint-johns-pl-brooklyn-ny-11238": {
+"a": [
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:395-smith-st-brooklyn-ny-11231": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:398-undisclosed-address-manhattan-ny-10022": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:4-lexington-ave-ny-ny-10010": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:400-9-st-hoboken-nj-07030": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:400-w-37-st-manhattan-ny-10018": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:401-kingston-ct-west-ny-nj-07093": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:401-w-56-st-ny-ny-10019": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:404-hudson-w-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:407-w-51-st-manhattan-ny-10019": {
+"a": [
+"balcony",
+"elevator"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:41-17-cres-st-queens-ny-11101": {
+"a": [
+"fitness-center",
+"parking",
+"pool",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:410-lorimer-st-brooklyn-ny-11206": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:412-w-110-st-ny-ny-10025": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:415-broadway-brooklyn-ny-11211": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:415-main-st-ny-ny-10044": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:416-w-23-st-ny-ny-10011": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:417-3-ave-ny-ny-10016": {
+"a": [
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:42-10-27-st-lic-ny-11101": {
+"a": [
+"balcony",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:421-e-78-st-ny-ny-10075": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:422-430-68-st-guttenberg-nj-07093": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"parking",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:422-amsterdam-ave-ny-ny-10024": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:425-5-ave-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"furnished",
+"garbage-disposal",
+"hardwood-floors",
+"patio",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:43-exchange-pl-manhattan-ny-10005": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"doorman",
+"elevator",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:43-w-16-st-manhattan-ny-10011": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:430-w-34-st-ny-ny-10001": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:431-62-st-west-ny-nj-07093": {
+"a": [
+"dogs",
+"fitness-center",
+"garage",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:431-w-37-st-manhattan-ny-10018": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:436-graham-ave-brooklyn-ny-11211": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:44-berry-st-brooklyn-ny-11249": {
+"a": [
+"balcony",
+"elevator",
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:4401-bergenline-ave-nj-nj-07087": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:441-e-83-st-ny-ny-10028": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:445-5-ave-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:45-riv-rd-edgewater-nj-07020": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"garbage-disposal",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:45-tudor-city-pl-ny-ny-10017": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:45-w-54-st-ny-ny-10019": {
+"a": [
+"balcony",
+"elevator",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:450-n-end-ave-ny-ny-10282": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:4529-cottage-pl-union-city-nj-07087": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:455-hudson-st-ny-ny-10014": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:457-w-40-st-manhattan-ny-10018": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:457-w-57-st-ny-ny-10019": {
+"a": [
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:462-w-58-st-manhattan-ny-10019": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"furnished",
+"hardwood-floors",
+"patio",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:47-market-st-manhattan-ny-10002": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:471-5-ave-brooklyn-ny-11215": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:474-48-ave-long-island-city-ny-11109": {
+"a": [
+"fitness-center"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:489-4-ave-brooklyn-ny-11215": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:50-e-28-st-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:50-lexington-ave-ny-ny-10010": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:50-macdougal-st-ny-ny-10012": {
+"a": [
+"balcony"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:50-united-nations-plz-ny-ny-10017": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:50-varet-st-ny-ny-11206": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"patio",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:50-w-47-st-ny-ny-10036": {
+"a": [
+"fitness-center",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:500-5-e-84-st-ny-ny-10028": {
+"a": [
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:500-500-degraw-st-brooklyn-ny-11217": {
+"a": [
+"balcony",
+"fitness-center",
+"garage",
+"parking",
+"patio",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:500-w-23-st-manhattan-ny-10011": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:501-e-87-st-ny-ny-10128": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:503-washington-blvd-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:509-47-st-union-city-nj-07087": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:51-59-beaver-st-ny-ny-10005": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"dogs",
+"fitness-center",
+"furnished",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:51-spg-st-ny-ny-10012": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:511-w-36-st-manhattan-ny-10018": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:5111-palisade-ave-west-ny-nj-07093": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:516-w-47-st-ny-ny-10036": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:519-e-86-st-manhattan-ny-10028": {
+"a": [
+"air-conditioning",
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:520-classon-ave-ny-ny-11238": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:525-60-st-west-ny-nj-07093": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:53-bushwick-ave-brooklyn-ny-11211": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:531-e-20-st-manhattan-ny-10016": {
+"a": [
+"dishwasher",
+"garage",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:55-battery-pl-manhattan-ny-10280": {
+"a": [
+"balcony",
+"cats",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:55-berry-st-ny-ny-11249": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:55-e-9-st-ny-ny-10003": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:55-lincoln-st-jersey-city-nj-07307": {
+"a": [
+"cats",
+"dogs"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:551-2-ave-manhattan-ny-10016": {
+"a": [
+"dishwasher"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:555-w-59-st-ny-ny-10019": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:561-10-ave-ny-ny-10036": {
+"a": [
+"balcony",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:57-w-58-st-ny-ny-10019": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:577-warren-st-brooklyn-ny-11217": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:595-myrtle-ave-brooklyn-ny-11205": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:60-e-55-st-ny-ny-10022": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"furnished",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:6035-park-ave-west-ny-nj-07093": {
+"a": [
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:606-w-57-st-ny-ny-10019": {
+"a": [
+"air-conditioning",
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"patio",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:608-w-57-st-ny-ny-10019": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"doorman",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:61-concord-dr-jersey-city-nj-07306": {
+"a": [
+"dogs"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:61-concord-st-jersey-city-nj-07306": {
+"a": [
+"dishwasher",
+"dogs"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:6114-highland-pl-west-ny-nj-07093": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:620-8-st-union-city-nj-07087": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:6200-hudson-ave-west-ny-nj-07093": {
+"a": [
+"fitness-center",
+"garage",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:630-1-ave-ny-ny-10016": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:635-w-42-st-ny-ny-10036": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:64-stagg-st-brooklyn-ny-11206": {
+"a": [
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:65-dupont-st-brooklyn-ny-11222": {
+"a": [
+"balcony",
+"fitness-center",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:650-palisade-ave-jersey-city-nj-07307": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:66-rockwell-pl-brooklyn-ny-11217": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"patio",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:66-w-38-st-manhattan-ny-10018": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:666-w-end-ave-ny-ny-10025": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:68-gold-st-brooklyn-ny-11201": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:6823-bergenline-ave-guttenberg-nj-07093": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:7-e-14-st-ny-ny-10003": {
+"a": [
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:70-greene-st-jersey-city-nj-07302": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"patio",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:700-blvd-e-weehawken-nj-07086": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:701-washington-blvd-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:703-bergen-st-ny-ny-11238": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:705-hhwest-jersey-city-nj-07310": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"fitness-center",
+"garage",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:71-broadway-manhattan-ny-10006": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"garbage-disposal"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:714-greenwich-st-manhattan-ny-10014": {
+"a": [
+"dishwasher",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:73-thompson-st-manhattan-ny-10013": {
+"a": [
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:730-columbus-ave-manhattan-ny-10025": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:749-9-ave-ny-ny-10019": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:75-maiden-ln-ny-ny-10038": {
+"a": [
+"cats",
+"dogs",
+"elevator",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:750-columbus-ave-manhattan-ny-10025": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:76-bartlett-st-brooklyn-ny-11206": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:77-commercial-st-ny-ny-11222": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"fitness-center",
+"garbage-disposal",
+"hardwood-floors",
+"pool",
+"washer-dryer"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:777-6-ave-manhattan-ny-10001": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"patio"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:8-saint-pauls-ave-jersey-city-nj-07306": {
+"a": [
+"cats",
+"dogs"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:8-spencer-pl-brooklyn-ny-11216": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:801-bergen-st-ny-ny-11238": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:802-9-ave-ny-ny-10019": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:812-new-york-ave-union-city-nj-07087": {
+"a": [
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"parking",
+"pool"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:824-9-ave-ny-ny-10019": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:84-undisclosed-address-manhattan-ny-10038": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:85-maple-st-weehawken-nj-07086": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:858-w-end-ave-ny-ny-10025": {
+"a": [
+"balcony",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:86-88-manhattan-ave-jersey-city-nj-07307": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:88-greenwich-st-ny-ny-10006": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:888-10-ave-ny-ny-10019": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:9-cook-st-brooklyn-ny-11206": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:90-william-st-ny-ny-10038": {
+"a": [
+"air-conditioning",
+"balcony",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:9033-wall-st-north-bergen-nj-07047": {
+"a": [
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"garage",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:91-hamilton-ave-fairview-nj-07022": {
+"a": [],
+"il": "2026-09-14"
+},
+"apartmentadvisor:943-columbus-ave-ny-ny-10025": {
+"a": [
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:95-worth-st-ny-ny-10013": {
+"a": [
+"balcony",
+"cats",
+"dishwasher",
+"dogs",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:96-moore-st-brooklyn-ny-11206": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:963-1-ave-manhattan-ny-10022": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:99-fleet-pl-brooklyn-ny-11201": {
+"a": [
+"balcony",
+"dishwasher",
+"dogs",
+"fitness-center",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
+"apartmentadvisor:99-john-st-ny-ny-10038": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-09-14"
+},
 "craigslist:1A3R3WaMuEe5HdeVWxj6pt": {
 "a": [
 "laundry in bldg"
