@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
 import type { Salvata, Stato } from "@/lib/wishlist";
+import type { Lavanderia } from "@/lib/listings";
 import {
   formatPrice,
   formatType,
@@ -10,6 +11,16 @@ import {
   tierMeta,
   sourceLabel,
 } from "@/lib/format";
+
+// Qui, a differenza della card, "sconosciuta" si dice. Sulla scheda aperta
+// stai decidendo se andare a vederla: sapere che il dato manca e' diverso dal
+// non vedere niente e credere che manchi il servizio.
+const LAVANDERIA: Record<Lavanderia, string> = {
+  "in-casa": "In casa",
+  edificio: "Nell'edificio",
+  assente: "Assente",
+  sconosciuta: "Non lo sappiamo",
+};
 
 type Props = {
   listing: ScoredListing | null;
@@ -142,6 +153,9 @@ export default function ListingDetail({
             <Stat label="Superficie" value={listing.sqft ? `${listing.sqft} ft²` : "n/d"} />
             <Stat label="Arredato" value={listing.furnished == null ? "n/d" : listing.furnished ? "Sì" : "No"} />
             <Stat label="Distanza" value={formatDistance(listing.distanceM)} />
+            <div className="col-span-2">
+              <Stat label="Lavanderia" value={LAVANDERIA[listing.lavanderia]} />
+            </div>
             {listing.stationM != null && (
               <div className="col-span-2">
                 <Stat label="Metro più vicina" value={formatDistance(listing.stationM)} />
@@ -149,9 +163,9 @@ export default function ListingDetail({
             )}
           </div>
 
-          {/* Servizi dell'edificio: la portineria che ritira i pacchi pesa nel
-              punteggio, quindi va anche mostrata — un numero che sale senza
-              dire perche' non serve a decidere. */}
+          {/* Gli altri servizi dell'edificio. Il portiere qui non pesa piu':
+              la lavanderia ha preso il suo posto in cima, e sta nel riquadro
+              sopra invece che sepolta in questo elenco. */}
           {!!listing.amenities?.length && (
             <div>
               <div className="mb-1.5 text-[11px] uppercase tracking-wide text-neutral-500">

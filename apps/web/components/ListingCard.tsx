@@ -4,6 +4,24 @@ import { useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
 import { formatPrice, formatDistance, tierMeta, sourceLabel } from "@/lib/format";
 import type { Stato } from "@/lib/wishlist";
+import type { Lavanderia } from "@/lib/listings";
+
+/** Come si mostra la lavanderia. "sconosciuta" non compare: sarebbe
+ *  un'etichetta su nove schede su dieci che non dice niente. */
+const LAVANDERIA: Partial<Record<Lavanderia, { testo: string; classe: string }>> = {
+  "in-casa": {
+    testo: "Lavatrice in casa",
+    classe: "border-sky-500/60 bg-sky-500/15 text-sky-300",
+  },
+  edificio: {
+    testo: "Lavanderia in edificio",
+    classe: "border-sky-800 bg-sky-950/60 text-sky-400/90",
+  },
+  assente: {
+    testo: "Senza lavanderia",
+    classe: "border-neutral-700 bg-neutral-900 text-neutral-500",
+  },
+};
 
 type Props = {
   listing: ScoredListing;
@@ -83,6 +101,17 @@ export default function ListingCard({
           {listing.neighborhood && (
             <span className="rounded-full border border-neutral-600 px-2 py-0.5 font-semibold text-neutral-200">
               {listing.neighborhood}
+            </span>
+          )}
+          {/* La lavanderia sta per prima fra le informazioni: e' il requisito
+              che fa scartare una casa a prescindere dal resto. */}
+          {LAVANDERIA[listing.lavanderia] && (
+            <span
+              className={`rounded-full border px-2 py-0.5 font-medium ${
+                LAVANDERIA[listing.lavanderia]!.classe
+              }`}
+            >
+              {LAVANDERIA[listing.lavanderia]!.testo}
             </span>
           )}
           {/* anche "Arredato" sta nel corpo: sulla foto si scontrava con il

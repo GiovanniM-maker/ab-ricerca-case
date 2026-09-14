@@ -31,6 +31,18 @@ const SORTS: { key: SortKey; label: string }[] = [
 ];
 const PAGE = 30;
 
+// Il bucato: a New York chi ci abita lo mette davanti a quasi tutto, perche'
+// senza lavatrice i sabati se ne vanno in lavanderia. Tre livelli e non due,
+// perche' "non lo sappiamo" e' il caso piu' frequente: solo l'8% delle schede
+// elenca i servizi, e filtrare come se il silenzio fosse un'assenza
+// nasconderebbe nove case su dieci.
+type FiltroLavanderia = "tutte" | "in-casa" | "almeno-edificio";
+const LAVANDERIE: { key: FiltroLavanderia; label: string }[] = [
+  { key: "tutte", label: "Tutte" },
+  { key: "in-casa", label: "Lavatrice in casa" },
+  { key: "almeno-edificio", label: "Almeno nell'edificio" },
+];
+
 /** Riga cliccabile dentro un pannello filtro. */
 function Row({
   on,
@@ -88,6 +100,7 @@ export default function Home() {
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [activeNeighborhoods, setActiveNeighborhoods] = useState<Set<string>>(new Set());
   const [hoodQuery, setHoodQuery] = useState("");
+  const [lavanderia, setLavanderia] = useState<FiltroLavanderia>("tutte");
   const [limit, setLimit] = useState(PAGE);
 
   const [selectedId, setSelectedId] = useState<string | number | null>(null);
@@ -136,7 +149,11 @@ export default function Home() {
         (!furnishedOnly || l.furnished === true) &&
         (maxPrice == null || (l.price ?? Infinity) <= maxPrice) &&
         (activeNeighborhoods.size === 0 ||
-          neighborhoodsOf(l.lat, l.lng).some((n) => activeNeighborhoods.has(n)))
+          neighborhoodsOf(l.lat, l.lng).some((n) => activeNeighborhoods.has(n))) &&
+        (lavanderia === "tutte" ||
+          (lavanderia === "in-casa"
+            ? l.lavanderia === "in-casa"
+            : l.lavanderia === "in-casa" || l.lavanderia === "edificio"))
     );
     filtered.sort((a, b) => {
       if (sort === "price") return (a.price ?? Infinity) - (b.price ?? Infinity);
@@ -144,11 +161,11 @@ export default function Home() {
       return b.convenienza - a.convenienza;
     });
     return filtered;
-  }, [scored, activeTiers, activeTypes, furnishedOnly, maxPrice, activeNeighborhoods, sort]);
+  }, [scored, activeTiers, activeTypes, furnishedOnly, maxPrice, activeNeighborhoods, lavanderia, sort]);
 
   useEffect(
     () => setLimit(PAGE),
-    [activeTiers, activeTypes, furnishedOnly, maxPrice, activeNeighborhoods, sort]
+    [activeTiers, activeTypes, furnishedOnly, maxPrice, activeNeighborhoods, lavanderia, sort]
   );
 
   function toggle<T>(set: Set<T>, v: T): Set<T> {
@@ -168,6 +185,7 @@ export default function Home() {
     setFurnishedOnly(false);
     setMaxPrice(null);
     setActiveNeighborhoods(new Set());
+    setLavanderia("tutte");
   };
 
   const tiersFiltered = activeTiers.size < 3;
@@ -176,6 +194,7 @@ export default function Home() {
     activeTypes.size > 0 ||
     furnishedOnly ||
     maxPrice != null ||
+    lavanderia !== "tutte" ||
     activeNeighborhoods.size > 0;
 
   const hoodList = NEIGHBORHOODS.filter((n) =>
@@ -403,6 +422,27 @@ export default function Home() {
                 </Row>
               </div>
             </FilterPopover>
+
+            <FilterPopover
+              label="Lavanderia"
+              value={lavanderia === "tutte" ? null : LAVANDERIE.find((x) => x.key === lavanderia)!.label}
+              width="w-60"
+            >
+              <div className="space-y-0.5">
+                {LAVANDERIE.map((v) => (
+                  <Row key={v.key} on={lavanderia === v.key} onClick={() => setLavanderia(v.key)}>
+                    {v.label}
+                  </Row>
+                ))}
+              </div>
+              {/* Detto qui, dove serve: chi sceglie "lavatrice in casa" vede
+                  l'elenco crollare e deve sapere che non e' perche' le case
+                  non ce l'hanno, ma perche' le fonti non lo dicono. */}
+              <p className="mt-2 border-t border-neutral-800 pt-2 text-[11px] leading-snug text-neutral-500">
+                Solo una casa su dodici dichiara i servizi. Filtrando qui sparisce
+                anche chi la lavatrice ce l&apos;ha ma non l&apos;ha scritto.
+              </p>
+            </FilterPopover>
           </div>
 
           {/* Filtri attivi */}
@@ -431,6 +471,12 @@ export default function Home() {
                 />
               ))}
               {furnishedOnly && <Pill label="Arredati" onRemove={() => setFurnishedOnly(false)} />}
+              {lavanderia !== "tutte" && (
+                <Pill
+                  label={LAVANDERIE.find((x) => x.key === lavanderia)!.label}
+                  onRemove={() => setLavanderia("tutte")}
+                />
+              )}
               {maxPrice != null && (
                 <Pill
                   label={`≤ $${maxPrice.toLocaleString()}`}

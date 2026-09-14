@@ -14,6 +14,8 @@ export interface ScoredListing extends Listing {
   stationM: number | null;
   /** quartiere piu' specifico che contiene la casa */
   neighborhood: string | null;
+  /** dove sta la lavanderia: il requisito che decide se la casa vale */
+  lavanderia: Lavanderia;
 }
 
 /** Pesi del punteggio convenienza (regolabili dall'UI). */
@@ -37,30 +39,75 @@ export const DEFAULT_WEIGHTS: Weights = {
   services: 0.1,
 };
 
-// Servizi dell'edificio e quanto valgono. La portineria vale piu' di tutto:
-// a NYC significa avere qualcuno che ritira e tiene le consegne.
-const SERVICES: { key: string; value: number }[] = [
-  { key: "doorman", value: 1 },
-  { key: "concierge", value: 1 },
-  { key: "package", value: 0.8 },
-  { key: "elevator", value: 0.6 },
-  { key: "washer", value: 0.6 },
-  { key: "laundry", value: 0.5 },
-  { key: "gym", value: 0.4 },
-  { key: "fitness", value: 0.4 },
-  { key: "storage", value: 0.3 },
-  { key: "roof", value: 0.3 },
+/**
+ * Dov'e' la lavatrice — il fattore che decide se una casa vale la pena.
+ *
+ * A New York fare il bucato fuori casa vuol dire passarci i sabati. Chi ci
+ * abita lo mette davanti alla portineria, davanti alla palestra, davanti a
+ * quasi tutto: in casa e' il massimo, nell'edificio si accetta, altrimenti
+ * l'appartamento si scarta.
+ *
+ * "sconosciuta" non e' "assente", ed e' la differenza piu' importante di
+ * questo file. Solo l'8% delle nostre schede elenca i servizi, e di quelle
+ * 192 su 205 si fermano a sette voci esatte — Apartments.com tronca li'. Una
+ * casa senza lavanderia fra i sette non e' una casa senza lavanderia: e' un
+ * elenco tagliato. Dedurre l'assenza da un silenzio del genere nasconderebbe
+ * proprio le case buone.
+ */
+export type Lavanderia = "in-casa" | "edificio" | "assente" | "sconosciuta";
+
+// \b e' tutto il segreto della correzione: "Dishwasher" contiene "washer" ma
+// non ha un confine di parola davanti. Prima passava, e 164 case prendevano i
+// punti della lavatrice per avere la lavastoviglie.
+const PAROLA_LAVANDERIA = /\b(laundry|washer|dryer|w\/d)\b/i;
+const IN_CASA = /\b(in[- ]?unit|in[- ]?suite|in[- ]?apartment)\b/i;
+const NELL_EDIFICIO = /\b(bldg|building|on[- ]?site|facilit|room|shared|common|basement)\b/i;
+const NESSUNA = /\bno\b[^.]{0,20}\b(laundry|washer|dryer)\b/i;
+// "w/d hookups" vuol dire che gli attacchi ci sono e la macchina la compri tu:
+// non e' una lavatrice. Se un giorno decidi che vale, e' questa riga da togliere.
+const SOLO_ATTACCHI = /\bhook[- ]?ups?\b/i;
+
+/** Dove sta la lavanderia, letta dall'elenco dei servizi. */
+export function lavanderiaDi(amenities?: string[] | null): Lavanderia {
+  if (!amenities?.length) return "sconosciuta";
+  const righe = amenities.filter((a) => PAROLA_LAVANDERIA.test(a));
+  if (!righe.length) return "sconosciuta"; // l'elenco c'e' ma e' troncato
+  if (righe.some((a) => NESSUNA.test(a))) return "assente";
+  if (righe.every((a) => SOLO_ATTACCHI.test(a))) return "assente";
+  if (righe.some((a) => IN_CASA.test(a))) return "in-casa";
+  // Una lavanderia senza indicazione di dove sia la diamo per condominiale:
+  // promuoverla a "in casa" farebbe promettere alla scheda piu' di quel che sa.
+  if (righe.some((a) => NELL_EDIFICIO.test(a))) return "edificio";
+  return "edificio";
+}
+
+/** Quanto vale la lavanderia dentro il punteggio servizi. */
+const PESO_LAVANDERIA: Record<Lavanderia, number> = {
+  "in-casa": 2,
+  edificio: 0.8,
+  assente: 0,
+  sconosciuta: 0,
+};
+
+// Gli altri servizi dell'edificio. Il portiere non c'e' piu': valeva piu' di
+// tutto, ma chi vive a New York lo mette molto dopo il bucato — e nei nostri
+// dati compare due volte in tutto, contro le ottantasei della lavatrice.
+const SERVICES: { key: RegExp; value: number }[] = [
+  { key: /\bpackage\b/i, value: 0.5 },
+  { key: /\belevator\b/i, value: 0.6 },
+  { key: /\b(gym|fitness)\b/i, value: 0.4 },
+  { key: /\bstorage\b/i, value: 0.3 },
+  { key: /\broof\b/i, value: 0.3 },
 ];
 /** Somma di servizi oltre la quale il punteggio e' pieno. */
 const SERVICES_MAX = 2.5;
 
-/** Da 0 a 1 in base ai servizi dell'edificio. */
+/** Da 0 a 1 in base ai servizi, con la lavanderia in cima. */
 export function servicesScore(amenities?: string[] | null): number {
   if (!amenities?.length) return 0;
-  const norm = amenities.map((a) => a.toLowerCase());
-  let sum = 0;
+  let sum = PESO_LAVANDERIA[lavanderiaDi(amenities)];
   for (const { key, value } of SERVICES) {
-    if (norm.some((a) => a.includes(key))) sum += value;
+    if (amenities.some((a) => key.test(a))) sum += value;
   }
   return Math.min(1, sum / SERVICES_MAX);
 }
@@ -184,6 +231,6 @@ export function scoreListings(
     // NEIGHBORHOODS e' ordinato dal piu' specifico al piu' generico,
     // quindi il primo match e' il quartiere giusto da mostrare.
     const neighborhood = neighborhoodsOf(l.lat, l.lng)[0] ?? null;
-    return { ...l, convenienza, stationM, neighborhood };
+    return { ...l, convenienza, stationM, neighborhood, lavanderia: lavanderiaDi(l.amenities) };
   });
 }
