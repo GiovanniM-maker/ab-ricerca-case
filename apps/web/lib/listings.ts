@@ -1,4 +1,4 @@
-import { FLATIRON } from "./config";
+import { BUDGET_MAX, FLATIRON, GIORNI_PER_PERSA } from "./config";
 import { classify, type IsochroneSet } from "./geo";
 import type { Listing, TierId } from "./types";
 import { nearestStationM, transitAccessScore, type Station } from "./subway";
@@ -162,12 +162,36 @@ export function isPlausibleListing(l: RawListing): boolean {
   return l.price == null || l.price >= floor;
 }
 
+/**
+ * false se costa piu' del budget: quelle case non entrano in "Tutte". Non si
+ * scartano al caricamento perche' una casa salvata prima del tetto, se e'
+ * ancora online, non deve risultare persa.
+ */
+export function isInBudget(l: RawListing): boolean {
+  return l.price == null || l.price <= BUDGET_MAX;
+}
+
+/**
+ * false se nessuna fonte la mostra da piu' di GIORNI_PER_PERSA giorni: e'
+ * stata affittata o tolta dal sito. Si conta dal giorno del file e non da
+ * oggi: se il crawl si fermasse per una settimana, l'elenco invecchierebbe
+ * tutto insieme invece di svuotarsi.
+ */
+export function isAncoraOnline(l: RawListing, generatedAt?: string): boolean {
+  if (!l.visto || !generatedAt) return true; // schede di prima del campo
+  const giorni = (Date.parse(generatedAt.slice(0, 10)) - Date.parse(l.visto)) / 86_400_000;
+  return !(giorni > GIORNI_PER_PERSA);
+}
+
 export async function loadListings(): Promise<RawListing[]> {
   try {
     const res = await fetch("/data/listings.json");
     if (!res.ok) return [];
     const data = await res.json();
-    return (data.listings ?? []).filter(isPlausibleListing);
+    return (data.listings ?? []).filter(
+      (l: RawListing) =>
+        isPlausibleListing(l) && isAncoraOnline(l, data.generatedAt)
+    );
   } catch {
     return [];
   }
