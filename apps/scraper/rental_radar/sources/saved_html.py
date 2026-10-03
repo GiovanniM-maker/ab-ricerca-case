@@ -78,6 +78,68 @@ _ADDR = re.compile(r"^\d+[\w\-]*\s+[A-Za-z]")
 FURN_KEYS = ("furnished", "isfurnished")
 AMENITY_KEYS = ("amenityfeature", "amenities", "amenity", "features", "buildingamenities")
 
+# --- le ricerche filtrate -----------------------------------------------------
+#
+# Le pagine di ricerca non dicono i servizi: su Zillow, in 673 KB, "laundry"
+# compare una volta e fuori dagli annunci, nel nome di un filtro. Ma quel
+# filtro e' la risposta. La stessa ricerca rifatta chiedendo «solo con
+# lavatrice in casa» torna un elenco piu' corto (14866 -> 5943), e chi resta
+# dentro la lavatrice ce l'ha per ammissione del sito. Il crawl scarica
+# entrambe le versioni; qui riconosciamo quelle filtrate dal nome del file.
+#
+# Stessa stringa in tools/collector.py e in browser/common.mjs: se cambia qui
+# e non la', le pagine filtrate tornano a sembrare pagine normali.
+PREFISSO_FILTRO = "filtro-"
+TARGETS_FILE = SCRAPER / "browser" / "targets.json"
+
+# Che cosa scriviamo fra i servizi quando il filtro ha morso. Deve restare una
+# dicitura che il punteggio sa leggere: apps/web/lib/listings.ts riconosce
+# "in-unit" + "laundry" e la classifica come lavatrice in casa. Cambiando il
+# testo qui, il tag sulla scheda sparisce senza un errore.
+ETICHETTE_FILTRO = {"lavanderia-in-casa": "In-unit Laundry"}
+
+# Se l'elenco filtrato contiene quasi tutte le case di quello libero, il filtro
+# non ha morso: il sito ha ignorato una sintassi che non conosce e ci ha
+# ridato la ricerca intera. Meglio non sapere la lavanderia che darla a tutti.
+QUOTA_SOSPETTA = 0.9
+
+
+def _filtro_del_file(nome_file: str) -> str | None:
+    """Da "filtro-lavanderia-in-casa--for-rent-flatiron-2.html" al filtro."""
+    if not nome_file.startswith(PREFISSO_FILTRO):
+        return None
+    resto = nome_file[len(PREFISSO_FILTRO) :]
+    return resto.split("--", 1)[0] if "--" in resto else None
+
+
+_TITOLO = re.compile(r"<title[^>]*>(.*?)</title>", re.S | re.I)
+
+
+def _conferme() -> dict[str, str]:
+    """filtro -> parola che DEVE comparire nel TITOLO della pagina.
+
+    Serve contro una deriva vera: togliendo a Zillow i flag dell'affitto, la
+    stessa URL risponde con le case in VENDITA e il titolo passa da
+    "5943 Rentals" a "Homes For Sale". Senza questo controllo prenderemmo
+    quegli annunci per affitti con la lavatrice.
+
+    Nel titolo e non in tutta la pagina: nella pagina delle vendite la parola
+    "Rentals" c'e' comunque — una volta, in un link del menu — e cercarla
+    dappertutto avrebbe lasciato passare esattamente la deriva da fermare.
+    """
+    try:
+        cfg = json.loads(TARGETS_FILE.read_text())
+    except (OSError, json.JSONDecodeError):
+        return {}
+    out: dict[str, str] = {}
+    for fonte, dati in cfg.items():
+        if fonte.startswith("_") or not isinstance(dati, dict):
+            continue
+        for nome, filtro in (dati.get("filtri") or {}).items():
+            if not nome.startswith("_") and isinstance(filtro, dict) and filtro.get("conferma"):
+                out[nome] = filtro["conferma"]
+    return out
+
 
 # --------------------------------------------------------------------------
 # 1. tirare fuori ogni JSON annidato nella pagina
@@ -497,9 +559,26 @@ def fetch_listings(source: str) -> list[Listing]:
     origin = ORIGINS.get(source, "")
     by_key: dict[str, Listing] = {}
 
+    conferme = _conferme()
+    # filtro -> le case comparse nell'elenco filtrato. Le pagine filtrate sono
+    # risultati di ricerca veri come gli altri, quindi contribuiscono anche
+    # case nuove: non si buttano, si etichettano.
+    trovate: dict[str, set[str]] = {}
+    senza_conferma = 0
+
     skipped = 0
     for f in files:
         html = f.read_text("utf-8", "replace")
+        filtro = _filtro_del_file(f.name)
+        if filtro is not None:
+            parola = conferme.get(filtro)
+            titolo = (_TITOLO.search(html) or [None, ""])[1]
+            if parola and parola not in titolo:
+                # La pagina c'e' ed e' grossa, ma non e' quello che avevamo
+                # chiesto. Non e' un muro: e' il filtro che e' andato altrove.
+                senza_conferma += 1
+                continue
+            trovate.setdefault(filtro, set())
         # Le pagine-muro pesano pochi KB: sono state salvate da versioni del
         # crawler con un controllo piu' permissivo. Nessun elenco di case e'
         # cosi' piccolo, quindi non c'e' rischio di scartare roba buona.
@@ -553,6 +632,12 @@ def fetch_listings(source: str) -> list[Listing]:
             sqft = _num(_pick(d, SQFT_KEYS))
 
             key = url if url != origin else f"{lat:.5f},{lng:.5f},{int(price)}"
+            # Prima di qualunque scarto per duplicato: il filtro etichetta la
+            # casa, e la casa e' la chiave. Se questa riga stesse sotto al
+            # `continue` qui accanto, la seconda volta che una casa compare
+            # l'etichetta andrebbe perduta.
+            if filtro is not None:
+                trovate[filtro].add(key)
             prev = by_key.get(key)
             if prev and (prev.sqft or not sqft):
                 continue
@@ -575,6 +660,32 @@ def fetch_listings(source: str) -> list[Listing]:
 
     if skipped:
         print(f"  ({skipped} pagine scartate: troppo piccole, sono muri o vuote)")
+    if senza_conferma:
+        print(f"  ({senza_conferma} pagine filtrate scartate: non contengono la conferma)")
+
+    for nome, chiavi in trovate.items():
+        etichetta = ETICHETTE_FILTRO.get(nome)
+        if etichetta is None:
+            print(f"  filtro «{nome}»: non so che servizio sia, lo ignoro")
+            continue
+        dentro = chiavi & by_key.keys()
+        if not dentro:
+            print(f"  filtro «{nome}»: nessuna casa, forse la sintassi non vale piu'")
+            continue
+        quota = len(dentro) / len(by_key)
+        if quota > QUOTA_SOSPETTA:
+            print(
+                f"  filtro «{nome}»: {len(dentro)}/{len(by_key)} case "
+                f"({quota:.0%}) — troppe. Il sito ha ignorato il filtro: "
+                f"non etichetto niente."
+            )
+            continue
+        for k in dentro:
+            l = by_key[k]
+            if etichetta not in (l.amenities or []):
+                l.amenities = [*(l.amenities or []), etichetta]
+        print(f"  filtro «{nome}»: {len(dentro)}/{len(by_key)} case ({quota:.0%}) → «{etichetta}»")
+
     return list(by_key.values())
 
 

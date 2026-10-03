@@ -54,8 +54,58 @@ export function pageUrl(base, cfg, n) {
   return null;
 }
 
+// Il trattino di coda va tolto: un URL che finisce con "/" lo lasciava li', e
+// il file diventava "new-york-ny-rentals--1.html" invece di "…-1.html". Era
+// innocuo finche' il nome del file diceva solo da che ricerca veniva la
+// pagina; adesso dice anche se e' filtrata, e i due crawl devono scrivere lo
+// stesso nome. L'equivalente in Python e' slug_for() in tools/collector.py.
 export const slugFor = (base) =>
-  base.replace(/^https?:\/\/[^/]+\//, "").replace(/[^a-z0-9]+/gi, "-") || "home";
+  base
+    .replace(/^https?:\/\/[^/]+\//, "")
+    .replace(/[^a-z0-9]+/gi, "-")
+    .replace(/^-+|-+$/g, "") || "home";
+
+// Stessa stringa in tools/collector.py e in rental_radar/sources/saved_html.py:
+// e' il contratto con cui si riconosce una pagina di ricerca filtrata.
+export const PREFISSO_FILTRO = "filtro-";
+
+/** L'URL di `base`, pagina `n`, con un filtro applicato. Vedi targets.json. */
+export function filtroUrl(filtro, base, cfg, n) {
+  const query = filtro.query ?? {};
+  let url = filtro.url.replace("{base}", base);
+  // Se il modello sa impaginarsi da solo ({n}), `pages` non ci mette bocca:
+  // su Zillow la pagina sta dentro il JSON della ricerca, e un ?page=2 di
+  // fuori non sposterebbe nulla (la pagina 1 torna identica).
+  const propria =
+    filtro.url.includes("{n}") || Object.values(query).some((v) => v.includes("{n}"));
+  if (!propria) {
+    url = pageUrl(url, cfg, n);
+    if (!url) return null;
+  }
+  const chiavi = Object.keys(query);
+  if (chiavi.length) {
+    const q = new URLSearchParams();
+    for (const k of chiavi) q.set(k, query[k].replaceAll("{n}", String(n)));
+    url += (url.includes("?") ? "&" : "?") + q.toString();
+  }
+  return url.replaceAll("{n}", String(n));
+}
+
+/**
+ * Le ricerche da scaricare per una fonte: prima quelle libere, poi le stesse
+ * filtrate. Le filtrate servono a sapere la lavanderia senza aprire una
+ * pagina di dettaglio per casa — chi compare nell'elenco filtrato ha quel
+ * servizio per ammissione del sito.
+ */
+export function giriPer(cfg) {
+  const giri = cfg.searches.map((base) => ({ base, slug: slugFor(base) }));
+  for (const [nome, filtro] of Object.entries(cfg.filtri ?? {})) {
+    if (nome.startsWith("_")) continue;
+    for (const base of cfg.searches)
+      giri.push({ base, filtro, slug: `${PREFISSO_FILTRO}${nome}--${slugFor(base)}` });
+  }
+  return giri;
+}
 
 export function savePage(source, slug, n, html) {
   const out = join(PAGES, source);
