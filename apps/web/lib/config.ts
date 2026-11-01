@@ -19,3 +19,8 @@ export const GIORNI_PER_PERSA = 14;
 // non riviste restano in elenco con la data dell'ultimo dato vero, non scadono.
 export const FONTI_COL_BROWSER = ["streeteasy", "zillow", "apartments"];
 export const GIORNI_PER_DATO_VECCHIO = 2;
+
+// Una casa il cui dato non viene ricontrollato da giorni (datoDel) vale un po'
+// meno in classifica: potrebbe essere gia' andata. Non esce dall'elenco, anzi:
+// StreetEasy e' proprio la fonte che il browser raggiunge a intermittenza.
+export const MOLTIPLICATORE_DATO_VECCHIO = 0.85;

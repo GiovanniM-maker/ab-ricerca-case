@@ -22,7 +22,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / "apps" / "web" / "public" / "data" / "listings.json"
-# come FONTI_FERME in apps/web/lib/config.ts
+# Per il solo tie-break di _segna_curati ("a parita' di data vince chi ha una
+# fonte viva"): sono le fonti che il giro NON riscarica con costanza e che
+# quindi perdono contro una scheda con una fonte fresca. NON e' lo stesso
+# insieme di FONTI_COL_BROWSER in apps/web/lib/config.ts (streeteasy, zillow,
+# apartments), che decide la scadenza e il peso del dato vecchio: li' anche
+# "apartments" e' a intermittenza; qui e' volutamente la fonte che vince.
+# "curato" e' la scheda manuale, che non si riscarica mai.
 FONTI_FERME = {"streeteasy", "zillow", "curato"}
 CURATI = ROOT / "apps" / "scraper" / "curati.json"
 LETTI = json.loads((ROOT / "apps" / "web" / "lib" / "affitto_letti.json").read_text())
@@ -62,6 +68,89 @@ def _norm_address(address_raw: str | None) -> str | None:
     return f"{street}|{unit}" if unit else street
 
 
+# ---- indirizzo canonico (solo per riconoscere i doppioni) --------------------
+# NON e' la chiave pubblicata. `_norm_address` resta com'era: la chiave esce nel
+# JSON e la wishlist salva `chiave||id` (lib/wishlist.ts, rifDi): cambiarla per
+# le case esistenti farebbe perdere le case salvate. Questa forma canonica serve
+# solo a confrontare due schede nello stesso giro e a non alterare nulla di cio'
+# che e' pubblicato.
+_PREFISSO_TITOLO = re.compile(r"^\s*rental open house at\s+", re.I)
+_PREFISSO_UNITA = re.compile(r"^\s*(?:unit|apt\.?|apartment|ste|suite)\s+#?(?P<u>[\w-]+)\s+at\s+", re.I)
+_CIVICO = re.compile(r"^\d+[a-z]?(?:-\d+)?\b")
+_CANON_TOKEN = {
+    "street": "st", "st": "st", "str": "st",
+    "place": "pl", "pl": "pl",
+    "avenue": "ave", "ave": "ave", "av": "ave",
+    "road": "rd", "rd": "rd",
+    "boulevard": "blvd", "blvd": "blvd",
+    "drive": "dr", "dr": "dr",
+    "lane": "ln", "ln": "ln",
+    "court": "ct", "ct": "ct",
+    "square": "sq", "sq": "sq",
+    "terrace": "ter", "ter": "ter",
+    "parkway": "pkwy", "pkwy": "pkwy",
+    "west": "w", "w": "w",
+    "east": "e", "e": "e",
+    "north": "n", "n": "n",
+    "south": "s", "s": "s",
+}
+
+
+def pulisci_titolo(titolo: str | None) -> str | None:
+    """Toglie "Rental open house at" dal titolo pubblicato."""
+    if not titolo:
+        return titolo
+    return _PREFISSO_TITOLO.sub("", titolo).strip()
+
+
+def _canon_address(testo: str | None) -> tuple[str, str] | None:
+    """(via canonica, interno) oppure None se non c'e' un civico in testa.
+
+    "Rental open house at 776 Sixth Avenue #17A" e "776 sixth ave" -> ("776 sixth ave", "17a").
+    "Unit 2112 at 10 Halletts Point" -> ("10 halletts point", "2112").
+    """
+    if not testo:
+        return None
+    t = testo.split(",")[0].lower().strip()
+    t = _PREFISSO_TITOLO.sub("", t)
+    unita = ""
+    m = _PREFISSO_UNITA.match(t)
+    if m:
+        unita = re.sub(r"[^a-z0-9]", "", m.group("u"))
+        t = t[m.end():]
+    m = _UNIT.search(t)
+    if m:
+        unita = unita or re.sub(r"[^a-z0-9]", "", t[m.start():].split("|")[0])
+        t = t[: m.start()]
+    t = _ORDINAL.sub(r"\1", t)
+    t = _PUNCT.sub("", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    if not _CIVICO.match(t):
+        return None
+    return " ".join(_CANON_TOKEN.get(w, w) for w in t.split()), unita
+
+
+def _canon_scheda(l: dict) -> tuple[str, str] | None:
+    """Canonico di una scheda gia' pubblicata: dalla chiave ("via|interno"), se
+    manca dal titolo."""
+    ch = l.get("chiave")
+    if ch:
+        via, _, unita = ch.partition("|")
+        c = _canon_address(via)
+        if c:
+            return c[0], unita and re.sub(r"[^a-z0-9]", "", unita) or c[1]
+    return _canon_address(l.get("title"))
+
+
+def _sqft_valida(v) -> int | None:
+    """Metratura credibile per un appartamento: 80..20000 sqft, altrimenti nulla."""
+    try:
+        n = int(v)
+    except (TypeError, ValueError):
+        return None
+    return n if 80 <= n <= 20000 else None
+
+
 def _id(item: dict) -> str:
     sid = item.get("source_id") or item.get("source_url") or json.dumps(item, sort_keys=True)
     return f"{item.get('source','?')}-{hashlib.sha1(str(sid).encode()).hexdigest()[:10]}"
@@ -70,18 +159,29 @@ def _id(item: dict) -> str:
 def _to_public(item: dict) -> dict:
     # ApartmentAdvisor pubblica minRent: per un palazzo con piu' unita' e' un
     # prezzo "a partire da", non il prezzo di quell'appartamento. Va detto.
-    unit_count = (item.get("raw") or {}).get("unitCount") or 1
-    return {
+    raw = item.get("raw") or {}
+    unit_count = raw.get("unitCount") or 1
+    extra = {}
+    # campi opzionali: ci sono solo se la fonte li ha dichiarati
+    if raw.get("baths") is not None:
+        extra["baths"] = raw["baths"]
+    if raw.get("disponibile"):
+        extra["disponibile"] = raw["disponibile"]
+    if raw.get("pubblicata"):
+        extra["pubblicata"] = raw["pubblicata"]
+    if raw.get("noFee"):
+        extra["noFee"] = True
+    return {**extra,
         "id": _id(item),
         "source": item.get("source"),
         "sourceUrl": item.get("source_url"),
-        "title": item.get("title"),
+        "title": pulisci_titolo(item.get("title")),
         "price": item.get("price"),
         "priceFrom": bool(item.get("price") and unit_count > 1),
         "currency": item.get("currency", "USD"),
         "type": item.get("type"),
         "furnished": item.get("furnished"),
-        "sqft": item.get("sqft"),
+        "sqft": _sqft_valida(item.get("sqft")),
         "lat": item["lat"],
         "lng": item["lng"],
         "photos": item.get("photos", []),
@@ -98,7 +198,8 @@ def _merge(into: dict, other: dict) -> None:
     # non esiste piu'. Sulla prima cosa fresca che tocca una casa riportata,
     # quindi, il dato di oggi sostituisce invece di fondersi.
     if into.pop("_riportata", False):
-        for f in ("price", "priceFrom", "title", "photos", "type", "sqft", "furnished"):
+        for f in ("price", "priceFrom", "title", "photos", "type", "sqft", "furnished",
+                  "baths", "disponibile", "pubblicata", "noFee"):
             if other.get(f) not in (None, "", []):
                 into[f] = other[f]
         into.setdefault("sources", [])
@@ -115,9 +216,11 @@ def _merge(into: dict, other: dict) -> None:
         into["price"] = into.get("price") or other.get("price")
     if other.get("priceFrom"):
         into["priceFrom"] = True
-    for f in ("type", "sqft", "title"):
+    for f in ("type", "sqft", "title", "baths", "disponibile", "pubblicata"):
         if into.get(f) in (None, "") and other.get(f) not in (None, ""):
             into[f] = other[f]
+    if other.get("noFee"):
+        into["noFee"] = True
     if other.get("furnished"):  # un solo "sì" basta
         into["furnished"] = True
     elif into.get("furnished") is None:
@@ -157,12 +260,85 @@ def _riporta(precedenti: list[dict], aggiornate: set[str]) -> list[dict]:
 
 
 def _affitta_letti(l: dict) -> bool:
-    return bool(_LETTI_TITOLO.search(l.get("title") or "") or _LETTI_URL.search(l.get("sourceUrl") or ""))
+    return bool(
+        _LETTI_TITOLO.search(l.get("title") or "")
+        or _LETTI_URL.search(l.get("sourceUrl") or "")
+        or "unita:bagno-condiviso" in (l.get("amenities") or [])
+    )
 
 
 def _vicino(l: dict, ed: dict) -> bool:
     # 300 m: le fonti mettono lo stesso palazzo su punti diversi della mappa
     return abs(l["lat"] - ed["lat"]) < 0.003 and abs(l["lng"] - ed["lng"]) < 0.0035
+
+
+def _stessa_casa(a: dict, b: dict) -> bool:
+    """Conservativa: stesso indirizzo canonico, stesso prezzo, stessa tipologia
+    (se entrambe la dicono), stessa unita' o unita' assente, posizione vicina."""
+    if a.get("curato") or b.get("curato"):
+        return False
+    ca, cb = _canon_scheda(a), _canon_scheda(b)
+    if not ca or not cb or ca[0] != cb[0]:
+        return False
+    if ca[1] and cb[1] and ca[1] != cb[1]:
+        return False
+    if not a.get("price") or a.get("price") != b.get("price"):
+        return False
+    if a.get("type") and b.get("type") and a["type"] != b["type"]:
+        return False
+    # ~150 m: abbastanza per due fonti sullo stesso palazzo, non per due palazzi
+    return abs(a["lat"] - b["lat"]) < 0.0015 and abs(a["lng"] - b["lng"]) < 0.0018
+
+
+def _fondi_doppioni(listings: list[dict]) -> tuple[list[dict], int]:
+    """Fonde le schede che sono la stessa casa vista da due fonti.
+
+    La chiave pubblicata della scheda che resta NON cambia. Quella assorbita
+    finisce in `chiaviVecchie` (sua chiave e suo id), cosi' chi l'aveva salvata
+    nella wishlist (`chiave||id`) puo' ritrovarla.
+    """
+    fuori: list[dict] = []
+    fusi = 0
+    for l in listings:
+        gemella = next((t for t in fuori if _stessa_casa(t, l)), None)
+        if gemella is None:
+            fuori.append(l)
+            continue
+        # resta quella con una chiave vera, a parita' la prima
+        tenuta, persa = (l, gemella) if (l.get("chiave") and not gemella.get("chiave")) else (gemella, l)
+        _merge(tenuta, persa)
+        tenuta["visto"] = max(tenuta.get("visto") or "", persa.get("visto") or "") or None
+        vecchie = list(tenuta.get("chiaviVecchie") or []) + list(persa.get("chiaviVecchie") or [])
+        vecchie += [x for x in (persa.get("chiave"), persa.get("id")) if x]
+        tenuta["chiaviVecchie"] = [x for i, x in enumerate(vecchie)
+                                   if x not in (tenuta.get("chiave"), tenuta.get("id")) and x not in vecchie[:i]]
+        if tenuta is l:
+            fuori[fuori.index(gemella)] = l
+        fusi += 1
+    return fuori, fusi
+
+
+def rifinisci(listings: list[dict]) -> tuple[list[dict], dict]:
+    """Pulizie finali, valide anche per le schede riportate da ieri.
+
+    Ritorna le schede e i conteggi di cosa e' stato toccato."""
+    conta = {"titoli_puliti": 0, "sqft_azzerate": 0, "titolo_vuoto": 0, "doppioni_fusi": 0}
+    out = []
+    for l in listings:
+        if not l.get("curato") and not (l.get("title") or "").strip():
+            conta["titolo_vuoto"] += 1  # scheda senza titolo: non si sa che casa sia
+            continue
+        t = pulisci_titolo(l.get("title"))
+        if t != l.get("title"):
+            l["title"] = t
+            conta["titoli_puliti"] += 1
+        sq = _sqft_valida(l.get("sqft"))
+        if sq != l.get("sqft"):
+            conta["sqft_azzerate"] += 1
+            l["sqft"] = sq
+        out.append(l)
+    out, conta["doppioni_fusi"] = _fondi_doppioni(out)
+    return out, conta
 
 
 def _segna_curati(listings: list[dict], edifici: list[dict], oggi: str) -> list[dict]:
@@ -312,6 +488,8 @@ def main() -> None:
 
     listings = [{k: v for k, v in by_key[key].items() if k != "_riportata"} for key in order]
     listings = [l for l in listings if not _affitta_letti(l)]
+    listings, conta = rifinisci(listings)
+    print("  pulizie: " + ", ".join(f"{k}={v}" for k, v in conta.items()))
     if CURATI.exists():
         listings = _segna_curati(listings, json.loads(CURATI.read_text())["edifici"], oggi)
     payload = {

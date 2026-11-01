@@ -1,4 +1,11 @@
-import { BUDGET_MAX, FLATIRON, FONTI_COL_BROWSER, GIORNI_PER_DATO_VECCHIO, GIORNI_PER_PERSA } from "./config";
+import {
+  BUDGET_MAX,
+  FLATIRON,
+  FONTI_COL_BROWSER,
+  GIORNI_PER_DATO_VECCHIO,
+  GIORNI_PER_PERSA,
+  MOLTIPLICATORE_DATO_VECCHIO,
+} from "./config";
 import { classify, type IsochroneSet } from "./geo";
 import type { Listing, TierId } from "./types";
 import { nearestStationM, transitAccessScore, type Station } from "./subway";
@@ -19,6 +26,20 @@ export interface ScoredListing extends Listing {
   lavanderia: Lavanderia;
   /** lavatrice in casa dichiarata per tutto il palazzo, non per questa unita' */
   lavanderiaDaVerificare: boolean;
+  /** le righe che sommate danno il punteggio (0..100): e' la spiegazione per casa */
+  componenti: ComponentePunteggio[];
+}
+
+/**
+ * Un contributo al punteggio, in punti su 100: la somma delle righe (con la riga
+ * "Dato vecchio", negativa) e' il punteggio mostrato, a meno dell'arrotondamento.
+ * `max` e' quanto potrebbe valere al meglio: serve a dire "forte" o "debole".
+ */
+export interface ComponentePunteggio {
+  chiave: "prezzo" | "vicinanza" | "spazio" | "servizi" | "lavatrice" | "foto" | "arredata" | "vecchio";
+  label: string;
+  punti: number;
+  max: number;
 }
 
 /** Pesi del punteggio convenienza (regolabili dall'UI). */
@@ -51,10 +72,10 @@ export const DEFAULT_WEIGHTS: Weights = {
  * l'appartamento si scarta.
  *
  * "sconosciuta" non e' "assente", ed e' la differenza piu' importante di
- * questo file. Solo l'8% delle nostre schede elenca i servizi, e di quelle
- * 192 su 205 si fermano a sette voci esatte — Apartments.com tronca li'. Una
- * casa senza lavanderia fra i sette non e' una casa senza lavanderia: e' un
- * elenco tagliato. Dedurre l'assenza da un silenzio del genere nasconderebbe
+ * questo file. Il 56% delle nostre schede elenca i servizi (1.368 su 2.454,
+ * misura sul listings.json del 01/11), ma l'elenco puo' essere tagliato:
+ * Apartments.com si ferma a sette voci. Una casa senza lavanderia fra quelle
+ * non e' una casa senza lavanderia: e' un elenco tagliato. Dedurre l'assenza da un silenzio del genere nasconderebbe
  * proprio le case buone.
  */
 export type Lavanderia = "in-casa" | "edificio" | "assente" | "sconosciuta";
@@ -70,6 +91,11 @@ const NESSUNA = /\bno\b[^.]{0,20}\b(laundry|washer|dryer)\b/i;
 // non e' una lavatrice. Se un giorno decidi che vale, e' questa riga da togliere.
 const SOLO_ATTACCHI = /\bhook[- ]?ups?\b/i;
 
+// Segni letti dal testo delle unita' (scraper, sources/apartmentadvisor.py).
+const UNITA_LAVATRICE = "unita:lavatrice";
+const UNITA_LAVANDERIA_EDIFICIO = "unita:lavanderia-edificio";
+const UNITA_BAGNO_CONDIVISO = "unita:bagno-condiviso";
+
 /** Che cosa dice UNA voce dell'elenco sulla lavanderia. */
 function leggiVoce(a: string): Lavanderia {
   if (!PAROLA_LAVANDERIA.test(a)) return "sconosciuta";
@@ -82,9 +108,17 @@ function leggiVoce(a: string): Lavanderia {
   return "edificio";
 }
 
+/** I servizi da mostrare: i segni dello scraper non sono per chi legge. */
+export function serviziVisibili(amenities?: string[] | null): string[] {
+  return (amenities ?? []).filter((a) => !a.startsWith("unita:"));
+}
+
 /** Dove sta la lavanderia, letta dall'elenco dei servizi. */
 export function lavanderiaDi(amenities?: string[] | null): Lavanderia {
   if (!amenities?.length) return "sconosciuta"; // nessuno ce l'ha detto
+  // Il testo della singola unita' batte quello che dichiara il palazzo.
+  if (amenities.includes(UNITA_LAVATRICE)) return "in-casa";
+  if (amenities.includes(UNITA_LAVANDERIA_EDIFICIO)) return "edificio";
   // Si guarda voce per voce e vince la migliore. Craigslist elenca sia
   // "w/d in unit" sia altre righe sulla lavanderia, e una prova positiva non
   // deve essere cancellata da una negativa che parla d'altro.
@@ -188,8 +222,14 @@ const LETTI_TITOLO = new RegExp(affittoLetti.titolo, "i");
 const LETTI_URL = new RegExp(affittoLetti.url, "i");
 
 /** true per chi affitta letti o stanze (FOUND Study, coliving, dormitori). */
-export function isAffittoLetti(l: Pick<RawListing, "title" | "sourceUrl">): boolean {
-  return LETTI_TITOLO.test(l.title ?? "") || LETTI_URL.test(l.sourceUrl ?? "");
+export function isAffittoLetti(
+  l: Pick<RawListing, "title" | "sourceUrl"> & { amenities?: string[] | null }
+): boolean {
+  return (
+    LETTI_TITOLO.test(l.title ?? "") ||
+    LETTI_URL.test(l.sourceUrl ?? "") ||
+    !!l.amenities?.includes(UNITA_BAGNO_CONDIVISO)
+  );
 }
 
 /**
@@ -229,11 +269,18 @@ export function fermaDal(
   return giorni >= GIORNI_PER_DATO_VECCHIO ? l.visto : null;
 }
 
+/** Quando e' stato generato il file letto da loadListings (ISO, UTC), per dirlo in testata. */
+let generatoIl: string | null = null;
+export function generatedAtCaricato(): string | null {
+  return generatoIl;
+}
+
 export async function loadListings(): Promise<RawListing[]> {
   try {
     const res = await fetch("/data/listings.json");
     if (!res.ok) return [];
     const data = await res.json();
+    generatoIl = typeof data.generatedAt === "string" ? data.generatedAt : null;
     return (data.listings ?? [])
       .filter(
         (l: RawListing) =>
@@ -258,9 +305,16 @@ export function scoreListings(
     distanceM: haversineM(FLATIRON.lat, FLATIRON.lng, l.lat, l.lng),
   }));
 
-  const sqfts = withTier.map((l) => l.sqft ?? 0).filter((s) => s > 0);
+  // Massimo dello spazio = 95° percentile, non il massimo: una sqft anomala
+  // (282 S 5 St: 78.840) schiaccerebbe lo spaceScore di tutte le altre.
+  const sqfts = withTier
+    .map((l) => l.sqft ?? 0)
+    .filter((s) => s > 0)
+    .sort((a, b) => a - b);
   const minS = Math.min(...sqfts, 0);
-  const maxS = Math.max(...sqfts, 1);
+  const maxS = sqfts.length
+    ? Math.max(sqfts[Math.min(sqfts.length - 1, Math.floor(0.95 * (sqfts.length - 1)))], 1)
+    : 1;
 
   const norm = (v: number, lo: number, hi: number) =>
     hi > lo ? (v - lo) / (hi - lo) : 0;
@@ -299,17 +353,18 @@ export function scoreListings(
       timeScore *= 0.6 + 0.4 * transitAccessScore(stationM);
     }
 
-    const spaceScore = l.sqft ? norm(l.sqft, minS, maxS) : 0.5;
+    const spaceScore = l.sqft ? Math.min(1, Math.max(0, norm(l.sqft, minS, maxS))) : 0.5;
     const furnScore = l.furnished ? 1 : 0;
     const photoScore = l.photos?.length ? 1 : 0;
     const servScore = servicesScore(l.amenities);
     const lavanderia = lavanderiaDi(l.amenities);
     // Il palazzo con piu' unita' dichiara la lavatrice per l'intero edificio
     // (304 W 30 St): non sappiamo se sta in QUESTO appartamento.
-    const lavanderiaDaVerificare = lavanderia === "in-casa" && !!l.priceFrom;
+    const lavanderiaDaVerificare =
+      lavanderia === "in-casa" && !!l.priceFrom && !l.amenities?.includes(UNITA_LAVATRICE);
     const premio = lavanderia === "in-casa" && !lavanderiaDaVerificare ? PREMIO_LAVATRICE : 0;
     // Si divide per restare fra 0 e 1: la barra della card e' una percentuale.
-    const convenienza =
+    const base =
       (weights.price * priceScore +
         weights.time * timeScore +
         weights.space * spaceScore +
@@ -318,9 +373,38 @@ export function scoreListings(
         weights.services * servScore +
         premio) /
       (1 + PREMIO_LAVATRICE);
+    // Dato non ricontrollato da giorni: la casa resta in elenco ma scende.
+    const vecchio = !!l.datoDel;
+    const convenienza = vecchio ? base * MOLTIPLICATORE_DATO_VECCHIO : base;
+
+    // La spiegazione per casa: ogni riga e' un contributo in punti su 100, con
+    // gli stessi pesi e la stessa divisione di sopra; la riga "Dato vecchio"
+    // toglie la differenza, quindi la somma torna al punteggio.
+    const punti = (peso: number, valore: number) => (peso * valore * 100) / (1 + PREMIO_LAVATRICE);
+    const massimo = (peso: number) => (peso * 100) / (1 + PREMIO_LAVATRICE);
+    const componenti: ComponentePunteggio[] = [
+      { chiave: "prezzo", label: "Prezzo", punti: punti(weights.price, priceScore), max: massimo(weights.price) },
+      { chiave: "vicinanza", label: "Vicinanza", punti: punti(weights.time, timeScore), max: massimo(weights.time) },
+      { chiave: "spazio", label: "Spazio", punti: punti(weights.space, spaceScore), max: massimo(weights.space) },
+      { chiave: "servizi", label: "Servizi", punti: punti(weights.services, servScore), max: massimo(weights.services) },
+      { chiave: "lavatrice", label: "Lavatrice", punti: punti(1, premio), max: massimo(PREMIO_LAVATRICE) },
+      { chiave: "foto", label: "Foto", punti: punti(weights.photo, photoScore), max: massimo(weights.photo) },
+    ];
+    // "Arredata" pesa un punto: compare solo quando c'e', per non allungare l'elenco.
+    if (furnScore) {
+      componenti.push({ chiave: "arredata", label: "Arredata", punti: punti(weights.furnished, 1), max: massimo(weights.furnished) });
+    }
+    if (vecchio) {
+      componenti.push({
+        chiave: "vecchio",
+        label: "Dato vecchio",
+        punti: -(base - convenienza) * 100,
+        max: 0,
+      });
+    }
     // NEIGHBORHOODS e' ordinato dal piu' specifico al piu' generico,
     // quindi il primo match e' il quartiere giusto da mostrare.
     const neighborhood = neighborhoodsOf(l.lat, l.lng)[0] ?? null;
-    return { ...l, convenienza, stationM, neighborhood, lavanderia, lavanderiaDaVerificare };
+    return { ...l, convenienza, stationM, neighborhood, lavanderia, lavanderiaDaVerificare, componenti };
   });
 }

@@ -36,7 +36,18 @@ type Props = {
   onSelect: (id: string | number) => void;
   /** i "rif" delle case salvate: quelle prendono un alone */
   salvate: Set<string>;
+  /**
+   * Firma dei filtri attivi: quando cambia, la mappa si adatta ai risultati.
+   * Non cambia con l'ordinamento ne' con la selezione di una casa.
+   */
+  fitKey: string;
 };
+
+const NOMI_TIER = [
+  { id: "walk30", label: "≤ 30 min a piedi", color: TIERS.walk30.color },
+  { id: "transit30", label: "≤ 30 min coi mezzi", color: TIERS.transit30.color },
+  { id: "transit45", label: "≤ 45 min coi mezzi", color: TIERS.transit45.color },
+] as const;
 
 function fc(feat: Feature<Polygon | MultiPolygon> | null) {
   return { type: "FeatureCollection" as const, features: feat ? [feat] : [] };
@@ -63,7 +74,7 @@ function listingsFC(listings: ScoredListing[], salvate: Set<string>): FeatureCol
   };
 }
 
-export default function MapView({ iso, listings, selectedId, onSelect, salvate }: Props) {
+export default function MapView({ iso, listings, selectedId, onSelect, salvate, fitKey }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const readyRef = useRef(false);
@@ -79,6 +90,7 @@ export default function MapView({ iso, listings, selectedId, onSelect, salvate }
   salvateRef.current = salvate;
   const selectedRef = useRef(selectedId);
   selectedRef.current = selectedId;
+  const selezionataPrima = useRef<string | number | null>(null);
   const applyRef = useRef<(() => void) | null>(null);
   const retryRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -155,11 +167,13 @@ export default function MapView({ iso, listings, selectedId, onSelect, salvate }
         source: "listings",
         filter: ["==", ["get", "salvata"], true],
         paint: {
-          "circle-radius": 13,
+          // Anello pieno e ben visibile: nella vista "Tutte" e' l'unico segno
+          // di quali pallini hai gia' messo da parte.
+          "circle-radius": 14,
           "circle-color": "#10b981",
-          "circle-opacity": 0.22,
-          "circle-stroke-width": 1.5,
-          "circle-stroke-color": "#10b981",
+          "circle-opacity": 0.18,
+          "circle-stroke-width": 3,
+          "circle-stroke-color": "#34d399",
         },
       });
       map.addLayer({
@@ -223,7 +237,7 @@ export default function MapView({ iso, listings, selectedId, onSelect, salvate }
       // destinazione (punto di ancoraggio)
       new maplibregl.Marker({ color: "#dc2626" })
         .setLngLat([FLATIRON.lng, FLATIRON.lat])
-        .setPopup(new maplibregl.Popup().setText(FLATIRON.label))
+        .setPopup(new maplibregl.Popup({ closeButton: true }).setText(FLATIRON.label))
         .addTo(map);
 
       applyData();
@@ -282,9 +296,93 @@ export default function MapView({ iso, listings, selectedId, onSelect, salvate }
         0,
       ]);
     }
-    const sel = listings.find((l) => l.id === selectedId);
-    if (sel) map.flyTo({ center: [sel.lng, sel.lat], zoom: 14, speed: 0.8 });
+    // Si centra solo quando CAMBIA la selezione: prima ripartiva a ogni cambio
+    // di elenco e annullava l'adattamento ai filtri.
+    if (selectedId !== selezionataPrima.current) {
+      selezionataPrima.current = selectedId;
+      const sel = listings.find((l) => l.id === selectedId);
+      if (sel) map.flyTo({ center: [sel.lng, sel.lat], zoom: 14, speed: 0.8 });
+    }
   }, [selectedId, listings]);
 
-  return <div ref={containerRef} className="h-full w-full" />;
+  // Adatta la mappa ai risultati quando cambiano i filtri (non al primo
+  // caricamento, che resta sull'area intera, ne' quando cambia l'ordinamento).
+  const fitPrima = useRef(fitKey);
+  const fitInSospeso = useRef(false);
+  const adatta = () => {
+    const map = mapRef.current;
+    const el = containerRef.current;
+    const elenco = listingsRef.current;
+    if (!map || !el || !elenco.length) return;
+    // Mappa nascosta (telefono, vista lista): si rimanda a quando ha una misura.
+    if (el.clientWidth === 0 || el.clientHeight === 0) {
+      fitInSospeso.current = true;
+      return;
+    }
+    fitInSospeso.current = false;
+    const b = new maplibregl.LngLatBounds();
+    for (const l of elenco) b.extend([l.lng, l.lat]);
+    map.fitBounds(b, { padding: 70, maxZoom: 15, duration: 600 });
+  };
+  const adattaRef = useRef(adatta);
+  adattaRef.current = adatta;
+
+  useEffect(() => {
+    if (fitKey === fitPrima.current) return;
+    fitPrima.current = fitKey;
+    adattaRef.current();
+  }, [fitKey]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(() => {
+      if (fitInSospeso.current) adattaRef.current();
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  // Legenda: conta i pallini per fascia di tempo sull'elenco mostrato.
+  const conteggi = { walk30: 0, transit30: 0, transit45: 0 } as Record<string, number>;
+  for (const l of listings) if (l.tier in conteggi) conteggi[l.tier]++;
+
+  return (
+    <div className="relative h-full w-full">
+      {/* Il canvas non si naviga da tastiera: la lista accanto ha le stesse case. */}
+      <div
+        ref={containerRef}
+        className="h-full w-full"
+        role="region"
+        aria-label="Mappa delle case. Le stesse case sono nella lista, con tutti i dettagli"
+      />
+      {/* Legenda: senza, i colori dei pallini non si spiegavano da nessuna parte. */}
+      <div className="pointer-events-none absolute bottom-8 left-3 z-10 rounded-xl border border-neutral-700 bg-neutral-900/90 px-3 py-2 text-[11px] text-neutral-200 shadow-lg backdrop-blur">
+        <ul className="space-y-1">
+          {NOMI_TIER.map((t) => (
+            <li key={t.id} className="flex items-center gap-2">
+              <span
+                className="inline-block h-2.5 w-2.5 rounded-full border border-neutral-950"
+                style={{ background: t.color }}
+              />
+              <span>{t.label}</span>
+              <span className="ml-auto pl-3 tabular-nums text-neutral-400">{conteggi[t.id]}</span>
+            </li>
+          ))}
+          <li className="flex items-center gap-2 border-t border-neutral-700 pt-1">
+            <span className="inline-block h-2.5 w-2.5 rounded-full border-2 border-emerald-400 bg-emerald-500/20" />
+            <span>Salvata</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2.5 w-2.5 rounded-full border-2 border-white bg-amber-500" />
+            <span>Selezionata</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2.5 w-2.5 rounded-full bg-red-600" />
+            <span>Flatiron</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
 }

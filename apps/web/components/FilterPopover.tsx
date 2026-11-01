@@ -3,8 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
+/**
+ * Classi di un chip filtro. Attivo = turchese, non bianco: il bianco e' del
+ * bottone primario ("Fatto", "Tutte"), e un filtro acceso non deve sembrare uno
+ * stato di selezione dell'ordinamento.
+ */
+export function chipClasse(attivo: boolean): string {
+  return `flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-2 text-xs font-medium transition max-sm:py-2.5 sm:py-1.5 ${
+    attivo
+      ? "border-teal-400 bg-teal-400/15 text-teal-200"
+      : "border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-600 hover:bg-neutral-800"
+  }`;
+}
+
 type Props = {
   label: string;
+  /** L'ordinamento non e' un filtro: stile neutro e icona, mai acceso. */
+  ordina?: boolean;
   /** Testo del valore selezionato, mostrato accanto all'etichetta. */
   value?: string | null;
   children: React.ReactNode;
@@ -18,12 +33,12 @@ type Props = {
  *   (la testata usa backdrop-blur, che creerebbe un containing block e
  *   romperebbe un position:fixed annidato).
  */
-export default function FilterPopover({ label, value, children, width = "w-72" }: Props) {
+export default function FilterPopover({ label, ordina, value, children, width = "w-72" }: Props) {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const active = Boolean(value);
+  const active = Boolean(value) && !ordina;
 
   useEffect(() => {
     setMounted(true);
@@ -60,14 +75,13 @@ export default function FilterPopover({ label, value, children, width = "w-72" }
   const trigger = (
     <button
       onClick={() => setOpen((o) => !o)}
-      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-2 text-xs font-medium transition sm:py-1.5 ${
-        active
-          ? "border-white bg-white text-neutral-900"
-          : "border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-600 hover:bg-neutral-800"
-      }`}
+      aria-haspopup="dialog"
+      aria-expanded={open}
+      className={chipClasse(active)}
     >
+      {ordina && <span aria-hidden="true">⇅</span>}
       {label}
-      {value && <span className="max-w-[8rem] truncate opacity-70">· {value}</span>}
+      {value && <span className="max-w-[8rem] truncate opacity-80">· {value}</span>}
       <svg
         width="10"
         height="10"
@@ -87,10 +101,16 @@ export default function FilterPopover({ label, value, children, width = "w-72" }
       ? createPortal(
           <div className="fixed inset-0 z-[60] flex flex-col justify-end sm:hidden">
             <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
-            <div className="relative max-h-[80dvh] w-full overflow-hidden rounded-t-3xl border-t border-neutral-700 bg-neutral-900 pb-[env(safe-area-inset-bottom)] shadow-2xl">
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label={label}
+              className="relative max-h-[80dvh] w-full overflow-hidden rounded-t-3xl border-t border-neutral-700 bg-neutral-900 pb-[env(safe-area-inset-bottom)] shadow-2xl"
+            >
               <div className="flex items-center justify-between border-b border-neutral-800 px-4 py-3">
                 <span className="text-sm font-semibold text-neutral-100">{label}</span>
                 <button
+                  autoFocus
                   onClick={() => setOpen(false)}
                   className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-neutral-900"
                 >

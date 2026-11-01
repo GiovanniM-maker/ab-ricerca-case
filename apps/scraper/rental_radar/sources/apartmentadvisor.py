@@ -48,6 +48,53 @@ def _bedroom_type(e: dict) -> str | None:
     return "studio" if n == 0 else f"{int(n)}br"
 
 
+def _num(v):
+    try:
+        n = float(v)
+    except (TypeError, ValueError):
+        return None
+    return int(n) if n == int(n) else n
+
+
+def _data(v) -> str | None:
+    """Data ISO (YYYY-MM-DD) da un valore che puo' essere data o datetime."""
+    m = re.match(r"\d{4}-\d{2}-\d{2}", str(v or ""))
+    return m.group(0) if m else None
+
+
+_NO_FEE = re.compile(r"\bno[- ]?fee\b", re.I)
+
+
+def campi_dettaglio(listing: Listing, testo: str) -> None:
+    """Pubblicazione e No Fee dal JSON di dettaglio che leggiamo gia' per i
+    servizi (nessuna richiesta in piu'). Non sovrascrive quello della ricerca."""
+    try:
+        prop = json.loads(testo)["pageProps"]["initialPageState"]["activeProperty"]
+    except (json.JSONDecodeError, KeyError, TypeError):
+        return
+    raw = listing.raw if listing.raw is not None else {}
+    listing.raw = raw
+    unita = prop.get("listedUnits") or []
+    if not raw.get("pubblicata"):
+        date_ = [_data(u.get("activatedAt")) for u in unita]
+        date_ = [d for d in date_ if d] or [d for d in [_data(prop.get("activatedAt"))] if d]
+        if date_:
+            raw["pubblicata"] = min(date_)
+    if not raw.get("disponibile"):
+        date_ = [d for d in (_data(u.get("availableFrom")) for u in unita) if d]
+        if date_:
+            raw["disponibile"] = min(date_)
+    if raw.get("baths") is None:
+        b = [x for x in (_num(u.get("bathroomCount")) for u in unita) if x is not None]
+        if b:
+            raw["baths"] = min(b)
+    voci = list(prop.get("amenities") or []) + [prop.get("description") or ""]
+    voci += [a for u in unita for a in (u.get("amenities") or [])]
+    voci += [u.get("description") or "" for u in unita]
+    if any(isinstance(v, str) and _NO_FEE.search(v) for v in voci):
+        raw["noFee"] = True
+
+
 def _to_listing(e: dict) -> Listing | None:
     addr = e.get("address") or {}
     lat, lng = addr.get("latitude"), addr.get("longitude")
@@ -81,6 +128,9 @@ def _to_listing(e: dict) -> Listing | None:
             "maxBathroomCount": e.get("maxBathroomCount"),
             "unitCount": e.get("unitCount"),
             "availableFrom": e.get("minAvailableFrom"),
+            # campi pubblici, gia' nella risposta di ricerca (minimi, come minRent)
+            "baths": _num(e.get("minBathroomCount")),
+            "disponibile": _data(e.get("minAvailableFrom")),
         },
     )
 
@@ -99,22 +149,86 @@ def build_id(html: str) -> str | None:
     return m.group(1) if m else None
 
 
+# Il palazzo dichiara i servizi per tutti; il testo della singola unita' dice
+# com'e' davvero (304 W 30 St: "washer-dryer-in-unit" sull'edificio, e nella
+# descrizione una stanza con il bagno in comune). Qui si legge quel testo.
+_UNITA_FRASE = re.compile(r"[.!?;\n]+")
+_UNITA_LAVATRICE = re.compile(
+    r"(washer|w/d|laundry)[^.]{0,40}\bin[- ]?(the )?(unit|apartment|residence|home)\b"
+    r"|\bin[- ]?(unit|apartment|home)\b[^.]{0,20}(washer|w/d|laundry)", re.I)
+# "Laundry room in the apartment building" e' il palazzo, "hookups" sono solo gli
+# attacchi (come SOLO_ATTACCHI in listings.ts): nessuno dei due e' una lavatrice.
+_UNITA_NON_IN_CASA = re.compile(
+    r"\b(building|complex|basement|community|shared|common|coin|hook[- ]?ups?|room)\b", re.I)
+_NEGAZIONE = re.compile(r"\b(no|not|without|never|private)\b", re.I)
+_UNITA_LAVANDERIA_EDIFICIO = re.compile(
+    r"(laundry|washers?( and dryers?)?)[^.]{0,30}\b(building|complex|basement|on[- ]?site|every floor|each floor)\b"
+    r"|\b(shared|common|coin)[- ](laundry|washers?)|laundry (room|facilit)", re.I)
+_UNITA_BAGNO_CONDIVISO = re.compile(
+    r"\bshared (bath|bathroom|kitchen)\b|\bshares? (a |the )?(bath|bathroom)\b|\bbath(room)? (is )?shared\b", re.I)
+
+
+def _frasi(testo: str) -> list[str]:
+    return [f for f in _UNITA_FRASE.split(testo) if f.strip()]
+
+
+def _dice_bagno_condiviso(testo: str) -> bool:
+    # Scarta una casa: nel dubbio ("Private bath, not shared") non lo dice.
+    return any(_UNITA_BAGNO_CONDIVISO.search(f) and not _NEGAZIONE.search(f) for f in _frasi(testo))
+
+
+def _dice_lavatrice(testo: str) -> bool:
+    return any(_UNITA_LAVATRICE.search(f) and not _UNITA_NON_IN_CASA.search(f)
+               and not _NEGAZIONE.search(f) for f in _frasi(testo))
+
+
+def segnali_unita(descrizioni: list[str]) -> list[str]:
+    """Che cosa dicono i testi delle unita', come voci in piu' fra i servizi.
+
+    Bagno condiviso e lavatrice valgono solo se lo dicono TUTTE le unita'
+    dell'annuncio: con unita' diverse la casa resta "da verificare".
+    """
+    testi = [d for d in descrizioni if d and d.strip()]
+    if not testi:
+        return []
+    segni = []
+    if all(_dice_bagno_condiviso(t) for t in testi):
+        segni.append("unita:bagno-condiviso")
+    if all(_dice_lavatrice(t) for t in testi):
+        segni.append("unita:lavatrice")
+    elif not any(_dice_lavatrice(t) for t in testi) and any(
+            _UNITA_LAVANDERIA_EDIFICIO.search(t) for t in testi):
+        segni.append("unita:lavanderia-edificio")
+    return segni
+
+
+def _descrizioni(testo: str) -> list[str]:
+    """I testi delle unita' dell'annuncio, dal JSON del dettaglio."""
+    try:
+        prop = json.loads(testo)["pageProps"]["initialPageState"]["activeProperty"]
+    except (json.JSONDecodeError, KeyError, TypeError):
+        return []
+    return [u.get("description") or "" for u in prop.get("listedUnits") or []]
+
+
 def amenities_of(listing: Listing, build: str) -> list[str]:
     """I servizi normalizzati di un annuncio, dal JSON della pagina di dettaglio.
 
     Il vocabolario e' loro e sta in minuscolo con i trattini: washer-dryer,
     washer-dryer-in-unit, dishwasher, elevator... A noi interessano i primi due,
-    e il terzo e' proprio quello da non confondere.
+    e il terzo e' proprio quello da non confondere. In coda i segni letti dal
+    testo delle unita' (segnali_unita).
     """
     slug = listing.source_url.rstrip("/").rsplit("/", 1)[-1]
     url = f"{ORIGIN}/_next/data/{build}/details/{slug}.json?listingId={slug}"
     testo = _get(url)
+    campi_dettaglio(listing, testo)
     return sorted({
         v.strip().strip('"')
         for blob in _NORM.findall(testo)
         for v in blob.split(",")
         if v.strip().strip('"')
-    })
+    }) + segnali_unita(_descrizioni(testo))
 
 
 def _search_params(html: str) -> dict:

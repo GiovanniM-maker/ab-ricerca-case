@@ -28,6 +28,20 @@ from typing import Callable, Iterable
 
 from rental_radar.models import Listing
 
+# Campi in piu' letti dalla stessa pagina di dettaglio (bagni, date, No Fee):
+# si ricordano insieme ai servizi, cosi' non servono richieste nuove.
+CAMPI_DETTAGLIO = ("baths", "disponibile", "pubblicata", "noFee")
+
+
+def _ricorda_campo(l: Listing, k: str, v) -> None:
+    if k not in CAMPI_DETTAGLIO:
+        return
+    if l.raw is None:
+        l.raw = {}
+    if l.raw.get(k) in (None, "", False):  # la ricerca di oggi ha la precedenza
+        l.raw[k] = v
+
+
 CACHE = Path(__file__).resolve().parents[1] / "servizi-cache.json"
 
 # Un palazzo non cambia i servizi in un mese. Riguardarli piu' spesso sarebbe
@@ -86,6 +100,8 @@ def arricchisci(
         if voce and not _scaduta(voce):
             if voce.get("a"):
                 l.amenities = list(voce["a"])
+            for k, v in (voce.get("x") or {}).items():
+                _ricorda_campo(l, k, v)
             dalla_cache += 1
             continue
         if dal_web >= max_nuovi:
@@ -93,6 +109,9 @@ def arricchisci(
         try:
             servizi = leggi_uno(l)
             cache[chiave] = {"a": servizi, "il": oggi}
+            extra = {k: l.raw[k] for k in CAMPI_DETTAGLIO if l.raw and l.raw.get(k) not in (None, False, "")}
+            if extra:
+                cache[chiave]["x"] = extra
             if servizi:
                 l.amenities = servizi
         except Exception:

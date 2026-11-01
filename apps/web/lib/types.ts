@@ -53,4 +53,17 @@ export interface Listing {
   visto?: string;
   /** Giorno dell'ultimo dato vero, se la fonte non la riguarda da giorni. */
   datoDel?: string | null;
+  /** Bagni (la fonte li dichiara solo per alcune schede; minimo, come il prezzo). */
+  baths?: number | null;
+  /** Disponibile dal giorno (YYYY-MM-DD). */
+  disponibile?: string | null;
+  /** Pubblicata il giorno (YYYY-MM-DD). */
+  pubblicata?: string | null;
+  /** true se l'annuncio dice No Fee; assente = non lo sappiamo. */
+  noFee?: boolean;
+  /**
+   * Rif (chiave o id) delle schede doppie assorbite in questa dall'aggregatore:
+   * chi le aveva salvate le ritrova da qui.
+   */
+  chiaviVecchie?: string[];
 }

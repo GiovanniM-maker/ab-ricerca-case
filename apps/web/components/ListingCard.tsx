@@ -2,25 +2,27 @@
 
 import { useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
-import { formatPrice, formatDistance, tierMeta, sourceDaUrl, sourceLabel } from "@/lib/format";
+import {
+  formatPrice,
+  formatDistance,
+  formatGiorno,
+  formatType,
+  testoLavanderia,
+  tierBadgeColor,
+  tierMeta,
+  sourceDaUrl,
+  sourceLabel,
+} from "@/lib/format";
 import type { Stato } from "@/lib/wishlist";
 import type { Lavanderia } from "@/lib/listings";
 
-/** Come si mostra la lavanderia. "sconosciuta" non compare: sarebbe
- *  un'etichetta su nove schede su dieci che non dice niente. */
-const LAVANDERIA: Partial<Record<Lavanderia, { testo: string; classe: string }>> = {
-  "in-casa": {
-    testo: "Lavatrice in casa",
-    classe: "border-sky-500/60 bg-sky-500/15 text-sky-300",
-  },
-  edificio: {
-    testo: "Lavanderia in edificio",
-    classe: "border-sky-800 bg-sky-950/60 text-sky-400/90",
-  },
-  assente: {
-    testo: "Senza lavanderia",
-    classe: "border-neutral-700 bg-neutral-900 text-neutral-500",
-  },
+/** Come si colora la lavanderia. "sconosciuta" non compare: sarebbe
+ *  un'etichetta su molte schede che non dice niente. Il testo e' di
+ *  testoLavanderia, lo stesso della scheda di dettaglio. */
+const LAVANDERIA: Partial<Record<Lavanderia, string>> = {
+  "in-casa": "border-sky-500/60 bg-sky-500/15 text-sky-300",
+  edificio: "border-sky-800 bg-sky-950/60 text-sky-400/90",
+  assente: "border-neutral-700 bg-neutral-900 text-neutral-400",
 };
 
 type Props = {
@@ -32,6 +34,18 @@ type Props = {
   stato: Stato | null;
   onSalva: () => void;
 };
+
+/** Le due righe in cui la casa va meglio (rispetto al massimo possibile): la ragione in breve. */
+function ragioni(l: ScoredListing): string {
+  return l.componenti
+    .filter((c) => c.max >= 5 && c.punti > 0)
+    .map((c) => ({ label: c.label, forza: c.punti / c.max }))
+    .filter((c) => c.forza >= 0.7)
+    .sort((x, y) => y.forza - x.forza)
+    .slice(0, 2)
+    .map((c) => c.label.toLowerCase())
+    .join(", ");
+}
 
 export default function ListingCard({
   listing,
@@ -45,23 +59,30 @@ export default function ListingCard({
   const meta = tierMeta(listing.tier);
   const photo = listing.photos?.[0];
   const dalGiorno = listing.datoDel;
+  const punteggio = Math.round(listing.convenienza * 100);
+  const perche = ragioni(listing);
 
-  // Il clic sulla card apre l'annuncio: selezionava solo il punto sulla mappa,
-  // e sembrava che la card non portasse a niente. La mappa si accende lo stesso.
-  // detail > 1: il secondo clic di un doppio clic non apre una seconda scheda.
-  const apriAnnuncio = (e: { detail?: number }) => {
+  // Il clic sulla card apre il dettaglio e porta la mappa sulla casa. L'annuncio
+  // esterno si apre solo da "Vedi su…": un tocco sul corpo della card e' il
+  // gesto per scorrere, non deve lanciare un'altra scheda del browser.
+  const apri = () => {
     onSelect();
-    if ((e.detail ?? 1) > 1 || !listing.sourceUrl) return;
-    window.open(listing.sourceUrl, "_blank", "noopener,noreferrer");
+    onOpen();
   };
 
   return (
     <article
-      role="link"
+      role="button"
       tabIndex={0}
-      onClick={apriAnnuncio}
+      aria-label={`${listing.title}, ${formatPrice(listing.price)} al mese. Apri i dettagli`}
+      onClick={apri}
       onKeyDown={(e) => {
-        if (e.key === "Enter") apriAnnuncio({});
+        // Solo se il tasto e' sulla card: Invio su "Salva" deve salvare e basta.
+        if (e.target !== e.currentTarget) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          apri();
+        }
       }}
       className={`group cursor-pointer overflow-hidden rounded-2xl border bg-neutral-900 transition-all duration-200 hover:border-neutral-600 ${
         selected
@@ -69,8 +90,8 @@ export default function ListingCard({
           : "border-neutral-800"
       }`}
     >
-      {/* Foto */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-neutral-800 to-neutral-900">
+      {/* Foto: sul telefono piu' bassa, perche' ne devono entrare di piu' */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-neutral-800 to-neutral-900 max-sm:aspect-auto max-sm:h-32">
         {photo && imgOk ? (
           <img
             src={photo}
@@ -91,18 +112,23 @@ export default function ListingCard({
         {/* badge tier */}
         <span
           className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-xs font-semibold text-white shadow-lg"
-          style={{ backgroundColor: meta.color }}
+          style={{ backgroundColor: tierBadgeColor(listing.tier) }}
         >
           {meta.label}
         </span>
 
         {/* prezzo */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent px-3 pb-3 pt-8">
           {listing.priceFrom && (
-            <span className="mr-1 text-sm font-medium text-white/70">da</span>
+            <span
+              className="mr-1 cursor-help text-sm font-medium text-white/80 underline decoration-dotted underline-offset-2"
+              title="Prezzo minimo del palazzo, non di questa unità"
+            >
+              da
+            </span>
           )}
           <span className="text-lg font-bold text-white">{formatPrice(listing.price)}</span>
-          <span className="text-sm font-medium text-white/70">/mese</span>
+          <span className="text-sm font-medium text-white/80">/mese</span>
         </div>
       </div>
 
@@ -122,12 +148,10 @@ export default function ListingCard({
           {LAVANDERIA[listing.lavanderia] && (
             <span
               className={`rounded-full border px-2 py-0.5 font-medium ${
-                LAVANDERIA[listing.lavanderia]!.classe
+                LAVANDERIA[listing.lavanderia]
               }`}
             >
-              {listing.lavanderiaDaVerificare
-                ? "Lavatrice dichiarata dall'edificio, da verificare"
-                : LAVANDERIA[listing.lavanderia]!.testo}
+              {testoLavanderia(listing.lavanderia, listing.lavanderiaDaVerificare)}
             </span>
           )}
           {listing.curato && (
@@ -136,8 +160,11 @@ export default function ListingCard({
             </span>
           )}
           {dalGiorno && (
-            <span className="rounded-full border border-amber-700 bg-amber-950/60 px-2 py-0.5 font-medium text-amber-400">
-              Dato del {new Date(dalGiorno).toLocaleDateString("it-IT", { day: "numeric", month: "short" })}
+            <span
+              className="rounded-full border border-amber-700 bg-amber-950/60 px-2 py-0.5 font-medium text-amber-400"
+              title="Nessuna fonte ha ricontrollato questa casa dopo quel giorno"
+            >
+              Dato del {formatGiorno(dalGiorno)}
             </span>
           )}
           {/* anche "Arredato" sta nel corpo: sulla foto si scontrava con il
@@ -147,31 +174,35 @@ export default function ListingCard({
               Arredato
             </span>
           )}
-          {listing.type && <span>{listing.type.toUpperCase()}</span>}
-          {listing.sqft && (
-            <>
-              <span className="text-neutral-700">·</span>
-              <span>{listing.sqft} ft²</span>
-            </>
-          )}
-          <span className="text-neutral-700">·</span>
+          {/* niente "·" a mano: sul telefono restava appeso a fine riga */}
+          {listing.type && <span>{formatType(listing.type)}</span>}
+          {listing.sqft && <span>{listing.sqft} ft²</span>}
           <span>{formatDistance(listing.distanceM)} da Flatiron</span>
         </div>
 
-        {/* convenienza */}
-        <div className="mt-2.5 flex items-center gap-2">
-          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-neutral-800">
+        {/* convenienza: con l'etichetta e le due ragioni migliori; il perche'
+            completo e' nella scheda di dettaglio */}
+        <div className="mt-2.5">
+          <div className="flex items-center justify-between text-[11px] text-neutral-400">
+            <span
+              title={listing.componenti
+                .map((c) => `${c.label} ${c.punti >= 0 ? "+" : ""}${c.punti.toFixed(0)}`)
+                .join(", ")}
+            >
+              <span className="font-medium text-neutral-300">Convenienza</span>
+              {perche && <span> · forte su {perche}</span>}
+            </span>
+            <span className="font-semibold tabular-nums text-neutral-200">{punteggio}</span>
+          </div>
+          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-neutral-800">
             <div
               className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-300"
-              style={{ width: `${Math.round(listing.convenienza * 100)}%` }}
+              style={{ width: `${punteggio}%` }}
             />
           </div>
-          <span className="text-[11px] font-medium tabular-nums text-neutral-500">
-            {Math.round(listing.convenienza * 100)}
-          </span>
         </div>
 
-        <div className="mt-2.5 flex flex-wrap items-center gap-2">
+        <div className="mt-2.5 flex flex-wrap items-center gap-2 max-sm:gap-2.5">
           {/* Salva. Il segnalibro pieno dice a colpo d'occhio quali case hai
               gia' messo da parte mentre scorri l'elenco intero. */}
           <button
@@ -181,7 +212,7 @@ export default function ListingCard({
               onSalva();
             }}
             aria-pressed={stato !== null}
-            className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-medium transition ${
+            className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-medium transition max-sm:px-3.5 max-sm:py-2.5 max-sm:text-xs ${
               stato
                 ? "border-emerald-500/60 bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/25"
                 : "border-neutral-700 text-neutral-300 hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
@@ -194,32 +225,32 @@ export default function ListingCard({
               fill={stato ? "currentColor" : "none"}
               stroke="currentColor"
               strokeWidth="1.6"
+              className="max-sm:h-3 max-sm:w-3"
             >
               <path d="M3 1.5h6v9L6 8.25 3 10.5v-9Z" strokeLinejoin="round" />
             </svg>
-            {stato === "vista" ? "Vista" : stato ? "Da vedere" : "Salva"}
+            {stato === "vista" ? "Visitata" : stato ? "Da visitare" : "Salva"}
           </button>
 
-          {/* La scheda completa ha il suo bottone: il clic sulla card apre
-              l'annuncio originale. */}
+          {/* "Dettagli" resta: e' la via esplicita, anche se ora la card intera apre la scheda. */}
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
-              onOpen();
+              apri();
             }}
-            className="inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+            className="inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white max-sm:px-3.5 max-sm:py-2.5 max-sm:text-xs"
           >
             Dettagli
           </button>
 
-          {/* tag fonte: apre l'annuncio originale senza passare dal dettaglio */}
+          {/* tag fonte: l'unica via verso l'annuncio originale dalla card */}
           <a
             href={listing.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+            className="inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white max-sm:px-3.5 max-sm:py-2.5 max-sm:text-xs"
           >
             Vedi su {sourceLabel(sourceDaUrl(listing.sourceUrl, listing.source))}
             <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">

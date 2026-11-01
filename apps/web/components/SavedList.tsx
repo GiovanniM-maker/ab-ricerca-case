@@ -11,7 +11,7 @@
  * di aprire la scheda intera.
  */
 
-import { useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { ScoredListing } from "@/lib/listings";
 import type { Salvata, Stato } from "@/lib/wishlist";
 import { rifSalvata } from "@/lib/wishlist";
@@ -25,6 +25,8 @@ type Props = {
   onStato: (rif: string, stato: Stato) => void;
   onNota: (rif: string, nota: string) => void;
   onRimuovi: (rif: string) => void;
+  /** sotto la lista: l'invito ad accedere (AuthLine), che non deve dominare la vista */
+  sotto?: ReactNode;
 };
 
 function Riga({
@@ -42,6 +44,14 @@ function Riga({
 }) {
   const [aperta, setAperta] = useState(false);
   const [bozza, setBozza] = useState(s.nota);
+  // C10: dopo una sincronizzazione la nota remota cambia; se la bozza non e'
+  // stata toccata (e' ancora uguale all'ultima nota vista) la si riallinea,
+  // altrimenti salvaNota riscriverebbe la nota vecchia sopra quella nuova.
+  const notaVista = useRef(s.nota);
+  useEffect(() => {
+    setBozza((b) => (b === notaVista.current ? s.nota : b));
+    notaVista.current = s.nota;
+  }, [s.nota]);
   const [imgOk, setImgOk] = useState(true);
 
   const meta = s.scheda.tier === "out" ? OUT_META : TIERS[s.scheda.tier];
@@ -92,6 +102,11 @@ function Riga({
             <span className="rounded-full px-1.5 py-0.5 font-semibold text-white" style={{ backgroundColor: meta.color }}>
               {meta.label}
             </span>
+            {vivo && (
+              <span className="rounded-full border border-neutral-700 px-1.5 py-0.5 text-neutral-300">
+                Punteggio {Math.round(vivo.convenienza * 100)}
+              </span>
+            )}
             {s.scheda.neighborhood && <span>{s.scheda.neighborhood}</span>}
             {vivo && <span>{formatDistance(vivo.distanceM)} da Flatiron</span>}
             {/* Il prezzo di allora e' il motivo per cui salviamo una copia. */}
@@ -113,8 +128,8 @@ function Riga({
           <div className="flex flex-wrap items-center gap-2">
             {(
               [
-                ["da_vedere", "Da vedere"],
-                ["vista", "Vista"],
+                ["da_vedere", "Da visitare"],
+                ["vista", "Visitata"],
               ] as [Stato, string][]
             ).map(([st, label]) => (
               <button
@@ -159,7 +174,7 @@ function Riga({
           />
           <div className="mt-1 text-[11px] text-neutral-600">
             {s.vistaIl
-              ? `Vista il ${new Date(s.vistaIl).toLocaleDateString("it-IT")}`
+              ? `Visitata il ${new Date(s.vistaIl).toLocaleDateString("it-IT")}`
               : `Salvata il ${new Date(s.salvataIl).toLocaleDateString("it-IT")}`}
           </div>
         </div>
@@ -169,8 +184,39 @@ function Riga({
 }
 
 type Nota = "tutte" | "con" | "senza";
+type Ordine = "recenti" | "punteggio" | "prezzo";
 
-export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }: Props) {
+const SECONDI_ANNULLA = 6;
+
+export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi, sotto }: Props) {
+  const [ordine, setOrdine] = useState<Ordine>("recenti");
+
+  // "Togli" non cancella subito: la riga sparisce e per qualche secondo si puo'
+  // annullare. Alla scadenza (o se la vista si chiude) la rimozione parte.
+  const [inAttesa, setInAttesa] = useState<{ rif: string; titolo: string } | null>(null);
+  const attesa = useRef<{ rif: string; timer: ReturnType<typeof setTimeout> } | null>(null);
+  const rimuoviRef = useRef(onRimuovi);
+  rimuoviRef.current = onRimuovi;
+  const chiudiAttesa = () => {
+    if (!attesa.current) return;
+    clearTimeout(attesa.current.timer);
+    rimuoviRef.current(attesa.current.rif);
+    attesa.current = null;
+    setInAttesa(null);
+  };
+  const togli = (s: Salvata) => {
+    chiudiAttesa(); // un'altra rimozione in sospeso diventa definitiva
+    const rif = rifSalvata(s);
+    attesa.current = { rif, timer: setTimeout(chiudiAttesa, SECONDI_ANNULLA * 1000) };
+    setInAttesa({ rif, titolo: s.scheda.title });
+  };
+  const annulla = () => {
+    if (attesa.current) clearTimeout(attesa.current.timer);
+    attesa.current = null;
+    setInAttesa(null);
+  };
+  useEffect(() => () => chiudiAttesa(), []); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Le note sono il motivo per cui torni qui: dopo dieci visite vuoi rileggere
   // quello che avevi scritto senza scorrere anche le case su cui non hai
   // ancora un'opinione. E il contrario — "senza nota" — e' l'elenco di quelle
@@ -178,8 +224,20 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
   const [conNota, setConNota] = useState<Nota>("tutte");
   const quante = salvate.filter((s) => s.nota.trim()).length;
 
-  const filtrate = salvate.filter((s) =>
-    conNota === "tutte" ? true : conNota === "con" ? s.nota.trim() : !s.nota.trim()
+  const punteggio = (s: Salvata) =>
+    (vive.get(rifSalvata(s)) ?? vive.get(s.listingId))?.convenienza ?? -1;
+  const prezzo = (s: Salvata) =>
+    (vive.get(rifSalvata(s)) ?? vive.get(s.listingId))?.price ?? s.scheda.price ?? Infinity;
+  const ordinate =
+    ordine === "punteggio"
+      ? [...salvate].sort((a, b) => punteggio(b) - punteggio(a))
+      : ordine === "prezzo"
+        ? [...salvate].sort((a, b) => prezzo(a) - prezzo(b))
+        : salvate;
+  const filtrate = ordinate.filter(
+    (s) =>
+      rifSalvata(s) !== inAttesa?.rif &&
+      (conNota === "tutte" ? true : conNota === "con" ? s.nota.trim() : !s.nota.trim())
   );
   const viva = (s: Salvata) => vive.has(rifSalvata(s)) || vive.has(s.listingId);
   // Le perse — affittate o tolte dal sito — stanno a parte e in fondo: non
@@ -195,6 +253,7 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
         <p className="mt-1 text-xs text-neutral-600">
           Nell&apos;elenco, il segnalibro su una scheda la mette qui.
         </p>
+        {sotto && <div className="mt-6 text-left">{sotto}</div>}
       </div>
     );
   }
@@ -216,7 +275,7 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
                 vivo={vive.get(rif) ?? vive.get(s.listingId)}
                 onStato={(st) => onStato(rif, st)}
                 onNota={(n) => onNota(rif, n)}
-                onRimuovi={() => onRimuovi(rif)}
+                onRimuovi={() => togli(s)}
               />
             );
           })}
@@ -228,6 +287,21 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
     <>
       {/* Compare solo quando c'e' qualcosa da separare: con zero note, o con
           tutte annotate, sarebbe una riga di comandi che non fanno niente. */}
+      {salvate.length > 1 && (
+        <label className="mb-3 flex items-center gap-2 text-[11px] text-neutral-500">
+          Ordina per
+          <select
+            value={ordine}
+            onChange={(e) => setOrdine(e.target.value as Ordine)}
+            className="rounded-md border border-neutral-800 bg-neutral-900 px-2 py-1 text-[11px] text-neutral-300"
+          >
+            <option value="recenti">Più recenti</option>
+            <option value="punteggio">Punteggio</option>
+            <option value="prezzo">Prezzo</option>
+          </select>
+        </label>
+      )}
+
       {quante > 0 && quante < salvate.length && (
         <div className="mb-3 flex flex-wrap items-center gap-2">
           {(
@@ -254,20 +328,36 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
       )}
 
       {!filtrate.length ? (
+        inAttesa && conNota === "tutte" ? null : (
         <p className="py-8 text-center text-sm text-neutral-500">
           Nessuna casa {conNota === "con" ? "con una nota" : "senza nota"}.
         </p>
+        )
       ) : (
         <>
-          <Sezione titolo="Da vedere" righe={daVedere} />
+          <Sezione titolo="Da visitare" righe={daVedere} />
           <Sezione titolo="Viste" righe={viste} />
           <Sezione
             titolo="Perse"
-            nota="Affittate o tolte dal sito: non sono piu' negli annunci."
+            nota="Affittate o tolte dal sito: non sono più negli annunci."
             righe={perse}
           />
         </>
       )}
+
+      {inAttesa && (
+        <div
+          role="status"
+          className="sticky bottom-2 mt-3 flex items-center justify-between gap-3 rounded-xl border border-neutral-700 bg-neutral-900 px-3 py-2 text-xs text-neutral-300 shadow-lg"
+        >
+          <span className="truncate">Tolta: {inAttesa.titolo}</span>
+          <button type="button" onClick={annulla} className="font-semibold text-white underline">
+            Annulla
+          </button>
+        </div>
+      )}
+
+      {sotto && <div className="mt-4">{sotto}</div>}
     </>
   );
 }
