@@ -1,6 +1,12 @@
 """Da apps/scraper: python3 -m unittest discover tests"""
+import json
+import sys
+import tempfile
 import unittest
+from pathlib import Path
+from unittest import mock
 
+from rental_radar import aggregate
 from rental_radar.aggregate import _affitta_letti, _segna_curati
 
 ED = {"nome": "Sable", "lat": 40.7205, "lng": -74.0348, "url": "https://x.test/sable"}
@@ -40,6 +46,25 @@ class Curati(unittest.TestCase):
     def test_stesso_nome_lontano_non_conta(self):
         lontana = scheda("Sable", ["zillow"], lat=40.80)
         self.assertEqual(len(_segna_curati([lontana], [ED], "2026-11-01")), 2)
+
+
+class Parziali(unittest.TestCase):
+    def test_fonte_parziale_non_cancella_le_altre_schede(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            out = d / "listings.json"
+            ieri = {"generatedAt": "2026-10-31", "listings": [
+                {"id": "a", "chiave": "a", "source": "streeteasy", "sources": ["streeteasy"],
+                 "lat": 40.7, "lng": -74.0, "title": "Vecchia", "visto": "2026-09-06"}]}
+            out.write_text(json.dumps(ieri))
+            snap = d / "streeteasy.snapshot.json"
+            snap.write_text("[]")
+            argv = ["x", str(snap), "--su-quelle-di-ieri", "--parziali=streeteasy"]
+            with mock.patch.object(aggregate, "OUT", out), mock.patch.object(sys, "argv", argv), \
+                    mock.patch.object(aggregate, "CURATI", d / "niente.json"):
+                aggregate.main()
+            l = json.loads(out.read_text())["listings"]
+            self.assertEqual([(x["title"], x["visto"]) for x in l], [("Vecchia", "2026-09-06")])
 
 
 if __name__ == "__main__":

@@ -241,6 +241,14 @@ def main() -> None:
         # contenuto significherebbe non riconoscere una fonte il cui snapshot e'
         # vuoto, e quindi riportarne le case come se non l'avessimo guardata.
         fonti_di_oggi = {Path(p).name.split(".")[0] for p in argv}
+        # --parziali=a,b: fonti che hanno negato l'accesso a meta' giro. Quello
+        # che hanno dato aggiorna le schede, le altre restano con la loro data.
+        fonti_di_oggi -= {
+            f
+            for a in sys.argv[1:]
+            if a.startswith("--parziali=")
+            for f in a.split("=", 1)[1].split(",")
+        }
         tenute = _riporta(vecchio.get("listings", []), fonti_di_oggi)
         print(
             f"↺ tengo {len(tenute)} case su {len(vecchio.get('listings', []))} "

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
 import { formatPrice, formatDistance, tierMeta, sourceDaUrl, sourceLabel } from "@/lib/format";
-import { fermaDal } from "@/lib/listings";
 import type { Stato } from "@/lib/wishlist";
 import type { Lavanderia } from "@/lib/listings";
 
@@ -45,7 +44,7 @@ export default function ListingCard({
   const [imgOk, setImgOk] = useState(true);
   const meta = tierMeta(listing.tier);
   const photo = listing.photos?.[0];
-  const dalGiorno = fermaDal(listing);
+  const dalGiorno = listing.datoDel;
 
   // Il clic sulla card apre l'annuncio: selezionava solo il punto sulla mappa,
   // e sembrava che la card non portasse a niente. La mappa si accende lo stesso.

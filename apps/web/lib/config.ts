@@ -15,10 +15,7 @@ export const BUDGET_MAX = 4000;
 // senza poterle ricontrollare.
 export const GIORNI_PER_PERSA = 14;
 
-// Fonti che oggi nessuno riesce a riscaricare, col giorno dell'ultimo crawl:
-// bloccano il Chrome degli agenti e il crawl.command vuole una persona. Le loro
-// case restano in elenco con l'avviso. Tornata la fonte, si toglie la riga.
-export const FONTI_FERME: Record<string, string> = {
-  streeteasy: "2026-09-06",
-  zillow: "2026-09-06",
-};
+// Fonti scaricate col browser: possono negare l'accesso a meta' giro. Le loro case
+// non riviste restano in elenco con la data dell'ultimo dato vero, non scadono.
+export const FONTI_COL_BROWSER = ["streeteasy", "zillow", "apartments"];
+export const GIORNI_PER_DATO_VECCHIO = 2;

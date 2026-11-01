@@ -1,8 +1,8 @@
-import { BUDGET_MAX, FLATIRON, FONTI_FERME, GIORNI_PER_PERSA } from "./config";
+import { BUDGET_MAX, FLATIRON, FONTI_COL_BROWSER, GIORNI_PER_DATO_VECCHIO, GIORNI_PER_PERSA } from "./config";
 import { classify, type IsochroneSet } from "./geo";
 import type { Listing, TierId } from "./types";
 import { nearestStationM, transitAccessScore, type Station } from "./subway";
-import { neighborhoodsOf } from "./neighborhoods";
+import { inManhattan, neighborhoodsOf } from "./neighborhoods";
 import affittoLetti from "./affitto_letti.json";
 import priceFloors from "./price_floors.json";
 
@@ -168,7 +168,20 @@ const PRICE_FLOORS: Record<string, number> = priceFloors.floors;
 /** false se l'annuncio ha un prezzo implausibile per la sua tipologia (civetta). */
 export function isPlausibleListing(l: RawListing): boolean {
   const floor = PRICE_FLOORS[l.type ?? ""] ?? 0;
-  return (l.price == null || l.price >= floor) && !isAffittoLetti(l);
+  return (l.price == null || l.price >= floor) && !isAffittoLetti(l) && !isFuoriZona(l);
+}
+
+// Il link dice lo stato: 8831 E Times Sq Cir e' in Alaska, geocodificata su Times Square.
+const STATO_FUORI_ZONA = /-(?!ny-|nj-)[a-z]{2}-\d{5}(?:[/?#]|$)/i;
+// Il titolo dice un altro borough mentre le coordinate cadono a Manhattan.
+const ALTROVE_NEL_TITOLO = /\b(brooklyn|bronx|queens)\b|\b1(?:04|12|13|14)\d{2}\b/i;
+
+/** true se l'annuncio dichiara un luogo diverso da dove l'abbiamo messo. */
+export function isFuoriZona(
+  l: Pick<RawListing, "title" | "sourceUrl" | "lat" | "lng">
+): boolean {
+  if (STATO_FUORI_ZONA.test(l.sourceUrl ?? "")) return true;
+  return ALTROVE_NEL_TITOLO.test(l.title ?? "") && inManhattan(l.lat, l.lng);
 }
 
 const LETTI_TITOLO = new RegExp(affittoLetti.titolo, "i");
@@ -196,7 +209,7 @@ export function isInBudget(l: RawListing): boolean {
  */
 export function isAncoraOnline(l: RawListing, generatedAt?: string): boolean {
   if (!l.visto || !generatedAt) return true; // schede di prima del campo
-  if (fermaDal(l)) return true; // nessuno la puo' ricontrollare: resta, con l'avviso sulla card
+  if (fermaDal(l, generatedAt)) return true; // nessuno la puo' ricontrollare: resta, con l'avviso sulla card
   const giorni = (Date.parse(generatedAt.slice(0, 10)) - Date.parse(l.visto)) / 86_400_000;
   return !(giorni > GIORNI_PER_PERSA);
 }
@@ -205,10 +218,15 @@ export function isAncoraOnline(l: RawListing, generatedAt?: string): boolean {
  * Il giorno dell'ultimo dato vero, se tutte le fonti della casa sono ferme.
  * La card lo dice: quella casa non e' stata ricontrollata da allora.
  */
-export function fermaDal(l: Pick<RawListing, "source" | "sources">): string | null {
+export function fermaDal(
+  l: Pick<RawListing, "source" | "sources" | "visto">,
+  generatedAt?: string
+): string | null {
+  if (!l.visto || !generatedAt) return null;
   const fonti = l.sources?.length ? l.sources : [l.source];
-  const date = fonti.map((f) => FONTI_FERME[f]);
-  return date.every(Boolean) ? date.sort().at(-1)! : null;
+  if (!fonti.every((f) => FONTI_COL_BROWSER.includes(f))) return null;
+  const giorni = (Date.parse(generatedAt.slice(0, 10)) - Date.parse(l.visto)) / 86_400_000;
+  return giorni >= GIORNI_PER_DATO_VECCHIO ? l.visto : null;
 }
 
 export async function loadListings(): Promise<RawListing[]> {
@@ -216,10 +234,12 @@ export async function loadListings(): Promise<RawListing[]> {
     const res = await fetch("/data/listings.json");
     if (!res.ok) return [];
     const data = await res.json();
-    return (data.listings ?? []).filter(
-      (l: RawListing) =>
-        isPlausibleListing(l) && isAncoraOnline(l, data.generatedAt)
-    );
+    return (data.listings ?? [])
+      .filter(
+        (l: RawListing) =>
+          isPlausibleListing(l) && isAncoraOnline(l, data.generatedAt)
+      )
+      .map((l: RawListing) => ({ ...l, datoDel: fermaDal(l, data.generatedAt) }));
   } catch {
     return [];
   }

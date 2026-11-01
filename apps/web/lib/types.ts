@@ -51,4 +51,6 @@ export interface Listing {
   chiave?: string | null;
   /** giorno (YYYY-MM-DD) in cui una fonte l'ha mostrata l'ultima volta */
   visto?: string;
+  /** Giorno dell'ultimo dato vero, se la fonte non la riguarda da giorni. */
+  datoDel?: string | null;
 }
