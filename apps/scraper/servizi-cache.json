@@ -95,7 +95,12 @@
 "washer-dryer",
 "washer-dryer-in-unit"
 ],
-"il": "2026-09-23"
+"il": "2026-11-01",
+"x": {
+"baths": 2,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-01"
+}
 },
 "apartmentadvisor:1-harborside-pl-jersey-city-nj-07311": {
 "a": [
@@ -5611,6 +5616,15 @@
 "unita:lavatrice"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:174-w-89-st-manhattan-ny-10024": {
+"a": [],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-01",
+"pubblicata": "2026-11-01"
+}
 },
 "apartmentadvisor:174-w-89-st-ny-city-ny-10024": {
 "a": [
@@ -12814,6 +12828,18 @@
 "unita:lavatrice"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:310-bleecker-st-manhattan-ny-10014": {
+"a": [
+"hardwood-floors",
+"unita:lavatrice"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-01",
+"pubblicata": "2026-11-01"
+}
 },
 "apartmentadvisor:310-e-40-st-ny-ny-10016": {
 "a": [
@@ -27237,6 +27263,28 @@
 ],
 "il": "2026-10-27"
 },
+"craigslist:3UpSpkpE3j5dZNBqXetpXf": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-01",
+"pubblicata": "2026-11-01"
+}
+},
+"craigslist:3UszAVBM89f7JM6LApXQrA": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-21",
+"pubblicata": "2026-11-01"
+}
+},
 "craigslist:3VhF9USmKb6KKUapZ4dgTC": {
 "a": [
 "no laundry on site"
@@ -32501,6 +32549,17 @@
 ],
 "il": "2026-10-13"
 },
+"craigslist:9supEa4QBP6Y9zASvi5XNt": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-01",
+"pubblicata": "2026-11-01"
+}
+},
 "craigslist:9svXndcpeTUfn6ufnipK72": {
 "a": [
 "no laundry on site"
@@ -34560,6 +34619,17 @@
 "no laundry on site"
 ],
 "il": "2026-10-11"
+},
+"craigslist:cNUmWhH6ASN3nhSRzc6g5r": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-15",
+"pubblicata": "2026-11-01"
+}
 },
 "craigslist:cNcXA3GyZrGJMRwqXg9J3B": {
 "a": [
@@ -47984,6 +48054,17 @@
 "w/d in unit"
 ],
 "il": "2026-09-23"
+},
+"craigslist:txr4ZrMJvvi7eED64t66d1": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-01",
+"pubblicata": "2026-11-01"
+}
 },
 "craigslist:ty91UhRStBjMMeLCRMQCYD": {
 "a": [
