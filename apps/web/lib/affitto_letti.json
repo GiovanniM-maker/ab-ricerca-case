@@ -1,0 +1,5 @@
+{
+  "_nota": "Chi affitta letti o stanze, non appartamenti. Sta in un JSON perche' lo leggono sia il sito sia aggregate.py.",
+  "titolo": "found[- ]study|\\bEHS\\b|\\bcampus\\b|student[ /-](housing|living|intern)|co-?living|\\bdorm\\b|\\broom[- ]in\\b|\\bbed[- ]in\\b(?![- ]unit)|shared (room|apartment|bath|unit)|women'?s housing|\\broommates?\\b|\\bbedspace\\b",
+  "url": "found-study"
+}

@@ -31,7 +31,10 @@ import {
   savePage, saveBlocked, sourceOfUrl, actLikeAHuman, diagnose, notify,
 } from "./common.mjs";
 
-const PORT = 9222;
+// CDP_PORT: un Chrome gia' acceso altrove (Mac nuovo, tunnel sulla 9230).
+// SENZA_UMANO=1: nessuno risolve captcha, al primo blocco la fonte si ferma.
+const PORT = Number(process.env.CDP_PORT || 9222);
+const SENZA_UMANO = process.env.SENZA_UMANO === "1";
 const PROFILE = join(HERE, ".chrome-profile");
 
 // Chrome non sta sempre in /Applications: puo' essere nella cartella utente,
@@ -182,6 +185,11 @@ async function crawl(source, ctx) {
           // finestra davanti, avvisiamo e RIPROVIAMO da soli. Cosi' puoi
           // risolvere il captcha quando ti pare e il crawl riparte da solo:
           // e' la differenza fra restare a guardare e fare altro.
+          if (SENZA_UMANO) {
+            console.log(`\n${source}: bloccato e nessuno a risolvere, mi fermo.`);
+            await p.close();
+            return { saved, blocks };
+          }
           if (!warned) {
             warned = true;
             await p.bringToFront().catch(() => {});

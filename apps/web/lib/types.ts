@@ -20,6 +20,8 @@ export const OUT_META: TierMeta = {
 
 /** Annuncio normalizzato (allineato a db/schema.sql). */
 export interface Listing {
+  /** edificio segnalato a mano (apps/scraper/curati.json) */
+  curato?: boolean;
   id: number | string;
   source: string;
   sourceUrl: string;

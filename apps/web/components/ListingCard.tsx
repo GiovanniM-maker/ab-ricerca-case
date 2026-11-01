@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import type { ScoredListing } from "@/lib/listings";
-import { formatPrice, formatDistance, tierMeta, sourceLabel } from "@/lib/format";
+import { formatPrice, formatDistance, tierMeta, sourceDaUrl, sourceLabel } from "@/lib/format";
+import { fermaDal } from "@/lib/listings";
 import type { Stato } from "@/lib/wishlist";
 import type { Lavanderia } from "@/lib/listings";
 
@@ -44,11 +45,25 @@ export default function ListingCard({
   const [imgOk, setImgOk] = useState(true);
   const meta = tierMeta(listing.tier);
   const photo = listing.photos?.[0];
+  const dalGiorno = fermaDal(listing);
+
+  // Il clic sulla card apre l'annuncio: selezionava solo il punto sulla mappa,
+  // e sembrava che la card non portasse a niente. La mappa si accende lo stesso.
+  // detail > 1: il secondo clic di un doppio clic non apre una seconda scheda.
+  const apriAnnuncio = (e: { detail?: number }) => {
+    onSelect();
+    if ((e.detail ?? 1) > 1 || !listing.sourceUrl) return;
+    window.open(listing.sourceUrl, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <article
-      onClick={onSelect}
-      onDoubleClick={onOpen}
+      role="link"
+      tabIndex={0}
+      onClick={apriAnnuncio}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") apriAnnuncio({});
+      }}
       className={`group cursor-pointer overflow-hidden rounded-2xl border bg-neutral-900 transition-all duration-200 hover:border-neutral-600 ${
         selected
           ? "border-white shadow-[0_0_0_1px_rgba(255,255,255,0.4)]"
@@ -111,7 +126,19 @@ export default function ListingCard({
                 LAVANDERIA[listing.lavanderia]!.classe
               }`}
             >
-              {LAVANDERIA[listing.lavanderia]!.testo}
+              {listing.lavanderiaDaVerificare
+                ? "Lavatrice dichiarata dall'edificio, da verificare"
+                : LAVANDERIA[listing.lavanderia]!.testo}
+            </span>
+          )}
+          {listing.curato && (
+            <span className="rounded-full border border-emerald-500/60 bg-emerald-500/15 px-2 py-0.5 font-medium text-emerald-300">
+              Segnalata
+            </span>
+          )}
+          {dalGiorno && (
+            <span className="rounded-full border border-amber-700 bg-amber-950/60 px-2 py-0.5 font-medium text-amber-400">
+              Dato del {new Date(dalGiorno).toLocaleDateString("it-IT", { day: "numeric", month: "short" })}
             </span>
           )}
           {/* anche "Arredato" sta nel corpo: sulla foto si scontrava con il
@@ -174,10 +201,8 @@ export default function ListingCard({
             {stato === "vista" ? "Vista" : stato ? "Da vedere" : "Salva"}
           </button>
 
-          {/* La scheda completa si apriva solo col doppio clic: sul telefono
-              non e' un gesto che qualcuno prova, e nulla diceva che ci fosse
-              dell'altro da vedere. Il doppio clic resta, ma ora c'e' anche un
-              bottone. */}
+          {/* La scheda completa ha il suo bottone: il clic sulla card apre
+              l'annuncio originale. */}
           <button
             type="button"
             onClick={(e) => {
@@ -197,7 +222,7 @@ export default function ListingCard({
             onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center gap-1 rounded-full border border-neutral-700 px-2.5 py-1 text-[11px] font-medium text-neutral-300 transition hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
           >
-            Vedi su {sourceLabel((listing.sources ?? [listing.source])[0])}
+            Vedi su {sourceLabel(sourceDaUrl(listing.sourceUrl, listing.source))}
             <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M4.5 2h5.5v5.5M10 2 2.5 9.5" />
             </svg>

@@ -85,6 +85,8 @@ export const NEIGHBORHOODS: Neighborhood[] = [
   // --- Fuori Manhattan ---
   { name: "Brooklyn Heights", bbox: [40.690, 40.703, -73.999, -73.988] },
   { name: "Long Island City", bbox: [40.735, 40.762, -73.958, -73.930], excludeManhattan: true },
+  { name: "Newport", bbox: [40.7255, 40.733, -74.040, -74.028] },
+  { name: "Harsimus Cove", bbox: [40.718, 40.7255, -74.042, -74.031] },
   { name: "Jersey City", bbox: [40.680, 40.745, -74.090, -74.030] },
   { name: "Hoboken", bbox: [40.735, 40.760, -74.040, -74.020] },
   // Comuni NJ sulla sponda a nord di Hoboken (Weehawken, Union City,

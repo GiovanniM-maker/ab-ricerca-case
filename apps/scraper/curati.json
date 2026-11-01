@@ -1,0 +1,40 @@
+{
+  "_nota": "Edifici segnalati a mano. aggregate li marca 'curato' se una fonte li ha gia', altrimenti crea una scheda senza prezzo.",
+  "edifici": [
+    {
+      "nome": "Sable",
+      "indirizzo": "200 Greene St, Jersey City, NJ 07311",
+      "lat": 40.7205,
+      "lng": -74.0348,
+      "url": "https://www.apartments.com/sable-jersey-city-nj/gbk3g9w/"
+    },
+    {
+      "nome": "VYV",
+      "indirizzo": "474 Warren St, Jersey City, NJ 07302",
+      "lat": 40.7244,
+      "lng": -74.0377,
+      "url": "https://www.apartments.com/vyv-jersey-city-nj/jp9pcv5/"
+    },
+    {
+      "nome": "Avalon Cove",
+      "indirizzo": "444 Washington Blvd, Jersey City, NJ 07310",
+      "lat": 40.7232,
+      "lng": -74.0353,
+      "url": "https://www.apartments.com/avalon-cove-jersey-city-nj/1zsme1"
+    },
+    {
+      "nome": "The BLVD Collection",
+      "indirizzo": "Harsimus Cove, Jersey City, NJ",
+      "lat": 40.7227,
+      "lng": -74.0369,
+      "url": "https://verisresidential.com/jersey-city-nj-apartments/the-blvd-collection/"
+    },
+    {
+      "nome": "Newport Rentals",
+      "indirizzo": "Newport, Jersey City, NJ",
+      "lat": 40.7265,
+      "lng": -74.0325,
+      "url": "https://www.newportrentals.com/"
+    }
+  ]
+}

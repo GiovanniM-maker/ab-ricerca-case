@@ -1,8 +1,9 @@
-import { BUDGET_MAX, FLATIRON, GIORNI_PER_PERSA } from "./config";
+import { BUDGET_MAX, FLATIRON, FONTI_FERME, GIORNI_PER_PERSA } from "./config";
 import { classify, type IsochroneSet } from "./geo";
 import type { Listing, TierId } from "./types";
 import { nearestStationM, transitAccessScore, type Station } from "./subway";
 import { neighborhoodsOf } from "./neighborhoods";
+import affittoLetti from "./affitto_letti.json";
 import priceFloors from "./price_floors.json";
 
 export type RawListing = Omit<Listing, "tier">;
@@ -16,6 +17,8 @@ export interface ScoredListing extends Listing {
   neighborhood: string | null;
   /** dove sta la lavanderia: il requisito che decide se la casa vale */
   lavanderia: Lavanderia;
+  /** lavatrice in casa dichiarata per tutto il palazzo, non per questa unita' */
+  lavanderiaDaVerificare: boolean;
 }
 
 /** Pesi del punteggio convenienza (regolabili dall'UI). */
@@ -93,11 +96,17 @@ export function lavanderiaDi(amenities?: string[] | null): Lavanderia {
 
 /** Quanto vale la lavanderia dentro il punteggio servizi. */
 const PESO_LAVANDERIA: Record<Lavanderia, number> = {
-  "in-casa": 2,
+  "in-casa": 0, // conta col premio a parte, sotto
   edificio: 0.8,
   assente: 0,
   sconosciuta: 0,
 };
+
+// La lavatrice in casa e' il requisito che decide: un premio a parte, fuori dai
+// servizi. 0.12 equivale a circa 1.800 $ di affitto sui prezzi del 01/11 (fra
+// 2.200 e 3.600 $): tanto, ma sotto i 2.000 $, che sarebbero troppi. Niente premio
+// se la dichiara solo l'edificio: 304 W 30 St finiva primo cosi'.
+const PREMIO_LAVATRICE = 0.12;
 
 // Gli altri servizi dell'edificio. Il portiere non c'e' piu': valeva piu' di
 // tutto, ma chi vive a New York lo mette molto dopo il bucato — e nei nostri
@@ -159,7 +168,15 @@ const PRICE_FLOORS: Record<string, number> = priceFloors.floors;
 /** false se l'annuncio ha un prezzo implausibile per la sua tipologia (civetta). */
 export function isPlausibleListing(l: RawListing): boolean {
   const floor = PRICE_FLOORS[l.type ?? ""] ?? 0;
-  return l.price == null || l.price >= floor;
+  return (l.price == null || l.price >= floor) && !isAffittoLetti(l);
+}
+
+const LETTI_TITOLO = new RegExp(affittoLetti.titolo, "i");
+const LETTI_URL = new RegExp(affittoLetti.url, "i");
+
+/** true per chi affitta letti o stanze (FOUND Study, coliving, dormitori). */
+export function isAffittoLetti(l: Pick<RawListing, "title" | "sourceUrl">): boolean {
+  return LETTI_TITOLO.test(l.title ?? "") || LETTI_URL.test(l.sourceUrl ?? "");
 }
 
 /**
@@ -179,8 +196,19 @@ export function isInBudget(l: RawListing): boolean {
  */
 export function isAncoraOnline(l: RawListing, generatedAt?: string): boolean {
   if (!l.visto || !generatedAt) return true; // schede di prima del campo
+  if (fermaDal(l)) return true; // nessuno la puo' ricontrollare: resta, con l'avviso sulla card
   const giorni = (Date.parse(generatedAt.slice(0, 10)) - Date.parse(l.visto)) / 86_400_000;
   return !(giorni > GIORNI_PER_PERSA);
+}
+
+/**
+ * Il giorno dell'ultimo dato vero, se tutte le fonti della casa sono ferme.
+ * La card lo dice: quella casa non e' stata ricontrollata da allora.
+ */
+export function fermaDal(l: Pick<RawListing, "source" | "sources">): string | null {
+  const fonti = l.sources?.length ? l.sources : [l.source];
+  const date = fonti.map((f) => FONTI_FERME[f]);
+  return date.every(Boolean) ? date.sort().at(-1)! : null;
 }
 
 export async function loadListings(): Promise<RawListing[]> {
@@ -255,16 +283,24 @@ export function scoreListings(
     const furnScore = l.furnished ? 1 : 0;
     const photoScore = l.photos?.length ? 1 : 0;
     const servScore = servicesScore(l.amenities);
+    const lavanderia = lavanderiaDi(l.amenities);
+    // Il palazzo con piu' unita' dichiara la lavatrice per l'intero edificio
+    // (304 W 30 St): non sappiamo se sta in QUESTO appartamento.
+    const lavanderiaDaVerificare = lavanderia === "in-casa" && !!l.priceFrom;
+    const premio = lavanderia === "in-casa" && !lavanderiaDaVerificare ? PREMIO_LAVATRICE : 0;
+    // Si divide per restare fra 0 e 1: la barra della card e' una percentuale.
     const convenienza =
-      weights.price * priceScore +
-      weights.time * timeScore +
-      weights.space * spaceScore +
-      weights.furnished * furnScore +
-      weights.photo * photoScore +
-      weights.services * servScore;
+      (weights.price * priceScore +
+        weights.time * timeScore +
+        weights.space * spaceScore +
+        weights.furnished * furnScore +
+        weights.photo * photoScore +
+        weights.services * servScore +
+        premio) /
+      (1 + PREMIO_LAVATRICE);
     // NEIGHBORHOODS e' ordinato dal piu' specifico al piu' generico,
     // quindi il primo match e' il quartiere giusto da mostrare.
     const neighborhood = neighborhoodsOf(l.lat, l.lng)[0] ?? null;
-    return { ...l, convenienza, stationM, neighborhood, lavanderia: lavanderiaDi(l.amenities) };
+    return { ...l, convenienza, stationM, neighborhood, lavanderia, lavanderiaDaVerificare };
   });
 }

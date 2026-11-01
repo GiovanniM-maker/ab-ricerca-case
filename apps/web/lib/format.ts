@@ -22,6 +22,24 @@ export function tierMeta(id: TierId) {
   return id === "out" ? OUT_META : TIERS[id];
 }
 
+/** La fonte dall'URL: il link va chiamato col nome del sito che apre davvero. */
+export function sourceDaUrl(url: string, ripiego: string): string {
+  const host = url.match(/^https?:\/\/(?:www\.)?([^/]+)/i)?.[1]?.toLowerCase() ?? "";
+  const nota = Object.entries(HOST_FONTE).find(([h]) => host.endsWith(h));
+  return nota ? nota[1] : ripiego;
+}
+
+const HOST_FONTE: Record<string, string> = {
+  "apartmentadvisor.com": "apartmentadvisor",
+  "trulia.com": "trulia",
+  "craigslist.org": "craigslist",
+  "streeteasy.com": "streeteasy",
+  "zillow.com": "zillow",
+  "apartments.com": "apartments",
+  "verisresidential.com": "curato",
+  "newportrentals.com": "curato",
+};
+
 export function sourceLabel(source: string): string {
   const map: Record<string, string> = {
     apartmentadvisor: "ApartmentAdvisor",
@@ -31,6 +49,7 @@ export function sourceLabel(source: string): string {
     zillow: "Zillow",
     apartments: "Apartments.com",
     renthop: "RentHop",
+    curato: "sito dell'edificio",
     sample: "Esempio",
   };
   return map[source] ?? source;

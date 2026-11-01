@@ -22,6 +22,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / "apps" / "web" / "public" / "data" / "listings.json"
+# come FONTI_FERME in apps/web/lib/config.ts
+FONTI_FERME = {"streeteasy", "zillow", "curato"}
+CURATI = ROOT / "apps" / "scraper" / "curati.json"
+LETTI = json.loads((ROOT / "apps" / "web" / "lib" / "affitto_letti.json").read_text())
+_LETTI_TITOLO = re.compile(LETTI["titolo"], re.I)
+_LETTI_URL = re.compile(LETTI["url"], re.I)
 
 _ORDINAL = re.compile(r"\b(\d+)(?:st|nd|rd|th)\b")
 _UNIT = re.compile(r"\s*(#|\bapt\b|\bunit\b|\bste\b).*$", re.I)
@@ -150,6 +156,60 @@ def _riporta(precedenti: list[dict], aggiornate: set[str]) -> list[dict]:
     ]
 
 
+def _affitta_letti(l: dict) -> bool:
+    return bool(_LETTI_TITOLO.search(l.get("title") or "") or _LETTI_URL.search(l.get("sourceUrl") or ""))
+
+
+def _vicino(l: dict, ed: dict) -> bool:
+    # 300 m: le fonti mettono lo stesso palazzo su punti diversi della mappa
+    return abs(l["lat"] - ed["lat"]) < 0.003 and abs(l["lng"] - ed["lng"]) < 0.0035
+
+
+def _segna_curati(listings: list[dict], edifici: list[dict], oggi: str) -> list[dict]:
+    """Gli edifici segnalati a mano: una scheda sola, la piu' fresca, marcata.
+
+    Zillow e Apartments danno lo stesso palazzo su due punti diversi e l'indirizzo
+    non basta a fonderli. Se nessuna fonte lo ha, la scheda nasce senza prezzo:
+    meglio un edificio da guardare a mano che un edificio che manca.
+    """
+    for ed in edifici:
+        nome = ed["nome"].lower()
+        gemelle = [l for l in listings if nome in (l.get("title") or "").lower() and _vicino(l, ed)]
+        if gemelle:
+            # a parita' di data vince chi ha una fonte che oggi viene riscaricata
+            tenuta = max(gemelle, key=lambda l: (
+                l.get("visto") or "",
+                not set(l.get("sources") or []) <= FONTI_FERME,
+                l.get("source") != "curato",
+            ))
+            listings = [l for l in listings if l is tenuta or l not in gemelle]
+            tenuta["curato"] = True
+            if tenuta.get("source") == "curato":
+                tenuta["visto"] = oggi
+            continue
+        listings.append({
+            "id": f"curato-{hashlib.sha1(ed['nome'].encode()).hexdigest()[:10]}",
+            "source": "curato",
+            "sourceUrl": ed["url"],
+            "title": ed["nome"],
+            "price": None,
+            "priceFrom": False,
+            "currency": "USD",
+            "type": None,
+            "furnished": None,
+            "sqft": None,
+            "lat": ed["lat"],
+            "lng": ed["lng"],
+            "photos": [],
+            "amenities": [],
+            "sources": ["curato"],
+            "chiave": None,
+            "visto": oggi,
+            "curato": True,
+        })
+    return listings
+
+
 def main() -> None:
     argv = [a for a in sys.argv[1:] if not a.startswith("--")]
     # --su-quelle-di-ieri: fondi sopra il listings.json gia' pubblicato invece
@@ -243,6 +303,9 @@ def main() -> None:
                 alias[rec["id"]] = key
 
     listings = [{k: v for k, v in by_key[key].items() if k != "_riportata"} for key in order]
+    listings = [l for l in listings if not _affitta_letti(l)]
+    if CURATI.exists():
+        listings = _segna_curati(listings, json.loads(CURATI.read_text())["edifici"], oggi)
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",

@@ -160,7 +160,7 @@ export default function Home() {
           neighborhoodsOf(l.lat, l.lng).some((n) => activeNeighborhoods.has(n))) &&
         (lavanderia === "tutte" ||
           (lavanderia === "in-casa"
-            ? l.lavanderia === "in-casa"
+            ? l.lavanderia === "in-casa" && !l.lavanderiaDaVerificare
             : l.lavanderia === "in-casa" || l.lavanderia === "edificio"))
     );
     filtered.sort((a, b) => {
