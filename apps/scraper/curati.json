@@ -35,6 +35,62 @@
       "lat": 40.7265,
       "lng": -74.0325,
       "url": "https://www.newportrentals.com/"
+    },
+    {
+      "nome": "Avalon Hoboken",
+      "indirizzo": "800 Madison St, Hoboken, NJ 07030",
+      "lat": 40.747784,
+      "lng": -74.039077,
+      "url": "https://www.avaloncommunities.com/new-jersey/hoboken-apartments/avalon-hoboken/"
+    },
+    {
+      "nome": "7 Seventy House",
+      "indirizzo": "770 Jackson St, Hoboken, NJ 07030",
+      "lat": 40.745777,
+      "lng": -74.039116,
+      "url": "https://7seventyhouse.com/"
+    },
+    {
+      "nome": "Edge Lofts",
+      "indirizzo": "1405 Clinton St, Hoboken, NJ 07030",
+      "lat": 40.754161,
+      "lng": -74.030477,
+      "url": "https://www.edgeloftshoboken.com/"
+    },
+    {
+      "nome": "Park and Garden",
+      "indirizzo": "1450 Garden St, Hoboken, NJ 07030",
+      "lat": 40.753895,
+      "lng": -74.027809,
+      "url": "https://www.parkandgardenhoboken.com/"
+    },
+    {
+      "nome": "Avalon North Bergen",
+      "indirizzo": "5665 Kennedy Blvd, North Bergen, NJ",
+      "lat": 40.789706,
+      "lng": -74.023691,
+      "url": "https://www.avaloncommunities.com/new-jersey/north-bergen-apartments/avalon-north-bergen/"
+    },
+    {
+      "nome": "AVA High Line",
+      "indirizzo": "525 W 28th St, New York, NY",
+      "lat": 40.751637,
+      "lng": -74.005508,
+      "url": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/ava-high-line/"
+    },
+    {
+      "nome": "Avalon Clinton",
+      "indirizzo": "515 W 52nd St, New York, NY",
+      "lat": 40.766499,
+      "lng": -73.991614,
+      "url": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-clinton/"
+    },
+    {
+      "nome": "Avalon Midtown West",
+      "indirizzo": "250 W 50th St, New York, NY",
+      "lat": 40.761986,
+      "lng": -73.985676,
+      "url": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-midtown-west/"
     }
   ]
 }
