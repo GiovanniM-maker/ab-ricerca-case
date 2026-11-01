@@ -26,6 +26,7 @@ import { spawn, execFileSync } from "node:child_process";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import readline from "node:readline/promises";
+import { chiediVerifica } from "./verifica-remota.mjs";
 import {
   HERE, PAGES, TARGETS, sources, pause, isBlocked, pageUrl, slugFor,
   savePage, saveBlocked, sourceOfUrl, actLikeAHuman, diagnose, notify,
@@ -35,6 +36,9 @@ import {
 // SENZA_UMANO=1: nessuno risolve captcha, al primo blocco la fonte si ferma.
 const PORT = Number(process.env.CDP_PORT || 9222);
 const SENZA_UMANO = process.env.SENZA_UMANO === "1";
+// VERIFICA_A_TOCCO=1: al blocco la verifica la fa una persona dal telefono.
+const VERIFICA_A_TOCCO = process.env.VERIFICA_A_TOCCO === "1";
+const MAX_VERIFICHE = 3; // per fonte: oltre, tre tocchi non sono bastati
 const PROFILE = join(HERE, ".chrome-profile");
 
 // Chrome non sta sempre in /Applications: puo' essere nella cartella utente,
@@ -165,6 +169,7 @@ async function crawl(source, ctx) {
   let saved = 0;
   let blocks = 0;
   let warned = false;
+  let verifiche = 0;
   for (const base of cfg.searches) {
     for (let n = 1; n <= (cfg.pages ?? 1); n++) {
       const url = pageUrl(base, cfg, n);
@@ -186,22 +191,28 @@ async function crawl(source, ctx) {
           // risolvere il captcha quando ti pare e il crawl riparte da solo:
           // e' la differenza fra restare a guardare e fare altro.
           if (SENZA_UMANO) {
-            console.log(`\n${source}: bloccato e nessuno a risolvere, mi fermo.`);
-            await p.close();
-            return { saved, blocks };
+            const passata = VERIFICA_A_TOCCO && verifiche++ < MAX_VERIFICHE
+              && (await chiediVerifica(p, source, isBlocked));
+            if (!passata) {
+              console.log(`\n${source}: bloccato e nessuno a risolvere, mi fermo.`);
+              await p.close();
+              return { saved, blocks };
+            }
+            console.log("  ✓ verifica fatta dal telefono, riprendo");
+          } else {
+            if (!warned) {
+              warned = true;
+              await p.bringToFront().catch(() => {});
+              notify("Flatiron Radar", `${source} chiede una verifica: risolvila in Chrome.`);
+            }
+            const passed = await waitUntilUnblocked(p, url, source);
+            if (!passed) {
+              console.log(`\n${source}: la verifica non e' stata risolta, passo oltre.`);
+              await p.close();
+              return { saved, blocks };
+            }
+            console.log("  ✓ verifica superata, riprendo");
           }
-          if (!warned) {
-            warned = true;
-            await p.bringToFront().catch(() => {});
-            notify("Flatiron Radar", `${source} chiede una verifica: risolvila in Chrome.`);
-          }
-          const passed = await waitUntilUnblocked(p, url, source);
-          if (!passed) {
-            console.log(`\n${source}: la verifica non e' stata risolta, passo oltre.`);
-            await p.close();
-            return { saved, blocks };
-          }
-          console.log("  ✓ verifica superata, riprendo");
         }
 
         const good = await p.content();
