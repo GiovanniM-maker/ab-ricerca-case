@@ -1742,7 +1742,7 @@
 },
 "apartmentadvisor:115-w-13-st-ny-ny-10011": {
 "a": [],
-"il": "2026-09-30"
+"il": "2026-11-01"
 },
 "apartmentadvisor:115-w-16-st-ny-ny-10011": {
 "a": [
@@ -4435,6 +4435,10 @@
 "apartmentadvisor:156-w-94-st-ny-ny-10025": {
 "a": [],
 "il": "2026-10-07"
+},
+"apartmentadvisor:157-e-32-st-manhattan-ny-10021": {
+"a": [],
+"il": "2026-11-01"
 },
 "apartmentadvisor:157-e-32-st-ny-ny-10016": {
 "a": [
@@ -8190,6 +8194,10 @@
 "apartmentadvisor:219-roosevelt-st-union-city-nj-07087": {
 "a": [],
 "il": "2026-10-12"
+},
+"apartmentadvisor:219-saint-james-pl-ny-ny-11238": {
+"a": [],
+"il": "2026-11-01"
 },
 "apartmentadvisor:219-w-14-st-ny-ny-10011": {
 "a": [
@@ -13055,6 +13063,14 @@
 "hardwood-floors"
 ],
 "il": "2026-10-15"
+},
+"apartmentadvisor:319-e-50-st-ny-ny-10022": {
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors"
+],
+"il": "2026-11-01"
 },
 "apartmentadvisor:32-e-2-st-manhattan-ny-10003": {
 "a": [],
@@ -20254,7 +20270,7 @@
 },
 "apartmentadvisor:53-w-72-st-ny-ny-10023": {
 "a": [],
-"il": "2026-09-27"
+"il": "2026-11-01"
 },
 "apartmentadvisor:53-w-76-st-manhattan-ny-10024": {
 "a": [
@@ -33385,6 +33401,12 @@
 ],
 "il": "2026-10-24"
 },
+"craigslist:bafL4YhYVGxjHyGciMwCGH": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-01"
+},
 "craigslist:bauhX6MMTqZtWsk8pkR4An": {
 "a": [
 "w/d in unit"
@@ -36071,6 +36093,12 @@
 "laundry in bldg"
 ],
 "il": "2026-09-24"
+},
+"craigslist:esTpijNKHNWgCcmFM8tDWh": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-01"
 },
 "craigslist:esZhcvu8GhpXf2MyQbQ2vK": {
 "a": [
