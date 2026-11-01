@@ -94,7 +94,12 @@ export async function chiediVerifica(p, sito, bloccata) {
 
   try {
     await p.bringToFront().catch(() => {});
-    avvisa(sito, `${BASE}/?t=${token}`);
+    try {
+      avvisa(sito, `${BASE}/?t=${token}`);
+    } catch (e) {
+      console.log(`  scheda non partita: ${e.message.split("\n")[0]}`);
+      return false;
+    }
     const fine = Date.now() + ATTESA_MS;
     while (Date.now() < fine) {
       await new Promise((r) => setTimeout(r, 2000));

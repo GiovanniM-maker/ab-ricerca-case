@@ -190,6 +190,12 @@ async function crawl(source, ctx) {
           // finestra davanti, avvisiamo e RIPROVIAMO da soli. Cosi' puoi
           // risolvere il captcha quando ti pare e il crawl riparte da solo:
           // e' la differenza fra restare a guardare e fare altro.
+          if (SENZA_UMANO && VERIFICA_A_TOCCO && !/captcha|denied/i.test(title + html)) {
+            // Un guasto del sito non e' una verifica: non si disturba nessuno.
+            console.log("      pagina in errore, salto");
+            await pause(3000, 7000);
+            continue;
+          }
           if (SENZA_UMANO) {
             const passata = VERIFICA_A_TOCCO && verifiche++ < MAX_VERIFICHE
               && (await chiediVerifica(p, source, isBlocked));
