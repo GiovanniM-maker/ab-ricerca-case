@@ -41919,6 +41919,17 @@
 ],
 "il": "2026-10-19"
 },
+"craigslist:m3ZwPY9hSmVWu9C1kcGqc4": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-01"
+}
+},
 "craigslist:m4q3qViQtoJZxG5Mqvf1R1": {
 "a": [
 "w/d in unit"
@@ -50185,6 +50196,16 @@
 "w/d in unit"
 ],
 "il": "2026-10-21"
+},
+"craigslist:wdjkWVGwHqAe2XmdHB8XWy": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-01",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-01"
+}
 },
 "craigslist:wdvuYUGLL4rXi2Wh74Lmuo": {
 "a": [
