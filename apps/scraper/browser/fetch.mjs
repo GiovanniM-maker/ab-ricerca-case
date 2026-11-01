@@ -21,7 +21,7 @@ import { mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import readline from "node:readline/promises";
 import {
-  HERE, PAGES, TARGETS, sources, pause, isBlocked, pageUrl, slugFor,
+  HERE, PAGES, TARGETS, sources, pause, isBlocked, pageUrl, giriPer, filtroUrl,
   savePage, saveBlocked, actLikeAHuman, diagnose,
 } from "./common.mjs";
 
@@ -94,9 +94,9 @@ async function crawl(source, headed) {
 
   let saved = 0;
   let blocks = 0;
-  for (const base of cfg.searches) {
+  for (const { base, slug, filtro } of giriPer(cfg)) {
     for (let n = 1; n <= (cfg.pages ?? 1); n++) {
-      const url = pageUrl(base, cfg, n);
+      const url = filtro ? filtroUrl(filtro, base, cfg, n) : pageUrl(base, cfg, n);
       if (!url) break;
       try {
         await p.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
@@ -126,9 +126,9 @@ async function crawl(source, headed) {
           continue;
         }
 
-        savePage(source, slugFor(base), n, html);
+        savePage(source, slug, n, html);
         saved++;
-        console.log(`  ✓ ${slugFor(base)} p${n} (${Math.round(html.length / 1024)} KB)`);
+        console.log(`  ✓ ${slug} p${n} (${Math.round(html.length / 1024)} KB)`);
       } catch (e) {
         console.log(`  ✗ ${url}: ${e.message.split("\n")[0]}`);
       }

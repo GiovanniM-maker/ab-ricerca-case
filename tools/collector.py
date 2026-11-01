@@ -18,7 +18,7 @@ import sys
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, urlencode, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 BROWSER = ROOT / "apps" / "scraper" / "browser"
@@ -65,6 +65,36 @@ def slug_for(base: str) -> str:
     return out or "home"
 
 
+# Le pagine di una ricerca filtrata si riconoscono dal nome del file. E' un
+# contratto fra tre file: qui, apps/scraper/browser/common.mjs (il crawl di
+# riserva) e rental_radar/sources/saved_html.py (chi le legge). Se cambia la
+# stringa, cambiala in tutti e tre o le pagine filtrate diventano pagine
+# normali e il filtro non etichetta piu' niente.
+PREFISSO_FILTRO = "filtro-"
+
+
+def filtro_url(filtro: dict, base: str, cfg: dict, n: int) -> str | None:
+    """L'URL della ricerca `base`, pagina `n`, con un filtro applicato.
+
+    Un filtro puo' stare nel percorso (StreetEasy: `/amenities:washer_dryer`)
+    o in un parametro (Zillow: tutto lo stato della ricerca in un JSON). E
+    puo' impaginarsi da solo: se nel modello compare `{n}`, quello vince e
+    `pages` non ci mette bocca — su Zillow la pagina sta dentro il JSON, e
+    aggiungere `?page=2` di fuori non sposterebbe nulla.
+    """
+    modello = filtro["url"]
+    query = filtro.get("query") or {}
+    url = modello.replace("{base}", base)
+    if "{n}" not in modello and not any("{n}" in v for v in query.values()):
+        url = page_url(url, cfg, n)
+        if url is None:
+            return None
+    if query:
+        pezzi = {k: v.replace("{n}", str(n)) for k, v in query.items()}
+        url += ("&" if "?" in url else "?") + urlencode(pezzi)
+    return url.replace("{n}", str(n))
+
+
 def targets() -> list[dict]:
     out = []
     for source, cfg in TARGETS.items():
@@ -75,6 +105,22 @@ def targets() -> list[dict]:
                 url = page_url(base, cfg, n)
                 if url:
                     out.append({"source": source, "url": url, "slug": slug_for(base), "n": n})
+        # Poi le stesse ricerche di nuovo, filtrate. Raddoppiano le pagine da
+        # scaricare, ed e' il prezzo per sapere la lavanderia senza aprire una
+        # pagina di dettaglio per casa: 48 pagine in piu' invece di 489.
+        for nome, filtro in (cfg.get("filtri") or {}).items():
+            if nome.startswith("_"):
+                continue
+            for base in cfg["searches"]:
+                for n in range(1, cfg.get("pages", 1) + 1):
+                    url = filtro_url(filtro, base, cfg, n)
+                    if url:
+                        out.append({
+                            "source": source,
+                            "url": url,
+                            "slug": f"{PREFISSO_FILTRO}{nome}--{slug_for(base)}",
+                            "n": n,
+                        })
     return out
 
 

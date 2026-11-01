@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { loadIsochrones, type IsochroneSet } from "@/lib/geo";
 import {
+  isInBudget,
   loadListings,
   scoreListings,
   type RawListing,
@@ -125,8 +126,15 @@ export default function Home() {
     );
   }, []);
 
-  const scored = useMemo(
+  // Tutto quello che e' ancora online, anche sopra budget: serve solo a
+  // ritrovare le salvate. "Tutte" parte da `scored`, gia' dentro il budget, e
+  // il punteggio prezzo si misura fra le case che possiamo davvero pagare.
+  const online = useMemo(
     () => scoreListings(raw, iso, stations),
+    [raw, iso, stations]
+  );
+  const scored = useMemo(
+    () => scoreListings(raw.filter(isInBudget), iso, stations),
     [raw, iso, stations]
   );
 
@@ -175,7 +183,7 @@ export default function Home() {
   }
 
   const openDetail = (id: string | number) => {
-    const l = visible.find((x) => x.id === id) ?? scored.find((x) => x.id === id);
+    const l = visible.find((x) => x.id === id) ?? online.find((x) => x.id === id);
     if (l) setDetail(l);
   };
 
@@ -201,17 +209,17 @@ export default function Home() {
     n.name.toLowerCase().includes(hoodQuery.toLowerCase())
   );
 
-  // Le salvate ritrovate nel crawl di oggi. Si cerca su tutto `scored` e non
-  // sui filtrati: una casa salvata resta tua anche quando i filtri correnti la
-  // escludono, e senza questo risulterebbe "non piu' in elenco" per sbaglio.
+  // Le salvate ritrovate nel crawl di oggi. Si cerca su tutto `online` e non
+  // sui filtrati: una casa salvata resta tua anche quando i filtri correnti, o
+  // il budget, la escludono, e senza questo finirebbe fra le perse per sbaglio.
   const vive = useMemo(() => {
     const m = new Map<string, ScoredListing>();
-    for (const l of scored) {
+    for (const l of online) {
       m.set(rifDi(l), l);
       m.set(String(l.id), l);
     }
     return m;
-  }, [scored]);
+  }, [online]);
 
   const rifSalvati = useMemo(
     () => new Set(wl.salvate.flatMap((s) => [rifSalvata(s), s.listingId])),

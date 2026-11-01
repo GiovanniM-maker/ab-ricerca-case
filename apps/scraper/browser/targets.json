@@ -2,10 +2,18 @@
   "_renthop": "Tolto: negli attributi data-* ha solo pezzi di interfaccia (il filtro quartieri ha le coordinate, il filtro prezzo ha i prezzi). Gli annunci stanno nel markup come testo, e inseguirli con selettori CSS sarebbe l'unica cosa fragile in tutta la pipeline. Sei pagine su 78: non vale.",
   "_nota": "Le ricerche da scaricare col browser vero. Modificale pure: sono URL normali, aprili prima nel browser per controllare che diano risultati. `pages` = quante pagine di risultati scaricare.",
 
+  "_filtri": "Come sappiamo se una casa ha la lavatrice, senza aprire 800 pagine di dettaglio. Le pagine di ricerca non dicono i servizi — l'ho controllato: in 673 KB di Zillow la parola 'laundry' compare una volta sola, ed e' il nome del filtro. Ma il filtro e' proprio la risposta: la stessa ricerca, rifatta chiedendo «solo con lavatrice in casa», torna un elenco piu' corto, e chi resta dentro la lavatrice ce l'ha per ammissione del sito, non per una mia espressione regolare. Su Zillow: 14866 affitti -> 5943. Quindi ogni ricerca si scarica due volte, e la seconda fa da etichetta. `{base}` e' la ricerca, `{n}` la pagina: se il filtro usa `{n}` si impagina da solo, altrimenti ci pensa `pages` come sempre. `conferma` e' una parola che DEVE comparire nella pagina filtrata, altrimenti si butta. Chi non compare nell'elenco filtrato resta 'sconosciuta', mai 'senza lavanderia': le tre pagine che scarichiamo sono una fetta di 5943, non l'elenco completo.",
+
   "streeteasy": {
     "loginUrl": "https://streeteasy.com/login",
     "pageParam": "page",
     "pages": 3,
+    "filtri": {
+      "lavanderia-in-casa": {
+        "_nota": "Non verificato: da qui StreetEasy risponde 403 a qualunque IP di datacenter, quindi questa sintassi la prova il tuo Chrome al prossimo crawl. Non c'e' rischio: se il filtro non morde — se cioe' l'elenco filtrato e' quasi identico a quello libero — il parser lo scarta e lo scrive nel log, invece di mettere la lavatrice a tutti.",
+        "url": "{base}/amenities:washer_dryer"
+      }
+    },
     "searches": [
       "https://streeteasy.com/for-rent/flatiron",
       "https://streeteasy.com/for-rent/chelsea",
@@ -28,8 +36,19 @@
 
   "zillow": {
     "loginUrl": "https://www.zillow.com/user/acct/login",
-    "pageParam": "page",
+    "_pagine": "Era `pageParam: page`, e non impaginava: `?page=2` rende la pagina 1 identica, carattere per carattere. Zillow impagina nel percorso, `2_p/`. Finora scaricavamo tre volte la stessa pagina per ogni ricerca: 15 richieste per 5 pagine di case.",
+    "pathPage": "/{n}_p/",
     "pages": 3,
+    "filtri": {
+      "lavanderia-in-casa": {
+        "_nota": "I sette flag prima di `lau` NON sono decorazione: senza `fr` Zillow passa alle case in VENDITA, e il titolo della pagina cambia da «5943 Rentals» a «Homes For Sale». L'ho visto accadere. Per questo c'e' anche `conferma`.",
+        "url": "{base}",
+        "query": {
+          "searchQueryState": "{\"pagination\":{\"currentPage\":{n}},\"filterState\":{\"fr\":{\"value\":true},\"fsba\":{\"value\":false},\"fsbo\":{\"value\":false},\"nc\":{\"value\":false},\"cmsn\":{\"value\":false},\"auc\":{\"value\":false},\"fore\":{\"value\":false},\"lau\":{\"value\":true}},\"isListVisible\":true}"
+        },
+        "conferma": "Rentals"
+      }
+    },
     "searches": [
       "https://www.zillow.com/new-york-ny/rentals/",
       "https://www.zillow.com/brooklyn-new-york-ny/rentals/",

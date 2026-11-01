@@ -194,9 +194,62 @@ due posti (il Mac e GitHub Actions) e senza un posto condiviso il runner
 ripartirebbe da zero ogni volta. Tetto di richieste per giro, validità 30
 giorni, e chi non risponde si riprova dopo una settimana invece che domani.
 
+### Il filtro del sito al posto della pagina di dettaglio
+
+Restavano fuori StreetEasy (489 case), Zillow (140) e Trulia (94): nessuna ha
+un lettore di dettaglio, e per StreetEasy e Trulia le pagine arrivano solo dal
+Chrome vero sul Mac, quindi non potevo nemmeno guardarle.
+
+Guardando Zillow è venuto fuori il contrario di quello che cercavo: in 673 KB
+la parola `laundry` compare **una volta sola**, e non in un annuncio — nel nome
+di un filtro, `onlyRentalInUnitLaundry`, `shortId: "lau"`. Le pagine di
+ricerca elencano case, non dotazioni.
+
+Ma quel filtro **è** la risposta. La stessa ricerca rifatta chiedendo «solo con
+lavatrice in casa» torna un elenco più corto — **14866 affitti → 5943** — e chi
+resta dentro la lavatrice ce l'ha perché lo dice il sito, non perché l'ho
+indovinato con un'espressione regolare. Costo: due pagine di ricerca invece di
+ottocento di dettaglio, e nessun tetto giornaliero.
+
+Quindi ogni ricerca si scarica due volte. Le pagine filtrate si riconoscono dal
+nome del file (`filtro-<nome>--<ricerca>-<n>.html`, contratto fra
+`tools/collector.py`, `browser/common.mjs` e `sources/saved_html.py`) e sono
+risultati veri come gli altri: contribuiscono anche case nuove, non solo
+l'etichetta. Il filtro si scrive in `browser/targets.json`; se usa `{n}` si
+impagina da sé.
+
+Due guardie, perché entrambi i modi di sbagliare li ho visti davvero:
+
+- **`conferma`** — una parola che deve comparire nel `<title>`. Togliendo a
+  Zillow i sette flag dell'affitto prima di `lau`, la stessa URL risponde con
+  le case in **vendita**: «5943 Rentals» diventa «Homes For Sale». Nel titolo e
+  non in tutta la pagina, perché nella pagina delle vendite la parola
+  "Rentals" c'è comunque, una volta, in un link del menu — cercarla dappertutto
+  avrebbe lasciato passare esattamente la deriva da fermare.
+- **la quota** — se l'elenco filtrato contiene oltre il 90% delle case di
+  quello libero, il sito ha ignorato una sintassi che non conosce e ci ha
+  ridato la ricerca intera. Meglio non sapere la lavanderia che darla a tutti.
+  È questa guardia che rende sicuro **provare** il filtro di StreetEasy senza
+  poterlo verificare da qui: se non morde, il parser lo scarta e lo scrive nel
+  log.
+
+Nel frattempo è saltato fuori che Zillow **non impaginava**: `?page=2` rende la
+pagina 1 identica carattere per carattere, perché Zillow impagina nel percorso
+(`2_p/`). Scaricavamo tre volte la stessa pagina per ricerca — 15 richieste per
+5 pagine di case. Zillow passa da **140 a 514 schede**, con servizi dal 5% al
+75%; fra le case entro i 4000 $ — quelle che vedi davvero — la lavatrice in
+casa va da **147 a 314**.
+
+Trulia resta l'unica senza risposta: risponde 403 a qualunque IP di datacenter,
+quindi solo il Mac può guardarla. `tools/che-filtri.py` cerca il nome del
+filtro in una pagina di ricerca ed è lo strumento con cui chiudere anche quella.
+
 > **Una regola che attraversa tutto questo pezzo**: `sconosciuta` non è
 > `assente`. Il tag non compare quando non sappiamo, il filtro lo dice prima
-> che lo usi, e non si scarta nessuna casa su un silenzio.
+> che lo usi, e non si scarta nessuna casa su un silenzio. Vale anche per le
+> ricerche filtrate: le tre pagine che scarichiamo sono una fetta di 5943, non
+> l'elenco completo, quindi chi non compare nell'elenco filtrato resta
+> `sconosciuta` — mai «senza lavanderia».
 
 ## 7. Stato di avanzamento
 - [x] **Fase 0** — Scaffold monorepo, schema DB, config Flatiron, docs.

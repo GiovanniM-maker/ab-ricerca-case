@@ -47,4 +47,6 @@ export interface Listing {
    * prima di questo campo: in quei casi si ripiega sull'id.
    */
   chiave?: string | null;
+  /** giorno (YYYY-MM-DD) in cui una fonte l'ha mostrata l'ultima volta */
+  visto?: string;
 }

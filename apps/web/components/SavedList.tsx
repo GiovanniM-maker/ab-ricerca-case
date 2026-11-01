@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * La wishlist: da vedere sopra, gia' viste sotto.
+ * La wishlist: da vedere sopra, gia' viste sotto, perse in fondo.
  *
  * Non riusa ListingCard di proposito. Meta' delle case che ti interessavano,
  * col tempo, spariscono dal crawl — le hanno affittate — e di quelle non esiste
@@ -53,7 +53,9 @@ function Riga({
   };
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900">
+    <article
+      className={`overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 ${vivo ? "" : "opacity-70"}`}
+    >
       <button
         type="button"
         onClick={() => setAperta((v) => !v)}
@@ -96,11 +98,6 @@ function Riga({
             {cambiato && (
               <span className={prezzoOra! < s.scheda.price! ? "text-emerald-400" : "text-amber-400"}>
                 era {formatPrice(s.scheda.price)}
-              </span>
-            )}
-            {!vivo && (
-              <span className="rounded-full border border-neutral-700 px-1.5 py-0.5 text-neutral-500">
-                non più in elenco
               </span>
             )}
           </div>
@@ -184,8 +181,12 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
   const filtrate = salvate.filter((s) =>
     conNota === "tutte" ? true : conNota === "con" ? s.nota.trim() : !s.nota.trim()
   );
-  const daVedere = filtrate.filter((s) => s.stato === "da_vedere");
-  const viste = filtrate.filter((s) => s.stato === "vista");
+  const viva = (s: Salvata) => vive.has(rifSalvata(s)) || vive.has(s.listingId);
+  // Le perse — affittate o tolte dal sito — stanno a parte e in fondo: non
+  // sono piu' una scelta possibile, ma restano rileggibili con la loro nota.
+  const daVedere = filtrate.filter((s) => viva(s) && s.stato === "da_vedere");
+  const viste = filtrate.filter((s) => viva(s) && s.stato === "vista");
+  const perse = filtrate.filter((s) => !viva(s));
 
   if (!salvate.length) {
     return (
@@ -198,12 +199,13 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
     );
   }
 
-  const Sezione = ({ titolo, righe }: { titolo: string; righe: Salvata[] }) =>
+  const Sezione = ({ titolo, nota, righe }: { titolo: string; nota?: string; righe: Salvata[] }) =>
     righe.length ? (
       <section className="mb-5">
         <h2 className="mb-2 text-[11px] uppercase tracking-wide text-neutral-500">
           {titolo} ({righe.length})
         </h2>
+        {nota && <p className="-mt-1 mb-2 text-[11px] text-neutral-600">{nota}</p>}
         <div className="space-y-2">
           {righe.map((s) => {
             const rif = rifSalvata(s);
@@ -259,6 +261,11 @@ export default function SavedList({ salvate, vive, onStato, onNota, onRimuovi }:
         <>
           <Sezione titolo="Da vedere" righe={daVedere} />
           <Sezione titolo="Viste" righe={viste} />
+          <Sezione
+            titolo="Perse"
+            nota="Affittate o tolte dal sito: non sono piu' negli annunci."
+            righe={perse}
+          />
         </>
       )}
     </>

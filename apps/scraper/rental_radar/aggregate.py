@@ -167,8 +167,16 @@ def main() -> None:
     # id o chiave -> la chiave con cui la casa sta davvero in by_key
     alias: dict[str, str] = {}
 
+    # Il giorno in cui una casa e' stata vista l'ultima volta su una fonte. Le
+    # case riportate da ieri si tengono il loro: e' cosi' che il frontend
+    # riconosce quelle che nessuno riguarda da troppo e le toglie da "Tutte".
+    oggi = datetime.now(timezone.utc).date().isoformat()
+
     if sopra and OUT.exists():
         vecchio = json.loads(OUT.read_text())
+        # Le schede scritte prima che esistesse "visto" prendono la data del
+        # file che le conteneva: e' l'ultima volta che le sappiamo vive.
+        visto_prima = (vecchio.get("generatedAt") or oggi)[:10]
         # dal NOME del file ("trulia.snapshot.json" -> "trulia"): ricavarla dal
         # contenuto significherebbe non riconoscere una fonte il cui snapshot e'
         # vuoto, e quindi riportarne le case come se non l'avessimo guardata.
@@ -181,7 +189,7 @@ def main() -> None:
         for l in tenute:
             key = l.get("chiave") or l["id"]
             if key not in by_key:
-                by_key[key] = {**l, "_riportata": True}
+                by_key[key] = {**l, "visto": l.get("visto") or visto_prima, "_riportata": True}
                 order.append(key)
                 # Anche sotto l'id, non solo sotto la chiave. Le schede
                 # pubblicate prima che esistesse il campo "chiave" ce l'hanno a
@@ -206,6 +214,7 @@ def main() -> None:
             if esistente:
                 vecchia = by_key[esistente]
                 _merge(vecchia, _to_public(it))
+                vecchia["visto"] = oggi
                 # e da ora in poi la casa ha una chiave vera — ma solo se
                 # nessun altro la sta gia' usando. Due unita' dello stesso
                 # palazzo arrivate separate dal file di ieri hanno lo stesso
@@ -228,6 +237,7 @@ def main() -> None:
                 # Resta None per le schede senza civico (~7%): li' non c'e' che
                 # l'id, e chi legge deve ripiegare su quello.
                 rec["chiave"] = addr
+                rec["visto"] = oggi
                 by_key[key] = rec
                 order.append(key)
                 alias[rec["id"]] = key
