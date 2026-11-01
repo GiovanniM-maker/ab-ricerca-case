@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-01T12:22:37.463172+00:00",
+  "generatedAt": "2026-11-01T12:31:39.936959+00:00",
   "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
-  "count": 2480,
+  "count": 2454,
   "listings": [
     {
       "id": "apartmentadvisor-60664132f8",
@@ -3015,7 +3015,7 @@
       "source": "streeteasy",
       "sourceUrl": "https://streeteasy.com/building/the-capitol-776-sixth-avenue-new_york/17a",
       "title": "Rental open house at 776 Sixth Avenue #17A in NoMad",
-      "price": 4564,
+      "price": 4608,
       "priceFrom": false,
       "currency": "USD",
       "type": null,
@@ -3024,14 +3024,15 @@
       "lat": 40.7448,
       "lng": -73.9909,
       "photos": [
-        "https://photos.zillowstatic.com/fp/d45bad352cc2e1fedfc9a0ce3015742f-p_e.webp",
-        "https://photos.zillowstatic.com/fp/d45bad352cc2e1fedfc9a0ce3015742f-p_e.webp"
+        "https://undefined/fp/3857bc1719244e4eee84251d7557052e-se_medium_500_250.webp",
+        "https://undefined/fp/3857bc1719244e4eee84251d7557052e-se_medium_500_250.webp"
       ],
       "amenities": [],
       "sources": [
         "streeteasy"
       ],
-      "visto": "2026-09-06"
+      "visto": "2026-11-01",
+      "chiave": "rental open house at 776 sixth avenue|17ainnomad"
     },
     {
       "id": "streeteasy-ee11213985",
@@ -19269,6 +19270,216 @@
         "apartments"
       ],
       "chiave": null,
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-4522ca46b3",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-capitol-776-sixth-avenue-new_york/10a",
+      "title": "Rental open house at 776 Sixth Avenue #10A in NoMad",
+      "price": 4473,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7448,
+      "lng": -73.9909,
+      "photos": [
+        "https://undefined/fp/bea8ca3d8f00e79aa98eccd3941c9c77-se_medium_500_250.webp",
+        "https://undefined/fp/bea8ca3d8f00e79aa98eccd3941c9c77-se_medium_500_250.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "rental open house at 776 sixth avenue|10ainnomad",
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-08ec45fe12",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-left-bank/112",
+      "title": "Rental open house at 77 West 15th Street #112 in Flatiron",
+      "price": 4995,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7382,
+      "lng": -73.9958,
+      "photos": [
+        "https://undefined/fp/33b3706568880edd50f3ecf08f9f2b83-se_medium_500_250.webp",
+        "https://undefined/fp/33b3706568880edd50f3ecf08f9f2b83-se_medium_500_250.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "rental open house at 77 west 15 street|112inflatiron",
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-397e091944",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/922-broadway-new_york/530",
+      "title": "15 East 21st Street",
+      "price": 3850,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "studio",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.73985,
+      "lng": -73.98927,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/348a562c05d1e18448cbd01c662ea5f2-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f2400de02b03289c586693d1ea15c50e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1c7b53c7fbd84ea830c60b2f94ac182b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/2d0ca671ab6feba5b92df612cbf79728-p_e.webp",
+        "https://photos.zillowstatic.com/fp/52f21e5c430dfe24576674c603d055f3-p_e.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "15 east 21 street",
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-7a6dea9f47",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/435-park-avenue-south-new_york/2",
+      "title": "435 Park Avenue South",
+      "price": 9500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.744217,
+      "lng": -73.9831,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/9f9e39bb9e3a1ee24d714f139fcc01fc-p_e.webp",
+        "https://photos.zillowstatic.com/fp/48707c9bf96f124b636faae0a66f7189-p_e.webp",
+        "https://photos.zillowstatic.com/fp/b945ee80a1346bfb178593406d27d100-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8e28141cff96f94f8db8ce081529a7cf-p_e.webp",
+        "https://photos.zillowstatic.com/fp/49028f79e15bb9ad169079768c1a3ef1-p_e.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "435 park avenue south",
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-85292b36f8",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-capitol-776-sixth-avenue-new_york/27n",
+      "title": "776 Sixth Avenue",
+      "price": 4378,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "studio",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7448,
+      "lng": -73.9909,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/1bde63e6c3d6015a0984c4d58718cee1-p_e.webp",
+        "https://photos.zillowstatic.com/fp/ae8b82de31e8ea095b0899bb7b8a62db-p_e.webp",
+        "https://photos.zillowstatic.com/fp/34b760da850eaeb96276b7752e7feb6e-p_e.webp",
+        "https://photos.zillowstatic.com/fp/8b35b05dd6fc0f6b90707b73e8bb05ac-p_e.webp",
+        "https://photos.zillowstatic.com/fp/05da434cf5b6c3caf9510304e69272c1-p_e.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "776 sixth avenue",
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-b706da8695",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-lotus-nyc-midtown-east/ph1e",
+      "title": "255 E. 39th Street",
+      "price": 13039,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.748062,
+      "lng": -73.97395,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/a0aaf9e6d8557980fbab3946f1fb501b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/28cfe3321cffd7aed0a846dbc902b774-p_e.webp",
+        "https://photos.zillowstatic.com/fp/279ac166eaf76f7127dec5deefc08091-p_e.webp",
+        "https://photos.zillowstatic.com/fp/01811a6548bace60661119046a0e8b9b-p_e.webp",
+        "https://photos.zillowstatic.com/fp/73ad74f643eff5b40f5db4359d05e767-p_e.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "255 e 39 street",
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-25eacce387",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-vanguard-chelsea/26b",
+      "title": "77 West 24th Street",
+      "price": 10984,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.74369,
+      "lng": -73.99174,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/7e74286a13ba3450c82277a5da6588a5-p_e.webp",
+        "https://photos.zillowstatic.com/fp/1d662afa6bc7425a9094b812b5f0e62c-p_e.webp",
+        "https://photos.zillowstatic.com/fp/f638a1d191c01907ab7b7e098bf5f47d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/a249e15661f6be166d7cec0995ce584d-p_e.webp",
+        "https://photos.zillowstatic.com/fp/94db92c727fd0cd8c629fae9dc0df40e-p_e.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "77 west 24 street",
+      "visto": "2026-11-01"
+    },
+    {
+      "id": "streeteasy-7b6e1f0355",
+      "source": "streeteasy",
+      "sourceUrl": "https://streeteasy.com/building/the-left-bank/304",
+      "title": "77 West 15th Street",
+      "price": 4000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "studio",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.7382,
+      "lng": -73.9958,
+      "photos": [
+        "https://photos.zillowstatic.com/fp/33b3706568880edd50f3ecf08f9f2b83-p_e.webp",
+        "https://photos.zillowstatic.com/fp/c224bd594cb1a6ebaadc5e1238337e70-p_e.webp",
+        "https://photos.zillowstatic.com/fp/adbf0b63cb4312cf69e09b263d57e6e4-p_e.webp",
+        "https://photos.zillowstatic.com/fp/becac9a278a84b33cd40fe56dc191ab9-p_e.webp",
+        "https://photos.zillowstatic.com/fp/43fa2f0e0b2d818afd92483c9aede4b2-p_e.webp"
+      ],
+      "amenities": [],
+      "sources": [
+        "streeteasy"
+      ],
+      "chiave": "77 west 15 street",
       "visto": "2026-11-01"
     },
     {
@@ -35670,12 +35881,12 @@
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/776-6-ave-ny-ny-10001",
       "title": "776 6 Ave",
-      "price": 4441,
-      "priceFrom": true,
+      "price": 8865,
+      "priceFrom": false,
       "currency": "USD",
       "type": "2br",
-      "furnished": false,
-      "sqft": 403,
+      "furnished": null,
+      "sqft": null,
       "lat": 40.7449785,
       "lng": -73.9910454,
       "photos": [
@@ -35692,8 +35903,7 @@
         "washer-dryer"
       ],
       "sources": [
-        "apartmentadvisor",
-        "trulia"
+        "apartmentadvisor"
       ],
       "chiave": "776 6 ave",
       "visto": "2026-11-01"
@@ -63386,788 +63596,6 @@
         "trulia"
       ],
       "chiave": "77 w 24 st|9d",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-5c21ed6e3a",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/77-w-15th-st-304-new-york-ny-10011-2079868918",
-      "title": "77 W  15th St #304",
-      "price": 4000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.738075,
-      "lng": -73.996056,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/33b3706568880edd50f3ecf08f9f2b83-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "77 w 15 st|304",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-845b7ccaa7",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-5e-new-york-ny-10016-443328453",
-      "title": "50 E  28th St #5E",
-      "price": 7555,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 772,
-      "lat": 40.743378,
-      "lng": -73.984474,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "50 e 28 st|5e",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-e9fc5daeb3",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/77-w-24th-st-29h-new-york-ny-10010-2102007182",
-      "title": "77 W  24th St #29H",
-      "price": 6813,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 708,
-      "lat": 40.743576,
-      "lng": -73.99192,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/513e0f70c88f585cf52da99e06708689-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "77 w 24 st|29h",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-95c783032a",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/77-w-24th-st-9b-new-york-ny-10010-465202440",
-      "title": "77 W  24th St #9B",
-      "price": 5526,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": 573,
-      "lat": 40.743576,
-      "lng": -73.99192,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/38d3b14451d490dce6bc115b823dd95b-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "77 w 24 st|9b",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-c4ef45b526",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/11-w-26th-st-2w-new-york-ny-10010-466224260",
-      "title": "11 W  26th St #2W",
-      "price": 7500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.744022,
-      "lng": -73.98953,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/02cd7ab9885ef008dd34dd1b75067dd3-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "11 w 26 st|2w",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-5adbf02ed3",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/121-madison-ave-11a-new-york-ny-10016-2126910215",
-      "title": "121 Madison Ave #11A",
-      "price": 4795,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.745373,
-      "lng": -73.98453,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/7169163f5b43829c8893294b3c93071a-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "121 madison ave|11a",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-d3b97399a2",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/55-w-14th-st-15c-new-york-ny-10011-2106271206",
-      "title": "55 W  14th St #15C",
-      "price": 6500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 921,
-      "lat": 40.737244,
-      "lng": -73.99616,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/a264788745166effe6c55eab4ebdc060-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "55 w 14 st|15c",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-65601604cf",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/43-e-20th-st-2a-new-york-ny-10003-466047715",
-      "title": "43 E  20th St #2A",
-      "price": 17500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": false,
-      "sqft": 2000,
-      "lat": 40.738842,
-      "lng": -73.98843,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/0191fcce6303e58e53046fcb746653c2-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "43 e 20 st|2a",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-4f0d58a4a5",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/60-w-23rd-st-851-new-york-ny-10010-2114400365",
-      "title": "60 W  23rd St #851",
-      "price": 9000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.742363,
-      "lng": -73.992386,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/80213c8b1bced235d3ed4d10913701f0-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "60 w 23 st|851",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-d1b62b189a",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-20j-new-york-ny-10003-2078474841",
-      "title": "1 Union Sq   S #20J",
-      "price": 9320,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.735535,
-      "lng": -73.99189,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/772661b00f13b258c8cb0aa27cc7ce11-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "1 union sq s|20j",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-899573e591",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/60-w-22nd-st-3-new-york-ny-10010-2068573207",
-      "title": "60 W  22nd St #3",
-      "price": 6000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.741867,
-      "lng": -73.993,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/5df0e1210a6bae1323908a0e37441f79-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "60 w 22 st|3",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-94b3feb01a",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-6e-new-york-ny-10016-2102655984",
-      "title": "50 E  28th St #6E",
-      "price": 7720,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 772,
-      "lat": 40.743378,
-      "lng": -73.984474,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "50 e 28 st|6e",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-2dbe2a3966",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/20-e-17th-st-3-new-york-ny-10003-2066822243",
-      "title": "20 E  17th St #3",
-      "price": 25000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": true,
-      "sqft": 2250,
-      "lat": 40.737267,
-      "lng": -73.991234,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/8a3cc5d566f7f13145952fe7f8b594e6-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "20 e 17 st|3",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-bba4748a1f",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-20e-new-york-ny-10016-2099293516",
-      "title": "50 E  28th St #20E",
-      "price": 8540,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 651,
-      "lat": 40.743378,
-      "lng": -73.984474,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/24752005ece9678c4aa5b19f604b137d-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "50 e 28 st|20e",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-cbfb8f4b06",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/35-w-15th-st-15c-new-york-ny-10011-124438268",
-      "title": "35 W  15th St #15C",
-      "price": 28000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": false,
-      "sqft": 2005,
-      "lat": 40.737564,
-      "lng": -73.9946,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/de1579b173058af61c4e486daaf893aa-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "35 w 15 st|15c",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-e55adbba82",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/66-madison-ave-7hi-manhattan-ny-10016-451294232",
-      "title": "66 Madison Ave #7HI",
-      "price": 13000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": false,
-      "sqft": 2000,
-      "lat": 40.743744,
-      "lng": -73.98635,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/7e43e6f733cc8f981165736b4b79c926-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "66 madison ave|7hi",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-23f47a57d8",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/7-e-30th-st-11a-new-york-ny-10016-351730443",
-      "title": "7 E  30th St #11A",
-      "price": 4695,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": 550,
-      "lat": 40.745773,
-      "lng": -73.985535,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/a72b252cb23198d10b7b9209080d5033-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "7 e 30 st|11a",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-78a3503a5c",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/121-madison-ave-7l-new-york-ny-10016-2131985323",
-      "title": "121 Madison Ave #7L",
-      "price": 5995,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.745373,
-      "lng": -73.98453,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/2bbb437ed251306ebc5f9f98acbdaab3-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "121 madison ave|7l",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-9dbd29d41b",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/15-e-21st-st-530-new-york-ny-10010-2095062010",
-      "title": "15 E  21st St #530",
-      "price": 3850,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.739845,
-      "lng": -73.989265,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/348a562c05d1e18448cbd01c662ea5f2-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "15 e 21 st|530",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-6790eae7c7",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/800-avenue-of-the-americas-31g-new-york-ny-10001-2081424293",
-      "title": "800 Avenue of the Americas #31G",
-      "price": 4803,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": 446,
-      "lat": 40.745342,
-      "lng": -73.990486,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/41a55924a8842d960f53a660702aeae1-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "800 avenue of the americas|31g",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-f0de3b73ac",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/1200-broadway-3g-new-york-ny-10001-72516217",
-      "title": "1200 Broadway #3G",
-      "price": 12999,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": 2000,
-      "lat": 40.74608,
-      "lng": -73.98814,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/61ed7e27219c9672d587713d2fa5afc9-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "1200 broadway|3g",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-99404d3bc3",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/7-e-14th-st-1409-new-york-ny-10003-72516355",
-      "title": "7 E  14th St #1409",
-      "price": 7500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.73585,
-      "lng": -73.99251,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/fdde91221fa7a4a4634c35e95f9947dc-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "7 e 14 st|1409",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-d007656f18",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-7e-new-york-ny-10016-2102656005",
-      "title": "50 E  28th St #7E",
-      "price": 7730,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 772,
-      "lat": 40.743378,
-      "lng": -73.984474,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "50 e 28 st|7e",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-1777dd1686",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/2-e-30th-st-1a-new-york-ny-10016-2120205362",
-      "title": "2 E  30th St #1A",
-      "price": 3100,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.74552,
-      "lng": -73.98603,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/9dd1d6a0b11402b7149f3026bee914cd-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "2 e 30 st|1a",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-10ef194b28",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-2g-new-york-ny-10016-2099293526",
-      "title": "50 E  28th St #2G",
-      "price": 5175,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": 479,
-      "lat": 40.743378,
-      "lng": -73.984474,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "50 e 28 st|2g",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-862114eb69",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-14k-new-york-ny-10003-2127594650",
-      "title": "1 Union Sq   S #14K",
-      "price": 8150,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.735535,
-      "lng": -73.99189,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/b6d46746e49e938d321170cf3ca04ebe-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "1 union sq s|14k",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-664d12acf6",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/800-avenue-of-the-americas-28f-new-york-ny-10001-343031063",
-      "title": "800 Avenue Of The Americas #28F",
-      "price": 5700,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 580,
-      "lat": 40.745342,
-      "lng": -73.990486,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/44c213b4bfb704decb95a74770b08aa3-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "800 avenue of the americas|28f",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-2c0b1ef9c2",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/109-e-29th-st-3b-new-york-ny-10016-349064402",
-      "title": "109 E  29th St #3B",
-      "price": 6200,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.74383,
-      "lng": -73.98278,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/271927c901a446759f049f3e641edf53-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "109 e 29 st|3b",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-f9ce314789",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/10-madison-sq-w-8g-new-york-ny-10010-2090767661",
-      "title": "10 Madison Sq   W #8G",
-      "price": 32500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": false,
-      "sqft": 2354,
-      "lat": 40.742687,
-      "lng": -73.98934,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/62a0fd8a5f25005d452ba7a66033d35d-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "10 madison sq w|8g",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-4512e26a55",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/404-park-ave-s-2a-new-york-ny-10016-124437486",
-      "title": "404 Park Ave S #2A",
-      "price": 21500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": true,
-      "sqft": 1621,
-      "lat": 40.74362,
-      "lng": -73.98423,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/ff3f04f7f9bd357c6cd4ebdb38f6b638-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "404 park ave s|2a",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-a3ec0c9a13",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/15-union-sq-w-31-new-york-ny-10003-244701836",
-      "title": "15 Union Sq W #31",
-      "price": 23500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": 2200,
-      "lat": 40.735886,
-      "lng": -73.9917,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/d947266d78606d121b1f2c954e2a9b82-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "15 union sq w|31",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-52a4e8cfde",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/109-e-29th-st-2f-new-york-ny-10016-2108126464",
-      "title": "109 E  29th St #2F",
-      "price": 6050,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.74383,
-      "lng": -73.98278,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/c34fe175870c14d5aa861e44f45e32e0-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "109 e 29 st|2f",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-c1ef50b1c3",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/45-e-30th-st-14a-new-york-ny-10016-80006328",
-      "title": "45 E  30th St #14A",
-      "price": 11500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": 1303,
-      "lat": 40.744987,
-      "lng": -73.9836,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/08fb9d25b5b43731cc6d3486bab067f4-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "45 e 30 st|14a",
-      "visto": "2026-11-01"
-    },
-    {
-      "id": "trulia-63df5d4604",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/800-6th-ave-29e-new-york-ny-10001-2102407311",
-      "title": "800 6th Ave #29E",
-      "price": 6200,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 660,
-      "lat": 40.745342,
-      "lng": -73.990486,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/3ed49f84d327128a99d632740e09e1fb-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "800 6 ave|29e",
       "visto": "2026-11-01"
     }
   ]
