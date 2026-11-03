@@ -38,7 +38,10 @@ const PORT = Number(process.env.CDP_PORT || 9222);
 const SENZA_UMANO = process.env.SENZA_UMANO === "1";
 // VERIFICA_A_TOCCO=1: al blocco la verifica la fa una persona dal telefono.
 const VERIFICA_A_TOCCO = process.env.VERIFICA_A_TOCCO === "1";
-const MAX_VERIFICHE = 3; // per fonte: oltre, tre tocchi non sono bastati
+// Un tocco per fonte a giro (Giovanni 03/11: tre verifiche Zillow in pochi minuti).
+// Zillow richiede la verifica ogni ~6 pagine: dopo la prima, ci si ferma e le
+// pagine mancanti restano coi dati di ieri (--parziali).
+const MAX_VERIFICHE = 1;
 const PROFILE = join(HERE, ".chrome-profile");
 
 // Chrome non sta sempre in /Applications: puo' essere nella cartella utente,
