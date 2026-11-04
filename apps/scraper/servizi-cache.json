@@ -1623,6 +1623,17 @@
 ],
 "il": "2026-09-20"
 },
+"apartmentadvisor:113-e-102-st-ny-ny-10029": {
+"a": [
+"yard"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1.5,
+"disponibile": "2026-11-04",
+"pubblicata": "2026-11-04"
+}
+},
 "apartmentadvisor:113-e-31-st-ny-ny-10016": {
 "a": [],
 "il": "2026-09-17"
@@ -7118,6 +7129,18 @@
 ],
 "il": "2026-09-16"
 },
+"apartmentadvisor:200-e-81-st-manhattan-ny-10028": {
+"a": [
+"dishwasher",
+"elevator"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-06",
+"pubblicata": "2026-11-04"
+}
+},
 "apartmentadvisor:200-e-81-st-ny-city-ny-10028": {
 "a": [
 "dishwasher",
@@ -9600,6 +9623,24 @@
 "unita:lavanderia-edificio"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:230-e-20-st-ny-ny-10003": {
+"a": [
+"balcony",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-04"
+}
 },
 "apartmentadvisor:230-e-63-st-ny-ny-10065": {
 "a": [
@@ -16714,6 +16755,18 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:398-lafayette-ave-brooklyn-ny-11238": {
+"a": [
+"hardwood-floors",
+"patio"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-04"
+}
+},
 "apartmentadvisor:398-undisclosed-address-manhattan-ny-10022": {
 "a": [],
 "il": "2026-11-01"
@@ -21122,6 +21175,21 @@
 ],
 "il": "2026-09-16"
 },
+"apartmentadvisor:52-franklin-st-jersey-city-nj-07307": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-04",
+"pubblicata": "2026-10-28"
+}
+},
 "apartmentadvisor:52-havemeyer-st-ny-ny-11211": {
 "a": [
 "dishwasher",
@@ -24484,6 +24552,26 @@
 "washer-dryer-in-unit"
 ],
 "il": "2026-10-14"
+},
+"apartmentadvisor:75-w-end-ave-manhattan-ny-10023": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"parking",
+"pool",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-04",
+"pubblicata": "2026-11-04"
+}
 },
 "apartmentadvisor:75-w-end-ave-ny-ny-10013": {
 "a": [
@@ -28267,6 +28355,17 @@
 ],
 "il": "2026-10-25"
 },
+"craigslist:3DTDMGYPD9DPfGGz6nfEnh": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-04",
+"pubblicata": "2026-11-04"
+}
+},
 "craigslist:3E5JtttSPP8kzq6okiF6TT": {
 "a": [
 "w/d in unit"
@@ -29889,6 +29988,17 @@
 "no laundry on site"
 ],
 "il": "2026-09-24"
+},
+"craigslist:53bJRGUgk3Bh5188wvvwNF": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 2,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-04"
+}
 },
 "craigslist:54RTwLtqSvah98rRspM9MX": {
 "a": [
@@ -39843,6 +39953,17 @@
 ],
 "il": "2026-09-16"
 },
+"craigslist:gL1uEqhao5gydG1ttpJfe6": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-04",
+"pubblicata": "2026-11-04"
+}
+},
 "craigslist:gLeyTkie8BFk3x2n6JtPpf": {
 "a": [
 "laundry in bldg"
@@ -48489,6 +48610,16 @@
 ],
 "il": "2026-10-11"
 },
+"craigslist:qyqbCZu28m36RzKvn7nRq5": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-04"
+}
+},
 "craigslist:qzHJqXPA36qZ5x4QJuQX6T": {
 "a": [
 "laundry in bldg"
@@ -52342,6 +52473,16 @@
 ],
 "il": "2026-09-14"
 },
+"craigslist:vVWK7UVq2LQfFamAN4zAEs": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-04"
+}
+},
 "craigslist:vWHcFNcCx19jfNKHRkEhrm": {
 "a": [
 "laundry in bldg"
@@ -52556,6 +52697,17 @@
 "laundry in bldg"
 ],
 "il": "2026-10-18"
+},
+"craigslist:vi7m2ZU1SLoY8Sqv6Pa4V9": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-04",
+"pubblicata": "2026-11-04"
+}
 },
 "craigslist:viN2cheZ98NZj4vGBf2Cgd": {
 "a": [
@@ -53248,6 +53400,16 @@
 "no laundry on site"
 ],
 "il": "2026-10-23"
+},
+"craigslist:wT7DJ6qViHQC77FbkKgNuR": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-04",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-04"
+}
 },
 "craigslist:wTDRGKrohnh2CJCgxJv7M6": {
 "a": [
