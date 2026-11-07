@@ -351,9 +351,15 @@
 "dishwasher",
 "elevator",
 "hardwood-floors",
-"patio"
+"patio",
+"unita:lavanderia-edificio"
 ],
-"il": "2026-09-19"
+"il": "2026-11-07",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-30",
+"pubblicata": "2026-11-07"
+}
 },
 "apartmentadvisor:10-e-13-st-ny-city-ny-10003": {
 "a": [
@@ -2661,6 +2667,23 @@
 "dishwasher"
 ],
 "il": "2026-09-24"
+},
+"apartmentadvisor:127-4-ave-manhattan-ny-10003": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"fitness-center",
+"hardwood-floors",
+"patio",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-20",
+"pubblicata": "2026-11-07"
+}
 },
 "apartmentadvisor:127-4-ave-ny-city-ny-10003": {
 "a": [
@@ -6318,6 +6341,23 @@
 "cats"
 ],
 "il": "2026-10-01"
+},
+"apartmentadvisor:179-wyckoff-st-brooklyn-ny-11217": {
+"a": [
+"balcony",
+"dishwasher",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"yard",
+"unita:lavatrice"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-07",
+"pubblicata": "2026-11-07"
+}
 },
 "apartmentadvisor:1790-3-ave-ny-ny-10029": {
 "a": [],
@@ -13865,6 +13905,24 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:303-e-49-st-manhattan-ny-10017": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-07",
+"pubblicata": "2026-11-07"
+}
+},
 "apartmentadvisor:303-e-49-st-ny-ny-10022": {
 "a": [
 "balcony",
@@ -16251,6 +16309,15 @@
 "apartmentadvisor:342-e-78-st-ny-ny-10075": {
 "a": [],
 "il": "2026-11-01"
+},
+"apartmentadvisor:342-leonard-st-brooklyn-ny-11211": {
+"a": [],
+"il": "2026-11-07",
+"x": {
+"baths": 0.5,
+"disponibile": "2026-11-07",
+"pubblicata": "2026-11-07"
+}
 },
 "apartmentadvisor:342-w-21-st-ny-ny-10011": {
 "a": [
@@ -19949,9 +20016,15 @@
 "a": [
 "dishwasher",
 "elevator",
-"hardwood-floors"
+"hardwood-floors",
+"unita:lavanderia-edificio"
 ],
-"il": "2026-09-15"
+"il": "2026-11-07",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-12",
+"pubblicata": "2026-11-07"
+}
 },
 "apartmentadvisor:440-e-85-st-ny-city-ny-10028": {
 "a": [
@@ -27310,6 +27383,17 @@
 "balcony"
 ],
 "il": "2026-10-12"
+},
+"apartmentadvisor:88-e-3-st-ny-ny-10003": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-15",
+"pubblicata": "2026-11-07"
+}
 },
 "apartmentadvisor:88-greenwich-st-ny-ny-10006": {
 "a": [
@@ -44284,6 +44368,17 @@
 ],
 "il": "2026-10-23"
 },
+"craigslist:https://www.craigslist.org/view/d/jersey-city-spacious-bed-bath-condo-at/kpKAQnfa8RGBT_Xkg-591g": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-07",
+"pubblicata": "2026-11-07"
+}
+},
 "craigslist:https://www.craigslist.org/view/d/jersey-city-updated-bedroom-heart-of/pq-HkDzV8RGbtZZszugr4Q": {
 "a": [
 "w/d in unit"
@@ -45734,6 +45829,17 @@
 "laundry in bldg"
 ],
 "il": "2026-10-20"
+},
+"craigslist:irTZbc1JqR454gKibE1mTq": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-09",
+"pubblicata": "2026-11-07"
+}
 },
 "craigslist:ircYf7vcdeudZCmRMJ5pHu": {
 "a": [
@@ -49948,6 +50054,17 @@
 "laundry in bldg"
 ],
 "il": "2026-10-18"
+},
+"craigslist:oTScAymJkPenhjFbmPZHQA": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-07"
+}
 },
 "craigslist:oTaAcKJ7afvuEsDDgrGQbW": {
 "a": [
@@ -56808,6 +56925,16 @@
 "w/d in unit"
 ],
 "il": "2026-10-26"
+},
+"craigslist:voNUAwDaeEWXc1UAQqnfkd": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-07",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-07"
+}
 },
 "craigslist:voqXLa8VkF494dLyyEryQC": {
 "a": [
