@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-08T06:34:00.818282+00:00",
+  "generatedAt": "2026-11-08T13:02:50.728024+00:00",
   "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
-  "count": 2790,
+  "count": 2797,
   "listings": [
     {
       "id": "apartmentadvisor-60664132f8",
@@ -3608,7 +3608,7 @@
         "trulia"
       ],
       "chiave": "77 west 24 street",
-      "visto": "2026-11-07",
+      "visto": "2026-11-08",
       "chiaviVecchie": [
         "77 w 24 st|26b",
         "trulia-6b12cc5e7b",
@@ -6923,7 +6923,7 @@
         "trulia"
       ],
       "chiave": "45 east 30 street",
-      "visto": "2026-11-07",
+      "visto": "2026-11-08",
       "chiaviVecchie": [
         "45 e 30 st|14a",
         "trulia-c1ef50b1c3",
@@ -13068,7 +13068,7 @@
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/10-hanover-square-new-york-ny/1wxy6j5/",
       "title": "10 Hanover Square",
-      "price": 3899,
+      "price": 4027,
       "priceFrom": true,
       "currency": "USD",
       "type": "studio",
@@ -13102,8 +13102,8 @@
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/95-wall-new-york-ny/b815kt8/",
       "title": "95 Wall",
-      "price": 3997,
-      "priceFrom": true,
+      "price": 4145,
+      "priceFrom": false,
       "currency": "USD",
       "type": null,
       "furnished": null,
@@ -13301,7 +13301,7 @@
         "trulia"
       ],
       "chiave": "15 east 21 street",
-      "visto": "2026-11-07",
+      "visto": "2026-11-08",
       "chiaviVecchie": [
         "15 e 21 st|530",
         "trulia-9dbd29d41b",
@@ -14111,8 +14111,8 @@
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/21-chelsea-new-york-ny/d10ll7l/",
       "title": "21 Chelsea",
-      "price": 4785,
-      "priceFrom": true,
+      "price": 4923,
+      "priceFrom": false,
       "currency": "USD",
       "type": null,
       "furnished": null,
@@ -14142,8 +14142,8 @@
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/view-34-new-york-ny/938hg25/",
       "title": "View 34",
-      "price": 3849,
-      "priceFrom": true,
+      "price": 4012,
+      "priceFrom": false,
       "currency": "USD",
       "type": null,
       "furnished": null,
@@ -27523,6 +27523,673 @@
       "visto": "2026-11-08"
     },
     {
+      "id": "apartments-640bbaf0cf",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/72-willoughby-st-brooklyn-ny-unit-si-fl2-id1977/0s9x8z1/",
+      "title": "72 Willoughby St Unit SI FL2-ID1977",
+      "price": 4070,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.69208,
+      "lng": -73.98583,
+      "photos": [
+        "https://images1.apartments.com/i2/0JFlm5wojbwQIG6txLQspmEly2syYOEp9G_ctBcPSRQ/118/72-willoughby-st-unit-si-fl2-id1977-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "72 willoughby st|unitsifl2id1977",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-b14d61c063",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/325-lafayette-ave-brooklyn-ny-unit-si-fl4-id1979/clqekzg/",
+      "title": "325 Lafayette Ave Unit SI FL4-ID1979",
+      "price": 4820,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6888,
+      "lng": -73.96258,
+      "photos": [
+        "https://images1.apartments.com/i2/oP8U-faEzIHsDJ4utNfOkz_qCUrgRgdhuK5ycUAkgLY/118/325-lafayette-ave-unit-si-fl4-id1979-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "325 lafayette ave|unitsifl4id1979",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-4fde5db943",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/756-union-st-brooklyn-ny-unit-si-id1032142p/y9y2r6r/",
+      "title": "756 Union St Unit SI ID1032142P",
+      "price": 6631,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.67518,
+      "lng": -73.97791,
+      "photos": [
+        "https://images1.apartments.com/i2/9lGpQa6vMtZJJc-F00NTUrYAjI_WFg5Np33GtsQT_jA/118/756-union-st-unit-si-id1032142p-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "756 union st|unitsiid1032142p",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-479798ecaa",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/545-vanderbilt-ave-brooklyn-ny-unit-si-fl27-id1961/xfmbj6q/",
+      "title": "545 Vanderbilt Ave Unit SI FL27-ID1961",
+      "price": 6660,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.68245,
+      "lng": -73.96826,
+      "photos": [
+        "https://images1.apartments.com/i2/LflxwmAv_EnyA6VrowixagTKasS7Qx30LoQnh8KmEEk/118/545-vanderbilt-ave-unit-si-fl27-id1961-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "545 vanderbilt ave|unitsifl27id1961",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-2d5842b589",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/159-boerum-st-brooklyn-ny-unit-si-fl14-id2013/4dbz5sh/",
+      "title": "159 Boerum St Unit SI FL14-ID2013",
+      "price": 5120,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70603,
+      "lng": -73.94209,
+      "photos": [
+        "https://images1.apartments.com/i2/ltuSC3S9yGlWH1B-ArtqKyJk8towf1KlDerf0OppCQo/118/159-boerum-st-unit-si-fl14-id2013-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "159 boerum st|unitsifl14id2013",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-31fc3e9652",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/159-boerum-st-brooklyn-ny-unit-si-fl15-id2012/4ep922l/",
+      "title": "159 Boerum St Unit SI FL15-ID2012",
+      "price": 5170,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70603,
+      "lng": -73.94209,
+      "photos": [
+        "https://images1.apartments.com/i2/2CrRQyKCW9xFKaS3VokAo_76Sr1BYCUhqT2T_qux19E/118/159-boerum-st-unit-si-fl15-id2012-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "159 boerum st|unitsifl15id2012",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-8c9c4bef60",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/478-kent-ave-brooklyn-ny-unit-si-fl5-id2129/p467yzs/",
+      "title": "478 Kent Ave Unit SI FL5-ID2129",
+      "price": 4980,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70753,
+      "lng": -73.96886,
+      "photos": [
+        "https://images1.apartments.com/i2/7YeKVGOQ7Kn0uTi_MzHphAeGT8CmDlfDmLh1dm4xcFM/118/478-kent-ave-unit-si-fl5-id2129-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "478 kent ave|unitsifl5id2129",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-eefbfe9785",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/478-kent-ave-brooklyn-ny-unit-si-fl6-id2138/63rqsvv/",
+      "title": "478 Kent Ave Unit SI FL6-ID2138",
+      "price": 8680,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70753,
+      "lng": -73.96886,
+      "photos": [
+        "https://images1.apartments.com/i2/ip8GMTYE3xvYiJR6cAshUY91LX1Gjlx8hyyFNQP-zwM/118/478-kent-ave-unit-si-fl6-id2138-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "478 kent ave|unitsifl6id2138",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-737f235741",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/478-kent-ave-brooklyn-ny-unit-si-fl6-id2133/m9k5c6k/",
+      "title": "478 Kent Ave Unit SI FL6-ID2133",
+      "price": 6410,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70753,
+      "lng": -73.96886,
+      "photos": [
+        "https://images1.apartments.com/i2/I43E81G_jVa_IIssKcqo49MaolED_5yfdK5KIgIKZiY/118/478-kent-ave-unit-si-fl6-id2133-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "478 kent ave|unitsifl6id2133",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-c564333aa9",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/478-kent-ave-brooklyn-ny-unit-si-fl7-id2135/zd4mpzz/",
+      "title": "478 Kent Ave Unit SI FL7-ID2135",
+      "price": 6880,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70753,
+      "lng": -73.96886,
+      "photos": [
+        "https://images1.apartments.com/i2/sha7XX3jl7e4mkRurV3bMAnjYVd0vkaWINuUvkvEQHo/118/478-kent-ave-unit-si-fl7-id2135-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "478 kent ave|unitsifl7id2135",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-6a2a76169d",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/482-kent-ave-brooklyn-ny-unit-si-fl15-id2130/n3sy1hn/",
+      "title": "482 Kent Ave Unit SI FL15-ID2130",
+      "price": 4730,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70749,
+      "lng": -73.96898,
+      "photos": [
+        "https://images1.apartments.com/i2/DETrBI3Ca9TGElOKJdsebiZsrCkuFhVPr0G79mP8VaU/118/482-kent-ave-unit-si-fl15-id2130-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "482 kent ave|unitsifl15id2130",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-8e4d2c5a1b",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/482-kent-ave-brooklyn-ny-unit-si-fl5-id2137/y47gyss/",
+      "title": "482 Kent Ave Unit SI FL5-ID2137",
+      "price": 8160,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70749,
+      "lng": -73.96898,
+      "photos": [
+        "https://images1.apartments.com/i2/WrIdQiWmGKTtJoHFqD0vQZPltvrudO2G6829k12HmcI/118/482-kent-ave-unit-si-fl5-id2137-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "482 kent ave|unitsifl5id2137",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-3cbcab9c0c",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/482-kent-ave-brooklyn-ny-unit-si-fl16-id2132/skwk0e5/",
+      "title": "482 Kent Ave Unit SI FL16-ID2132",
+      "price": 4900,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70749,
+      "lng": -73.96898,
+      "photos": [
+        "https://images1.apartments.com/i2/v56Dcji2uIfG4FpppL2B9GQ2UlGaN43qbdka9jN5qko/118/482-kent-ave-unit-si-fl16-id2132-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "482 kent ave|unitsifl16id2132",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-8d979a479c",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/482-kent-ave-brooklyn-ny-unit-si-fl6-id2134/4v0s8ck/",
+      "title": "482 Kent Ave Unit SI FL6-ID2134",
+      "price": 8210,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70749,
+      "lng": -73.96898,
+      "photos": [
+        "https://images1.apartments.com/i2/R3O8Yy0ILH4vFP1jpPjkwgj4MsJqGJjYefunFAgku_c/118/482-kent-ave-unit-si-fl6-id2134-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "482 kent ave|unitsifl6id2134",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-fc0139749c",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/478-kent-ave-brooklyn-ny-unit-si-fl6-id2131/evp40wm/",
+      "title": "478 Kent Ave Unit SI FL6-ID2131",
+      "price": 5120,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70753,
+      "lng": -73.96886,
+      "photos": [
+        "https://images1.apartments.com/i2/iVLpuzvjj0wlQrdt5IhQCMoBUTui_SXyfaswUJqgoaU/118/478-kent-ave-unit-si-fl6-id2131-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "478 kent ave|unitsifl6id2131",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-8f11edc7be",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/135-york-st-brooklyn-ny-unit-si-fl6-id2166/lp6erce/",
+      "title": "135 York St Unit SI FL6-ID2166",
+      "price": 8040,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70192,
+      "lng": -73.98536,
+      "photos": [
+        "https://images1.apartments.com/i2/XGrIhTimzGsLCRwf4IWC75-PqoCnu_0rjxNoyNpFCJs/118/135-york-st-unit-si-fl6-id2166-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "135 york st|unitsifl6id2166",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-9d8d97bb9f",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/72-willoughby-st-brooklyn-ny-unit-si-fl3-id2167/f7jfj3s/",
+      "title": "72 Willoughby St Unit SI FL3-ID2167",
+      "price": 4670,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.69208,
+      "lng": -73.98583,
+      "photos": [
+        "https://images1.apartments.com/i2/IqSO3AvkGrWBpEMKrAldJzjnXG_c8OgrTOm6_UHDHlw/118/72-willoughby-st-unit-si-fl3-id2167-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "72 willoughby st|unitsifl3id2167",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-76249e3ae1",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/151-s-elliott-pl-brooklyn-ny-unit-si-fl7-id2176/wrkd2vj/",
+      "title": "151 S Elliott Pl Unit SI FL7-ID2176",
+      "price": 4860,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.68498,
+      "lng": -73.9751,
+      "photos": [
+        "https://images1.apartments.com/i2/ntY6OlONn6A0OM_n4_SSGRyc94gLu9WjSAYn5WIw804/118/151-s-elliott-pl-unit-si-fl7-id2176-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "151 s elliott pl|unitsifl7id2176",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-0907e17d30",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/151-s-elliott-pl-brooklyn-ny-unit-si-fl2-id2175/5ktg87p/",
+      "title": "151 S Elliott Pl Unit SI FL2-ID2175",
+      "price": 7870,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.68498,
+      "lng": -73.9751,
+      "photos": [
+        "https://images1.apartments.com/i2/H4WbbHu1wOOKFHpvkJNMDCLYxX1p3s8f82eJSSDR8wA/118/151-s-elliott-pl-unit-si-fl2-id2175-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "151 s elliott pl|unitsifl2id2175",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-201e438349",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/525-pacific-st-brooklyn-ny-unit-si-fl2-id2183/pj6w66t/",
+      "title": "525 Pacific St Unit SI FL2-ID2183",
+      "price": 6760,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.68479,
+      "lng": -73.98028,
+      "photos": [
+        "https://images1.apartments.com/i2/e5_G8i1vSG-aKLU3YoVrpy4lkxD4jL0o6p-Ng9MbVGo/118/525-pacific-st-unit-si-fl2-id2183-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "525 pacific st|unitsifl2id2183",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-b4f4da4e53",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/525-pacific-st-brooklyn-ny-unit-si-fl3-id2184/6k8d52v/",
+      "title": "525 Pacific St Unit SI FL3-ID2184",
+      "price": 7010,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.68479,
+      "lng": -73.98028,
+      "photos": [
+        "https://images1.apartments.com/i2/hLTZyf2JY3TdNXSmr_2rdmR6x0rVeJQk7eR6Wvvdyyc/118/525-pacific-st-unit-si-fl3-id2184-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "525 pacific st|unitsifl3id2184",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-5a6475f8e2",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/218-front-st-brooklyn-ny-unit-si-fl5-id2186/26r8118/",
+      "title": "218 Front St Unit SI FL5-ID2186",
+      "price": 6460,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70218,
+      "lng": -73.98339,
+      "photos": [
+        "https://images1.apartments.com/i2/T69HlebxK-mDVrE1GWthv9Cua86_Q4UCt-dG9tlyBnw/118/218-front-st-unit-si-fl5-id2186-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "218 front st|unitsifl5id2186",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-4ce0f8799a",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/218-front-st-brooklyn-ny-unit-si-fl6-id2187/24h83j9/",
+      "title": "218 Front St Unit SI FL6-ID2187",
+      "price": 6580,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.70218,
+      "lng": -73.98339,
+      "photos": [
+        "https://images1.apartments.com/i2/ifpyJCxNwkdrrtFLZ355GMeT_FGhrTUD8F0SCxq9idY/118/218-front-st-unit-si-fl6-id2187-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "218 front st|unitsifl6id2187",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-8876300a30",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/16-west-st-brooklyn-ny-unit-si-fl2-id2196/0e666m1/",
+      "title": "16 West St Unit SI FL2-ID2196",
+      "price": 6090,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.72655,
+      "lng": -73.9586,
+      "photos": [
+        "https://images1.apartments.com/i2/TcJUvGVXYoZIJiQxhsWWfZ5Jy-RZW6R1e61WxZfxd20/118/16-west-st-unit-si-fl2-id2196-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "16 west st|unitsifl2id2196",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-233ad0dab5",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/88-schermerhorn-st-brooklyn-ny-unit-si-fl4-id2153/nn79fxq/",
+      "title": "88 Schermerhorn St Unit SI FL4-ID2153",
+      "price": 9400,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.69034,
+      "lng": -73.99042,
+      "photos": [
+        "https://images1.apartments.com/i2/n-3SjdcreD8qXVT31C5sO3iYyTv3VEBw24MCLOUNuWc/118/88-schermerhorn-st-unit-si-fl4-id2153-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "88 schermerhorn st|unitsifl4id2153",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-04e32a9326",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/16-west-st-brooklyn-ny-unit-si-fl2-id2195/nhl9c5m/",
+      "title": "16 West St Unit SI FL2-ID2195",
+      "price": 6310,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.72655,
+      "lng": -73.9586,
+      "photos": [
+        "https://images1.apartments.com/i2/PFCvteSquW8s6fs2FDcje3GAazg-OJmWzdr2G1y_8_0/118/16-west-st-unit-si-fl2-id2195-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "16 west st|unitsifl2id2195",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-2f53e705f2",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/655-union-st-brooklyn-ny-unit-si-fl15-id2198/pb3smss/",
+      "title": "655 Union St Unit SI FL15-ID2198",
+      "price": 9740,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.67785,
+      "lng": -73.98421,
+      "photos": [
+        "https://images1.apartments.com/i2/D0VyM0yelxRrpEKQUb3I7XWwSMAGZxxpJdPqiiz_WUg/118/655-union-st-unit-si-fl15-id2198-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "655 union st|unitsifl15id2198",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-3b630c9b1e",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/655-union-st-brooklyn-ny-unit-si-fl9-id2197/k0q1me8/",
+      "title": "655 Union St Unit SI FL9-ID2197",
+      "price": 5990,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.67785,
+      "lng": -73.98421,
+      "photos": [
+        "https://images1.apartments.com/i2/mOxN9VcVgTbe1S9T7iznDEHKN5JUTVT2iKgfT2mL6A4/118/655-union-st-unit-si-fl9-id2197-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "655 union st|unitsifl9id2197",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-fa897432ad",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/544-carroll-st-brooklyn-ny-unit-si-fl12-id2202/j3tf524/",
+      "title": "544 Carroll St Unit SI FL12-ID2202",
+      "price": 8730,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6762,
+      "lng": -73.9843,
+      "photos": [
+        "https://images1.apartments.com/i2/ikxHn5sa8HYlD5VGU4lCy7fwMD_C1Xg8ERoOvmhA-gc/118/544-carroll-st-unit-si-fl12-id2202-brooklyn-ny-building-photo.jpg?p=1"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": "544 carroll st|unitsifl12id2202",
+      "visto": "2026-11-08"
+    },
+    {
       "id": "apartments-f41d1c2dd2",
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/150-lawrence-st-brooklyn-ny-unit-si-fl16-id2213/yhyxxzr/",
@@ -28332,696 +28999,6 @@
       "visto": "2026-11-08"
     },
     {
-      "id": "apartments-5c06322189",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/241-atlantic-ave-brooklyn-ny-unit-si-fl10-id734/dlqw8zl/",
-      "title": "241 Atlantic Ave Unit SI FL10-ID734",
-      "price": 7930,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68934,
-      "lng": -73.99118,
-      "photos": [
-        "https://images1.apartments.com/i2/Q0wmjSC-UvXLXHfUA_PvoyBTGMzITxG8H3Dp0FAEbqs/118/241-atlantic-ave-unit-si-fl10-id734-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "241 atlantic ave|unitsifl10id734",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-3562619715",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/472-smith-st-brooklyn-ny-unit-si-fl2-id759/ss4tk14/",
-      "title": "472 Smith St Unit SI FL2-ID759",
-      "price": 5510,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.67502,
-      "lng": -73.99789,
-      "photos": [
-        "https://images1.apartments.com/i2/zY1Jnk8WWdS6fegKlMPK1Ha2221x7RLaOXggVAqqEGc/118/472-smith-st-unit-si-fl2-id759-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "472 smith st|unitsifl2id759",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-7a19c48d5c",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/141-joralemon-st-brooklyn-ny-unit-si-fl4-id794/zy37dhw/",
-      "title": "141 Joralemon St Unit SI FL4-ID794",
-      "price": 9130,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69319,
-      "lng": -73.99395,
-      "photos": [
-        "https://images1.apartments.com/i2/RMoruStwclCiOILtNu5Xo7FSdat3avb41RbxeoXcvgY/118/141-joralemon-st-unit-si-fl4-id794-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "141 joralemon st|unitsifl4id794",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-4cb61599f9",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/241-atlantic-ave-brooklyn-ny-unit-si-fl7-id879/1kxnh64/",
-      "title": "241 Atlantic Ave Unit SI FL7-ID879",
-      "price": 6220,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68934,
-      "lng": -73.99118,
-      "photos": [
-        "https://images1.apartments.com/i2/gvBYcqwLJrhaMhLPcQIZIBzsZx8vtqZS76KOr56_lkA/118/241-atlantic-ave-unit-si-fl7-id879-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "241 atlantic ave|unitsifl7id879",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-e1c93ddddb",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/710-degraw-st-brooklyn-ny-unit-si-fl2-id908/gpekgkx/",
-      "title": "710 Degraw St Unit SI FL2-ID908",
-      "price": 8520,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6777,
-      "lng": -73.98027,
-      "photos": [
-        "https://images1.apartments.com/i2/RbT2h1UCGynPf9APN4OwFoVHlLWyNKz4T38rQOQf7bA/118/710-degraw-st-unit-si-fl2-id908-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "710 degraw st|unitsifl2id908",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-c200e09479",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/145-henry-st-brooklyn-ny-unit-si-fl4-id910/hzttg30/",
-      "title": "145 Henry St Unit SI FL4-ID910",
-      "price": 10050,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69637,
-      "lng": -73.99348,
-      "photos": [
-        "https://images1.apartments.com/i2/vuRfl9EWoMmjV1OlrC6Xo0LDYQ9XUE4ryZQXEMLQmIQ/118/145-henry-st-unit-si-fl4-id910-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "145 henry st|unitsifl4id910",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-64a213851e",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/516-lorimer-st-brooklyn-ny-unit-si-fl2-id797/z3q4dzy/",
-      "title": "516 Lorimer St Unit SI FL2-ID797",
-      "price": 7580,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.71237,
-      "lng": -73.9488,
-      "photos": [
-        "https://images1.apartments.com/i2/ikCMxbecKShjMdLsamnbW3EvcXaoxDoT0P4J-hMtZo8/118/516-lorimer-st-unit-si-fl2-id797-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "516 lorimer st|unitsifl2id797",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-ef43624e4e",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/527-dean-st-brooklyn-ny-unit-si-fl4-id953/g4e6xey/",
-      "title": "527 Dean St Unit SI FL4-ID953",
-      "price": 7570,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68121,
-      "lng": -73.97267,
-      "photos": [
-        "https://images1.apartments.com/i2/zEclNSIS0ktsvxSR1HGQuXXCsCc6-Y5RsFb09knkOr0/118/527-dean-st-unit-si-fl4-id953-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "527 dean st|unitsifl4id953",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-edbb4bc857",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/545-vanderbilt-ave-brooklyn-ny-unit-si-fl20-id972/3v8d4zd/",
-      "title": "545 Vanderbilt Ave Unit SI FL20-ID972",
-      "price": 5030,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68245,
-      "lng": -73.96826,
-      "photos": [
-        "https://images1.apartments.com/i2/MIFvm949DWEuumyDLlH0Lr4MSOdwi_X5g5MEAdNTk5g/118/545-vanderbilt-ave-unit-si-fl20-id972-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "545 vanderbilt ave|unitsifl20id972",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-d78c7f362e",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/141-joralemon-st-brooklyn-ny-unit-si-fl2-id819/ycbkmmr/",
-      "title": "141 Joralemon St Unit SI FL2-ID819",
-      "price": 7390,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69319,
-      "lng": -73.99395,
-      "photos": [
-        "https://images1.apartments.com/i2/uQMrwJBb44s2lBbjWDt2kDQCNj7GRnOkiozfkqRliVQ/118/141-joralemon-st-unit-si-fl2-id819-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "141 joralemon st|unitsifl2id819",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-d41961360d",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/241-atlantic-ave-brooklyn-ny-unit-si-fl6-id935/sw42v57/",
-      "title": "241 Atlantic Ave Unit SI FL6-ID935",
-      "price": 12160,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68934,
-      "lng": -73.99118,
-      "photos": [
-        "https://images1.apartments.com/i2/Zu-miMFitiTy4vS0CdL0M88Kelug3HXnYv7D83tZsrU/118/241-atlantic-ave-unit-si-fl6-id935-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "241 atlantic ave|unitsifl6id935",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-4b12712d55",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/545-vanderbilt-ave-brooklyn-ny-unit-si-fl4-id1022/y6n7v5s/",
-      "title": "545 Vanderbilt Ave Unit SI FL4-ID1022",
-      "price": 3740,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68245,
-      "lng": -73.96826,
-      "photos": [
-        "https://images1.apartments.com/i2/_btqh7VmVwmhqMZSupIcFi9rwKRLvNAqpOC_rwP1u_w/118/545-vanderbilt-ave-unit-si-fl4-id1022-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "545 vanderbilt ave|unitsifl4id1022",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-a6a4ca9e3f",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/145-henry-st-brooklyn-ny-unit-si-fl1-id1066/eqmxbzn/",
-      "title": "145 Henry St Unit SI FL1-ID1066",
-      "price": 8390,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69637,
-      "lng": -73.99348,
-      "photos": [
-        "https://images1.apartments.com/i2/CyN-sgUvAxoVdZqIldAk94Mpms8DTSOPmwojs_MILQY/118/145-henry-st-unit-si-fl1-id1066-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "145 henry st|unitsifl1id1066",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-8275c92fe6",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/545-vanderbilt-ave-brooklyn-ny-unit-si-fl22-id1025/t7scvsc/",
-      "title": "545 Vanderbilt Ave Unit SI FL22-ID1025",
-      "price": 6440,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68245,
-      "lng": -73.96826,
-      "photos": [
-        "https://images1.apartments.com/i2/IyHzp1N1NBuRmvIZAsu5aBH6LLXUy0GqaUEnRG0Zt-0/118/545-vanderbilt-ave-unit-si-fl22-id1025-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "545 vanderbilt ave|unitsifl22id1025",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-867242eda7",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/141-joralemon-st-brooklyn-ny-unit-si-fl6-id1508/3e1frsf/",
-      "title": "141 Joralemon St Unit SI FL6-ID1508",
-      "price": 8130,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69319,
-      "lng": -73.99395,
-      "photos": [
-        "https://images1.apartments.com/i2/cP0mtE4TdJ1jobDJ77UeKKPXEEtqeUCj4_Bcx-M5fFI/118/141-joralemon-st-unit-si-fl6-id1508-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "141 joralemon st|unitsifl6id1508",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-508481aee3",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/141-joralemon-st-brooklyn-ny-unit-si-fl6-id1509/njlrdqn/",
-      "title": "141 Joralemon St Unit SI FL6-ID1509",
-      "price": 5640,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69319,
-      "lng": -73.99395,
-      "photos": [
-        "https://images1.apartments.com/i2/EifC0JGwou8d2xY20SSh9X5Mv8p-DaeL68eqiwaLPl4/118/141-joralemon-st-unit-si-fl6-id1509-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "141 joralemon st|unitsifl6id1509",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-7d64de7091",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/200-montague-st-brooklyn-ny-unit-si-fl2-id1516/ppgqjkt/",
-      "title": "200 Montague St Unit SI FL2-ID1516",
-      "price": 6770,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69372,
-      "lng": -73.99125,
-      "photos": [
-        "https://images1.apartments.com/i2/eJqFEkWoEUAUiTeoZ0IZuBmzW16eBKLXScz2anpBwSo/118/200-montague-st-unit-si-fl2-id1516-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "200 montague st|unitsifl2id1516",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-f7bcd790b5",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/131-greenpoint-ave-brooklyn-ny-unit-si-id1013714p/2fl9nzb/",
-      "title": "131 Greenpoint Ave Unit SI ID1013714P",
-      "price": 6600,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.73027,
-      "lng": -73.95483,
-      "photos": [
-        "https://images1.apartments.com/i2/UdCOrSGSjYNsH-vstTvPsxi3iJFJ6eIWVkCA4FmZkOw/118/131-greenpoint-ave-unit-si-id1013714p-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "131 greenpoint ave|unitsiid1013714p",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-0dc4f8f21c",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/325-lafayette-ave-brooklyn-ny-unit-si-fl4-id1674/z43nwkz/",
-      "title": "325 Lafayette Ave Unit SI FL4-ID1674",
-      "price": 4890,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6888,
-      "lng": -73.96258,
-      "photos": [
-        "https://images1.apartments.com/i2/XgR65pZXwOMuN1ApvCgykUJaeHUz0kKJiZSTo0gu7_8/118/325-lafayette-ave-unit-si-fl4-id1674-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "325 lafayette ave|unitsifl4id1674",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-dac158d561",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/149-green-st-brooklyn-ny-unit-si-id1021860p/1tvdr45/",
-      "title": "149 Green St Unit SI ID1021860P",
-      "price": 5580,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.73384,
-      "lng": -73.95568,
-      "photos": [
-        "https://images1.apartments.com/i2/TBZyDzHoPfY1N6QW2kxyS5lUEGhlCV0cXDgHo7NieLs/118/149-green-st-unit-si-id1021860p-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "149 green st|unitsiid1021860p",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-667ef2b1bc",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/323-graham-ave-brooklyn-ny-unit-si-fl2-id1021977p/6hh1mjt/",
-      "title": "323 Graham Ave Unit SI FL2-ID1021977P",
-      "price": 5602,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.71396,
-      "lng": -73.94447,
-      "photos": [
-        "https://images1.apartments.com/i2/Ncx03bBOaDmhEZetlPirMhWvhOjjbSBeIYvXTC03ImA/118/323-graham-ave-unit-si-fl2-id1021977p-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "323 graham ave|unitsifl2id1021977p",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-267a666567",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/323-graham-ave-brooklyn-ny-unit-si-fl3-id1021982p/dzec3yh/",
-      "title": "323 Graham Ave Unit SI FL3-ID1021982P",
-      "price": 5448,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.71396,
-      "lng": -73.94447,
-      "photos": [
-        "https://images1.apartments.com/i2/cdgJze-xx_NQtT5rjI4I_5MozMZRdjfRhmozlfO7_dc/118/323-graham-ave-unit-si-fl3-id1021982p-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "323 graham ave|unitsifl3id1021982p",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-55cf66d933",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/173-n-7th-st-brooklyn-ny-unit-si-id1034998p/x86yhjn/",
-      "title": "173 N 7th St Unit SI ID1034998P",
-      "price": 6706,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.71767,
-      "lng": -73.957,
-      "photos": [
-        "https://images1.apartments.com/i2/4c9tFLB-3QlU0gq40oF9fl3BFDxxVC_2ey-pXJOmhSA/118/173-n-7th-st-unit-si-id1034998p-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "173 n 7 st|unitsiid1034998p",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-9e292274ef",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/107-columbia-heights-brooklyn-ny-unit-si-fl4-id1724/6283ejr/",
-      "title": "107 Columbia Heights Unit SI FL4-ID1724",
-      "price": 5400,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69933,
-      "lng": -73.99513,
-      "photos": [
-        "https://images1.apartments.com/i2/bDtD32xD4_Yh92uvXb_3Lf_kK-JwhVFsYDB5e3uoIcE/118/107-columbia-heights-unit-si-fl4-id1724-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "107 columbia heights|unitsifl4id1724",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-ccccf15665",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/107-columbia-heights-brooklyn-ny-unit-si-fl2-id1725/w83szbj/",
-      "title": "107 Columbia Heights Unit SI FL2-ID1725",
-      "price": 10900,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69933,
-      "lng": -73.99513,
-      "photos": [
-        "https://images1.apartments.com/i2/cHcalfR1jJ3wOgJfLHyf1Wyic0L2ohGayQZj4BsTdss/118/107-columbia-heights-unit-si-fl2-id1725-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "107 columbia heights|unitsifl2id1725",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-da46170f70",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/107-columbia-heights-brooklyn-ny-unit-si-fl7-id1757/ttjw159/",
-      "title": "107 Columbia Heights Unit SI FL7-ID1757",
-      "price": 5650,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69933,
-      "lng": -73.99513,
-      "photos": [
-        "https://images1.apartments.com/i2/VTCvru1MmvTXuKs6pdfMcA4212wtMfIo8Bd6__IiF4g/118/107-columbia-heights-unit-si-fl7-id1757-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "107 columbia heights|unitsifl7id1757",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-4b7f1d10f7",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/87-commercial-st-brooklyn-ny-unit-si-fl17-id1812/0pr7831/",
-      "title": "87 Commercial St Unit SI FL17-ID1812",
-      "price": 5670,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.73799,
-      "lng": -73.95708,
-      "photos": [
-        "https://images1.apartments.com/i2/muTkiM_lCaPK7UEJfOotSPAAieHStSRzaA438jTqb-o/118/87-commercial-st-unit-si-fl17-id1812-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "87 commercial st|unitsifl17id1812",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-a88a1560ae",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/72-willoughby-st-brooklyn-ny-unit-si-fl4-id1832/8nj35s3/",
-      "title": "72 Willoughby St Unit SI FL4-ID1832",
-      "price": 5090,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.69208,
-      "lng": -73.98583,
-      "photos": [
-        "https://images1.apartments.com/i2/z71h8l_V1seeXUJYrNXNsLImBSEdcYeHRsRi7hEDGgk/118/72-willoughby-st-unit-si-fl4-id1832-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "72 willoughby st|unitsifl4id1832",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-a6dcb7394c",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/227-s-4th-st-brooklyn-ny-unit-si-fl4-id1866/gn3tkhy/",
-      "title": "227 S 4th St Unit SI FL4-ID1866",
-      "price": 6560,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.71063,
-      "lng": -73.959,
-      "photos": [
-        "https://images1.apartments.com/i2/lE3bAxO80zScwQ1i6siKFHTGlfSNdvhbCzR2Nj2IbvE/118/227-s-4th-st-unit-si-fl4-id1866-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "227 s 4 st|unitsifl4id1866",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-edbdcd7170",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/227-s-4th-st-brooklyn-ny-unit-si-fl3-id1865/h4pyf52/",
-      "title": "227 S 4th St Unit SI FL3-ID1865",
-      "price": 6780,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.71063,
-      "lng": -73.959,
-      "photos": [
-        "https://images1.apartments.com/i2/Y_K8TiPuTLIz4ibyeQGENEhYTclLvNapgXaaIjCoXkA/118/227-s-4th-st-unit-si-fl3-id1865-brooklyn-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "227 s 4 st|unitsifl3id1865",
-      "visto": "2026-11-08"
-    },
-    {
       "id": "apartments-d3f3904c57",
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/newport-rentals-jersey-city-nj/79cy0vy/",
@@ -29205,6 +29182,36 @@
       "visto": "2026-11-08"
     },
     {
+      "id": "apartments-d7730cb7d3",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/vantage-collection-jersey-city-nj/lzl2jtg/",
+      "title": "Vantage Collection",
+      "price": 3178,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7137,
+      "lng": -74.04467,
+      "photos": [
+        "https://images1.apartments.com/i2/1v2SAN4qJRfbQmx0EdzXBuLSSRSWdW471UcFrbuqLWs/118/vantage-collection-jersey-city-nj-building-photo.jpg?p=1"
+      ],
+      "amenities": [
+        "Fitness Center",
+        "Pool",
+        "Dishwasher",
+        "Refrigerator",
+        "In Unit Washer & Dryer",
+        "Walk-In Closets"
+      ],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": null,
+      "visto": "2026-11-08"
+    },
+    {
       "id": "apartments-83518dcbda",
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/hudson-house-east-jersey-city-nj/gqk3rgw/",
@@ -29235,34 +29242,65 @@
       "visto": "2026-11-08"
     },
     {
-      "id": "apartments-d7730cb7d3",
+      "id": "apartments-d15dc37e04",
       "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/vantage-collection-jersey-city-nj/lzl2jtg/",
-      "title": "Vantage Collection",
-      "price": 3178,
+      "sourceUrl": "https://www.apartments.com/the-enclave-jersey-city-nj/016f5p0/",
+      "title": "The Enclave",
+      "price": 2950,
       "priceFrom": false,
       "currency": "USD",
       "type": null,
       "furnished": null,
       "sqft": null,
-      "lat": 40.7137,
-      "lng": -74.04467,
+      "lat": 40.73431,
+      "lng": -74.04824,
       "photos": [
-        "https://images1.apartments.com/i2/1v2SAN4qJRfbQmx0EdzXBuLSSRSWdW471UcFrbuqLWs/118/vantage-collection-jersey-city-nj-building-photo.jpg?p=1"
+        "https://images1.apartments.com/i2/fO5n34WXBz0uLWt577wsq2mSSL1qTXOKGKZ54NOT6f0/118/the-enclave-jersey-city-nj-building-photo.jpg?p=1"
       ],
       "amenities": [
+        "Pets Allowed",
         "Fitness Center",
         "Pool",
         "Dishwasher",
         "Refrigerator",
-        "In Unit Washer & Dryer",
-        "Walk-In Closets"
+        "Kitchen"
       ],
       "sources": [
         "apartments"
       ],
       "chiave": null,
       "visto": "2026-11-08"
+    },
+    {
+      "id": "apartments-92bfa59e6d",
+      "source": "apartments",
+      "sourceUrl": "https://www.apartments.com/the-blvd-collection-jersey-city-nj/20myq18/",
+      "title": "The BLVD Collection",
+      "price": 3230,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.72211,
+      "lng": -74.03683,
+      "photos": [
+        "https://images1.apartments.com/i2/XjDigasZUICFh-sfdXVoSlGaZHh6ta1w8lZ6dm_E0NE/117/the-blvd-collection-jersey-city-nj-building-photo.jpg?p=1"
+      ],
+      "amenities": [
+        "Pets Allowed",
+        "Fitness Center",
+        "Pool",
+        "Clubhouse",
+        "Balcony",
+        "Package Service"
+      ],
+      "sources": [
+        "apartments"
+      ],
+      "chiave": null,
+      "visto": "2026-11-08",
+      "curato": true
     },
     {
       "id": "apartments-2139d43004",
@@ -29416,67 +29454,6 @@
       ],
       "chiave": null,
       "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-d15dc37e04",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/the-enclave-jersey-city-nj/016f5p0/",
-      "title": "The Enclave",
-      "price": 2950,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.73431,
-      "lng": -74.04824,
-      "photos": [
-        "https://images1.apartments.com/i2/fO5n34WXBz0uLWt577wsq2mSSL1qTXOKGKZ54NOT6f0/118/the-enclave-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [
-        "Pets Allowed",
-        "Fitness Center",
-        "Pool",
-        "Dishwasher",
-        "Refrigerator",
-        "Kitchen"
-      ],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": null,
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-92bfa59e6d",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/the-blvd-collection-jersey-city-nj/20myq18/",
-      "title": "The BLVD Collection",
-      "price": 3230,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.72211,
-      "lng": -74.03683,
-      "photos": [
-        "https://images1.apartments.com/i2/XjDigasZUICFh-sfdXVoSlGaZHh6ta1w8lZ6dm_E0NE/117/the-blvd-collection-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [
-        "Pets Allowed",
-        "Fitness Center",
-        "Pool",
-        "Clubhouse",
-        "Balcony",
-        "Package Service"
-      ],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": null,
-      "visto": "2026-11-08",
-      "curato": true
     },
     {
       "id": "apartments-673dfd4562",
@@ -29964,210 +29941,26 @@
       "visto": "2026-11-08"
     },
     {
-      "id": "apartments-504af0bc21",
+      "id": "apartments-d528cb8839",
       "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/129-poplar-st-jersey-city-nj-unit-1/2ny9g68/",
-      "title": "129 Poplar St Unit 1",
-      "price": 5800,
+      "sourceUrl": "https://www.apartments.com/102-nelson-ave-jersey-city-nj-unit-si-fl2-id1589922p/fblyq3t/",
+      "title": "102 Nelson Ave Unit SI FL2-ID1589922P",
+      "price": 9825,
       "priceFrom": false,
       "currency": "USD",
       "type": null,
       "furnished": null,
       "sqft": null,
-      "lat": 40.75552,
-      "lng": -74.04991,
+      "lat": 40.75547,
+      "lng": -74.05059,
       "photos": [
-        "https://images1.apartments.com/i2/x4vXRwSeWz9xttWHCvF0gcTZk7D-pZvcw1ao0yDWs7Q/115/129-poplar-st-unit-1-jersey-city-nj-building-photo.jpg?p=1"
+        "https://images1.apartments.com/i2/WOiinekhXJ7oOUpnWJ9O7bdt8JqaHAlqG3pNXby920g/118/102-nelson-ave-unit-si-fl2-id1589922p-jersey-city-nj-building-photo.jpg?p=1"
       ],
       "amenities": [],
       "sources": [
         "apartments"
       ],
-      "chiave": "129 poplar st|unit1",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-8d40e22f7f",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/132-morris-st-jersey-city-nj/p89rspv/",
-      "title": "132 Morris St",
-      "price": 4950,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.71432,
-      "lng": -74.04012,
-      "photos": [
-        "https://images1.apartments.com/i2/w5117DmSJLpcRJtmwjUGRqPnGbZflFAED1OK7WlOkhY/115/132-morris-st-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "132 morris st",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-a5f303d49c",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/175-2nd-st-jersey-city-nj-unit-si-fl12-id2302/4kj81fl/",
-      "title": "175 2nd St Unit SI FL12-ID2302",
-      "price": 6110,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.72195,
-      "lng": -74.04045,
-      "photos": [
-        "https://images1.apartments.com/i2/vGpy9DEfUUq4HmVxPHwrhCF-mSB8mrWJ1rq_zeqVuxQ/118/175-2nd-st-unit-si-fl12-id2302-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "175 2 st|unitsifl12id2302",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-4d0522433b",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/145-grace-st-jersey-city-nj/ejycj4m/",
-      "title": "145 Grace St",
-      "price": 3075,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.75624,
-      "lng": -74.04974,
-      "photos": [
-        "https://images1.apartments.com/i2/HTJNB0ImCQwZlJh7Sj-uGFiGZO9DpeYS4oajtm9YHW4/115/145-grace-st-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "145 grace st",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-702fc7b216",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/1123-summit-ave-jersey-city-nj-unit-2/255ej3b/",
-      "title": "1123 Summit Ave Unit 2",
-      "price": 4500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.75339,
-      "lng": -74.04759,
-      "photos": [
-        "https://images1.apartments.com/i2/vkmaA9il5COP00rlr3Otd_msEFHIw0f5jRcC73C_C4I/115/1123-summit-ave-unit-2-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "1123 summit ave|unit2",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-416097f308",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/1123-summit-ave-jersey-city-nj-unit-3/mvzv7xh/",
-      "title": "1123 Summit Ave Unit 3",
-      "price": 4700,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.75339,
-      "lng": -74.04759,
-      "photos": [
-        "https://images1.apartments.com/i2/4-VLn2r8CIQa8a4sehWgDyB5yYp8uvz55T8Qzpvw65g/115/1123-summit-ave-unit-3-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "1123 summit ave|unit3",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-3c4e35fbb2",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/1123-summit-ave-jersey-city-nj-unit-1/fr9hedt/",
-      "title": "1123 Summit Ave Unit 1",
-      "price": 4100,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.75339,
-      "lng": -74.04759,
-      "photos": [
-        "https://images1.apartments.com/i2/Ca35BloAezs3AcutJguLzt_VcsC6I0Y5cU2ha28O0No/115/1123-summit-ave-unit-1-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "1123 summit ave|unit1",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-54baabc7e3",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/hudson-house-west-jersey-city-nj/pk6b6rv/#7bj81kx-2-unit/",
-      "title": "Unit W1414 at Hudson House West",
-      "price": 4665,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7326,
-      "lng": -74.04734,
-      "photos": [
-        "https://images1.apartments.com/i2/Vx-9KLoDbhY8UU9p1sCYq9cgPmiL1DtWYm09o3jXuM0/115/hudson-house-west-unit-w1414-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": null,
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-823a1e6281",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/274-7th-st-jersey-city-nj/1yqx985/",
-      "title": "274 7th St",
-      "price": 11000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7265,
-      "lng": -74.04605,
-      "photos": [
-        "https://images1.apartments.com/i2/QOrD8Prn3tJ9bnagj90tMDyQR7cKOnfRaz1whb_H-DE/115/274-7th-st-jersey-city-nj-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "274 7 st",
+      "chiave": "102 nelson ave|unitsifl2id1589922p",
       "visto": "2026-11-08"
     },
     {
@@ -30198,10 +29991,7 @@
         "apartments"
       ],
       "chiave": "10 halletts point",
-      "visto": "2026-11-08",
-      "chiaviVecchie": [
-        "apartments-eec9804508"
-      ]
+      "visto": "2026-11-08"
     },
     {
       "id": "apartments-36840cf32a",
@@ -30323,7 +30113,7 @@
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/windsor-court-new-york-ny/q3856xz/",
       "title": "Windsor Court",
-      "price": 4200,
+      "price": 4195,
       "priceFrom": false,
       "currency": "USD",
       "type": null,
@@ -30664,29 +30454,6 @@
       "visto": "2026-11-08"
     },
     {
-      "id": "apartments-8d4e4cfb7c",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/53-park-pl-new-york-ny-unit-si-fl2-id52/gtv2rxx/",
-      "title": "53 Park Pl Unit SI FL2-ID52",
-      "price": 6650,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.714,
-      "lng": -74.01013,
-      "photos": [
-        "https://images1.apartments.com/i2/3CiKbG1WqD4ZfihZg7iGIXGhxHvrAsZgCoNlUoHmGRo/118/53-park-pl-unit-si-fl2-id52-new-york-ny-building-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": "53 park pl|unitsifl2id52",
-      "visto": "2026-11-08"
-    },
-    {
       "id": "apartments-11d49d2ac0",
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/101-w-15th-st-new-york-ny-unit-si-fl6-id34/rcc9s93/",
@@ -30829,7 +30596,7 @@
       "source": "apartments",
       "sourceUrl": "https://www.apartments.com/east-44th-street-new-york-ny-unit-40l/se1zlh7/",
       "title": "East 44th Street",
-      "price": 6575,
+      "price": 5870,
       "priceFrom": true,
       "currency": "USD",
       "type": null,
@@ -30937,29 +30704,6 @@
         "apartments"
       ],
       "chiave": "10 ave | btwn 49/50 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "apartments-7272f2eaa6",
-      "source": "apartments",
-      "sourceUrl": "https://www.apartments.com/21-chelsea-new-york-ny/d10ll7l/#ljtgxne-2-unit/",
-      "title": "Unit N/A-318 at 21 Chelsea",
-      "price": 4923,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.74186,
-      "lng": -73.99492,
-      "photos": [
-        "https://images1.apartments.com/i2/3E1uDZZib_hS2QG9V5rfe1Aa7rec3TAdzXsSHyI4ZfY/118/21-chelsea-unit-na-318-new-york-ny-interior-photo.jpg?p=1"
-      ],
-      "amenities": [],
-      "sources": [
-        "apartments"
-      ],
-      "chiave": null,
       "visto": "2026-11-08"
     },
     {
@@ -32069,16 +31813,16 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 1,
+      "baths": 2.5,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-3a40e51778",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/35-central-park-n-ny-ny-10026",
       "title": "35 Central Park N",
-      "price": 4000,
-      "priceFrom": true,
+      "price": 9000,
+      "priceFrom": false,
       "currency": "USD",
-      "type": "2br",
+      "type": "studio",
       "furnished": null,
       "sqft": 3257,
       "lat": 40.7979604,
@@ -32745,7 +32489,7 @@
       "lat": 40.67709,
       "lng": -73.991325,
       "photos": [
-        "https://static.apartmentadvisor.com/i/31be4710e9d299255d0d6c11e2750f0f.png"
+        "https://static.apartmentadvisor.com/i/ef71be0618c8e7f21811c9f1e3c26364.png"
       ],
       "amenities": [
         "air-conditioning",
@@ -34180,36 +33924,6 @@
     },
     {
       "baths": 1,
-      "disponibile": "2026-12-15",
-      "id": "apartmentadvisor-af76cab613",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/503-atlantic-ave-brooklyn-ny-11217",
-      "title": "503 Atlantic Ave",
-      "price": 3800,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": 700,
-      "lat": 40.6857321,
-      "lng": -73.9810324,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/8378a2c952992af3ca6c4612aa4869be.jpeg"
-      ],
-      "amenities": [
-        "dishwasher",
-        "washer-dryer",
-        "washer-dryer-in-unit",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "503 atlantic ave",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
       "disponibile": "2026-12-01",
       "id": "apartmentadvisor-a812d6da6b",
       "source": "apartmentadvisor",
@@ -34756,40 +34470,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-c9885798f0",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/198-van-vorst-st-jersey-city-nj-07302",
-      "title": "198 Van Vorst St.",
-      "price": 3310,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": 659,
-      "lat": 40.7141,
-      "lng": -74.0409,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/25ad74dbcea789f0c750c0d8da913eb9.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "balcony",
-        "dishwasher",
-        "elevator",
-        "fitness-center",
-        "garage",
-        "garbage-disposal",
-        "patio"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "198 van vorst st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-8a2f0b59d7",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/438-63-st-nj-nj-07093",
@@ -35016,6 +34696,40 @@
       "visto": "2026-11-08"
     },
     {
+      "baths": 1,
+      "disponibile": "2026-11-08",
+      "id": "apartmentadvisor-c9885798f0",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/198-van-vorst-st-jersey-city-nj-07302",
+      "title": "198 Van Vorst St.",
+      "price": 3310,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": 659,
+      "lat": 40.7141,
+      "lng": -74.0409,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/25ad74dbcea789f0c750c0d8da913eb9.jpeg"
+      ],
+      "amenities": [
+        "air-conditioning",
+        "balcony",
+        "dishwasher",
+        "elevator",
+        "fitness-center",
+        "garage",
+        "garbage-disposal",
+        "patio"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "198 van vorst st",
+      "visto": "2026-11-08"
+    },
+    {
       "baths": 1.5,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-1ed373c905",
@@ -35225,7 +34939,7 @@
       "lat": 40.7596474,
       "lng": -73.9908993,
       "photos": [
-        "https://static.apartmentadvisor.com/i/e12960d5c4cb33bffe2de17fa3f3d1c2.jpeg"
+        "https://static.apartmentadvisor.com/i/ad03b36268a3320da2963228da360dd6.jpeg"
       ],
       "amenities": [
         "patio",
@@ -37786,7 +37500,7 @@
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
-      "furnished": null,
+      "furnished": false,
       "sqft": null,
       "lat": 40.7423805,
       "lng": -73.98298679999999,
@@ -37797,10 +37511,15 @@
         "unita:lavanderia-edificio"
       ],
       "sources": [
-        "apartmentadvisor"
+        "apartmentadvisor",
+        "trulia"
       ],
       "chiave": "106 lexington ave",
-      "visto": "2026-11-08"
+      "visto": "2026-11-08",
+      "chiaviVecchie": [
+        "106 lexington ave|3",
+        "trulia-f3a10f04b0"
+      ]
     },
     {
       "baths": 1,
@@ -39719,6 +39438,40 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
+      "id": "apartmentadvisor-a2383eac4b",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/300-e-40-st-ny-ny-10016",
+      "title": "300 E 40 St",
+      "price": 4250,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": 900,
+      "lat": 40.7480655,
+      "lng": -73.97286199999999,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/41240ed26e935e434f55735d81f30ad6.png"
+      ],
+      "amenities": [
+        "balcony",
+        "dishwasher",
+        "fitness-center",
+        "garage",
+        "hardwood-floors",
+        "parking",
+        "pool",
+        "unita:lavanderia-edificio"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "300 e 40 st",
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-74b13655b5",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/43-w-16-st-ny-city-ny-10011",
@@ -39956,37 +39709,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 0,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-4ce2aaa22c",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/175-w-90-st-ny-ny-10024",
-      "title": "175 W 90 St",
-      "price": 3450,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": 450,
-      "lat": 40.7816517,
-      "lng": -73.9524568,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/092f941a21cdbd0e9bfa034852b32c56.jpeg"
-      ],
-      "amenities": [
-        "balcony",
-        "dishwasher",
-        "fitness-center",
-        "garage",
-        "unita:lavanderia-edificio"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "175 w 90 st",
-      "visto": "2026-11-08"
-    },
-    {
       "baths": 1,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-1c14581a90",
@@ -40151,7 +39873,7 @@
       "priceFrom": false,
       "currency": "USD",
       "type": "3br",
-      "furnished": null,
+      "furnished": false,
       "sqft": 2000,
       "lat": 40.7437464,
       "lng": -73.9863775,
@@ -40168,10 +39890,15 @@
         "balcony"
       ],
       "sources": [
-        "apartmentadvisor"
+        "apartmentadvisor",
+        "trulia"
       ],
       "chiave": "66 madison ave",
-      "visto": "2026-11-08"
+      "visto": "2026-11-08",
+      "chiaviVecchie": [
+        "66 madison ave|7hi",
+        "trulia-e55adbba82"
+      ]
     },
     {
       "baths": 1.5,
@@ -40478,40 +40205,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-a2383eac4b",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/300-e-40-st-ny-ny-10016",
-      "title": "300 E 40 St",
-      "price": 4250,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": 900,
-      "lat": 40.7480655,
-      "lng": -73.97286199999999,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/41240ed26e935e434f55735d81f30ad6.png"
-      ],
-      "amenities": [
-        "balcony",
-        "dishwasher",
-        "fitness-center",
-        "garage",
-        "hardwood-floors",
-        "parking",
-        "pool",
-        "unita:lavanderia-edificio"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "300 e 40 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-d11ad41874",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/301-e-63-st-ny-ny-10065",
@@ -40675,36 +40368,6 @@
         "apartmentadvisor"
       ],
       "chiave": "171 henry st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "pubblicata": "2026-11-04",
-      "id": "apartmentadvisor-3e9ba41c47",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/219-e-12-st-ny-ny-10003",
-      "title": "219 E 12 St",
-      "price": 6500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": 915,
-      "lat": 40.731705,
-      "lng": -73.986946,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/7b33d2867afb97f3db0a103155d42551.jpeg"
-      ],
-      "amenities": [
-        "washer-dryer",
-        "washer-dryer-in-unit",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "219 e 12 st",
       "visto": "2026-11-08"
     },
     {
@@ -44522,7 +44185,7 @@
       "lat": 40.760292053222656,
       "lng": -73.9649658203125,
       "photos": [
-        "https://static.apartmentadvisor.com/i/5b851ea8174ec97b08536e3b2b6fa53e.jpeg"
+        "https://static.apartmentadvisor.com/i/fc7de3d4f011b5bd0468fdcd3e467896.jpeg"
       ],
       "amenities": [
         "air-conditioning",
@@ -46343,38 +46006,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-3551f6afb7",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/545-w-48-st-ny-ny-10036",
-      "title": "545 W 48 St",
-      "price": 3800,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": null,
-      "sqft": 577,
-      "lat": 40.764656,
-      "lng": -73.99426,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/73a2eec036852a2ec709a834e9b7e964.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "dishwasher",
-        "fitness-center",
-        "washer-dryer",
-        "washer-dryer-in-unit",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "545 w 48 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
       "pubblicata": "2026-11-04",
       "id": "apartmentadvisor-0546a828b7",
       "source": "apartmentadvisor",
@@ -46662,6 +46293,37 @@
         "apartmentadvisor"
       ],
       "chiave": "85 livingston st",
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 0,
+      "disponibile": "2026-11-08",
+      "id": "apartmentadvisor-4ce2aaa22c",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/175-w-90-st-ny-ny-10024",
+      "title": "175 W 90 St",
+      "price": 3450,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": 450,
+      "lat": 40.7816517,
+      "lng": -73.9524568,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/092f941a21cdbd0e9bfa034852b32c56.jpeg"
+      ],
+      "amenities": [
+        "balcony",
+        "dishwasher",
+        "fitness-center",
+        "garage",
+        "unita:lavanderia-edificio"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "175 w 90 st",
       "visto": "2026-11-08"
     },
     {
@@ -47065,7 +46727,7 @@
       "lat": 40.7534885,
       "lng": -73.9676973,
       "photos": [
-        "https://static.apartmentadvisor.com/i/5621d4b27769e18721e970e8a789cc6e.jpeg"
+        "https://static.apartmentadvisor.com/i/cdbdf51d62dd9daef528b0ddaadb7b2a.jpeg"
       ],
       "amenities": [
         "dishwasher",
@@ -47128,7 +46790,7 @@
       "lat": 40.7029868,
       "lng": -74.0127983,
       "photos": [
-        "https://static.apartmentadvisor.com/i/ae5fb3477e3bac94a70246ac43d93664.png"
+        "https://static.apartmentadvisor.com/i/6d8d985b48bce382fc43d6248f7b8edb.jpeg"
       ],
       "amenities": [
         "balcony",
@@ -50785,7 +50447,7 @@
       "lat": 40.747707,
       "lng": -73.99741,
       "photos": [
-        "https://static.apartmentadvisor.com/i/554bdc12b354d16d3d4aefc2ae2171b2.jpeg"
+        "https://static.apartmentadvisor.com/i/ecc011da6a6d6b2a83a9580c81883370.jpeg"
       ],
       "amenities": [
         "dishwasher",
@@ -51923,7 +51585,7 @@
       "priceFrom": false,
       "currency": "USD",
       "type": "2br",
-      "furnished": null,
+      "furnished": false,
       "sqft": 1302,
       "lat": 40.74056909999999,
       "lng": -73.9924149,
@@ -51938,11 +51600,16 @@
         "unita:lavatrice"
       ],
       "sources": [
-        "apartmentadvisor"
+        "apartmentadvisor",
+        "trulia"
       ],
       "chiave": "21 w 20 st",
       "visto": "2026-11-08",
-      "pubblicata": "2026-11-06"
+      "pubblicata": "2026-11-06",
+      "chiaviVecchie": [
+        "21 w 20 st|9",
+        "trulia-0d983e5e91"
+      ]
     },
     {
       "baths": 1,
@@ -52144,34 +51811,6 @@
         "apartmentadvisor"
       ],
       "chiave": "225 east 70 street",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-1a9135f772",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/120-thompson-st-manhattan-ny-10012",
-      "title": "120 Thompson St",
-      "price": 3750,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.72589874,
-      "lng": -74.00150299,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/a424934e50d1e8c46d9b6d3dc068a863.jpeg"
-      ],
-      "amenities": [
-        "dishwasher",
-        "hardwood-floors"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "120 thompson st",
       "visto": "2026-11-08"
     },
     {
@@ -53447,6 +53086,42 @@
       "visto": "2026-11-08"
     },
     {
+      "baths": 3,
+      "disponibile": "2026-11-08",
+      "id": "apartmentadvisor-559cd8c9c7",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/305-e-51-st-ny-ny-10022",
+      "title": "305 E 51 St",
+      "price": 23000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": 2500,
+      "lat": 40.7554918,
+      "lng": -73.9675345,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/a14f92e15e069ce1a30d6fe0db32ea7d.jpeg"
+      ],
+      "amenities": [
+        "air-conditioning",
+        "dishwasher",
+        "fitness-center",
+        "garage",
+        "garbage-disposal",
+        "hardwood-floors",
+        "parking",
+        "pool",
+        "washer-dryer",
+        "washer-dryer-in-unit"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "305 e 51 st",
+      "visto": "2026-11-08"
+    },
+    {
       "baths": 3.5,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-7cd67bec9e",
@@ -53713,41 +53388,6 @@
     {
       "baths": 2.5,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-3956ab0d81",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/641-5-ave-ny-ny-10022",
-      "title": "641 5 Ave",
-      "price": 15000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": 2000,
-      "lat": 40.7591282,
-      "lng": -73.9762743,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/03a49915780e819597178a68e552489b.png"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "dishwasher",
-        "elevator",
-        "fitness-center",
-        "hardwood-floors",
-        "parking",
-        "washer-dryer",
-        "washer-dryer-in-unit",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "641 5 ave",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 2.5,
-      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-4a2cbf8006",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/201-w-17-st-ny-ny-10011",
@@ -53853,7 +53493,7 @@
       "priceFrom": false,
       "currency": "USD",
       "type": "3br",
-      "furnished": null,
+      "furnished": false,
       "sqft": 2354,
       "lat": 40.7427018,
       "lng": -73.989346,
@@ -53871,10 +53511,15 @@
         "unita:lavanderia-edificio"
       ],
       "sources": [
-        "apartmentadvisor"
+        "apartmentadvisor",
+        "trulia"
       ],
       "chiave": "10 madison sq w",
-      "visto": "2026-11-08"
+      "visto": "2026-11-08",
+      "chiaviVecchie": [
+        "10 madison sq w|8g",
+        "trulia-f9ce314789"
+      ]
     },
     {
       "baths": 4.5,
@@ -53947,35 +53592,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 3,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-de3df9aeeb",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/200-e-95-st-ny-ny-10128",
-      "title": "200 E 95 St",
-      "price": 20000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": 1938,
-      "lat": 40.7842807,
-      "lng": -73.94950759999999,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/0b18630c4c30c632739ce6afff0dcf8d.jpeg"
-      ],
-      "amenities": [
-        "fitness-center",
-        "hardwood-floors",
-        "pool"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "200 e 95 st",
-      "visto": "2026-11-08"
-    },
-    {
       "baths": 1,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-44d2d38d8a",
@@ -53983,7 +53599,7 @@
       "sourceUrl": "https://www.apartmentadvisor.com/details/282-s-5-st-ny-ny-11211",
       "title": "282 S 5 St",
       "price": 3610,
-      "priceFrom": true,
+      "priceFrom": false,
       "currency": "USD",
       "type": "studio",
       "furnished": null,
@@ -53991,7 +53607,7 @@
       "lat": 40.7090828,
       "lng": -73.958095,
       "photos": [
-        "https://static.apartmentadvisor.com/i/0f6f819467f58799030dad0df53944c8.jpeg"
+        "https://static.apartmentadvisor.com/i/85ad0c8bcc74ca4d1d12d31c50b7958f.jpeg"
       ],
       "amenities": [
         "air-conditioning",
@@ -54563,33 +54179,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 2,
-      "disponibile": "2026-12-03",
-      "id": "apartmentadvisor-c6f6f79ba8",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/800-un-st-brooklyn-ny-11215",
-      "title": "800 Un St",
-      "price": 7395,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.67440033,
-      "lng": -73.97609711,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/2d0f0d2b637d6b01db2719bba164e234.jpeg"
-      ],
-      "amenities": [
-        "parking"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "800 un st",
-      "visto": "2026-11-08"
-    },
-    {
       "baths": 4.5,
       "disponibile": "2026-11-15",
       "pubblicata": "2026-11-06",
@@ -54964,35 +54553,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 4,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-7fde733438",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/252-bleecker-st-ny-ny-10014",
-      "title": "252 Bleecker St",
-      "price": 22000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": 2762,
-      "lat": 40.7309864,
-      "lng": -74.0030816,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/d9ba20bca876597eec61ecf122826901.jpeg"
-      ],
-      "amenities": [
-        "elevator",
-        "hardwood-floors",
-        "washer-dryer"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "252 bleecker st",
-      "visto": "2026-11-08"
-    },
-    {
       "baths": 1,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-7e43aa0200",
@@ -55326,7 +54886,7 @@
       "lat": 40.7102589,
       "lng": -74.0080526,
       "photos": [
-        "https://static.apartmentadvisor.com/i/fc82535adc3497a433850a2e53d99bca.jpeg"
+        "https://static.apartmentadvisor.com/i/e4d60d3c33b88c7673332b622690a9c7.jpeg"
       ],
       "amenities": [
         "air-conditioning",
@@ -55491,40 +55051,6 @@
         "apartmentadvisor"
       ],
       "chiave": "356 e 78 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 3.5,
-      "disponibile": "2026-11-08",
-      "pubblicata": "2026-11-06",
-      "id": "apartmentadvisor-2a613784a4",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/50-w-66-st-ny-city-ny-10023",
-      "title": "50 W 66 St",
-      "price": 31500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": 2097,
-      "lat": 40.7730497,
-      "lng": -73.9804663,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/123912b84f128bfb15caee07b700a46d.png"
-      ],
-      "amenities": [
-        "fitness-center",
-        "pool",
-        "dishwasher",
-        "garage",
-        "parking",
-        "washer-dryer",
-        "washer-dryer-in-unit"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "50 w 66 st",
       "visto": "2026-11-08"
     },
     {
@@ -56274,18 +55800,18 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 2,
+      "baths": 1.5,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-7d3eea8ad8",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/520-5-ave-ny-ny-10036",
       "title": "520 5 Ave",
-      "price": 16000,
+      "price": 11000,
       "priceFrom": true,
       "currency": "USD",
       "type": "2br",
       "furnished": null,
-      "sqft": 1278,
+      "sqft": 808,
       "lat": 40.75447,
       "lng": -73.98063,
       "photos": [
@@ -57669,7 +57195,7 @@
       "lat": 40.74416,
       "lng": -73.99729,
       "photos": [
-        "https://static.apartmentadvisor.com/i/aed7de16bcbdeee456cce99d0f205512.jpeg"
+        "https://static.apartmentadvisor.com/i/659048eaa05b33875423bfa25d6b8f5a.jpeg"
       ],
       "amenities": [
         "dishwasher",
@@ -57802,11 +57328,11 @@
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/1200-broadway-ny-ny-10001",
       "title": "1200 Broadway",
-      "price": 16500,
+      "price": 16000,
       "priceFrom": false,
       "currency": "USD",
       "type": "2br",
-      "furnished": null,
+      "furnished": false,
       "sqft": 1850,
       "lat": 40.74605589999999,
       "lng": -73.98809920000001,
@@ -57819,10 +57345,15 @@
         "unita:lavanderia-edificio"
       ],
       "sources": [
-        "apartmentadvisor"
+        "apartmentadvisor",
+        "trulia"
       ],
       "chiave": "1200 broadway",
-      "visto": "2026-11-08"
+      "visto": "2026-11-08",
+      "chiaviVecchie": [
+        "1200 broadway|5g",
+        "trulia-d745f24be7"
+      ]
     },
     {
       "baths": 2,
@@ -58418,7 +57949,7 @@
       "priceFrom": false,
       "currency": "USD",
       "type": "2br",
-      "furnished": null,
+      "furnished": false,
       "sqft": 2300,
       "lat": 40.738689,
       "lng": -73.995338,
@@ -58431,10 +57962,15 @@
         "unita:lavanderia-edificio"
       ],
       "sources": [
-        "apartmentadvisor"
+        "apartmentadvisor",
+        "trulia"
       ],
       "chiave": "55 w 16 st",
-      "visto": "2026-11-08"
+      "visto": "2026-11-08",
+      "chiaviVecchie": [
+        "55 w 16 st|9",
+        "trulia-e827171226"
+      ]
     },
     {
       "baths": 3,
@@ -58561,35 +58097,6 @@
       "baths": 3.5,
       "disponibile": "2026-11-08",
       "pubblicata": "2026-11-06",
-      "id": "apartmentadvisor-63e1b1ac9e",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/11-e-78-st-manhattan-ny-10075",
-      "title": "11 E 78 St",
-      "price": 17000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.77606121,
-      "lng": -73.96304941,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/0a9fa56ce569fcc3a392cabd495b3508.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "elevator"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "11 e 78 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 3.5,
-      "disponibile": "2026-11-08",
-      "pubblicata": "2026-11-06",
       "id": "apartmentadvisor-34aed060fc",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/333-e-91-st-ny-ny-10128",
@@ -58640,6 +58147,32 @@
         "apartmentadvisor"
       ],
       "chiave": "430 3 ave",
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-08",
+      "pubblicata": "2026-11-06",
+      "id": "apartmentadvisor-5c7bc161f5",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/336-e-50-st-ny-ny-10022",
+      "title": "336 E 50 St",
+      "price": 3250,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": 800,
+      "lat": 40.7541623,
+      "lng": -73.9672841,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/15794a9555d2186a9f28c8b5a0d84eed.jpeg"
+      ],
+      "amenities": [],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "336 e 50 st",
       "visto": "2026-11-08"
     },
     {
@@ -59656,37 +59189,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-13aba139c2",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/226-e-74-st-ny-ny-10021",
-      "title": "226 E 74Th St",
-      "price": 3300,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.770389556884766,
-      "lng": -73.95864868164062,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/4e766126b50a705017c6e2572c910cef.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "dishwasher",
-        "elevator",
-        "hardwood-floors",
-        "washer-dryer"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "226 e 74 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-e3acb72bcd",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/1675-york-ave-ny-ny-10128",
@@ -59745,36 +59247,6 @@
         "apartmentadvisor"
       ],
       "chiave": "239 banker st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 2.5,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-ee829cc9c7",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/368-3-ave-ny-ny-10016",
-      "title": "368 3 Ave",
-      "price": 14000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": 1662,
-      "lat": 40.7412931,
-      "lng": -73.981837,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/7ec0ac2e96c447092c3a2c631e693534.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "fitness-center",
-        "washer-dryer",
-        "washer-dryer-in-unit"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "368 3 ave",
       "visto": "2026-11-08"
     },
     {
@@ -60181,7 +59653,7 @@
       "lat": 40.6967289,
       "lng": -73.9963497,
       "photos": [
-        "https://static.apartmentadvisor.com/i/bbcff96262217ba0ef789cc90523c16e.jpeg"
+        "https://static.apartmentadvisor.com/i/ef052533c515a4a4bacac9b55665f8a8.jpeg"
       ],
       "amenities": [
         "air-conditioning",
@@ -61316,7 +60788,7 @@
       "lat": 40.7423282,
       "lng": -73.99114089999999,
       "photos": [
-        "https://static.apartmentadvisor.com/i/075b3e4e2c1e985c8fa3475201113a59.jpeg"
+        "https://static.apartmentadvisor.com/i/6390a3dbe4e6942035af9da57e26b5f0.jpeg"
       ],
       "amenities": [
         "dishwasher",
@@ -63243,7 +62715,7 @@
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
-      "furnished": null,
+      "furnished": false,
       "sqft": null,
       "lat": 40.745481,
       "lng": -73.986654,
@@ -63258,10 +62730,15 @@
         "unita:lavatrice"
       ],
       "sources": [
-        "apartmentadvisor"
+        "apartmentadvisor",
+        "trulia"
       ],
       "chiave": "273 5 ave",
-      "visto": "2026-11-08"
+      "visto": "2026-11-08",
+      "chiaviVecchie": [
+        "273 5 ave|4",
+        "trulia-8d975d69ae"
+      ]
     },
     {
       "baths": 2,
@@ -65509,32 +64986,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-e9bc89f761",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/254-w-20-st-ny-ny-10011",
-      "title": "254 W 20 St",
-      "price": 3500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7431522,
-      "lng": -73.9995038,
-      "photos": [],
-      "amenities": [
-        "dishwasher",
-        "hardwood-floors"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "254 w 20 st",
-      "visto": "2026-11-08"
-    },
-    {
       "baths": 1.5,
       "disponibile": "2026-11-08",
       "pubblicata": "2026-11-06",
@@ -66379,33 +65830,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-6f05e46774",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/621-amsterdam-ave-ny-ny-10024",
-      "title": "621 Amsterdam Ave",
-      "price": 3450,
-      "priceFrom": true,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.790397,
-      "lng": -73.972514,
-      "photos": [],
-      "amenities": [
-        "balcony",
-        "dishwasher",
-        "garage"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "621 amsterdam ave",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-c2c203ea40",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/203-w-85-st-manhattan-ny-10024",
@@ -67224,6 +66648,33 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
+      "id": "apartmentadvisor-6f05e46774",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/621-amsterdam-ave-ny-ny-10024",
+      "title": "621 Amsterdam Ave",
+      "price": 3450,
+      "priceFrom": true,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.790397,
+      "lng": -73.972514,
+      "photos": [],
+      "amenities": [
+        "balcony",
+        "dishwasher",
+        "garage"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "621 amsterdam ave",
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-cc0280a198",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/241-e-38-st-ny-ny-10016",
@@ -68013,33 +67464,6 @@
     },
     {
       "baths": 1,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-cccb6ebeaa",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/354-2-st-brooklyn-ny-11215",
-      "title": "354 2 St",
-      "price": 5200,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.67322815,
-      "lng": -73.98358281,
-      "photos": [],
-      "amenities": [
-        "dogs",
-        "elevator",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "354 2 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
       "disponibile": "2026-12-15",
       "id": "apartmentadvisor-17d9632a7b",
       "source": "apartmentadvisor",
@@ -68585,6 +68009,37 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
+      "id": "apartmentadvisor-06a276f18c",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/42-b-ny-ny-10009",
+      "title": "42 B",
+      "price": 8250,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7275043,
+      "lng": -73.9800645,
+      "photos": [],
+      "amenities": [
+        "balcony",
+        "cats",
+        "dishwasher",
+        "dogs",
+        "hardwood-floors",
+        "washer-dryer",
+        "washer-dryer-in-unit"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "42 b",
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-08",
       "pubblicata": "2026-11-06",
       "id": "apartmentadvisor-a7f14bb6e7",
       "source": "apartmentadvisor",
@@ -68756,35 +68211,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "pubblicata": "2026-11-04",
-      "id": "apartmentadvisor-0a49a82e2c",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/615-e-14-st-manhattan-ny-10016",
-      "title": "615 East 14Th St.",
-      "price": 4642,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.729429,
-      "lng": -73.976994,
-      "photos": [],
-      "amenities": [
-        "fitness-center",
-        "garage",
-        "hardwood-floors",
-        "parking"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "615 east 14 st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
       "id": "apartmentadvisor-b0da456548",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/215-217-e-96-st-ny-ny-10128",
@@ -68869,29 +68295,6 @@
         "apartmentadvisor"
       ],
       "chiave": "37 blue",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-0aa42005bb",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/436-w-52-st-ny-ny-10019",
-      "title": "436 W 52Nd St",
-      "price": 7295,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.765228271484375,
-      "lng": -73.98978424072266,
-      "photos": [],
-      "amenities": [],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "436 w 52 st",
       "visto": "2026-11-08"
     },
     {
@@ -69314,40 +68717,6 @@
         "apartmentadvisor"
       ],
       "chiave": "250 mercer st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 3,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-559cd8c9c7",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/305-e-51-st-ny-ny-10022",
-      "title": "305 E 51 St",
-      "price": 23000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": 2500,
-      "lat": 40.7554918,
-      "lng": -73.9675345,
-      "photos": [],
-      "amenities": [
-        "air-conditioning",
-        "dishwasher",
-        "fitness-center",
-        "garage",
-        "garbage-disposal",
-        "hardwood-floors",
-        "parking",
-        "pool",
-        "washer-dryer",
-        "washer-dryer-in-unit"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "305 e 51 st",
       "visto": "2026-11-08"
     },
     {
@@ -69925,6 +69294,33 @@
       "visto": "2026-11-08"
     },
     {
+      "baths": 2.5,
+      "disponibile": "2026-11-08",
+      "pubblicata": "2026-11-06",
+      "id": "apartmentadvisor-63e1b1ac9e",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/11-e-78-st-manhattan-ny-10075",
+      "title": "11 E 78 St",
+      "price": 17000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.77606121,
+      "lng": -73.96304941,
+      "photos": [],
+      "amenities": [
+        "air-conditioning",
+        "elevator"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "11 e 78 st",
+      "visto": "2026-11-08"
+    },
+    {
       "baths": 1,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-38c3fb2ea0",
@@ -70375,7 +69771,7 @@
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/307-309-e-77-st-ny-ny-10075",
       "title": "307 309 E 77 St",
-      "price": 4000,
+      "price": 3500,
       "priceFrom": false,
       "currency": "USD",
       "type": "2br",
@@ -70504,6 +69900,38 @@
         "apartmentadvisor"
       ],
       "chiave": "202 54 ave",
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 3.5,
+      "disponibile": "2026-11-08",
+      "pubblicata": "2026-11-06",
+      "id": "apartmentadvisor-3999b8b760",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/50-w-66-st-manhattan-ny-10023",
+      "title": "50 W 66 St",
+      "price": 31500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7730497,
+      "lng": -73.9804663,
+      "photos": [],
+      "amenities": [
+        "dishwasher",
+        "fitness-center",
+        "garage",
+        "parking",
+        "pool",
+        "washer-dryer",
+        "washer-dryer-in-unit"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "50 w 66 st",
       "visto": "2026-11-08"
     },
     {
@@ -70664,63 +70092,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-ecec4ec81f",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/110-6-ave-manhattan-ny-10013",
-      "title": "110 6 Ave",
-      "price": 4795,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.72367805,
-      "lng": -74.00436536,
-      "photos": [],
-      "amenities": [
-        "dishwasher",
-        "hardwood-floors"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "110 6 ave",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-06a276f18c",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/42-b-ny-ny-10009",
-      "title": "42 B",
-      "price": 8250,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7275043,
-      "lng": -73.9800645,
-      "photos": [],
-      "amenities": [
-        "balcony",
-        "cats",
-        "dishwasher",
-        "dogs",
-        "hardwood-floors",
-        "washer-dryer",
-        "washer-dryer-in-unit"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "42 b",
-      "visto": "2026-11-08"
-    },
-    {
       "baths": 2,
       "disponibile": "2026-11-08",
       "pubblicata": "2026-11-07",
@@ -70800,29 +70171,6 @@
         "apartmentadvisor"
       ],
       "chiave": "233 alt clinton st",
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-10d806b235",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/108-flushing-ave-brooklyn-ny-11205",
-      "title": "108 Flushing Ave",
-      "price": 4200,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.697723,
-      "lng": -73.97293,
-      "photos": [],
-      "amenities": [],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "108 flushing ave",
       "visto": "2026-11-08"
     },
     {
@@ -71022,30 +70370,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 1,
-      "disponibile": "2026-11-08",
-      "pubblicata": "2026-11-06",
-      "id": "apartmentadvisor-5c7bc161f5",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/336-e-50-st-ny-ny-10022",
-      "title": "336 E 50 St",
-      "price": 3250,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": 800,
-      "lat": 40.7541623,
-      "lng": -73.9672841,
-      "photos": [],
-      "amenities": [],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "336 e 50 st",
-      "visto": "2026-11-08"
-    },
-    {
       "baths": 1.5,
       "disponibile": "2026-11-15",
       "pubblicata": "2026-11-06",
@@ -71107,24 +70431,24 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-77b8d7c87c",
+      "id": "apartmentadvisor-8148b6c879",
       "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/305-315-w-13-st-ny-ny-10014",
-      "title": "305 315 W 13 St",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/115-w-13-st-ny-ny-10011",
+      "title": "115 W 13 St",
       "price": 5300,
       "priceFrom": true,
       "currency": "USD",
       "type": "1br",
       "furnished": null,
       "sqft": 523,
-      "lat": 40.739548,
-      "lng": -74.00353,
+      "lat": 40.737232,
+      "lng": -73.998074,
       "photos": [],
       "amenities": [],
       "sources": [
         "apartmentadvisor"
       ],
-      "chiave": "305 315 w 13 st",
+      "chiave": "115 w 13 st",
       "visto": "2026-11-08"
     },
     {
@@ -71629,24 +70953,24 @@
     {
       "baths": 1,
       "disponibile": "2026-11-08",
-      "id": "apartmentadvisor-064e5d1bd0",
+      "id": "apartmentadvisor-4a9b93274c",
       "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/216-218-w-72-st-ny-ny-10023",
-      "title": "216 218 W 72 St",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/53-w-72-st-ny-ny-10023",
+      "title": "53 W 72Nd St",
       "price": 2900,
       "priceFrom": false,
       "currency": "USD",
       "type": "studio",
       "furnished": null,
       "sqft": 243,
-      "lat": 40.778812,
-      "lng": -73.98284,
+      "lat": 40.77745819091797,
+      "lng": -73.9784927368164,
       "photos": [],
       "amenities": [],
       "sources": [
         "apartmentadvisor"
       ],
-      "chiave": "216 218 w 72 st",
+      "chiave": "53 w 72 st",
       "visto": "2026-11-08"
     },
     {
@@ -72340,6 +71664,29 @@
       "visto": "2026-11-08"
     },
     {
+      "baths": 1,
+      "disponibile": "2026-11-08",
+      "id": "apartmentadvisor-0aa42005bb",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/436-w-52-st-ny-ny-10019",
+      "title": "436 W 52Nd St",
+      "price": 7295,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.765228271484375,
+      "lng": -73.98978424072266,
+      "photos": [],
+      "amenities": [],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "436 w 52 st",
+      "visto": "2026-11-08"
+    },
+    {
       "baths": 2,
       "disponibile": "2026-11-08",
       "id": "apartmentadvisor-0fd08e780c",
@@ -72765,6 +72112,159 @@
         "apartmentadvisor"
       ],
       "chiave": "240 e 82 st",
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-12-01",
+      "pubblicata": "2026-11-08",
+      "noFee": true,
+      "id": "craigslist-4fee814c80",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-williamsburg-studio-laundry-in/aiQPdXsEsuAbUvsQPGPefd",
+      "title": "WILLIAMSBURG STUDIO - LAUNDRY IN UNIT - KENT AVE - NO FEE",
+      "price": 3950,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7175614085266,
+      "lng": -73.9644871278847,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-08",
+      "pubblicata": "2026-11-08",
+      "id": "craigslist-60a9e6fba1",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-york-avenue-and-east-75th/bb3fnahBpdEPgEnfdsxyvq",
+      "title": "York Avenue and East 75th Street (Address On Request)",
+      "price": 3620,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7685007942578,
+      "lng": -73.9587976569794,
+      "photos": [],
+      "amenities": [
+        "no laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-08",
+      "id": "craigslist-ff4121aabc",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-east-village-bedroom-apartment/qoyTRsH1aj15ikNgVBpCbB",
+      "title": "East Village 2 Bedroom Apartment",
+      "price": 1690,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7262016120767,
+      "lng": -73.9796023274773,
+      "photos": [],
+      "amenities": [
+        "laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-08",
+      "id": "craigslist-dca27b4c47",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-charming-williamsburg-bedroom/mCUVPkWncfGKBoCwiAK8Mu",
+      "title": "Charming Williamsburg 1 Bedroom Apartment",
+      "price": 1800,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7094981734762,
+      "lng": -73.9562978421194,
+      "photos": [],
+      "amenities": [
+        "laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "id": "craigslist-3155734d2f",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-west-new-york-apartment/59VXDLsE1xTWA5NHtfq7UQ",
+      "title": "West New York apartment for rent",
+      "price": 2800,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7888001159804,
+      "lng": -74.0114994608883,
+      "photos": [],
+      "amenities": [
+        "no laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-08"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-08",
+      "noFee": true,
+      "id": "craigslist-6191d79fa2",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-fee-west-vil-sprawling-king/bfjLVkpbtZTiw62VbuGRxi",
+      "title": "NO FEE West Vil Sprawling King Sized 1BR, full luxe, doorman, VIDEO!",
+      "price": 9300,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7402001169266,
+      "lng": -73.9996014193152,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
       "visto": "2026-11-08"
     },
     {
@@ -75211,32 +74711,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-07",
-      "pubblicata": "2026-09-23",
-      "id": "craigslist-7b7201b1d1",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/union-city-renovated-apartment-park-ave/26KRg3t8ZKynQXTKTJ1Swo",
-      "title": "RENOVATED APARTMENT :PARK AVE IN UNION CITY",
-      "price": 2600,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.767401288249,
-      "lng": -74.0322972558926,
-      "photos": [],
-      "amenities": [
-        "no laundry on site"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-08"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-07",
       "pubblicata": "2026-11-06",
       "id": "craigslist-08c6397424",
       "source": "craigslist",
@@ -76968,32 +76442,6 @@
       "visto": "2026-11-08"
     },
     {
-      "baths": 1,
-      "disponibile": "2026-11-06",
-      "pubblicata": "2026-11-05",
-      "id": "craigslist-b56d115b2d",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-stunning-chelsea-2br-fully/mZNkHGbXHQMgDtFqsiHT8c",
-      "title": "STUNNING CHELSEA 2BR | FULLY RENOVATED | HIGH FLOOR | $5,250",
-      "price": 5250,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7402001169266,
-      "lng": -73.9996014193152,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-08"
-    },
-    {
       "id": "trulia-54991bb6e3",
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/building/anagram-nomad-10-e-29th-st-new-york-ny-10016-2750812423",
@@ -77040,52 +76488,6 @@
       "visto": "2026-11-08"
     },
     {
-      "id": "trulia-d637730db4",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/60-w-23rd-st-617-new-york-ny-10010-2069226744",
-      "title": "60 W  23rd St #617",
-      "price": 4800,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.742363,
-      "lng": -73.992386,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/7530b9692abbf050692b6805c5f6d04f-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "60 w 23 st|617",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "trulia-5adedbf3b8",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/45-e-22nd-st-28b-new-york-ny-10010-300201945",
-      "title": "45 E  22nd St #28B",
-      "price": 19750,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": false,
-      "sqft": 1491,
-      "lat": 40.73995,
-      "lng": -73.98731,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/b2ee3c16475214b12fabd82b65105d42-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "45 e 22 st|28b",
-      "visto": "2026-11-08"
-    },
-    {
       "id": "trulia-98347472f2",
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/2-w-16th-st-glb-new-york-ny-10011-466502698",
@@ -77109,49 +76511,26 @@
       "visto": "2026-11-08"
     },
     {
-      "id": "trulia-dd4a5edc02",
+      "id": "trulia-474dd2a247",
       "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/43-w-16th-st-5b-new-york-ny-10011-2131177371",
-      "title": "43 W  16th St #5B",
-      "price": 4200,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.73855,
-      "lng": -73.994995,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/c033426fa413c470e3e79d0efd4a209a-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "43 w 16 st|5b",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "trulia-f7a6bc0ee8",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-18g-new-york-ny-10003-2126797289",
-      "title": "1 Union Sq   S #18G",
-      "price": 8960,
+      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-13l-new-york-ny-10016-2102655966",
+      "title": "50 E  28th St #13L",
+      "price": 6385,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
-      "furnished": true,
-      "sqft": 597,
-      "lat": 40.735535,
-      "lng": -73.99189,
+      "furnished": false,
+      "sqft": 680,
+      "lat": 40.743378,
+      "lng": -73.984474,
       "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/fb09fc6645cb6dfdeeba02107955b370-full.jpg"
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
       ],
       "amenities": [],
       "sources": [
         "trulia"
       ],
-      "chiave": "1 union sq s|18g",
+      "chiave": "50 e 28 st|13l",
       "visto": "2026-11-08"
     },
     {
@@ -77201,6 +76580,98 @@
       "visto": "2026-11-08"
     },
     {
+      "id": "trulia-dd4a5edc02",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/43-w-16th-st-5b-new-york-ny-10011-2131177371",
+      "title": "43 W  16th St #5B",
+      "price": 4200,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.73855,
+      "lng": -73.994995,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/c033426fa413c470e3e79d0efd4a209a-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "43 w 16 st|5b",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-f7a6bc0ee8",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-18g-new-york-ny-10003-2126797289",
+      "title": "1 Union Sq   S #18G",
+      "price": 8960,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": true,
+      "sqft": 597,
+      "lat": 40.735535,
+      "lng": -73.99189,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/fb09fc6645cb6dfdeeba02107955b370-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "1 union sq s|18g",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-d637730db4",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/60-w-23rd-st-617-new-york-ny-10010-2069226744",
+      "title": "60 W  23rd St #617",
+      "price": 4800,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.742363,
+      "lng": -73.992386,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/7530b9692abbf050692b6805c5f6d04f-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "60 w 23 st|617",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-00439e3d73",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/60-w-23rd-st-422-new-york-ny-10010-2114400368",
+      "title": "60 W  23rd St #422",
+      "price": 6000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.742363,
+      "lng": -73.992386,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/d82c35d4378337846457d00d60912ef1-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "60 w 23 st|422",
+      "visto": "2026-11-08"
+    },
+    {
       "id": "trulia-08966a221f",
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-24e-new-york-ny-10003-2119023578",
@@ -77244,52 +76715,6 @@
         "trulia"
       ],
       "chiave": "60 w 23 st|1812",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "trulia-af73cc6632",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/435-park-ave-s-3a-new-york-ny-10016-466465980",
-      "title": "435 Park Ave S #3A",
-      "price": 10550,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "4br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.74422,
-      "lng": -73.9831,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/849f984f78941a8e8c976c72e57b2ec7-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "435 park ave s|3a",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "trulia-474dd2a247",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-13l-new-york-ny-10016-2102655966",
-      "title": "50 E  28th St #13L",
-      "price": 6385,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": 680,
-      "lat": 40.743378,
-      "lng": -73.984474,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "50 e 28 st|13l",
       "visto": "2026-11-08"
     },
     {
@@ -77339,6 +76764,52 @@
       "visto": "2026-11-08"
     },
     {
+      "id": "trulia-af73cc6632",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/435-park-ave-s-3a-new-york-ny-10016-466465980",
+      "title": "435 Park Ave S #3A",
+      "price": 10550,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "4br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.74422,
+      "lng": -73.9831,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/849f984f78941a8e8c976c72e57b2ec7-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "435 park ave s|3a",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-5adedbf3b8",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/45-e-22nd-st-28b-new-york-ny-10010-300201945",
+      "title": "45 E  22nd St #28B",
+      "price": 19750,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": 1491,
+      "lat": 40.73995,
+      "lng": -73.98731,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/b2ee3c16475214b12fabd82b65105d42-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "45 e 22 st|28b",
+      "visto": "2026-11-08"
+    },
+    {
       "id": "trulia-5687c828f4",
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/55-w-14th-st-12c-new-york-ny-10011-2113590970",
@@ -77359,29 +76830,6 @@
         "trulia"
       ],
       "chiave": "55 w 14 st|12c",
-      "visto": "2026-11-08"
-    },
-    {
-      "id": "trulia-00439e3d73",
-      "source": "trulia",
-      "sourceUrl": "https://www.trulia.com/home/60-w-23rd-st-422-new-york-ny-10010-2114400368",
-      "title": "60 W  23rd St #422",
-      "price": 6000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": false,
-      "sqft": null,
-      "lat": 40.742363,
-      "lng": -73.992386,
-      "photos": [
-        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/d82c35d4378337846457d00d60912ef1-full.jpg"
-      ],
-      "amenities": [],
-      "sources": [
-        "trulia"
-      ],
-      "chiave": "60 w 23 st|422",
       "visto": "2026-11-08"
     },
     {
@@ -77615,6 +77063,29 @@
       "visto": "2026-11-08"
     },
     {
+      "id": "trulia-48a1e2a942",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/10-e-28th-st-3c-new-york-ny-10016-466407031",
+      "title": "10 E  28th St #3C",
+      "price": 3695,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.743996,
+      "lng": -73.98657,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/6976bdc88102eec4a695d0ae66916fd1-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "10 e 28 st|3c",
+      "visto": "2026-11-08"
+    },
+    {
       "id": "trulia-91a99ad7f5",
       "source": "trulia",
       "sourceUrl": "https://www.trulia.com/home/280-park-ave-s-12l-new-york-ny-10010-31504431",
@@ -77635,6 +77106,650 @@
         "trulia"
       ],
       "chiave": "280 park ave s|12l",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-5de34156dd",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-penthouse-1j-new-york-ny-10003-465757774",
+      "title": "1 Union Sq S #Penthouse 1J",
+      "price": 9750,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.735535,
+      "lng": -73.99189,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/10202687c51d43caab4ea40ce434ac80-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "1 union sq s|penthouse1j",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-83b4ea39dd",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/108-e-30th-st-1-new-york-ny-10016-2092290375",
+      "title": "108 E  30th St #1",
+      "price": 12000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.744137,
+      "lng": -73.98275,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/d2b633cef059e4afcb3a14c859a65769-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "108 e 30 st|1",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-47c438fa40",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/77-w-24th-st-19l-new-york-ny-10010-2097492067",
+      "title": "77 W  24th St #19L",
+      "price": 6083,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 597,
+      "lat": 40.743576,
+      "lng": -73.99192,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/8bddd1461c4d2ff477c8ea1421b49770-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "77 w 24 st|19l",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-dc62709d85",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-22a-new-york-ny-10016-2099293518",
+      "title": "50 E  28th St #22A",
+      "price": 7075,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 684,
+      "lat": 40.743378,
+      "lng": -73.984474,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "50 e 28 st|22a",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-22b8dfaf06",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/77-w-24th-st-6l-new-york-ny-10010-2095644203",
+      "title": "77 W  24th St #6L",
+      "price": 4367,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": 478,
+      "lat": 40.743576,
+      "lng": -73.99192,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/e229da30df80a3a48238819eeb8ed688-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "77 w 24 st|6l",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-845b7ccaa7",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-5e-new-york-ny-10016-443328453",
+      "title": "50 E  28th St #5E",
+      "price": 7555,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 772,
+      "lat": 40.743378,
+      "lng": -73.984474,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "50 e 28 st|5e",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-e9fc5daeb3",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/77-w-24th-st-29h-new-york-ny-10010-2102007182",
+      "title": "77 W  24th St #29H",
+      "price": 6810,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 708,
+      "lat": 40.743576,
+      "lng": -73.99192,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/513e0f70c88f585cf52da99e06708689-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "77 w 24 st|29h",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-95c783032a",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/77-w-24th-st-9b-new-york-ny-10010-465202440",
+      "title": "77 W  24th St #9B",
+      "price": 5272,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": 573,
+      "lat": 40.743576,
+      "lng": -73.99192,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/38d3b14451d490dce6bc115b823dd95b-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "77 w 24 st|9b",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-c4ef45b526",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/11-w-26th-st-2w-new-york-ny-10010-466224260",
+      "title": "11 W  26th St #2W",
+      "price": 7500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.744022,
+      "lng": -73.98953,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/02cd7ab9885ef008dd34dd1b75067dd3-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "11 w 26 st|2w",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-3089dcf18d",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/2-w-16th-st-tfr-new-york-ny-10011-2104945255",
+      "title": "2 W  16th St #Tfr",
+      "price": 8500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.737328,
+      "lng": -73.99328,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/7e80961054a33f093fdebc06494bab79-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "2 w 16 st|tfr",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-d1b62b189a",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-20j-new-york-ny-10003-2078474841",
+      "title": "1 Union Sq   S #20J",
+      "price": 9320,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.735535,
+      "lng": -73.99189,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/772661b00f13b258c8cb0aa27cc7ce11-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "1 union sq s|20j",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-5adbf02ed3",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/121-madison-ave-11a-new-york-ny-10016-2126910215",
+      "title": "121 Madison Ave #11A",
+      "price": 4795,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.745373,
+      "lng": -73.98453,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/7169163f5b43829c8893294b3c93071a-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "121 madison ave|11a",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-94b3feb01a",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-6e-new-york-ny-10016-2102655984",
+      "title": "50 E  28th St #6E",
+      "price": 7715,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 772,
+      "lat": 40.743378,
+      "lng": -73.984474,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "50 e 28 st|6e",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-bba4748a1f",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-20e-new-york-ny-10016-2099293516",
+      "title": "50 E  28th St #20E",
+      "price": 8535,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 651,
+      "lat": 40.743378,
+      "lng": -73.984474,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/24752005ece9678c4aa5b19f604b137d-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "50 e 28 st|20e",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-899573e591",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/60-w-22nd-st-3-new-york-ny-10010-2068573207",
+      "title": "60 W  22nd St #3",
+      "price": 6000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.741867,
+      "lng": -73.993,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/5df0e1210a6bae1323908a0e37441f79-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "60 w 22 st|3",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-6790eae7c7",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/800-avenue-of-the-americas-31g-new-york-ny-10001-2081424293",
+      "title": "800 Avenue of the Americas #31G",
+      "price": 4678,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": 446,
+      "lat": 40.745342,
+      "lng": -73.990486,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/41a55924a8842d960f53a660702aeae1-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "800 avenue of the americas|31g",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-23f47a57d8",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/7-e-30th-st-11a-new-york-ny-10016-351730443",
+      "title": "7 E  30th St #11A",
+      "price": 4695,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": 550,
+      "lat": 40.745773,
+      "lng": -73.985535,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/a72b252cb23198d10b7b9209080d5033-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "7 e 30 st|11a",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-78a3503a5c",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/121-madison-ave-7l-new-york-ny-10016-2131985323",
+      "title": "121 Madison Ave #7L",
+      "price": 5995,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.745373,
+      "lng": -73.98453,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/2bbb437ed251306ebc5f9f98acbdaab3-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "121 madison ave|7l",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-f0de3b73ac",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/1200-broadway-3g-new-york-ny-10001-72516217",
+      "title": "1200 Broadway #3G",
+      "price": 12999,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": 2000,
+      "lat": 40.74608,
+      "lng": -73.98814,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/61ed7e27219c9672d587713d2fa5afc9-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "1200 broadway|3g",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-d007656f18",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-7e-new-york-ny-10016-2102656005",
+      "title": "50 E  28th St #7E",
+      "price": 7725,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 772,
+      "lat": 40.743378,
+      "lng": -73.984474,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "50 e 28 st|7e",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-4f0d58a4a5",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/60-w-23rd-st-851-new-york-ny-10010-2114400365",
+      "title": "60 W  23rd St #851",
+      "price": 9000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.742363,
+      "lng": -73.992386,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/80213c8b1bced235d3ed4d10913701f0-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "60 w 23 st|851",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-99404d3bc3",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/7-e-14th-st-1409-new-york-ny-10003-72516355",
+      "title": "7 E  14th St #1409",
+      "price": 7500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.73585,
+      "lng": -73.99251,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/fdde91221fa7a4a4634c35e95f9947dc-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "7 e 14 st|1409",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-10ef194b28",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/50-e-28th-st-2g-new-york-ny-10016-2099293526",
+      "title": "50 E  28th St #2G",
+      "price": 5095,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": 479,
+      "lat": 40.743378,
+      "lng": -73.984474,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/dc6561e9fbf6291b4b1b6cdfc23c0695-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "50 e 28 st|2g",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-862114eb69",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/1-union-sq-s-14k-new-york-ny-10003-2127594650",
+      "title": "1 Union Sq   S #14K",
+      "price": 8150,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.735535,
+      "lng": -73.99189,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/b6d46746e49e938d321170cf3ca04ebe-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "1 union sq s|14k",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-664d12acf6",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/800-avenue-of-the-americas-28f-new-york-ny-10001-343031063",
+      "title": "800 Avenue Of The Americas #28F",
+      "price": 5720,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": false,
+      "sqft": 580,
+      "lat": 40.745342,
+      "lng": -73.990486,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/44c213b4bfb704decb95a74770b08aa3-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "800 avenue of the americas|28f",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-2c0b1ef9c2",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/109-e-29th-st-3b-new-york-ny-10016-349064402",
+      "title": "109 E  29th St #3B",
+      "price": 6200,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.74383,
+      "lng": -73.98278,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/271927c901a446759f049f3e641edf53-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "109 e 29 st|3b",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-1777dd1686",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/2-e-30th-st-1a-new-york-ny-10016-2120205362",
+      "title": "2 E  30th St #1A",
+      "price": 3100,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.74552,
+      "lng": -73.98603,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/9dd1d6a0b11402b7149f3026bee914cd-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "2 e 30 st|1a",
+      "visto": "2026-11-08"
+    },
+    {
+      "id": "trulia-52a4e8cfde",
+      "source": "trulia",
+      "sourceUrl": "https://www.trulia.com/home/109-e-29th-st-2f-new-york-ny-10016-2108126464",
+      "title": "109 E  29th St #2F",
+      "price": 6050,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": false,
+      "sqft": null,
+      "lat": 40.74383,
+      "lng": -73.98278,
+      "photos": [
+        "https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/c34fe175870c14d5aa861e44f45e32e0-full.jpg"
+      ],
+      "amenities": [],
+      "sources": [
+        "trulia"
+      ],
+      "chiave": "109 e 29 st|2f",
       "visto": "2026-11-08"
     }
   ]
