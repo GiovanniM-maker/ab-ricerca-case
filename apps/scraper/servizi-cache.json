@@ -5854,19 +5854,32 @@
 "washer-dryer",
 "washer-dryer-in-unit"
 ],
-"il": "2026-09-18"
+"il": "2026-11-09",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-09",
+"pubblicata": "2026-11-09"
+}
 },
 "apartmentadvisor:170-e-87-st-ny-ny-10028": {
 "a": [
+"air-conditioning",
 "balcony",
 "fitness-center",
+"garage",
 "hardwood-floors",
 "patio",
 "pool",
 "washer-dryer",
-"washer-dryer-in-unit"
+"washer-dryer-in-unit",
+"unita:lavanderia-edificio"
 ],
-"il": "2026-09-15"
+"il": "2026-11-09",
+"x": {
+"baths": 2,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-09"
+}
 },
 "apartmentadvisor:170-elizabeth-st-manhattan-ny-10012": {
 "a": [],
@@ -34618,6 +34631,16 @@
 ],
 "il": "2026-10-21"
 },
+"craigslist:7FceKMmvF2Q5Ym2Nsbdyff": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-09",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-09"
+}
+},
 "craigslist:7G2ErV7SErTZRMkCnYj1hG": {
 "a": [
 "laundry in bldg"
@@ -34804,6 +34827,17 @@
 "no laundry on site"
 ],
 "il": "2026-10-20"
+},
+"craigslist:7R15wNGtpSdBcKgqLfqfs5": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-09",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-09",
+"pubblicata": "2026-11-09"
+}
 },
 "craigslist:7RwWu6PQkziK53v9ZkF6LF": {
 "a": [
@@ -37824,6 +37858,16 @@
 "no laundry on site"
 ],
 "il": "2026-10-16"
+},
+"craigslist:aF2kKW1s3mromM1tXQ1MQe": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-09",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-09"
+}
 },
 "craigslist:aFGdCnpNNzQdyeMXFuXzuT": {
 "a": [
@@ -43752,6 +43796,16 @@
 "no laundry on site"
 ],
 "il": "2026-09-15"
+},
+"craigslist:gZD8RnzZ8hiUoodidRvyGc": {
+"a": [
+"laundry on site"
+],
+"il": "2026-11-09",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-09"
+}
 },
 "craigslist:gZJaxqrCqMcN972HvCgA6y": {
 "a": [
@@ -50158,6 +50212,16 @@
 ],
 "il": "2026-09-20"
 },
+"craigslist:ngFqUPTZWjNxBkEPCpNrmu": {
+"a": [
+"laundry on site"
+],
+"il": "2026-11-09",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-09"
+}
+},
 "craigslist:ngceD6gv7kRqoDDEKMevW5": {
 "a": [
 "laundry in bldg"
@@ -52933,6 +52997,16 @@
 "no laundry on site"
 ],
 "il": "2026-09-27"
+},
+"craigslist:qd1vd8Bxaf5XqfpvAWzdfL": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-09",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-09"
+}
 },
 "craigslist:qeoYq5NvYP41v5ZAeTChkr": {
 "a": [
