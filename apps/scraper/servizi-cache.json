@@ -569,6 +569,23 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:100-vandam-st-ny-ny-10013": {
+"a": [
+"balcony",
+"elevator",
+"fitness-center",
+"garage",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 4,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-10"
+}
+},
 "apartmentadvisor:100-w-12-st-manhattan-ny-10011": {
 "a": [
 "dishwasher",
@@ -1848,6 +1865,21 @@
 "washer-dryer-in-unit"
 ],
 "il": "2026-09-16"
+},
+"apartmentadvisor:114-spg-st-ny-ny-10012": {
+"a": [
+"air-conditioning",
+"elevator",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 2,
+"disponibile": "2026-12-15",
+"pubblicata": "2026-11-10"
+}
 },
 "apartmentadvisor:114-suffolk-st-manhattan-ny-10002": {
 "a": [
@@ -5259,6 +5291,15 @@
 "apartmentadvisor:16-prince-st-ny-ny-10012": {
 "a": [],
 "il": "2026-10-18"
+},
+"apartmentadvisor:16-saint-marks-pl-manhattan-ny-10003": {
+"a": [],
+"il": "2026-11-10",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-10"
+}
 },
 "apartmentadvisor:16-saint-marks-pl-ny-ny-10003": {
 "a": [
@@ -11202,14 +11243,24 @@
 "dishwasher",
 "hardwood-floors"
 ],
-"il": "2026-09-17"
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-10"
+}
 },
 "apartmentadvisor:239-e-58-st-ny-city-ny-10022": {
 "a": [
 "dishwasher",
 "hardwood-floors"
 ],
-"il": "2026-09-18"
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-10"
+}
 },
 "apartmentadvisor:239-n-9-st-brooklyn-ny-11211": {
 "a": [
@@ -13377,6 +13428,19 @@
 "washer-dryer-in-unit"
 ],
 "il": "2026-09-14"
+},
+"apartmentadvisor:29-w-12-st-manhattan-ny-10011": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-13",
+"pubblicata": "2026-11-10"
+}
 },
 "apartmentadvisor:29-w-65-st-ny-ny-10023": {
 "a": [
@@ -27259,6 +27323,23 @@
 ],
 "il": "2026-10-23"
 },
+"apartmentadvisor:789-w-end-ave-ny-ny-10025": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 3,
+"disponibile": "2026-11-15",
+"pubblicata": "2026-11-10"
+}
+},
 "apartmentadvisor:79-kingsland-ave-brooklyn-ny-11211": {
 "a": [
 "dishwasher",
@@ -34662,6 +34743,17 @@
 "laundry in bldg"
 ],
 "il": "2026-10-04"
+},
+"craigslist:6mdrKiwjfHwxBKr2XgEjGf": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-10"
+}
 },
 "craigslist:6meKXaBFVvGF9sTRBP4AjH": {
 "a": [
@@ -50944,6 +51036,17 @@
 ],
 "il": "2026-10-02"
 },
+"craigslist:nK5wcMudjqqeC7yhcMXBMu": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-10"
+}
+},
 "craigslist:nKK4k6nqkesojtoAMJ7RH4": {
 "a": [
 "laundry in bldg"
@@ -54075,6 +54178,17 @@
 ],
 "il": "2026-10-17"
 },
+"craigslist:qVeb9YcFbKECEVcDhdhWWU": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-10"
+}
+},
 "craigslist:qVnwqerx7JdCSiDv3BiBow": {
 "a": [
 "no laundry on site"
@@ -55823,6 +55937,16 @@
 "laundry in bldg"
 ],
 "il": "2026-09-26"
+},
+"craigslist:sNDQPSncErUqqugdG22vGZ": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-10"
+}
 },
 "craigslist:sPB3cEXLTTRyjDYRihCCN5": {
 "a": [
@@ -57639,6 +57763,17 @@
 "pubblicata": "2026-11-05"
 }
 },
+"craigslist:uCKsBCuga7U6BDJbMx1Tfy": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-10",
+"pubblicata": "2026-11-10"
+}
+},
 "craigslist:uD2uW95YDGYbg8GiVM7wVb": {
 "a": [
 "w/d in unit"
@@ -57856,6 +57991,16 @@
 "w/d in unit"
 ],
 "il": "2026-10-18"
+},
+"craigslist:uRAEZDM6KFFKGqAU94oGcV": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-10",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-10"
+}
 },
 "craigslist:uRAs7cMduGwAGeryBynBAm": {
 "a": [
