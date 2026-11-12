@@ -1410,6 +1410,19 @@
 "pubblicata": "2026-11-06"
 }
 },
+"apartmentadvisor:11-greene-ave-brooklyn-ny-11238": {
+"a": [
+"balcony",
+"hardwood-floors",
+"yard"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1.5,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-11"
+}
+},
 "apartmentadvisor:11-hoyt-st-brooklyn-ny-11201": {
 "a": [
 "air-conditioning",
@@ -4638,6 +4651,17 @@
 ],
 "il": "2026-09-16"
 },
+"apartmentadvisor:150-baxter-st-manhattan-ny-10013": {
+"a": [
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-15",
+"pubblicata": "2026-11-12"
+}
+},
 "apartmentadvisor:150-central-park-s-ny-ny-10019": {
 "a": [
 "furnished"
@@ -5435,6 +5459,19 @@
 "a": [],
 "il": "2026-10-18"
 },
+"apartmentadvisor:16-saint-marks-pl-brooklyn-ny-11217": {
+"a": [
+"dishwasher",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 2,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-11"
+}
+},
 "apartmentadvisor:16-saint-marks-pl-manhattan-ny-10003": {
 "a": [],
 "il": "2026-11-10",
@@ -5576,8 +5613,18 @@
 "il": "2026-11-01"
 },
 "apartmentadvisor:160-w-71-st-ny-ny-10023": {
-"a": [],
-"il": "2026-09-17"
+"a": [
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"parking"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-12"
+}
 },
 "apartmentadvisor:160-w-73-st-ny-ny-10023": {
 "a": [],
@@ -9602,6 +9649,22 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:216-flatbush-ave-ny-ny-11217": {
+"a": [
+"air-conditioning",
+"balcony",
+"hardwood-floors",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-12"
+}
+},
 "apartmentadvisor:216-quincy-st-brooklyn-ny-11216": {
 "a": [
 "dishwasher",
@@ -9675,6 +9738,17 @@
 "washer-dryer-in-unit"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:218-garfield-pl-brooklyn-ny-11215": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-11"
+}
 },
 "apartmentadvisor:218-w-10-st-ny-ny-10014": {
 "a": [],
@@ -10503,6 +10577,17 @@
 "elevator"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:225-w-80-st-ny-ny-10024": {
+"a": [
+"elevator"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-11"
+}
 },
 "apartmentadvisor:225-w-83-st-ny-ny-10024": {
 "a": [
@@ -12027,6 +12112,25 @@
 "a": [],
 "il": "2026-11-01"
 },
+"apartmentadvisor:246-w-17-st-manhattan-ny-10011": {
+"a": [
+"air-conditioning",
+"balcony",
+"fitness-center",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 3,
+"disponibile": "2026-11-12",
+"pubblicata": "2026-11-11"
+}
+},
 "apartmentadvisor:247-driggs-ave-brooklyn-ny-11222": {
 "a": [
 "fitness-center",
@@ -12418,6 +12522,19 @@
 "unita:lavatrice"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:250-10-ave-ny-ny-10001": {
+"a": [
+"dishwasher",
+"dogs",
+"hardwood-floors"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-12"
+}
 },
 "apartmentadvisor:250-bowery-ny-ny-10012": {
 "a": [
@@ -14276,6 +14393,19 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:300-w-23-st-ny-ny-10011": {
+"a": [
+"dishwasher",
+"hardwood-floors",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-12",
+"pubblicata": "2026-11-12"
+}
+},
 "apartmentadvisor:300-w-30-st-ny-ny-10001": {
 "a": [
 "balcony",
@@ -14804,7 +14934,12 @@
 "hardwood-floors",
 "washer-dryer"
 ],
-"il": "2026-09-18"
+"il": "2026-11-12",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-12",
+"pubblicata": "2026-11-12"
+}
 },
 "apartmentadvisor:305-w-16-st-ny-ny-10011": {
 "a": [
@@ -17869,6 +18004,24 @@
 "a": [],
 "il": "2026-09-18"
 },
+"apartmentadvisor:360-e-89-st-ny-ny-10128": {
+"a": [
+"air-conditioning",
+"dishwasher",
+"fitness-center",
+"garbage-disposal",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 3.5,
+"disponibile": "2026-12-07",
+"pubblicata": "2026-11-12"
+}
+},
 "apartmentadvisor:360-furman-st-brooklyn-heights-ny-11201": {
 "a": [
 "fitness-center",
@@ -19922,6 +20075,15 @@
 "elevator"
 ],
 "il": "2026-10-18"
+},
+"apartmentadvisor:42-25-undisclosed-address-manhattan-ny-10022": {
+"a": [],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-12",
+"pubblicata": "2026-11-11"
+}
 },
 "apartmentadvisor:42-6-orch-st-queens-ny-11101": {
 "a": [
@@ -23549,6 +23711,19 @@
 "a": [],
 "il": "2026-11-01"
 },
+"apartmentadvisor:515-w-38-st-ny-ny-10018": {
+"a": [
+"balcony",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-12"
+}
+},
 "apartmentadvisor:516-e-80-st-ny-ny-10075": {
 "a": [],
 "il": "2026-10-19"
@@ -23910,10 +24085,13 @@
 "il": "2026-11-01"
 },
 "apartmentadvisor:525-6-ave-ny-ny-10011": {
-"a": [
-"fitness-center"
-],
-"il": "2026-09-16"
+"a": [],
+"il": "2026-11-12",
+"x": {
+"baths": 2.5,
+"disponibile": "2026-11-12",
+"pubblicata": "2026-11-12"
+}
 },
 "apartmentadvisor:525-60-st-west-ny-nj-07093": {
 "a": [
@@ -23998,6 +24176,24 @@
 "apartmentadvisor:529-carroll-st-ny-ny-11215": {
 "a": [],
 "il": "2026-09-26"
+},
+"apartmentadvisor:529-w-42-st-ny-ny-10036": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"garbage-disposal",
+"hardwood-floors",
+"pool",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2027-02-01",
+"pubblicata": "2026-11-12"
+}
 },
 "apartmentadvisor:53-boerum-pl-brooklyn-ny-11201": {
 "a": [
@@ -27892,6 +28088,18 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:80-freeman-st-brooklyn-ny-11222": {
+"a": [
+"hardwood-floors",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-15",
+"pubblicata": "2026-11-11"
+}
+},
 "apartmentadvisor:80-john-st-ny-ny-10038": {
 "a": [
 "air-conditioning",
@@ -28344,6 +28552,18 @@
 "apartmentadvisor:853-7-ave-ny-ny-10019": {
 "a": [],
 "il": "2026-11-01"
+},
+"apartmentadvisor:856-w-end-ave-ny-ny-10025": {
+"a": [
+"balcony",
+"hardwood-floors"
+],
+"il": "2026-11-12",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-12",
+"pubblicata": "2026-11-12"
+}
 },
 "apartmentadvisor:858-w-end-ave-ny-ny-10025": {
 "a": [
