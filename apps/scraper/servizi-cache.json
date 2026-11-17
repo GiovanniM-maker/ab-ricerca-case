@@ -8875,6 +8875,20 @@
 ],
 "il": "2026-10-15"
 },
+"apartmentadvisor:201-w-109-st-manhattan-ny-10025": {
+"a": [
+"dishwasher",
+"elevator",
+"washer-dryer",
+"washer-dryer-in-unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-17",
+"pubblicata": "2026-11-17"
+}
+},
 "apartmentadvisor:201-w-109-st-ny-city-ny-10025": {
 "a": [
 "dishwasher"
@@ -14459,6 +14473,17 @@
 "pubblicata": "2026-11-12"
 }
 },
+"apartmentadvisor:282-president-st-brooklyn-ny-11231": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-17"
+}
+},
 "apartmentadvisor:282-s-5-st-ny-ny-11211": {
 "a": [
 "air-conditioning",
@@ -17357,6 +17382,25 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:330-e-75-st-ny-ny-10021": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"garage",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 2,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-17"
+}
+},
 "apartmentadvisor:330-e-76-st-ny-ny-10021": {
 "a": [
 "dishwasher",
@@ -20186,17 +20230,18 @@
 "apartmentadvisor:400-e-54-st-ny-ny-10022": {
 "a": [
 "air-conditioning",
-"balcony",
 "dishwasher",
-"elevator",
-"fitness-center",
 "garage",
 "hardwood-floors",
 "parking",
-"washer-dryer",
-"washer-dryer-in-unit"
+"unita:lavanderia-edificio"
 ],
-"il": "2026-09-15"
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-17",
+"pubblicata": "2026-11-17"
+}
 },
 "apartmentadvisor:400-e-56-st-ny-ny-10022": {
 "a": [
@@ -29510,7 +29555,12 @@
 "hardwood-floors",
 "parking"
 ],
-"il": "2026-10-16"
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-17",
+"pubblicata": "2026-11-17"
+}
 },
 "apartmentadvisor:7809-broadway-1-north-bergen-nj-07047": {
 "a": [
@@ -32962,6 +33012,17 @@
 ],
 "il": "2026-10-30"
 },
+"craigslist:2UU425APdxhAQwSuxK1DXs": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-17",
+"pubblicata": "2026-11-17"
+}
+},
 "craigslist:2VA9JNpYRVfQzwnZnTC2Uy": {
 "a": [
 "no laundry on site"
@@ -32973,6 +33034,16 @@
 "w/d in unit"
 ],
 "il": "2026-10-14"
+},
+"craigslist:2WmPLtcvxT2X4jUWXSA9F4": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 2,
+"pubblicata": "2026-11-17"
+}
 },
 "craigslist:2Y8AyL4ZxVnW5NmoxdtQe5": {
 "a": [
@@ -34459,6 +34530,16 @@
 "no laundry on site"
 ],
 "il": "2026-10-04"
+},
+"craigslist:3kF9MQReXDviRaiFbMqT8j": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-17"
+}
 },
 "craigslist:3kYVvjDsfLFAsNxZdDxjqN": {
 "a": [
@@ -40993,6 +41074,16 @@
 "pubblicata": "2026-11-03"
 }
 },
+"craigslist:97RFkRPuw7Fkncp4unAZv5": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-17"
+}
+},
 "craigslist:97i3gGuhGV4eQNBGzfkUZC": {
 "a": [
 "laundry in bldg"
@@ -46082,6 +46173,16 @@
 "no laundry on site"
 ],
 "il": "2026-09-27"
+},
+"craigslist:dEHJRCnSfD96zBNfrg7v4n": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-17"
+}
 },
 "craigslist:dEaULBhwbjyZGDcRHwXWmU": {
 "a": [
@@ -52917,6 +53018,16 @@
 "pubblicata": "2026-11-10"
 }
 },
+"craigslist:idhw1nHPAT9biXN8kXGc9E": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-17"
+}
+},
 "craigslist:ieEs3aUXPHwA2KAktKCXu9": {
 "a": [
 "no laundry on site"
@@ -54837,6 +54948,16 @@
 "pubblicata": "2026-11-03"
 }
 },
+"craigslist:kKwXPiDah9n6KnAErwH6h7": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-17"
+}
+},
 "craigslist:kL8uNmEsJFqxZSgkFtaWoS": {
 "a": [
 "no laundry on site"
@@ -55777,6 +55898,16 @@
 "laundry in bldg"
 ],
 "il": "2026-10-08"
+},
+"craigslist:m7VWx6CMAhwZsHwvVqpXdE": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-17"
+}
 },
 "craigslist:m8MwgBn3rS2XyyPR3qR8mZ": {
 "a": [
@@ -61994,6 +62125,16 @@
 ],
 "il": "2026-09-17"
 },
+"craigslist:rkyi1qgKXmMjx8ieZbpDeP": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 3,
+"pubblicata": "2026-11-17"
+}
+},
 "craigslist:rmWZZmnaFfhhvuwsrZzfp3": {
 "a": [
 "laundry in bldg"
@@ -62545,6 +62686,16 @@
 "laundry in bldg"
 ],
 "il": "2026-09-19"
+},
+"craigslist:s9CknrKZ4H14kZdxNTErrm": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-17",
+"x": {
+"baths": 2,
+"pubblicata": "2026-11-17"
+}
 },
 "craigslist:s9Fbgg5gwo9y8GMgTEuXoT": {
 "a": [
