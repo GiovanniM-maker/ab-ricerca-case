@@ -13659,9 +13659,15 @@
 "dishwasher",
 "elevator",
 "washer-dryer",
-"washer-dryer-in-unit"
+"washer-dryer-in-unit",
+"unita:lavatrice"
 ],
-"il": "2026-09-15"
+"il": "2026-11-18",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-27",
+"pubblicata": "2026-11-18"
+}
 },
 "apartmentadvisor:253-nassau-ave-ny-ny-11222": {
 "a": [
@@ -26895,12 +26901,17 @@
 },
 "apartmentadvisor:56-pine-st-ny-ny-10005": {
 "a": [
-"air-conditioning",
 "dishwasher",
 "fitness-center",
-"hardwood-floors"
+"hardwood-floors",
+"unita:lavanderia-edificio"
 ],
-"il": "2026-09-15"
+"il": "2026-11-18",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-18"
+}
 },
 "apartmentadvisor:56-stagg-st-brooklyn-ny-11206": {
 "a": [
@@ -27964,6 +27975,18 @@
 "unita:lavatrice"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:63-w-107-st-manhattan-ny-10025": {
+"a": [
+"dishwasher",
+"hardwood-floors"
+],
+"il": "2026-11-18",
+"x": {
+"baths": 1,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-18"
+}
 },
 "apartmentadvisor:63-w-107-st-ny-city-ny-10025": {
 "a": [
@@ -49054,6 +49077,16 @@
 ],
 "il": "2026-10-20"
 },
+"craigslist:f8H9WL46rMVVJSvj8vDfPo": {
+"a": [
+"laundry on site"
+],
+"il": "2026-11-18",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-18"
+}
+},
 "craigslist:f8P6mRW6ww358ctcBGS8tG": {
 "a": [
 "w/d in unit"
@@ -52463,6 +52496,17 @@
 "no laundry on site"
 ],
 "il": "2026-10-02"
+},
+"craigslist:https://www.craigslist.org/view/d/jersey-city-spacious-2br-3ba-condo-for/AIzcjELj8RGN-7bdJnzP-g": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-18",
+"x": {
+"baths": 3,
+"disponibile": "2026-11-18",
+"pubblicata": "2026-11-18"
+}
 },
 "craigslist:https://www.craigslist.org/view/d/jersey-city-spacious-3br-2ba-apartment/_m8hKWLO8RGzVq1HYB2JJw": {
 "a": [
@@ -64964,6 +65008,16 @@
 "pubblicata": "2026-11-04"
 }
 },
+"craigslist:suoJ2f6CRr4qWLzwkuSCim": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-18",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-18"
+}
+},
 "craigslist:susGytZcLYkPG5medmPZvq": {
 "a": [
 "no laundry on site"
@@ -69006,6 +69060,16 @@
 ],
 "il": "2026-10-05"
 },
+"craigslist:w4sFt2nGuWnwETD5JYSNEz": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-18",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-18"
+}
+},
 "craigslist:w56aRxymSUqXmwtnXBTsf5": {
 "a": [
 "w/d in unit"
@@ -69203,6 +69267,16 @@
 "x": {
 "baths": 1,
 "pubblicata": "2026-11-06"
+}
+},
+"craigslist:wHE3Z9BdMNenwcoTyB5o5R": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-18",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-18"
 }
 },
 "craigslist:wHcDG1aLPRVR5RNtY8czgJ": {
