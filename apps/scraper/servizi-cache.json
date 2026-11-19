@@ -3261,18 +3261,16 @@
 },
 "apartmentadvisor:130-e-63-st-ny-ny-10065": {
 "a": [
-"air-conditioning",
 "balcony",
 "dishwasher",
-"fitness-center",
-"furnished",
-"garage",
-"hardwood-floors",
-"parking",
-"washer-dryer",
-"washer-dryer-in-unit"
+"unita:lavanderia-edificio"
 ],
-"il": "2026-09-14"
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-19",
+"pubblicata": "2026-11-19"
+}
 },
 "apartmentadvisor:130-e-93-st-manhattan-ny-10128": {
 "a": [
@@ -11180,10 +11178,23 @@
 },
 "apartmentadvisor:225-5-ave-ny-ny-10010": {
 "a": [
+"air-conditioning",
+"balcony",
 "dishwasher",
-"fitness-center"
+"elevator",
+"fitness-center",
+"garbage-disposal",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit"
 ],
-"il": "2026-09-23"
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-15",
+"pubblicata": "2026-11-19"
+}
 },
 "apartmentadvisor:225-8-ave-ny-ny-10011": {
 "a": [
@@ -12102,6 +12113,20 @@
 "dishwasher"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:235-e-2-st-ny-ny-10009": {
+"a": [
+"air-conditioning",
+"elevator",
+"washer-dryer",
+"unita:lavatrice"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-19"
+}
 },
 "apartmentadvisor:235-e-40-st-ny-ny-10016": {
 "a": [
@@ -21158,6 +21183,17 @@
 "a": [],
 "il": "2026-11-01"
 },
+"apartmentadvisor:407-w-40-st-manhattan-ny-10018": {
+"a": [
+"hardwood-floors"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-20",
+"pubblicata": "2026-11-19"
+}
+},
 "apartmentadvisor:407-w-51-st-manhattan-ny-10019": {
 "a": [
 "elevator"
@@ -23501,9 +23537,15 @@
 "apartmentadvisor:455-park-ave-s-ny-city-ny-10016": {
 "a": [
 "dishwasher",
-"elevator"
+"elevator",
+"hardwood-floors"
 ],
-"il": "2026-10-10"
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-19",
+"pubblicata": "2026-11-19"
+}
 },
 "apartmentadvisor:457-broome-st-manhattan-ny-10013": {
 "a": [
@@ -23589,6 +23631,18 @@
 "washer-dryer-in-unit"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:459-hudson-st-ny-ny-10014": {
+"a": [
+"hardwood-floors",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-19",
+"pubblicata": "2026-11-19"
+}
 },
 "apartmentadvisor:459-w-50-st-ny-ny-10019": {
 "a": [
@@ -24591,6 +24645,19 @@
 "baths": 1,
 "disponibile": "2026-12-01",
 "pubblicata": "2026-11-11"
+}
+},
+"apartmentadvisor:5-great-jones-st-manhattan-ny-10012": {
+"a": [
+"dishwasher",
+"garbage-disposal",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 2,
+"disponibile": "2026-11-19",
+"pubblicata": "2026-11-19"
 }
 },
 "apartmentadvisor:5-s-5-st-brooklyn-ny-11249": {
@@ -28976,6 +29043,21 @@
 ],
 "il": "2026-11-01"
 },
+"apartmentadvisor:69-bank-st-manhattan-ny-10014": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"washer-dryer",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 2,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-19"
+}
+},
 "apartmentadvisor:69-skillman-ave-ny-ny-11211": {
 "a": [],
 "il": "2026-11-01"
@@ -29810,6 +29892,25 @@
 ],
 "il": "2026-10-15"
 },
+"apartmentadvisor:75-poplar-st-brooklyn-ny-11201": {
+"a": [
+"air-conditioning",
+"balcony",
+"dishwasher",
+"elevator",
+"hardwood-floors",
+"parking",
+"washer-dryer",
+"washer-dryer-in-unit",
+"unita:lavatrice"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1.5,
+"disponibile": "2026-11-19",
+"pubblicata": "2026-11-19"
+}
+},
 "apartmentadvisor:75-w-68-st-ny-ny-10023": {
 "a": [
 "dishwasher",
@@ -30053,6 +30154,23 @@
 "washer-dryer-in-unit"
 ],
 "il": "2026-09-27"
+},
+"apartmentadvisor:77-w-55-st-manhattan-ny-10019": {
+"a": [
+"balcony",
+"dishwasher",
+"elevator",
+"garage",
+"hardwood-floors",
+"parking",
+"unita:lavanderia-edificio"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-01",
+"pubblicata": "2026-11-19"
+}
 },
 "apartmentadvisor:77-w-68-st-manhattan-ny-10023": {
 "a": [
@@ -52578,6 +52696,16 @@
 ],
 "il": "2026-10-24"
 },
+"craigslist:hWtQogce2CSBJNjbtYhw5J": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-19"
+}
+},
 "craigslist:hWzF1eABBdWqPXdRviV2ZU": {
 "a": [
 "w/d in unit"
@@ -52725,6 +52853,16 @@
 "w/d in unit"
 ],
 "il": "2026-10-27"
+},
+"craigslist:heVTFT1cq2BCxgz3X2sYdW": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 3,
+"pubblicata": "2026-11-19"
+}
 },
 "craigslist:henk6q4EUhxeJ4Q2djnGMh": {
 "a": [
@@ -57370,6 +57508,17 @@
 "no laundry on site"
 ],
 "il": "2026-10-12"
+},
+"craigslist:kjHb1YMnqSjMh8yq9tCGu1": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-23",
+"pubblicata": "2026-11-19"
+}
 },
 "craigslist:kjrvsaytjaU9bthAhgrz6S": {
 "a": [
@@ -62677,6 +62826,16 @@
 ],
 "il": "2026-10-29"
 },
+"craigslist:qC2jincnNTNqXUFLD295Lv": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-19"
+}
+},
 "craigslist:qD9P2Ujb1CFMCMpzr4m88Z": {
 "a": [
 "laundry in bldg"
@@ -62895,6 +63054,16 @@
 "no laundry on site"
 ],
 "il": "2026-09-18"
+},
+"craigslist:qPBMhvG44CyN8NMwcYy6JS": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-19"
+}
 },
 "craigslist:qPZQ2nkXdY8degPEjsFgT6": {
 "a": [
@@ -65643,6 +65812,16 @@
 "pubblicata": "2026-11-11"
 }
 },
+"craigslist:sghbRZ3XxJAR7Q8VHRYojx": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-19"
+}
+},
 "craigslist:sgr4gGomTuCE8N4ckbWXxs": {
 "a": [
 "no laundry on site"
@@ -68128,6 +68307,16 @@
 ],
 "il": "2026-10-18"
 },
+"craigslist:uenvsNWz3KzE17ucZVhBKt": {
+"a": [
+"laundry on site"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-19"
+}
+},
 "craigslist:uerzP3Qfpq4F4gDKmN2yTg": {
 "a": [
 "laundry in bldg"
@@ -68749,6 +68938,16 @@
 "w/d in unit"
 ],
 "il": "2026-10-24"
+},
+"craigslist:vB3jgdyVTKACGQN43GvNYo": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-19",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-19"
+}
 },
 "craigslist:vBYXOZWz8RGmKpi28UzEwA": {
 "a": [
