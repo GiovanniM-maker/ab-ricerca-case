@@ -3569,6 +3569,20 @@
 "pubblicata": "2026-11-13"
 }
 },
+"apartmentadvisor:133-water-st-brooklyn-ny-11201": {
+"a": [
+"air-conditioning",
+"balcony",
+"fitness-center",
+"hardwood-floors"
+],
+"il": "2026-11-20",
+"x": {
+"baths": 1,
+"disponibile": "2026-12-15",
+"pubblicata": "2026-11-20"
+}
+},
 "apartmentadvisor:1330-5-ave-ny-ny-10026": {
 "a": [
 "balcony",
@@ -4334,9 +4348,15 @@
 "fitness-center",
 "hardwood-floors",
 "washer-dryer",
-"washer-dryer-in-unit"
+"washer-dryer-in-unit",
+"unita:lavatrice"
 ],
-"il": "2026-09-17"
+"il": "2026-11-20",
+"x": {
+"baths": 1,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-20"
+}
 },
 "apartmentadvisor:142-sullivan-st-ny-ny-10012": {
 "a": [
@@ -19139,6 +19159,15 @@
 "yard"
 ],
 "il": "2026-11-01"
+},
+"apartmentadvisor:349-flatbush-ave-brooklyn-ny-11238": {
+"a": [],
+"il": "2026-11-20",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-20",
+"pubblicata": "2026-11-20"
+}
 },
 "apartmentadvisor:349-w-30-st-ny-ny-10001": {
 "a": [
@@ -44743,6 +44772,16 @@
 "pubblicata": "2026-11-13"
 }
 },
+"craigslist:aTz5kL2eJDdEA2pkoubL9b": {
+"a": [
+"w/d in unit"
+],
+"il": "2026-11-20",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-20"
+}
+},
 "craigslist:aUrntfd1N8bRxKhETexsAN": {
 "a": [
 "w/d in unit"
@@ -50089,6 +50128,16 @@
 "laundry in bldg"
 ],
 "il": "2026-10-18"
+},
+"craigslist:emG9AHTs4u1JW2JdSBwtj3": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-20",
+"x": {
+"baths": 1,
+"pubblicata": "2026-11-20"
+}
 },
 "craigslist:emHe9hmQksoAQ8aLnRVwAb": {
 "a": [
@@ -63337,6 +63386,17 @@
 "pubblicata": "2026-11-14"
 }
 },
+"craigslist:psah5yMYPZrMfuiaBwCSp6": {
+"a": [
+"laundry in bldg"
+],
+"il": "2026-11-20",
+"x": {
+"baths": 1,
+"disponibile": "2027-01-01",
+"pubblicata": "2026-11-20"
+}
+},
 "craigslist:pt1ksoV1PN8XacrzdBN69V": {
 "a": [
 "laundry in bldg"
@@ -70753,6 +70813,17 @@
 "baths": 1,
 "disponibile": "2026-11-11",
 "pubblicata": "2026-11-11"
+}
+},
+"craigslist:vf7A6bXC684xSXKxSNE14c": {
+"a": [
+"no laundry on site"
+],
+"il": "2026-11-20",
+"x": {
+"baths": 1,
+"disponibile": "2026-11-20",
+"pubblicata": "2026-11-20"
 }
 },
 "craigslist:vfChajTZhgghpZTFWfS1x6": {
