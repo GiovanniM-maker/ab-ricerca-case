@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-22T12:30:54.121373+00:00",
+  "generatedAt": "2026-11-22T18:31:44.441629+00:00",
   "note": "Generato da rental_radar.aggregate. Il tier è calcolato dal frontend.",
-  "count": 2848,
+  "count": 2832,
   "listings": [
     {
       "id": "apartmentadvisor-60664132f8",
@@ -34134,39 +34134,6 @@
       "visto": "2026-11-22"
     },
     {
-      "baths": 2,
-      "disponibile": "2026-11-22",
-      "pubblicata": "2026-11-11",
-      "id": "apartmentadvisor-9539a2e294",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/142-grace-st-jersey-city-nj-07307",
-      "title": "142 Grace St",
-      "price": 2900,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": 1400,
-      "lat": 40.7565039,
-      "lng": -74.04935680000001,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/147f9fe79948ac1bd60bd9eb5ee1a20f.jpeg"
-      ],
-      "amenities": [
-        "balcony",
-        "dishwasher",
-        "hardwood-floors",
-        "parking",
-        "washer-dryer",
-        "washer-dryer-in-unit"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "142 grace st",
-      "visto": "2026-11-22"
-    },
-    {
       "baths": 1,
       "disponibile": "2026-11-22",
       "id": "apartmentadvisor-e8407b0741",
@@ -34290,38 +34257,6 @@
       "visto": "2026-11-22"
     },
     {
-      "baths": 0.5,
-      "disponibile": "2026-11-22",
-      "id": "apartmentadvisor-8ce3e1d40f",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/319-broadway-brooklyn-ny-11211",
-      "title": "319 Broadway",
-      "price": 8000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "studio",
-      "furnished": null,
-      "sqft": 2205,
-      "lat": 40.708188,
-      "lng": -73.95685,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/c4e1077365a7ad47871b3cd9d4f6567c.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "balcony",
-        "dishwasher",
-        "elevator",
-        "fitness-center",
-        "hardwood-floors"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "319 broadway",
-      "visto": "2026-11-22"
-    },
-    {
       "baths": 1,
       "disponibile": "2027-01-01",
       "pubblicata": "2026-11-05",
@@ -34442,37 +34377,6 @@
         "apartmentadvisor"
       ],
       "chiave": "205 e 89 st",
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "disponibile": "2026-12-01",
-      "pubblicata": "2026-11-06",
-      "id": "apartmentadvisor-509ce93ba9",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/75-2-ave-manhattan-ny-10003",
-      "title": "75 2 Ave",
-      "price": 8350,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "5br",
-      "furnished": null,
-      "sqft": 1600,
-      "lat": 40.7265871,
-      "lng": -73.98953712,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/cf8872156a90be4bc2157be0799c2530.jpeg"
-      ],
-      "amenities": [
-        "hardwood-floors",
-        "washer-dryer",
-        "washer-dryer-in-unit",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "75 2 ave",
       "visto": "2026-11-22"
     },
     {
@@ -34811,7 +34715,7 @@
       "lat": 40.76373299999999,
       "lng": -73.968465,
       "photos": [
-        "https://static.apartmentadvisor.com/i/ca7695d092180027e9a3ebd511c0083a.jpeg"
+        "https://static.apartmentadvisor.com/i/aee69b04041a757a608a91eaa076ebb7.jpeg"
       ],
       "amenities": [
         "dishwasher",
@@ -36575,7 +36479,7 @@
       "lat": 40.77492055,
       "lng": -73.95137005,
       "photos": [
-        "https://static.apartmentadvisor.com/i/743c71b1163eb2d220178c746a0efcdf.png"
+        "https://static.apartmentadvisor.com/i/8c97781d9afe10f7d54c9b74b304319e.jpeg"
       ],
       "amenities": [
         "hardwood-floors"
@@ -37762,34 +37666,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-22",
-      "id": "apartmentadvisor-68a7f4e104",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/135-w-95-st-ny-ny-10025",
-      "title": "135 W 95 St",
-      "price": 5000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7928833,
-      "lng": -73.9691941,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/38f23eacecbb9a06f0f21cc0c5bd1044.jpeg"
-      ],
-      "amenities": [
-        "dishwasher",
-        "unita:lavanderia-edificio"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "135 w 95 st",
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-22",
       "id": "apartmentadvisor-c9885798f0",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/198-van-vorst-st-jersey-city-nj-07302",
@@ -38090,7 +37966,7 @@
       "lat": 40.74989595,
       "lng": -73.9964125,
       "photos": [
-        "https://static.apartmentadvisor.com/i/8b3b2e1e8c438ade413ba3edb92a6365.jpeg"
+        "https://static.apartmentadvisor.com/i/035674496ec029180db180a13e6d4c6c.jpeg"
       ],
       "amenities": [
         "dishwasher",
@@ -41261,7 +41137,7 @@
       "lat": 40.760292053222656,
       "lng": -73.9649658203125,
       "photos": [
-        "https://static.apartmentadvisor.com/i/58c496a01e6aef6f25d3a72f3a416556.jpeg"
+        "https://static.apartmentadvisor.com/i/7e9c6d52203a9ac764890fe6439f6f79.jpeg"
       ],
       "amenities": [
         "air-conditioning",
@@ -41756,6 +41632,33 @@
     {
       "baths": 1,
       "disponibile": "2026-11-22",
+      "id": "apartmentadvisor-143739f36c",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/125-ainslie-st-brooklyn-ny-11211",
+      "title": "125 Ainslie St",
+      "price": 4750,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7127188,
+      "lng": -73.9495811,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/b6051e268af6ffc500eef3d3d4cd3f79.jpeg"
+      ],
+      "amenities": [
+        "hardwood-floors"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "125 ainslie st",
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-22",
       "id": "apartmentadvisor-3225a8b104",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/435-dekalb-ave-brooklyn-ny-11205",
@@ -41780,33 +41683,6 @@
         "apartmentadvisor"
       ],
       "chiave": "435 dekalb ave",
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-22",
-      "id": "apartmentadvisor-143739f36c",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/125-ainslie-st-brooklyn-ny-11211",
-      "title": "125 Ainslie St",
-      "price": 4750,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7127188,
-      "lng": -73.9495811,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/b6051e268af6ffc500eef3d3d4cd3f79.jpeg"
-      ],
-      "amenities": [
-        "hardwood-floors"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "125 ainslie st",
       "visto": "2026-11-22"
     },
     {
@@ -42985,39 +42861,6 @@
         "apartmentadvisor"
       ],
       "chiave": "325 5 avenue",
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-22",
-      "id": "apartmentadvisor-4015547040",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/378-baltic-st-brooklyn-ny-11201",
-      "title": "378 Baltic St",
-      "price": 4000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": 650,
-      "lat": 40.6839911,
-      "lng": -73.9901773,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/a0d18a6462291de4bf6dd7e3bd5b9ea6.jpeg"
-      ],
-      "amenities": [
-        "balcony",
-        "dishwasher",
-        "elevator",
-        "fitness-center",
-        "hardwood-floors",
-        "patio",
-        "unita:lavanderia-edificio"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "378 baltic st",
       "visto": "2026-11-22"
     },
     {
@@ -45933,40 +45776,6 @@
         "apartmentadvisor"
       ],
       "chiave": "65 dupont st",
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-22",
-      "pubblicata": "2026-11-06",
-      "id": "apartmentadvisor-5ee64f3dac",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/20-rockwell-pl-brooklyn-ny-11201",
-      "title": "20 Rockwell Pl",
-      "price": 4550,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.68865,
-      "lng": -73.9794,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/3ec963e8f4df0de1d4f2a841a1aca40c.jpeg"
-      ],
-      "amenities": [
-        "balcony",
-        "dishwasher",
-        "fitness-center",
-        "parking",
-        "washer-dryer",
-        "washer-dryer-in-unit",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "20 rockwell pl",
       "visto": "2026-11-22"
     },
     {
@@ -51606,42 +51415,6 @@
       "visto": "2026-11-22"
     },
     {
-      "baths": 1,
-      "disponibile": "2026-12-15",
-      "pubblicata": "2026-11-06",
-      "id": "apartmentadvisor-17d9632a7b",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/189-schermerhorn-st-brooklyn-ny-11201",
-      "title": "189 Schermerhorn St",
-      "price": 4395,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6893716,
-      "lng": -73.98667689999999,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/b558152017685b501c6eb1f24092b879.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "balcony",
-        "dishwasher",
-        "elevator",
-        "fitness-center",
-        "garage",
-        "hardwood-floors",
-        "parking",
-        "unita:lavanderia-edificio"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "189 schermerhorn st",
-      "visto": "2026-11-22"
-    },
-    {
       "baths": 2,
       "disponibile": "2026-11-22",
       "pubblicata": "2026-10-29",
@@ -55402,38 +55175,6 @@
       "visto": "2026-11-22"
     },
     {
-      "baths": 2,
-      "disponibile": "2026-11-23",
-      "id": "apartmentadvisor-ca15edb8fe",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/1080-madison-ave-ny-ny-10028",
-      "title": "1080 Madison Ave",
-      "price": 14000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": 1350,
-      "lat": 40.7779148,
-      "lng": -73.9611663,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/c21aac6edd97336a4dcfadb10d9d8342.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "balcony",
-        "dishwasher",
-        "elevator",
-        "hardwood-floors",
-        "unita:lavanderia-edificio"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "1080 madison ave",
-      "visto": "2026-11-22"
-    },
-    {
       "baths": 1,
       "disponibile": "2026-11-22",
       "id": "apartmentadvisor-a858a1e162",
@@ -56094,7 +55835,7 @@
       "price": 16500,
       "priceFrom": false,
       "currency": "USD",
-      "type": "3br",
+      "type": "2br",
       "furnished": null,
       "sqft": 1746,
       "lat": 40.7674375,
@@ -59272,7 +59013,7 @@
       "lat": 40.7170971,
       "lng": -74.0056255,
       "photos": [
-        "https://static.apartmentadvisor.com/i/c22e44e57ea89e6b689e645d6888e231.jpeg"
+        "https://static.apartmentadvisor.com/i/a67b771fb0cd947ec67abd027021ad68.jpeg"
       ],
       "amenities": [
         "air-conditioning",
@@ -61720,6 +61461,34 @@
         "apartmentadvisor"
       ],
       "chiave": "425 w 53 street",
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 2,
+      "disponibile": "2026-11-22",
+      "id": "apartmentadvisor-6be2b2eb4b",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/190-berry-st-brooklyn-ny-11249",
+      "title": "190 Berry St",
+      "price": 14995,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.716923,
+      "lng": -73.96117,
+      "photos": [
+        "https://static.apartmentadvisor.com/i/9fc0b966b769e806103596531dc84737.jpeg"
+      ],
+      "amenities": [
+        "washer-dryer",
+        "washer-dryer-in-unit"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "190 berry st",
       "visto": "2026-11-22"
     },
     {
@@ -66793,34 +66562,6 @@
     {
       "baths": 1,
       "disponibile": "2026-11-22",
-      "id": "apartmentadvisor-6be2b2eb4b",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/190-berry-st-brooklyn-ny-11249",
-      "title": "190 Berry St",
-      "price": 6650,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.716923,
-      "lng": -73.96117,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/9fc0b966b769e806103596531dc84737.jpeg"
-      ],
-      "amenities": [
-        "washer-dryer",
-        "washer-dryer-in-unit"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "190 berry st",
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-22",
       "id": "apartmentadvisor-1c262904da",
       "source": "apartmentadvisor",
       "sourceUrl": "https://www.apartmentadvisor.com/details/547-w-47-st-ny-ny-10036",
@@ -67126,41 +66867,6 @@
       "visto": "2026-11-22"
     },
     {
-      "baths": 2,
-      "disponibile": "2026-12-01",
-      "pubblicata": "2026-11-06",
-      "id": "apartmentadvisor-53877de13e",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/115-york-st-brooklyn-ny-11201",
-      "title": "115 York St",
-      "price": 11500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": 1291,
-      "lat": 40.70193599,
-      "lng": -73.98572525,
-      "photos": [
-        "https://static.apartmentadvisor.com/i/f54de31fb90d9bd6f512cc72c331c0b2.jpeg"
-      ],
-      "amenities": [
-        "air-conditioning",
-        "balcony",
-        "fitness-center",
-        "hardwood-floors",
-        "pool",
-        "washer-dryer",
-        "washer-dryer-in-unit",
-        "unita:lavatrice"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "115 york st",
-      "visto": "2026-11-22"
-    },
-    {
       "baths": 3,
       "disponibile": "2026-11-22",
       "pubblicata": "2026-11-14",
@@ -67207,7 +66913,7 @@
       "lat": 40.782117,
       "lng": -73.9796222,
       "photos": [
-        "https://static.apartmentadvisor.com/i/6a86b66efc8fe0bd48509be94f114c9f.jpeg"
+        "https://static.apartmentadvisor.com/i/773c3bada8c130f7008e7911df642104.jpeg"
       ],
       "amenities": [
         "air-conditioning",
@@ -68199,7 +67905,7 @@
       "lat": 40.761983,
       "lng": -73.985687,
       "photos": [
-        "https://static.apartmentadvisor.com/i/df33c5ef8c55743a986df4ff193aabe9.jpeg"
+        "https://static.apartmentadvisor.com/i/1b7f9e37179b9960801250b08610ce18.jpeg"
       ],
       "amenities": [
         "fitness-center",
@@ -69355,32 +69061,6 @@
         "apartmentadvisor"
       ],
       "chiave": "50 pine st",
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-22",
-      "pubblicata": "2026-11-11",
-      "id": "apartmentadvisor-b1d9509db2",
-      "source": "apartmentadvisor",
-      "sourceUrl": "https://www.apartmentadvisor.com/details/1229-1-ave-ny-ny-10065",
-      "title": "1229 1 Ave",
-      "price": 3175,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7643232,
-      "lng": -73.9588251,
-      "photos": [],
-      "amenities": [
-        "dishwasher"
-      ],
-      "sources": [
-        "apartmentadvisor"
-      ],
-      "chiave": "1229 1 ave",
       "visto": "2026-11-22"
     },
     {
@@ -71233,6 +70913,40 @@
         "apartmentadvisor"
       ],
       "chiave": "75 w end ave",
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-12-15",
+      "pubblicata": "2026-11-06",
+      "id": "apartmentadvisor-17d9632a7b",
+      "source": "apartmentadvisor",
+      "sourceUrl": "https://www.apartmentadvisor.com/details/189-schermerhorn-st-brooklyn-ny-11201",
+      "title": "189 Schermerhorn St",
+      "price": 4395,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6893716,
+      "lng": -73.98667689999999,
+      "photos": [],
+      "amenities": [
+        "air-conditioning",
+        "balcony",
+        "dishwasher",
+        "elevator",
+        "fitness-center",
+        "garage",
+        "hardwood-floors",
+        "parking",
+        "unita:lavanderia-edificio"
+      ],
+      "sources": [
+        "apartmentadvisor"
+      ],
+      "chiave": "189 schermerhorn st",
       "visto": "2026-11-22"
     },
     {
@@ -75142,6 +74856,488 @@
       "visto": "2026-11-22"
     },
     {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "noFee": true,
+      "id": "craigslist-8495d115bb",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-gowanus-bedrom-for-rent-no-fee/3jXYmnxocJ3hcgkWWL1u12",
+      "title": "Gowanus  2 bedrom FOR RENT  no fee",
+      "price": 2490,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6668987614105,
+      "lng": -73.9827988590161,
+      "photos": [],
+      "amenities": [
+        "no laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-30",
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-ac694c0374",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-park-slope-luxury-bedroom/69zfvvFEH4Th41P2goSmzu",
+      "title": "Park Slope - Luxury 2 Bedroom - Parking - Laundry - Gym - Elevator!!",
+      "price": 1260,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6818529598626,
+      "lng": -73.9800326187814,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-caa3043039",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-big-25-3bed-near-prospect-park/nqV1R9XRxJngrdLUy99YQ6",
+      "title": "Big 2.5/3bed near prospect park, w/d in unit+dishwasher+heat included",
+      "price": 5000,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6739576014461,
+      "lng": -73.9648979386238,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-30",
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-c0c5437203",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-spacious-rent-stabilized-studio/7oSFLuvxJRQaARdS3C8CqP",
+      "title": "Spacious Rent stabilized Studio",
+      "price": 2542,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6960325193757,
+      "lng": -73.9435266128666,
+      "photos": [],
+      "amenities": [
+        "laundry in bldg"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-02",
+      "noFee": true,
+      "id": "craigslist-5a6c58b065",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/weehawken-charming-large-studio-10-min/8RiBs5kVnTpr84dwm5cxMn",
+      "title": "Charming Large Studio 10 min to New York with skyline view No Fee",
+      "price": 2150,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7693000703819,
+      "lng": -74.0233023914673,
+      "photos": [],
+      "amenities": [
+        "laundry in bldg"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-12-01",
+      "pubblicata": "2026-11-22",
+      "noFee": true,
+      "id": "craigslist-87b7b9ef8e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburg-bedroom-amenities/i9TTdAyUysNHsBjMsAwo5m",
+      "title": "WILLIAMSBURG 2 BEDROOM - AMENITIES BUILDING - LORIMER L TRAIN - NO FEE",
+      "price": 4500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7157858123196,
+      "lng": -73.9502531373811,
+      "photos": [],
+      "amenities": [
+        "laundry in bldg"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-813d335fc8",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-williamsburg-bedroom-apartment/hHdtJK9JgcAP3ejrvv8PST",
+      "title": "Williamsburg 1 Bedroom Apartment For Rent",
+      "price": 1690,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7094981734762,
+      "lng": -73.9562978421194,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-c066a2cb3b",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-dime-squaretrue-1brfurnished/6oUfaqSJn5Sscu79h2LqqV",
+      "title": "DIME SQUARE.......TRUE 1BR......FURNISHED___ PAY NO UTILITIES___ TRUE 1BR ___",
+      "price": 2750,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7138652577904,
+      "lng": -73.9924978885716,
+      "photos": [],
+      "amenities": [
+        "no laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "disponibile": "2026-11-30",
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-1cac69f635",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-park-slope-luxury-bedroom/tpzGM85FB5zQCWXdyfWmGV",
+      "title": "Park Slope - Luxury 2 Bedroom - Parking - Laundry - Gym - Elevator!!",
+      "price": 1260,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6818529598626,
+      "lng": -73.9800326187814,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-b2b9aa2a75",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-luxury-sunny-corner-2b1b-2/u2Do8f953J7SEuZKcMqaA4",
+      "title": "LUXURY SUNNY CORNER 2b1b w 2 balconies!! 4 min walk from Barclay’s!! Leasing n",
+      "price": 6375,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6834984946501,
+      "lng": -73.9758987282897,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 2,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-96ada2a3a8",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-luxury-1b15-bath-kitchen/a9YZ5sfuahAHHkzerPmbwt",
+      "title": "LUXURY 1b1.5 bath w kitchen island 4 min walk from Barclay’s!!  Now leasing",
+      "price": 4816,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6834984946501,
+      "lng": -73.9758987282897,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-00888cb0f1",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-luxury-1b1b-balcony-min-walk/2VRbwYtNJoag7KygrN5c5a",
+      "title": "LUXURY 1b1b w balcony 4 min walk from Barclay’s! Now leasing!",
+      "price": 4250,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "1br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6834984946501,
+      "lng": -73.9758987282897,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 2,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-05035b7a65",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-massive-3b2b-private-balcony/ep4SJU9WK4fXCqZCFXz57y",
+      "title": "MASSIVE 3b2b w private balcony and kitchen island -penthouse level.",
+      "price": 11333,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "3br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6834984946501,
+      "lng": -73.9758987282897,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 2,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-adb7897e04",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-big-cozy-2b15b-private-balcony/egkDKWpuSZKXss8EFpYtU8",
+      "title": "BIG COZY 2b1.5b w private balcony great for a couple or roomies, 4 min BARCLAY",
+      "price": 6138,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6834984946501,
+      "lng": -73.9758987282897,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-f2f05c4a41",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-new-lofty-large-studio-near/mDQxFeyP7otqqhC1Lm8n3V",
+      "title": "NEW LoFTY LaRGE STUDIO ...NEAR PRATT..G TRAIN..",
+      "price": 3500,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6919175364913,
+      "lng": -73.9587569769759,
+      "photos": [],
+      "amenities": [
+        "laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-70897bacc7",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/hoboken-studio-at-seventy-house-no/45Sfc6gU6Wvsiq2W7fp7mK",
+      "title": "$3,510 - Studio at 7 Seventy House - No Broker Fee, Rooftop Pool",
+      "price": 3510,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.744499592221,
+      "lng": -74.0328982886197,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-827310719e",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/new-york-no-broker-studio-doorman/mUQEsmCUjxx3EwXhGoRJsD",
+      "title": "No broker Studio doorman elevator dishwasher on 26th street",
+      "price": 2680,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": null,
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.7374986209227,
+      "lng": -73.9813034391709,
+      "photos": [],
+      "amenities": [
+        "laundry in bldg"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-80d7ee579b",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-entire-floor-amazing-charming/638SXCK49VUZqwqAJa2142",
+      "title": "Entire Floor Amazing Charming 2BR Near Atlantic Terminal",
+      "price": 3399,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.6829324123486,
+      "lng": -73.9787285668397,
+      "photos": [],
+      "amenities": [
+        "no laundry on site"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
+      "baths": 1,
+      "pubblicata": "2026-11-22",
+      "id": "craigslist-7604e20b88",
+      "source": "craigslist",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-newly-renovated-amazing/39UnJ42T46KXGpv9AwN9vc",
+      "title": "Newly renovated Amazing Charming 2BR Bedroom Steps to ALL",
+      "price": 6499,
+      "priceFrom": false,
+      "currency": "USD",
+      "type": "2br",
+      "furnished": null,
+      "sqft": null,
+      "lat": 40.687276578351,
+      "lng": -73.9957901040622,
+      "photos": [],
+      "amenities": [
+        "w/d in unit"
+      ],
+      "sources": [
+        "craigslist"
+      ],
+      "chiave": null,
+      "visto": "2026-11-22"
+    },
+    {
       "baths": 2,
       "pubblicata": "2026-11-21",
       "noFee": true,
@@ -75428,8 +75624,8 @@
       "id": "craigslist-6b738e9138",
       "source": "craigslist",
       "sourceUrl": "https://www.craigslist.org/view/d/jersey-city-br-at-65-bay-street-no/2yLRUD1CEDsJL1VJV99x4R",
-      "title": "$3,727 - 1BR at 65 Bay Street - No Broker Fee, Pool, Doorman",
-      "price": 3727,
+      "title": "$3,709 - 1BR at 65 Bay Street - No Broker Fee, Pool, Doorman",
+      "price": 3709,
       "priceFrom": false,
       "currency": "USD",
       "type": "1br",
@@ -75607,58 +75803,6 @@
     },
     {
       "baths": 1,
-      "disponibile": "2026-11-22",
-      "pubblicata": "2026-11-21",
-      "id": "craigslist-f32f3bb702",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-great-deal-bed-apt-in-kips-bay/teJxjv449Craz38Rwo3t4F",
-      "title": "GREAT DEAL - 2 bed apt in Kips Bay/Brooklyn",
-      "price": 1900,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6668987614105,
-      "lng": -73.9827988590161,
-      "photos": [],
-      "amenities": [
-        "laundry in bldg"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-22",
-      "pubblicata": "2026-11-21",
-      "id": "craigslist-78460c4704",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-great-deal-bed-apt-in-kips-bay/hNEpyDEGgdbheDibhvM8Fq",
-      "title": "GREAT DEAL - 2 bed apt in Kips Bay/Brooklyn",
-      "price": 1950,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6668987614105,
-      "lng": -73.9827988590161,
-      "photos": [],
-      "amenities": [
-        "laundry in bldg"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
       "pubblicata": "2026-11-20",
       "id": "craigslist-ad2fe4e07b",
       "source": "craigslist",
@@ -75733,31 +75877,6 @@
       "visto": "2026-11-22"
     },
     {
-      "baths": 2,
-      "pubblicata": "2026-11-21",
-      "id": "craigslist-b142c1bff9",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-big-cozy-2b15b-private-balcony/cYHarGy56bDTUVurtniX2T",
-      "title": "BIG COZY 2b1.5b w private balcony great for a couple or roomies, 4 min BARCLAY",
-      "price": 6138,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6834984946501,
-      "lng": -73.9758987282897,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
       "baths": 1,
       "disponibile": "2026-12-01",
       "pubblicata": "2026-11-21",
@@ -75787,31 +75906,6 @@
     {
       "baths": 2,
       "pubblicata": "2026-11-21",
-      "id": "craigslist-1483fa8bff",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-massive-3b2b-private-balcony/oxZsVFgD1h6Ji5GSGPxRir",
-      "title": "MASSIVE 3b2b w private balcony and kitchen island -penthouse level.",
-      "price": 11333,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6834984946501,
-      "lng": -73.9758987282897,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "pubblicata": "2026-11-21",
       "id": "craigslist-b578d57917",
       "source": "craigslist",
       "sourceUrl": "https://www.craigslist.org/view/d/new-york-chelsea-3br-great-layout/4xgEQATsSLvHgNWSWP3P5T",
@@ -75827,31 +75921,6 @@
       "photos": [],
       "amenities": [
         "no laundry on site"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-21",
-      "id": "craigslist-cd143f19f6",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-luxury-1b1b-balcony-min-walk/pPrgujaKVUEQ4HZgL3Yzkv",
-      "title": "LUXURY 1b1b w balcony 4 min walk from Barclay’s! Now leasing!",
-      "price": 4250,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6834984946501,
-      "lng": -73.9758987282897,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
       ],
       "sources": [
         "craigslist"
@@ -75952,56 +76021,6 @@
       "photos": [],
       "amenities": [
         "laundry in bldg"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "pubblicata": "2026-11-21",
-      "id": "craigslist-885116c4e7",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-luxury-1b15-bath-kitchen/124bVRLUidMQRwsPEq6GbG",
-      "title": "LUXURY 1b1.5 bath w kitchen island 4 min walk from Barclay’s!!  Now leasing",
-      "price": 4816,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6834984946501,
-      "lng": -73.9758987282897,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-21",
-      "id": "craigslist-63f080a215",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-luxury-sunny-corner-2b1b-2/7ebZ1nqDa41DsKV4PU6eTn",
-      "title": "LUXURY SUNNY CORNER 2b1b w 2 balconies!! 4 min walk from Barclay’s!! Leasing n",
-      "price": 6941,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6834984946501,
-      "lng": -73.9758987282897,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
       ],
       "sources": [
         "craigslist"
@@ -76944,31 +76963,6 @@
       "photos": [],
       "amenities": [
         "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-20",
-      "id": "craigslist-7cd43c0732",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-new-lofty-large-studio-near/iCakaSW8Brm1t9GZeZ14oM",
-      "title": "NEW LoFTY LaRGE STUDIO ...NEAR PRATT..G TRAIN..",
-      "price": 3500,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.6919175364913,
-      "lng": -73.9587569769759,
-      "photos": [],
-      "amenities": [
-        "laundry on site"
       ],
       "sources": [
         "craigslist"
@@ -77928,31 +77922,6 @@
     {
       "baths": 1,
       "pubblicata": "2026-11-20",
-      "id": "craigslist-66719730bd",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-newly-renovated-amazing/aTz5kL2eJDdEA2pkoubL9b",
-      "title": "Newly renovated Amazing Charming 2BR Bedroom Steps to ALL",
-      "price": 6499,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.687276578351,
-      "lng": -73.9957901040622,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-20",
       "id": "craigslist-a1e473b458",
       "source": "craigslist",
       "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-historical-amazing-newly/emG9AHTs4u1JW2JdSBwtj3",
@@ -78820,8 +78789,8 @@
       "noFee": true,
       "id": "craigslist-7abf00105a",
       "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-bedroom-for-rent-no-fee/33Cdg2CDv3MgcwX5C2VFB2",
-      "title": "2 BEDROOM  FOR RENT                 NO FEE",
+      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-bedroom-for-rent-gowanus-no-fee/33Cdg2CDv3MgcwX5C2VFB2",
+      "title": "2 BEDROOM  FOR RENT        GOWANUS         NO FEE",
       "price": 2495,
       "priceFrom": false,
       "currency": "USD",
@@ -79291,434 +79260,6 @@
       "sqft": null,
       "lat": 40.7063222684179,
       "lng": -74.0071822239022,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-f3bda12da6",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-resort-style-amenities/dPTJdkDgfk4Lnzuffcxf1q",
-      "title": "Resort Style Amenities - Convertible 3 Bedroom",
-      "price": 6300,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7063222684179,
-      "lng": -74.0071822239022,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-db619a65ce",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-resort-style-amenities/e3EnFAziVijQrpM9gwQVZP",
-      "title": "Resort Style Amenities - Convertible 3 Bedroom",
-      "price": 6300,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7063222684179,
-      "lng": -74.0071822239022,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-7eb86a7dc6",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-resort-style-amenities/3MLxaaMend5jz4JPhtLcP1",
-      "title": "Resort Style Amenities - Convertible 3 Bedroom",
-      "price": 6300,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7063222684179,
-      "lng": -74.0071822239022,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-abcc899c80",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-bright-convertible-bedroom/uTFwC6qGF1AQedUXZ9w8Qw",
-      "title": "Bright Convertible 3 Bedroom",
-      "price": 5800,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7045907899611,
-      "lng": -74.0091302804055,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-a9b033205c",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-bright-views-flex-bedroom/12fn2VTg44k6Js8J8PNYrm",
-      "title": "Bright Views, Flex 3 Bedroom",
-      "price": 5800,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7071181067953,
-      "lng": -74.0048468479294,
-      "photos": [],
-      "amenities": [
-        "laundry in bldg"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-9736587b49",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-lofty-flex-bedroom/1hcMbjn2QcLw3fUSQWqZth",
-      "title": "Lofty Flex 3 Bedroom",
-      "price": 5795,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7090747576656,
-      "lng": -74.0131730706078,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-6472843a5d",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-large-convertible-bedroom/83pu7PiTCUudZE6u1Ytjfp",
-      "title": "Large Convertible 3 Bedroom",
-      "price": 5800,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "3br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7055745584953,
-      "lng": -74.0077500250771,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-82e35dcf5f",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-new-renovated-convertible/wQXnDDZqpiy5Jkehx1X6Dw",
-      "title": "New Renovated, Convertible 2 Bedroom",
-      "price": 4000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7049666502747,
-      "lng": -74.0073947912442,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-5059e002d1",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-bright-convertible-bedroom/9z8FrAXRcCLDeifyRkR6As",
-      "title": "Bright Convertible 2 Bedroom",
-      "price": 4050,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7045907899611,
-      "lng": -74.0091302804055,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-1104c9e250",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-new-renovated-convertible/iJnwrtVndcdtELZYmQoA1B",
-      "title": "New Renovated, Convertible 2 Bedroom",
-      "price": 4000,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7049666502747,
-      "lng": -74.0073947912442,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-b802d40101",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-bright-convertible-bedroom/xjuTFT53R7dMicBbhfzrH5",
-      "title": "Bright Convertible 2 Bedroom",
-      "price": 3900,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7045907899611,
-      "lng": -74.0091302804055,
-      "photos": [],
-      "amenities": [
-        "laundry in bldg"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-3710e9c8ea",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/brooklyn-bed-bath-on-greenpoint-east/j8xcaEofyZi8nfStbS6yPG",
-      "title": "1 bed 1 bath on Greenpoint/ East Williamsburg boarder",
-      "price": 3100,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.721799577337,
-      "lng": -73.937395964459,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 2,
-      "disponibile": "2026-12-15",
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-32a72d400e",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-gorgeous-2br-2bath-duplex-with/h8d9ho4pDsbLuvPU6xnmL6",
-      "title": "Gorgeous 2BR 2Bath Duplex with a Massive Private Outdoor Space!",
-      "price": 8705,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "2br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7631224394352,
-      "lng": -73.9964799452475,
-      "photos": [],
-      "amenities": [
-        "w/d in unit"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-171635c5cf",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-33-wea-oversized-one-bedroom/5bi7Je4EhgNhdsb17cirMx",
-      "title": "33 WEA - OVERSIZED ONE BEDROOM - FLEX TWO BEDROOM",
-      "price": 4695,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7728655867408,
-      "lng": -73.9895402804333,
-      "photos": [],
-      "amenities": [
-        "laundry in bldg"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-23",
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-47d953c21e",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/new-york-spacious-studios-grand-central/cbX4MPg9kGpNpX35j5Nwb9",
-      "title": "Spacious Studios - Grand Central area. Doorman/Laundry building.",
-      "price": 3400,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7539935028858,
-      "lng": -73.9741930329337,
-      "photos": [],
-      "amenities": [
-        "laundry in bldg"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "disponibile": "2026-11-17",
-      "pubblicata": "2026-11-16",
-      "id": "craigslist-dc2e73671d",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/weehawken-studio-for-rent-luxury-hi/cR8GtCJfqWa1r2ksvUFUse",
-      "title": "Studio for rent Luxury Hi-rise river view Terrace",
-      "price": 1995,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": null,
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7725361360087,
-      "lng": -74.0176398495784,
-      "photos": [],
-      "amenities": [
-        "laundry on site"
-      ],
-      "sources": [
-        "craigslist"
-      ],
-      "chiave": null,
-      "visto": "2026-11-22"
-    },
-    {
-      "baths": 1,
-      "pubblicata": "2026-11-19",
-      "id": "craigslist-834ab408ab",
-      "source": "craigslist",
-      "sourceUrl": "https://www.craigslist.org/view/d/west-new-york-6611-broadway-a6-west-new/bCRyhTHk8RGwDYrt_Nnzkg",
-      "title": "6611 Broadway #A6, West New York, NJ 07093",
-      "price": 1900,
-      "priceFrom": false,
-      "currency": "USD",
-      "type": "1br",
-      "furnished": null,
-      "sqft": null,
-      "lat": 40.7916414136863,
-      "lng": -74.0072395196817,
       "photos": [],
       "amenities": [
         "w/d in unit"
